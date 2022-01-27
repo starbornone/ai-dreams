@@ -13,7 +13,7 @@ timeToRead: "1422 words, ~6 minutes"
 
 It's almost impossible to not feel at odds with the world. So many of us sense we are different from the model human that we believe society demands. Feelings such as these make it easy to feel lost in the world, without direction or hope, often resulting in anxiety and depression.
 
-That is why I wrote myself some guidelines for life, so I know what kind of person I should try to be. Of course, I won't always succeed in following those guidelines. But at least they're there, like a map, to help me get back on track. But why? Why so many rules?
+That is why I wrote myself [some guidelines for life](https://aidreams.world/10-rules-life), so I know what kind of person I should try to be. Of course, I won't always succeed in following those guidelines. But at least they're there, like a map, to help me get back on track. But why? Why so many rules?
 
 Society today, our world of liberal hyper-individual capitalism, wants us to believe that our whims and impulses are our true selves. To deny the compulsions we feel is to deny who we are. This system superficially appears nomadic and free-flowing as a method of self-creation and self-determination, tearing down tyrannical structures.
 
