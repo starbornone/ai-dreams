@@ -77,7 +77,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "develop": "SET NODE_OPTIONS=--openssl-legacy-provider && gatsby develop",
+    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && gatsby develop",
     "dev": "npm run develop",
     "serve": "gatsby serve",
     "build": "gatsby build",
