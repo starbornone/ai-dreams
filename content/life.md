@@ -8,6 +8,7 @@ date: "2021-09-24"
 category: "reflection"
 tags:
     - life
+    - quotes
 timeToRead: "714 words, ~3 minutes"
 ---
 

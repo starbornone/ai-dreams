@@ -8,6 +8,7 @@ date: "2021-10-01"
 category: "imagination"
 tags:
     - sci-fi
+    - short story
 timeToRead: "5888 words, ~23 minutes"
 ---
 

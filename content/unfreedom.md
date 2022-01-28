@@ -8,6 +8,7 @@ date: "2022-01-07"
 category: "reflection"
 tags:
   - life
+  - anti-consumerism
 timeToRead: "1422 words, ~6 minutes"
 ---
 

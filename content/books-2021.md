@@ -8,6 +8,7 @@ date: "2021-10-15"
 category: "reflection"
 tags:
     - books
+    - political economy
 timeToRead: "1056 words, ~4 minutes"
 ---
 
