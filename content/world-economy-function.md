@@ -9,7 +9,7 @@ category: "function"
 tags:
   - game development
   - game economy
-timeToRead: "1699 words, ~7 minutes"
+timeToRead: "1771 words, ~7 minutes"
 ---
 
 I've always hoped that the games I create contain worlds that function similarly to our own. Not just because trying to recreate reality with 1s and 0s is an exciting challenge, but also because of the potential emergent gameplay, stories, and possibility for reflection on our current systems. Furthermore, while modelling player needs and interactions can quickly become tedious with increased complexity, a complex world can make the experience even more fascinating.
@@ -48,7 +48,7 @@ For example, a Business that puts a car together will purchase metals, rubbers, 
 
 Worker Effort is the time a Worker spends in creating the product to be sold. It represents the time spent at the current stage of creating the product.
 
-For example, in a service such as changing the tyres on a car, the time it takes for the employee to change the tyres will be the Worker Effort. In this example, we're looking at the Business that did the tyre changing using tyres bought from another Business, and not the Business that made the tyre. For each Business, we only consider the Worker Effort of its employees and not the goods or services it has purchased off other Businesses.
+For example, in a service such as changing the tyres on a car, the time it takes for the employee to change the tyres will be the Worker Effort. In this example, we're looking at the Business that did the tyre changing using tyres bought from another Business, and not the Business that made the tyre. For each Business, we only consider the Worker Effort of its employees and not the goods or services it has purchased from other Businesses.
 
 Therefore, in constructing a car, the Business sources tyres from another company by purchasing them. Then the Worker Effort that went into creating those tyres does not count for this Business. However, the car will most likely be assembled by other machines that were assembled and are both run and maintained by Workers. Because running them usually requires interaction, often to feed materials to the machines as part of the manufacturing process itself, this counts as Worker Effort. Meanwhile, the latter is covered by Operating Costs.
 
@@ -81,6 +81,10 @@ The shop example is simple because it involves one building owned by one Person 
 In this case, the building and its land will still appear as a Possession and Asset of said Person or Business. However, to rent it out, they have to set it up as a profit-creating entity itself - this is what the Asset trait will indicate. This will allow the game to calculate costs from the correct perspective and apply any Business-related modifiers to it, such as those that may come in the form of government policy or tax. It will also allow the building to be segmented and have prices assigned to each section, turning them into services, which will count towards the overall availability and demand of itself and similar services.
 
 Doctor's offices often work using this fashion, where the GP will rent out a room in a medical centre. Through this, they gain access to the centre's equipment, tools, medications, and facilities, including reception handling their bookings and applications for maintaining and storing patient records.
+
+## This is just the beginning
+
+So we can see where this is going. It's just a start, but we've already managed to begin to address some of the more complicated workings of generating value, price, and profit. We'll still need to talk more about the formulas which explain the starting points for these values, which we'll do next, and then we'll probably look a bit deeper into what makes up a Person.
 
 ---
 
