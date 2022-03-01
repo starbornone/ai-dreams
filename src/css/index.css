@@ -44,6 +44,14 @@ article a {
   @apply underline;
 }
 
+article dt {
+  @apply font-semibold;
+}
+
+article dd {
+  @apply mb-4;
+}
+
 .input-label {
   @apply block;
   @apply text-sm;
