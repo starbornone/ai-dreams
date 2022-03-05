@@ -35,6 +35,11 @@ article > div {
   @apply my-8;
 }
 
+article > blockquote {
+  @apply border-l-4;
+  @apply border-rose-500;
+}
+
 article > hr {
   @apply my-12;
 }
@@ -96,6 +101,7 @@ article dd {
   @apply text-gray-500;
 }
 
+article > blockquote,
 .alert,
 .email-box,
 .dialogue-box {
