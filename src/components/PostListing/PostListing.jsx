@@ -23,7 +23,7 @@ function PostListing({ postEdges }) {
     <div>
       {postList.map((post) => (
         <div
-          className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-16"
+          className="mt-6 pt-10 grid gap-16 md:grid-cols-2 lg:gap-x-5 lg:gap-y-16"
           key={post.title}
         >
           <div>

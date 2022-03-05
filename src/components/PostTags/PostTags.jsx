@@ -4,11 +4,11 @@ import { Link } from "gatsby";
 
 function PostTags({ tags }) {
   return (
-    <div className="font-meta text-xs tracking-wider uppercase">
+    <div className="font-meta grid grid-cols-2 gap-x-6 text-xs tracking-wider uppercase">
       {tags &&
         tags.map((tag) => (
           <Link
-            className="mr-12"
+            className="inline-block"
             key={tag}
             style={{ textDecoration: "none" }}
             to={`/tags/${_.kebabCase(tag)}`}

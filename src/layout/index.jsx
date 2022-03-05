@@ -10,7 +10,7 @@ export default function MainLayout({ children }) {
   return (
     <div className="relative flex flex-col h-screen justify-between">
       <Navbar />
-      <div className="relative px-4 sm:px-6 lg:px-8 flex-grow">
+      <div className="relative px-4 sm:px-6 lg:px-8 flex-grow overflow-x-none">
         <div className="max-w-4xl mx-auto">
           <Helmet>
             <meta name="description" content={config.siteDescription} />
