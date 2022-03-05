@@ -9,7 +9,7 @@ category: "reflection"
 tags:
   - economics
   - capitalism
-timeToRead: "1466 words, ~5 minutes"
+timeToRead: "1466 words, ~6 minutes"
 ---
 
 The beginnings of some simple economic concepts in ["To see a world in a 3D array and an economy in a function"](https://aidreams.world/world-economy-function) didn't get enough attention. My criticisms of some existing measures focus on the fact that they are not scientific - that is, models based on them cannot predict. So I'd like for us to take a moment and talk a bit more about generating value, price, and profit under our economic system in a more scientific manner before we move on. What is that system? Capitalism.
@@ -46,9 +46,10 @@ Is it then fair to compare the productivity of those in India to the US? Only in
 
 Either way, we must still include labour outside of the human element in our calculations. In ["To see a world in a 3D array and an economy in a function"](https://aidreams.world/world-economy-function), we looked at the following example:
 
-> In a service such as changing the tyres on a car, the time it takes for the employee to change the tyres will be the Worker Effort. In this example, we're looking at the Business that did the tyre changing using tyres bought from another Business, and not the Business that made the tyre. For each Business, we only consider the Worker Effort of its employees and not the goods or services it has purchased from other Businesses.
-
-> Therefore, in constructing a car, the Business sources tyres from another company by purchasing them. Then the Worker Effort that went into creating those tyres does not count for this Business. However, the car will most likely be assembled by other machines that were assembled and are both run and maintained by Workers. Because running them usually requires interaction, often to feed materials to the machines as part of the manufacturing process itself, this counts as Worker Effort. Meanwhile, the latter is covered by Operating Costs.
+<blockquote>
+<p>In a service such as changing the tyres on a car, the time it takes for the employee to change the tyres will be the Worker Effort. In this example, we're looking at the Business that did the tyre changing using tyres bought from another Business, and not the Business that made the tyre. For each Business, we only consider the Worker Effort of its employees and not the goods or services it has purchased from other Businesses.</p>
+<p>Therefore, in constructing a car, the Business sources tyres from another company by purchasing them. Then the Worker Effort that went into creating those tyres does not count for this Business. However, the car will most likely be assembled by other machines that were assembled and are both run and maintained by Workers. Because running them usually requires interaction, often to feed materials to the machines as part of the manufacturing process itself, this counts as Worker Effort. Meanwhile, the latter is covered by Operating Costs.</p>
+</blockquote>
 
 This example illustrates the difference between *living labour* (represented by Worker Effort) and *dead labour* (represented by Material and Operating Costs). As we can see, living labour refers to what the workers here and now contribute to creating the commodity. Meanwhile, dead labour relates to things acquired, refined, or made outside the part of the production chain we're examining.
 
