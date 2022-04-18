@@ -58,8 +58,11 @@ function Listing({ pageContext, data }) {
   }
 
   const postEdges = [];
-  data.allMarkdownRemark.edges.map((post) => {
-    if (DateTime.fromISO(post.node.fields.date) <= DateTime.local()) {
+  data.allMarkdownRemark.edges.forEach((post) => {
+    if (
+      !post.node.frontmatter.archive &&
+      DateTime.fromISO(post.node.fields.date) <= DateTime.local()
+    ) {
       postEdges.push(post);
     }
   });
@@ -103,6 +106,7 @@ export const listingQuery = graphql`
             thumbnail
             date
             tags
+            archive
           }
         }
       }
