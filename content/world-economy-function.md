@@ -10,6 +10,7 @@ tags:
   - game development
   - game economy
 timeToRead: "1771 words, ~7 minutes"
+archive: false
 ---
 
 I've always hoped that the games I create contain worlds that function similarly to our own. Not just because trying to recreate reality with 1s and 0s is an exciting challenge, but also because of the potential emergent gameplay, stories, and possibility for reflection on our current systems. Furthermore, while modelling player needs and interactions can quickly become tedious with increased complexity, a complex world can make the experience even more fascinating.

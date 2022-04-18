@@ -10,6 +10,7 @@ tags:
     - gothic
     - Shattered Time
 timeToRead: "1420 words, ~6 minutes"
+archive: true
 ---
 
 'Well?' Layne asked with the tired voice of someone who had endured enough for one day. He was a tall vampire with short brown hair, high cheekbones, a strong jawline, and a straight nose. Despite the many years spent wandering the earth, he had the appearance of one in their mid-thirties.

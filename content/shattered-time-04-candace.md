@@ -10,6 +10,7 @@ tags:
     - gothic
     - Shattered Time
 timeToRead: "1420 words, ~6 minutes"
+archive: true
 ---
 
 Candace reclined against a black leather sofa seated opposite William Chen, dressed in his usual dark slim-fit blazer. They sat a small space apart on a sumptuous black leather sofa, its back detailed with button tufting, squared-off by a minimal frame and chrome-plated legs.

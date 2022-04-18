@@ -10,6 +10,7 @@ tags:
   - life
   - anti-consumerism
 timeToRead: "1422 words, ~6 minutes"
+archive: false
 ---
 
 It's almost impossible to not feel at odds with the world. So many of us sense we are different from the model human that we believe society demands. Feelings such as these make it easy to feel lost in the world, without direction or hope, often resulting in anxiety and depression.

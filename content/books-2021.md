@@ -10,6 +10,7 @@ tags:
     - books
     - political economy
 timeToRead: "1056 words, ~4 minutes"
+archive: false
 ---
 
 With 2021 drawing to a close, it's time to recommend some books. Here are five that I think are worth reading no matter where you are, covering modern industries, economics, political strategy, and mass media/propaganda.

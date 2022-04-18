@@ -10,6 +10,7 @@ tags:
     - sci-fi
     - short story
 timeToRead: "5888 words, ~23 minutes"
+archive: false
 ---
 
 For numerous years, a single question has captured the imagination and interest of the populace:

@@ -10,6 +10,7 @@ tags:
     - gothic
     - Shattered Time
 timeToRead: "1420 words, ~6 minutes"
+archive: true
 ---
 
 The click of Olivia's black heels echoed off drab concrete floors and walls. Her tiered short black dress swayed with each step, a small black clutch in her left hand. She walked down a dim hallway lined with people attired in minidresses and collared shirts, past a large sign that read 'RESIDENCE', each letter illuminated by fluorescent red lights. Uptempo hi-NRG Eurodance powered by bass beats, synthesisers, a snarling keyboard, and guitars flowed through a heavy metal door.

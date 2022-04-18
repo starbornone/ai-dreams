@@ -10,6 +10,7 @@ tags:
     - gothic
     - Shattered Time
 timeToRead: "1420 words, ~6 minutes"
+archive: true
 ---
 
 'Okay.' Olivia peered into the counter surface, seeing nothing. She felt her heartbeat in her chest, a steady rhythm that reverberated down through her limbs. If she didn't keep her hands firmly planted in her lap, there would be nothing to hide her hands shaking. 'But what do I...'

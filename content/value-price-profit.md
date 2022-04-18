@@ -10,6 +10,7 @@ tags:
   - economics
   - capitalism
 timeToRead: "1466 words, ~6 minutes"
+archive: false
 ---
 
 The beginnings of some simple economic concepts in ["To see a world in a 3D array and an economy in a function"](https://aidreams.world/world-economy-function) didn't get enough attention. My criticisms of some existing measures focus on the fact that they are not scientific - that is, models based on them cannot predict. So I'd like for us to take a moment and talk a bit more about generating value, price, and profit under our economic system in a more scientific manner before we move on. What is that system? Capitalism.

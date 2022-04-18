@@ -10,6 +10,7 @@ tags:
     - life
     - quotes
 timeToRead: "714 words, ~3 minutes"
+archive: false
 ---
 
 Ask not what your life can do for you, but what you can do for your life! Start here:
