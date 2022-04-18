@@ -19,7 +19,7 @@ export default function MainLayout({ children }) {
           {children}
         </div>
       </div>
-      <Footer config={config} />
+      <Footer />
     </div>
   );
 }
