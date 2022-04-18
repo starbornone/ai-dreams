@@ -1,9 +1,6 @@
 import React from "react";
-import { Link } from "gatsby";
 
-function Footer({ config }) {
-  const url = config.siteRss;
-
+function Footer() {
   return (
     <footer className="max-w-4xl mx-auto text-xs w-full mt-12">
       <div className="p-6 py-12 md:flex md:items-center md:justify-between">
