@@ -7,7 +7,7 @@ export default function HeroPost({ title, coverImage, excerpt, slug, tags }) {
       <div className="mb-8">
         <CoverImage slug={slug} title={title} url={coverImage.url} />
       </div>
-      <div className="mb-20 grid gap-16 md:grid-cols-2 lg:gap-x-5 lg:gap-y-16">
+      <div className="mb-20 grid gap-8 md:grid-cols-2 lg:gap-x-5 lg:gap-y-16">
         <div>
           <h3 className="mb-4 text-2xl leading-tight lg:text-4xl">
             <Link href={`/posts/${slug}`}>{title}</Link>
