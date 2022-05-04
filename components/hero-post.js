@@ -20,7 +20,7 @@ export default function HeroPost({ title, coverImage, excerpt, slug, tags }) {
             </div>
           )}
         </div>
-        <div className="mt-16">
+        <div className="lg:mt-16">
           <p className="mb-4 text-lg leading-relaxed text-grey-400">{excerpt}</p>
         </div>
       </div>

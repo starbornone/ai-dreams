@@ -9,7 +9,7 @@ export default function PostPreview({
   title,
 }) {
   return (
-    <div className="mt-6 pt-10 grid gap-16 md:grid-cols-2 lg:gap-x-5 lg:gap-y-16">
+    <div className="mt-6 pt-10 grid gap-8 md:grid-cols-2 lg:gap-x-5 lg:gap-y-16">
       <div>
         <CoverImage slug={slug} title={title} url={coverImage.url} />
       </div>
