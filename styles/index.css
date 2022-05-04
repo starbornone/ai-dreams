@@ -1,0 +1,31 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+html {
+  @apply text-grey-600;
+}
+
+strong {
+  @apply font-semibold;
+  @apply text-oasis-700;
+}
+
+a {
+  @apply text-kobi-500;
+}
+
+a:focus,
+a:hover {
+  @apply cursor-pointer;
+  @apply text-kobi-600;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+  @apply text-grey-600;
+}
