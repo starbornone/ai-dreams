@@ -12,7 +12,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <Link href="https://sha.codes">
-              <a target="_blank" rel="noreferrer">sha.codes</a>
+              <a target="_blank" rel="noreferrer">sha</a>
             </Link>
           </div>
         </div>
