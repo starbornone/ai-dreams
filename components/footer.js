@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Container from "./container";
 
 export default function Footer() {
@@ -9,7 +11,9 @@ export default function Footer() {
             Existing since 2021. That's all.
           </div>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            ...
+            <Link href="https://sha.codes">
+              <a target="_blank" rel="noreferrer">sha.codes</a>
+            </Link>
           </div>
         </div>
       </Container>
