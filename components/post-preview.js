@@ -1,5 +1,6 @@
-import CoverImage from "./cover-image";
 import Link from "next/link";
+
+import CoverImage from "components/cover-image";
 
 export default function PostPreview({
   coverImage,

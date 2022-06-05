@@ -1,10 +1,12 @@
-import Container from "../components/container";
-import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
-import Layout from "../components/layout";
-import { getAllPostsForHome } from "../lib/graphcms";
 import Head from "next/head";
+
+import { getAllPostsForHome } from "lib/graphcms";
+
+import Container from "components/container";
+import HeroPost from "components/home/hero-post";
+import Intro from "components/home/intro";
+import MoreStories from "components/more-stories";
+import { Layout } from "components/layout";
 
 export default function Index({ posts }) {
   const heroPost = posts[0];

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Header() {
+export function Header() {
   return (
     <>
       <h2 className="text-2xl md:text-4xl tracking-tight md:tracking-tighter leading-tight mt-8">

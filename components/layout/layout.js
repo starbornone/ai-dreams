@@ -1,7 +1,7 @@
-import Footer from "../components/footer";
-import Meta from "../components/meta";
+import Meta from "../meta";
+import { Footer } from "./";
 
-export default function Layout({ children }) {
+export function Layout({ children }) {
   return (
     <>
       <Meta />

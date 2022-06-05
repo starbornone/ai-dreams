@@ -1,15 +1,17 @@
-import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "components/container";
-import PostBody from "components/post-body";
-import MoreStories from "components/more-stories";
-import Header from "components/header";
-import PostHeader from "components/post-header";
-import SectionSeparator from "components/section-separator";
-import Layout from "components/layout";
-import { getAllPostsWithSlug, getPostAndMorePosts } from "lib/graphcms";
-import PostTitle from "components/post-title";
 import Head from "next/head";
+import { useRouter } from "next/router";
+
+import { getAllPostsWithSlug, getPostAndMorePosts } from "lib/graphcms";
+
+import Container from "components/container";
+import MoreStories from "components/more-stories";
+import PostBody from "components/pages/post-body";
+import PostHeader from "components/pages/post-header";
+import PostTitle from "components/pages/post-title";
+import SectionSeparator from "components/section-separator";
+import { Header } from "components/layout";
+import { Layout } from "components/layout";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -29,7 +31,7 @@ export default function Post({ post, morePosts, preview }) {
             <article>
               <Head>
                 <title>{post.title} | AI Dreams</title>
-                {/* <meta property="og:image" content={post.ogImage.url} /> */}
+                <meta property="og:image" content={post.ogImage.url} />
               </Head>
               <PostHeader title={post.title} coverImage={post.coverImage} />
               <PostBody content={post.content} />
