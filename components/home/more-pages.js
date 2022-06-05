@@ -29,7 +29,7 @@ export default function MorePages() {
       </div>
       <div className="relative max-w-7xl mx-auto">
         <div className="mt-12 max-w-lg mx-auto grid gap-16 lg:grid-cols-2 lg:max-w-none">
-          {pages.map((page) => (
+          {/* {pages.map((page) => (
             <div key={page.title} className="flex flex-col overflow-hidden">
               <a href={page.href}>
                 <div className="flex-shrink-0">
@@ -44,7 +44,7 @@ export default function MorePages() {
                 </div>
               </a>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
