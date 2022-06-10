@@ -9,7 +9,7 @@ export function Header() {
         </Link>
       </h2>
       <h5 className="text-lg md:text-xl text-left mb-16 ml-12">
-        of a better <span className="text-kobi-600">.world</span>
+        of a better <span className="text-oasis-500">.world</span>
       </h5>
     </>
   );

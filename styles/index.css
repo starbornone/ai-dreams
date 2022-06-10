@@ -14,13 +14,14 @@ strong {
 }
 
 a {
-  @apply text-kobi-500;
+  @apply text-oasis-500;
 }
 
 a:focus,
 a:hover {
   @apply cursor-pointer;
-  @apply text-kobi-600;
+  @apply border-b-2;
+  @apply border-oasis-500;
 }
 
 h1 a,
