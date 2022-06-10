@@ -26,7 +26,7 @@ export default function Page({ page, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article>
+            <article className="page">
               <Head>
                 <title>{page.title} | AI Dreams</title>
                 <meta property="og:image" content={page.ogImage.url} />

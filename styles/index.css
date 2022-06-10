@@ -29,3 +29,8 @@ h3 a,
 h4 a {
   @apply text-grey-600;
 }
+
+.page img {
+  @apply mx-auto;
+  @apply w-full;
+}
