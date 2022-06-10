@@ -6,22 +6,24 @@ export function Footer() {
   return (
     <footer className="bg-grey-100 border-t border-grey-200 text-sm">
       <Container>
-        <div className="py-28 md:px-4 lg:px-0 flex flex-col md:flex-row">
-          <div className="md:text-left mb-10 md:mb-0 md:pr-4 md:w-1/2">
-            Existing since 2021. That's all.
+        <div className="py-28 md:px-4 lg:px-0 grid grid-cols-1 md:grid-cols-3">
+          <div className="mb-10 md:mb-0">
+            <Link href="https://aidreams.world/pages/about">
+              <a target="_blank" rel="noreferrer">
+                About
+              </a>
+            </Link>
           </div>
-          <div className="flex flex-col md:flex-row justify-end md:text-right md:pl-4 md:w-1/2">
-            <div>
-              Words by{" "}
-              <Link href="https://sha.codes">
-                <a target="_blank" rel="noreferrer">
-                  sha
-                </a>
-              </Link>
-              <div className="text-xs max-w-sm text-grey-200">
-                aren't representative of whatever organisation(s) she's
-                associated with, and so on and so on... *sniff*
-              </div>
+          <div className="md:text-center mb-10 md:mb-0">
+            Existing since 2021.
+          </div>
+          <div className="flex md:justify-end md:text-right">
+            <div
+              className="text-xs text-grey-200"
+              style={{ maxWidth: "256px" }}
+            >
+              Words by Sha aren't representative of whatever organisation(s)
+              she's associated with, and so on and so on... *sniff*
             </div>
           </div>
         </div>
