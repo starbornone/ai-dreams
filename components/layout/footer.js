@@ -7,15 +7,14 @@ export function Footer() {
     <footer className="bg-grey-100 border-t border-grey-200 text-sm">
       <Container>
         <div className="py-28 md:px-4 lg:px-0 grid grid-cols-1 md:grid-cols-3">
-          <div className="mb-10 md:mb-0">
-            <div className="divide-x divide-grey-200 divide-opacity-50">
-              <Link href="https://aidreams.world/">
-                <a className="pr-4">Home</a>
-              </Link>
-              <Link href="https://aidreams.world/pages/about">
-                <a className="pl-4">About</a>
-              </Link>
-            </div>
+          <div className="mb-10 md:mb-0 flex">
+            <Link href="https://aidreams.world/">
+              <a className="">Home</a>
+            </Link>
+            <div className="text-grey-200 mx-4">{" | "}</div>
+            <Link href="https://aidreams.world/pages/about">
+              <a className="">About</a>
+            </Link>
           </div>
           <div className="md:text-center mb-10 md:mb-0">
             Existing since 2021.
