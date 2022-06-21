@@ -31,7 +31,9 @@ export default function Post({ post, morePosts, preview }) {
             <article>
               <Head>
                 <title>{post.title} | AI Dreams</title>
-                <meta property="og:image" content={post.ogImage.url} />
+                {post.ogImage && (
+                  <meta property="og:image" content={post.ogImage.url} />
+                )}
               </Head>
               <PostHeader title={post.title} coverImage={post.coverImage} />
               <PostBody content={post.content} />
