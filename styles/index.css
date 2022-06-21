@@ -59,7 +59,6 @@ h4 a {
   @apply mt-8 mb-4 text-2xl leading-snug;
 }
 
-
 .note {
   @apply bg-gray-100;
   @apply my-6;
