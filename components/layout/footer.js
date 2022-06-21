@@ -17,7 +17,7 @@ export function Footer() {
             </Link>
           </div>
           <div className="md:text-center mb-10 md:mb-0">
-            Existing since 2021. I don't own ideas.
+            Existing since 2021.
           </div>
           <div className="flex md:justify-end md:text-right">
             <div className="text-xs" style={{ maxWidth: "256px" }}>
