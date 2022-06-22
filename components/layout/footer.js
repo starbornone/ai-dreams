@@ -21,8 +21,14 @@ export function Footer() {
           </div>
           <div className="flex md:justify-end md:text-right">
             <div className="text-xs" style={{ maxWidth: "256px" }}>
-              Words by Sha aren't representative of whatever organisation(s)
-              she's associated with, and so on and so on... *sniff*
+              <p className="mb-2">
+                The purchase of a product from any external sites does not grant
+                any benefit, monetary or otherwise, to the author.
+              </p>
+              <p>
+                The content within isn't representative of whatever
+                organisation(s) the author is associated with.
+              </p>
             </div>
           </div>
         </div>
