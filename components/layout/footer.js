@@ -7,11 +7,11 @@ export function Footer() {
     <footer className="bg-gray-100 border-t border-gray-200 text-sm text-gray-300">
       <Container>
         <div className="py-28 md:px-4 lg:px-0 grid grid-cols-1 md:grid-cols-3">
-          <div className="mb-10 md:mb-0 flex">
+          <div className="mb-10 md:mb-0">
             <Link href="https://aidreams.world/">
               <a className="">Home</a>
             </Link>
-            <div className="mx-4">{" | "}</div>
+            <span className="mx-4">{" | "}</span>
             <Link href="https://aidreams.world/pages/about">
               <a className="">About</a>
             </Link>
