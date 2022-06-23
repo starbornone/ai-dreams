@@ -35,6 +35,9 @@ export default function Post({ post, morePosts, preview }) {
                 {post.ogImage && (
                   <meta property="og:image" content={post.ogImage.url} />
                 )}
+                {post.excerpt && (
+                  <meta name="description" content={post.excerpt} />
+                )}
               </Head>
               <PostHeader
                 coverImage={post.coverImage}

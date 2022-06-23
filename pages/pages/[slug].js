@@ -29,7 +29,12 @@ export default function Page({ page, preview }) {
             <article className="page pb-20">
               <Head>
                 <title>{page.title} | AI Dreams</title>
-                <meta property="og:image" content={page.ogImage.url} />
+                {page.excerpt && (
+                  <meta property="og:image" content={page.ogImage.url} />
+                )}
+                {page.excerpt && (
+                  <meta name="description" content={page.excerpt} />
+                )}
               </Head>
               <PostHeader coverImage={page.coverImage} title={page.title} />
               <PostBody content={page.content} />
