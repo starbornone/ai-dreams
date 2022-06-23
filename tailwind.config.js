@@ -55,8 +55,7 @@ module.exports = {
       },
       fontFamily: {
         mono: ["Overpass Mono"],
-        sans: ["Space Grotesk"],
-        serif: ["Merriweather"],
+        sans: ["Manrope", "Maven Pro"],
       },
     },
   },
