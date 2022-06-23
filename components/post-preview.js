@@ -12,7 +12,7 @@ export default function PostPreview({
   title,
 }) {
   return (
-    <div className="mt-6 pt-10 grid gap-8 md:grid-cols-2 lg:gap-x-5 lg:gap-y-16">
+    <div className="mt-6 grid gap-8 md:grid-cols-2 lg:gap-x-5 lg:gap-y-16">
       {coverImage && (
         <div>
           <CoverImage slug={slug} title={title} url={coverImage.url} />
@@ -26,9 +26,9 @@ export default function PostPreview({
           <p className="mb-4 leading-relaxed text-gray-400">{excerpt}</p>
         </div>
         <div className="w-full pb-2">
-          <div className="flex justify-between">
+          <div className="flex justify-between text-sm">
             {tags && (
-              <div className="flex gap-8 text-gray-300 font-light">
+              <div className="md:flex md:gap-8 text-gray-300 font-light">
                 {tags.map((tag) => (
                   <div key={tag}>{tag}</div>
                 ))}
