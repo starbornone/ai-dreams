@@ -1,5 +1,6 @@
 import ErrorPage from "next/error";
 import Head from "next/head";
+import { format } from "date-fns";
 import { useRouter } from "next/router";
 
 import { getAllPostsWithSlug, getPostAndMorePosts } from "lib/graphcms";
@@ -35,7 +36,12 @@ export default function Post({ post, morePosts, preview }) {
                   <meta property="og:image" content={post.ogImage.url} />
                 )}
               </Head>
-              <PostHeader title={post.title} coverImage={post.coverImage} />
+              <PostHeader
+                coverImage={post.coverImage}
+                date={post.date}
+                tags={post.tags}
+                title={post.title}
+              />
               <PostBody content={post.content} />
             </article>
             <SectionSeparator />

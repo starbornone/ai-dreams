@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { format } from "date-fns";
 
 import CoverImage from "components/cover-image";
 
 export default function PostPreview({
   coverImage,
+  date,
   excerpt,
   slug,
   tags,
@@ -23,13 +25,22 @@ export default function PostPreview({
           </h3>
           <p className="mb-4 leading-relaxed text-gray-400">{excerpt}</p>
         </div>
-        {tags && (
-          <div className="flex gap-8 text-gray-300 font-light">
-            {tags.map((tag) => (
-              <div key={tag}>{tag}</div>
-            ))}
+        <div className="w-full pb-2">
+          <div className="flex justify-between">
+            {tags && (
+              <div className="flex gap-8 text-gray-300 font-light">
+                {tags.map((tag) => (
+                  <div key={tag}>{tag}</div>
+                ))}
+              </div>
+            )}
+            {date && (
+              <div className="text-gray-300 font-light">
+                {format(new Date(date), "dd MMMM yyyy")}
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

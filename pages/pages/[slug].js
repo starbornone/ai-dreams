@@ -31,7 +31,7 @@ export default function Page({ page, preview }) {
                 <title>{page.title} | AI Dreams</title>
                 <meta property="og:image" content={page.ogImage.url} />
               </Head>
-              <PostHeader title={page.title} coverImage={page.coverImage} />
+              <PostHeader coverImage={page.coverImage} title={page.title} />
               <PostBody content={page.content} />
             </article>
           </>

@@ -11,6 +11,7 @@ import { Layout } from "components/layout";
 export default function Index({ posts }) {
   const heroPost = posts[0];
   const morePosts = posts.slice(1);
+
   return (
     <>
       <Layout>
@@ -21,6 +22,7 @@ export default function Index({ posts }) {
           <Intro />
           {heroPost && (
             <HeroPost
+              date={heroPost.date}
               title={heroPost.title}
               coverImage={heroPost.coverImage}
               slug={heroPost.slug}

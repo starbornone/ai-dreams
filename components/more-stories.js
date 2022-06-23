@@ -7,6 +7,7 @@ export default function MoreStories({ posts }) {
         {posts.map((post) => (
           <PostPreview
             key={post.slug}
+            date={post.date}
             title={post.title}
             coverImage={post.coverImage}
             slug={post.slug}
