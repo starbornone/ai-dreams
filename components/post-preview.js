@@ -20,10 +20,10 @@ export default function PostPreview({
       )}
       <div className="flex flex-wrap content-between">
         <div>
-          <h3 className="mb-3 text-2xl leading-snug">
+          <h2 className="mb-3 text-2xl leading-snug">
             <Link href={`/posts/${slug}`}>{title}</Link>
-          </h3>
-          <p className="mb-4 leading-relaxed text-gray-400">{excerpt}</p>
+          </h2>
+          <p className="mb-4 leading-relaxed text-gray-500">{excerpt}</p>
         </div>
         <div className="w-full pb-2">
           <div className="flex justify-between text-sm">
