@@ -41,7 +41,7 @@ h4 a {
 }
 
 .post {
-  @apply leading-relaxed;
+  @apply leading-7;
 }
 
 .post p,
