@@ -37,11 +37,6 @@
   resolved "https://registry.yarnpkg.com/@fontsource/manrope/-/manrope-4.5.10.tgz#406a7066f72ffc649ee1b3716430b50545c692fd"
   integrity sha512-1R4A3uXpX2XbNc1LEZdidJWPaQPTH2LiIaB2n4+4D6IrIK/vkIlYx/YtvMLZK36OVWbWY8CYfM+ufrwUAVpEGQ==
 
-"@fontsource/maven-pro@^4.5.10":
-  version "4.5.10"
-  resolved "https://registry.yarnpkg.com/@fontsource/maven-pro/-/maven-pro-4.5.10.tgz#8e4548b9a57ba54f02e9e1968e5486b2147b559c"
-  integrity sha512-BAQEFqk1P31Yzv+A/HnIeXmgDae0BL6AqycDEK0FZNlvzYObZn8TLr8hKtDm89avRvG7bG+gblyaOEr3ZHOkoQ==
-
 "@fontsource/overpass-mono@^4.5.8":
   version "4.5.8"
   resolved "https://registry.yarnpkg.com/@fontsource/overpass-mono/-/overpass-mono-4.5.8.tgz#9ad366d333ae9531c9f3d9636a8495a4faf65194"

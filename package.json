@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "@fontsource/manrope": "^4.5.10",
-    "@fontsource/maven-pro": "^4.5.10",
     "@fontsource/overpass-mono": "^4.5.8",
     "classnames": "2.3.1",
     "date-fns": "2.28.0",
