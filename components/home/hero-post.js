@@ -25,21 +25,21 @@ export default function HeroPost({
           </h2>
           <div className="flex justify-between">
             {tags && (
-              <div className="flex gap-8 text-gray-300 font-light">
+              <div className="flex gap-8 text-text-300 font-light">
                 {tags.map((tag) => (
                   <div key={tag}>{tag}</div>
                 ))}
               </div>
             )}
             {date && (
-              <div className="text-gray-300 font-light">
+              <div className="text-text-300 font-light">
                 {format(new Date(date), "dd MMMM yyyy")}
               </div>
             )}
           </div>
         </div>
         <div className="lg:mt-16">
-          <p className="mb-4 text-lg leading-relaxed text-gray-500">
+          <p className="mb-4 text-lg leading-relaxed text-text-500">
             {excerpt}
           </p>
         </div>

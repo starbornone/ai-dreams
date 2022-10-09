@@ -11,20 +11,22 @@ export default function PostHeader({ coverImage, date, tags, title }) {
           <CoverImage title={title} url={coverImage.url} />
         </div>
       )}
-      <div className="flex justify-between max-w-3xl mx-auto mb-6">
-        {tags && (
-          <div className="flex gap-8 text-gray-300 font-light">
-            {tags.map((tag) => (
-              <div key={tag}>{tag}</div>
-            ))}
-          </div>
-        )}
-        {date && (
-          <div className="text-gray-300 font-light">
-            {format(new Date(date), "dd MMMM yyyy")}
-          </div>
-        )}
-      </div>
+      {(tags || date) && (
+        <div className="flex justify-between max-w-3xl mx-auto mb-6">
+          {tags && (
+            <div className="flex gap-8 text-text-500 font-light">
+              {tags.map((tag) => (
+                <div key={tag}>{tag}</div>
+              ))}
+            </div>
+          )}
+          {date && (
+            <div className="text-text-500 font-light">
+              {format(new Date(date), "dd MMMM yyyy")}
+            </div>
+          )}
+        </div>
+      )}
       <PostTitle>{title}</PostTitle>
     </>
   );

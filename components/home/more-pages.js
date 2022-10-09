@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const pages = [
   {
     title: "An introduction about the blog",
@@ -25,26 +23,26 @@ export default function MorePages() {
   return (
     <div className="relative mb-20">
       <div className="absolute inset-0">
-        <div className="bg-white h-1/3 sm:h-2/3" />
+        <div className="h-1/3 sm:h-2/3" />
       </div>
       <div className="relative max-w-7xl mx-auto">
-        <div className="mt-12 max-w-lg mx-auto grid gap-16 lg:grid-cols-2 lg:max-w-none">
-          {/* {pages.map((page) => (
+        <div className="mt-12 max-w-lg mx-auto grid gap-16 lg:grid-cols-3 lg:max-w-none">
+          {pages.map((page) => (
             <div key={page.title} className="flex flex-col overflow-hidden">
               <a href={page.href}>
                 <div className="flex-shrink-0">
-                  <Image
+                  <img
                     alt={page.title}
                     className="h-48 w-full object-cover"
                     src={page.imageUrl}
                   />
                 </div>
                 <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-                  <p className="mt-3 text-base text-gray-500">{page.title}</p>
+                  <p className="mt-3 text-base text-text-500">{page.title}</p>
                 </div>
               </a>
             </div>
-          ))} */}
+          ))}
         </div>
       </div>
     </div>

@@ -1,26 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import cn from "classnames";
-
 export default function CoverImage({ title, url, slug }) {
   const image = (
     <Image
-      width={2000}
-      height={1000}
       alt={title}
-      className={cn("object-cover", {
-        "hover:shadow-medium transition-shadow duration-200": slug,
-      })}
+      className="link-inner object-cover object-center"
+      height={600}
       src={url}
+      width={1200}
     />
   );
 
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link className="block" href={`/posts/${slug}`}>
-          <a>{image}</a>
+        <Link href={`/posts/${slug}`}>
+          <a className="img-link">{image}</a>
         </Link>
       ) : (
         image
