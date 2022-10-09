@@ -9,12 +9,6 @@ export function Nav() {
       <Link href="https://aidreams.world/pages/about">
         <a>About</a>
       </Link>
-      <Link href="https://aidreams.world/pages/about">
-        <a>Rants</a>
-      </Link>
-      <Link href="https://aidreams.world/pages/about">
-        <a>Stories</a>
-      </Link>
     </div>
   );
 }
