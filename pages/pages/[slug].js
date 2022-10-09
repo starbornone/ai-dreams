@@ -46,7 +46,7 @@ export default function Page({ page, preview }) {
   );
 }
 
-export async function getStaticProps({ params, preview }) {
+export async function getStaticProps({ params, preview = false }) {
   const data = await getPage(params.slug, preview);
   return {
     props: {
