@@ -22,7 +22,7 @@ export default function Index({ posts }) {
   );
 }
 
-export async function getStaticProps({ preview = true }) {
+export async function getStaticProps({ preview }) {
   const posts = (await getAllPostsForHome(preview)) || [];
   return {
     props: { posts, preview },
