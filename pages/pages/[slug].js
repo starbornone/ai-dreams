@@ -1,67 +1,72 @@
-import ErrorPage from "next/error";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import ErrorPage from 'next/error'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
-import { getAllPagesWithSlug, getPage } from "lib/graphcms";
+import { getAllPagesWithSlug, getPage } from 'lib/graphcms'
 
-import Container from "components/container";
-import PostBody from "components/pages/post-body";
-import PostHeader from "components/pages/post-header";
-import PostTitle from "components/pages/post-title";
-import { Header } from "components/layout";
-import { Layout } from "components/layout";
+import { Container, PostBody, PostHeader, PostTitle } from 'components'
+import { Header, Layout } from 'layout'
 
 export default function Page({ page, preview }) {
-  const router = useRouter();
+    const router = useRouter()
 
-  if (!router.isFallback && !page?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
+    if (!router.isFallback && !page?.slug) {
+        return <ErrorPage statusCode={404} />
+    }
 
-  return (
-    <Layout preview={preview}>
-      <Container>
-        <Header />
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article className="page pb-20">
-              <Head>
-                <title>{page.title} | AI Dreams</title>
-                {page.excerpt && (
-                  <meta property="og:image" content={page.ogImage.url} />
+    return (
+        <Layout preview={preview}>
+            <Container>
+                <Header />
+                {router.isFallback ? (
+                    <PostTitle>Loading…</PostTitle>
+                ) : (
+                    <>
+                        <article className="page pb-20">
+                            <Head>
+                                <title>{page.title} | AI Dreams</title>
+                                {page.excerpt && (
+                                    <meta
+                                        property="og:image"
+                                        content={page.ogImage.url}
+                                    />
+                                )}
+                                {page.excerpt && (
+                                    <meta
+                                        name="description"
+                                        content={page.excerpt}
+                                    />
+                                )}
+                            </Head>
+                            <PostHeader
+                                coverImage={page.coverImage}
+                                title={page.title}
+                            />
+                            <PostBody content={page.content} />
+                        </article>
+                    </>
                 )}
-                {page.excerpt && (
-                  <meta name="description" content={page.excerpt} />
-                )}
-              </Head>
-              <PostHeader coverImage={page.coverImage} title={page.title} />
-              <PostBody content={page.content} />
-            </article>
-          </>
-        )}
-      </Container>
-    </Layout>
-  );
+            </Container>
+        </Layout>
+    )
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const data = await getPage(params.slug, preview);
-  return {
-    props: {
-      preview,
-      page: data.page,
-    },
-  };
+    const data = await getPage(params.slug, preview)
+    return {
+        props: {
+            preview,
+            page: data.page,
+        },
+    }
 }
 
 export async function getStaticPaths() {
-  const pages = await getAllPagesWithSlug();
-  return {
-    paths: pages.map(({ slug }) => ({
-      params: { slug },
-    })),
-    fallback: true,
-  };
+    const pages = await getAllPagesWithSlug()
+    return {
+        paths: pages.map(({ slug }) => ({
+            params: { slug },
+        })),
+        fallback: true,
+    }
 }
