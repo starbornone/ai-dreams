@@ -131,7 +131,6 @@
 footer a,
 li a,
 p a {
-    @apply inline-block;
     @apply relative;
     z-index: 1;
 }
