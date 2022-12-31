@@ -6,8 +6,6 @@ import { Container, MoreStories } from 'components'
 import { Header, Layout } from 'layout'
 
 export default function Index({ posts }) {
-    console.log('posts', posts)
-
     return (
         <>
             <Layout>
