@@ -1,11 +1,13 @@
 import Head from 'next/head'
 
-import { getAllPosts } from 'lib/graphcms'
+import { getPostsByCategory } from 'lib/graphcms'
 
 import { Container, MoreStories } from 'components'
 import { Header, Layout } from 'layout'
 
 export default function Index({ posts }) {
+    console.log('posts', posts)
+
     return (
         <>
             <Layout>
@@ -22,7 +24,7 @@ export default function Index({ posts }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-    const posts = (await getAllPosts(preview)) || []
+    const posts = (await getPostsByCategory('conscious', preview)) || []
     return {
         props: { posts, preview },
     }
