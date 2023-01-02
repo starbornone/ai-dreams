@@ -6,7 +6,7 @@ export function Footer() {
     return (
         <footer className="bg-gray-900 text-sm font-semibold text-text-400">
             <Container>
-                <div className="grid grid-cols-1 py-24 md:grid-cols-3 md:px-4 lg:px-0">
+                <div className="grid grid-cols-1 py-12 md:py-24 md:grid-cols-3 md:px-4 lg:px-0">
                     <div className="col-span-2 my-8 md:my-0">
                         <Link href="https://aidreams.world/">
                             <a className="">Home</a>

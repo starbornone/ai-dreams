@@ -6,7 +6,7 @@ import { getAllPostsWithSlug, getPostAndMorePosts } from 'lib/graphcms'
 
 import {
     Container,
-    MoreStories,
+    PostList,
     PostBody,
     PostHeader,
     PostTitle,
@@ -55,7 +55,7 @@ export default function Post({ post, morePosts, preview }) {
                         </article>
                         <SectionSeparator />
                         {morePosts.length > 0 && (
-                            <MoreStories posts={morePosts} />
+                            <PostList posts={morePosts} />
                         )}
                     </>
                 )}

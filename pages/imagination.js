@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { getPostsByCategory } from 'lib/graphcms'
 
-import { Container, MoreStories } from 'components'
+import { Container, PostList } from 'components'
 import { Header, Layout } from 'layout'
 
 export default function Index({ posts }) {
@@ -14,7 +14,7 @@ export default function Index({ posts }) {
                 </Head>
                 <Container>
                     <Header />
-                    {posts.length > 0 && <MoreStories posts={posts} />}
+                    {posts.length > 0 && <PostList posts={posts} />}
                 </Container>
             </Layout>
         </>

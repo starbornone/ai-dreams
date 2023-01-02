@@ -17,7 +17,7 @@ export function Header() {
                     </span>
                 </div>
             </div>
-            <Nav />
+            {/* <Nav /> */}
         </div>
     )
 }
