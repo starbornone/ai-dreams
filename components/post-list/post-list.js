@@ -3,7 +3,7 @@ import { PostPreview } from 'components'
 export function PostList({ posts }) {
     return (
         <section>
-            <div className="my-12 grid grid-cols-1 gap-y-12 md:my-32 md:gap-x-12 md:gap-y-32 lg:gap-x-24">
+            <div className="my-12 grid grid-cols-1 gap-y-12 md:my-16 md:gap-x-12 md:gap-y-32 lg:gap-x-24">
                 {posts.map((post) => (
                     <PostPreview
                         key={post.slug}
