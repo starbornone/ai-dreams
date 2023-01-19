@@ -18,9 +18,14 @@ html {
     @apply font-light;
 }
 
-strong {
+b, strong {
     @apply font-bold;
-    @apply text-orange-600;
+    @apply text-orange-700;
+}
+
+i, em {
+    @apply italic;
+    @apply text-orange-700;
 }
 
 h1 a,
