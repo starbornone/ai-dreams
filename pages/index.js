@@ -14,8 +14,12 @@ export default function Index({ morePosts, posts }) {
                 </Head>
                 <Container>
                     <Header />
-                    {posts.length > 0 && <PostList posts={posts} />}
-                    {morePosts.length > 0 && <MorePosts posts={morePosts} />}
+                    {posts && posts.length > 0 ? (
+                        <PostList posts={posts} />
+                    ) : null}
+                    {morePosts && morePosts.length > 0 ? (
+                        <MorePosts posts={morePosts} />
+                    ) : null}
                 </Container>
             </Layout>
         </>
