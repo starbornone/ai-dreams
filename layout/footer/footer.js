@@ -8,12 +8,16 @@ export function Footer() {
             <Container>
                 <div className="grid grid-cols-1 py-12 md:py-24 md:grid-cols-3 md:px-4 lg:px-0">
                     <div className="col-span-2 my-8 md:my-0">
-                        <Link href="https://aidreams.world/">
+                        <Link href="/">
                             <a className="">Home</a>
                         </Link>
                         <span className="mx-4">{' | '}</span>
-                        <Link href="https://aidreams.world/pages/about">
+                        <Link href="/pages/about">
                             <a className="">About</a>
+                        </Link>
+                        <span className="mx-4">{' | '}</span>
+                        <Link href="/categories/resources">
+                            <a className="">Resources</a>
                         </Link>
                     </div>
                     <div className="my-8 md:my-0 md:text-right">
