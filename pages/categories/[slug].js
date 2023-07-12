@@ -22,7 +22,7 @@ export default function Categories({ category, morePosts, params, posts }) {
         <>
             <Layout>
                 <Head>
-                    <title>{category.name} | AI Dreams</title>
+                    <title>{category.name ? `${category.name} | ` : ''}AI Dreams</title>
                 </Head>
                 <Container>
                     <Header />
