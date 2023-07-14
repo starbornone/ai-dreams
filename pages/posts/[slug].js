@@ -34,14 +34,33 @@ export default function Post({ post, morePosts, preview }) {
                                 <title>{post.title} | AI Dreams</title>
                                 {post.ogImage && (
                                     <meta
-                                        property="og:image"
                                         content={post.ogImage.url}
+                                        key="image"
+                                        property="og:image"
+                                    />
+                                )}
+                                {post.title && (
+                                    <meta
+                                        content={post.excerpt}
+                                        key="title"
+                                        name="title"
+                                        property="og:title"
                                     />
                                 )}
                                 {post.excerpt && (
                                     <meta
-                                        name="description"
                                         content={post.excerpt}
+                                        key="description"
+                                        name="description"
+                                        property="og:description"
+                                    />
+                                )}
+                                {post.tags && (
+                                    <meta
+                                        content={post.tags}
+                                        key="keywords"
+                                        name="keywords"
+                                        property="og:keywords"
                                     />
                                 )}
                             </Head>
@@ -54,9 +73,7 @@ export default function Post({ post, morePosts, preview }) {
                             <PostBody content={post.content} />
                         </article>
                         <SectionSeparator />
-                        {morePosts.length > 0 && (
-                            <PostList posts={morePosts} />
-                        )}
+                        {morePosts.length > 0 && <PostList posts={morePosts} />}
                     </>
                 )}
             </Container>
