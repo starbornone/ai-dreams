@@ -41,7 +41,7 @@ export default function Post({ post, morePosts, preview }) {
                                 )}
                                 {post.title && (
                                     <meta
-                                        content={post.excerpt}
+                                        content={`${post.title} | AI Dreams`}
                                         key="title"
                                         name="title"
                                         property="og:title"
