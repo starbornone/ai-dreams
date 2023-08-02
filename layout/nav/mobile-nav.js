@@ -1,10 +1,11 @@
 import Link from 'next/link'
 
-export function Nav() {
+export function MobileNav() {
     return (
-        <div className="hidden lg:block lg:my-0 lg:max-w-lg">
+        <div className="block lg:hidden m-16 text-center">
+            <div className="site-title text-text-900 tracking-wider mb-6">Topics:</div>
             <div
-                className="neon-links sign space-x-12 text-xl tracking-wider flex flex-wrap justify-end"
+                className="neon-links sign text-2xl tracking-wider grid grid-cols-1 space-y-6"
                 style={{ fontFamily: 'Neon' }}
             >
                 <Link href="/categories/philosophy">
