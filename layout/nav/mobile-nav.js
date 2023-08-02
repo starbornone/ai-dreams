@@ -17,9 +17,6 @@ export function MobileNav() {
                 <Link href="/categories/economics">
                     <a>Economics</a>
                 </Link>
-                <Link href="/categories/culture">
-                    <a>Culture</a>
-                </Link>
                 <Link href="/categories/games">
                     <a>Games</a>
                 </Link>
