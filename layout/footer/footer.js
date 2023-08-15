@@ -19,6 +19,10 @@ export function Footer() {
                         <Link href="/categories/resources">
                             <a className="">Resources</a>
                         </Link>
+                        <span className="mx-4">{' | '}</span>
+                        <Link href="/categories/fiction">
+                            <a className="">Fiction</a>
+                        </Link>
                     </div>
                     <div className="my-8 md:my-0 md:text-right">
                         <p>Dreaming since 2021.</p>
