@@ -16,11 +16,11 @@ export function Nav() {
                 <Link href="/categories/economics">
                     <a>Economics</a>
                 </Link>
+                <Link href="/categories/culture">
+                    <a>Culture</a>
+                </Link>
                 <Link href="/categories/games">
                     <a>Games</a>
-                </Link>
-                <Link href="/categories/fiction">
-                    <a>Fiction</a>
                 </Link>
             </div>
         </div>
