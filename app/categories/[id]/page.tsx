@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+
 import {
   getAllCategoriesWithSlug,
   getCategory,
@@ -13,25 +15,31 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function getPosts({ id }) {
+export async function handleGetPosts({ id }) {
   const data = await getPostsByCategory(id);
   return {
     posts: data.posts || [],
   };
 }
 
-export async function generateMetadata({ params: { id } }) {
+interface Props {
+  params: { id: string };
+}
+
+export async function generateMetadata(
+  { params: { id } }: Props,
+): Promise<Metadata> {
   const category = await getCategory(id);
 
   return {
-    title: `${category?.name ? `${category.name} | ` : ''}AI Dreams`,
-    description: `An AI dreaming of ${category?.name}.`,
-    keywords: ['AI Dreams', `${category?.name}`],
+    title: `${category.name} | AI Dreams`,
+    description: `An AI dreaming of ${category.name}.`,
+    keywords: ['AI Dreams', `${category.name}`],
   };
 }
 
 export default async function Categories({ params }) {
-  const { posts } = await getPosts(params);
+  const { posts } = await handleGetPosts(params);
 
   return <>{posts && posts.length > 0 ? <PostList posts={posts} /> : null}</>;
 }
