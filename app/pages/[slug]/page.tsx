@@ -21,7 +21,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function handleGetPage({ slug }) {
+async function handleGetPage({ slug }) {
   const data = await getPage(slug);
   
   return data.page;

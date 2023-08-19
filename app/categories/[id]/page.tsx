@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function handleGetPosts({ id }) {
+async function handleGetPosts({ id }) {
   const data = await getPostsByCategory(id);
   return {
     posts: data.posts || [],

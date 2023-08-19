@@ -34,12 +34,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function handleGetPost({ slug }) {
+async function handleGetPost({ slug }) {
   const data = await getPost(slug);
   return data.post;
 }
 
-export async function handleGetPostAndMorePost({ slug }) {
+async function handleGetPostAndMorePost({ slug }) {
   const data: PostAndMorePostsProps = await getPostAndMorePosts(slug);
   return {
     post: data.post,
