@@ -1,7 +1,6 @@
-.post img {
-  @apply mx-auto;
-  @apply w-full;
-}
+/* ===============
+  Posts CSS
+  =============== */
 
 .post {
   @apply leading-7;

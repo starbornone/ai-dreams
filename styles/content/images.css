@@ -2,7 +2,8 @@
   Image CSS
   =============== */
 
-.page img {
+.page img,
+.post img {
   @apply mx-auto;
   @apply w-full;
 }
