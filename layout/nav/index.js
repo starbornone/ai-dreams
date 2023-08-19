@@ -1,2 +1,2 @@
-export * from './mobile-nav'
-export * from './nav'
+export * from './NavMobile';
+export * from './Nav';

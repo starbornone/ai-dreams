@@ -1,1 +1,1 @@
-export * from './section-separator'
+export * from './SectionSeparator';

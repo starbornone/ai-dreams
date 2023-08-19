@@ -12,6 +12,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./effects.css";
+@import "./keyframes.css";
+
 html {
     @apply bg-gray-800;
     @apply text-text-300;
