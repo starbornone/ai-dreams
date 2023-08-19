@@ -2,25 +2,22 @@
   Posts CSS
   =============== */
 
-.post {
-  line-height: 1.75rem;
-}
-
-.post .subtitle {
-  color: var(--color-gray-500);
-  font-style: italic;
-  margin-top: -1rem;
+.post h1,
+.post h2,
+.post h3,
+.post h4 {
+  font-weight: 700;
 }
 
 .post p,
 .post ul,
-.post ol,
-.post blockquote {
+.post ol {
+  line-height: 1.75rem;
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
 }
 
-.post-title {
+.post .post-title {
   font-weight: 600;
   letter-spacing: 0.05em;
   text-shadow: 0.1em 0.1em 0 var(--color-purple-500);

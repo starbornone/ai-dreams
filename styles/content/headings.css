@@ -9,17 +9,9 @@ h4 {
   color: var(--color-gray-100);
 }
 
-.post h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 2.5rem;
-  margin-bottom: 1rem;
-  margin-top: 3rem;
-}
-
+.page h2,
 .post h2 {
   font-size: 1.5rem;
-  font-weight: 700;
   letter-spacing: 0.025em;
   line-height: 2rem;
   margin-bottom: 1rem;
@@ -27,15 +19,16 @@ h4 {
 }
 
 @media (min-width: 640px) {
+  .page h2,
   .post h2 {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
 }
 
+.page h3,
 .post h3 {
   font-size: 1.25rem;
-  font-weight: 800;
   letter-spacing: 0.05em;
   line-height: 1.75rem;
   margin-bottom: 1rem;
@@ -43,6 +36,7 @@ h4 {
 }
 
 @media (min-width: 640px) {
+  .page h3,
   .post h3 {
     font-size: 1.5rem;
     line-height: 2rem;

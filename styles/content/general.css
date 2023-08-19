@@ -4,13 +4,13 @@
 
 b,
 strong {
-  color: var(--color-orange-700);
+  color: var(--color-gray-100);
   font-weight: 700;
 }
 
 i,
 em {
-  color: var(--color-orange-700);
+  color: var(--color-gray-100);
   font-style: italic;
 }
 
@@ -18,13 +18,13 @@ em {
   Blockquote CSS
   =============== */
 
-blockquote {
+blockquote,
+.page blockquote,
+.post blockquote {
   border-color: var(--color-orange-500);
-  color: var(--color-gray-100);
   border-left-width: 4px;
-  font-size: 1.25rem;
-  font-weight: 100;
-  line-height: 1.75rem;
+  color: var(--color-gray-200);
+  letter-spacing: 0.05em;
   padding-left: 1.5rem;
 }
 
@@ -55,12 +55,14 @@ hr,
   =============== */
 
 ul,
+.page ul,
 .post ul {
   list-style-type: disc;
   margin-left: 1rem;
 }
 
 li,
+.page li,
 .post li {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;

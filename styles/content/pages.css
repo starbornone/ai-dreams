@@ -1,0 +1,32 @@
+/* ===============
+  Pages CSS
+  =============== */
+
+.page p,
+.page ul,
+.page ol {
+  line-height: 1.75rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.page .post-title {
+  font-family: 'Neon';
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-shadow: 0.1em 0.1em 0 var(--color-purple-500);
+}
+
+.page h2 {
+  font-family: 'Neon';
+  font-weight: 500;
+}
+
+.page h3 {
+  border-color: var(--color-gray-700);
+  border-left-width: 4px;
+  font-family: 'Neon';
+  font-weight: 500;
+  padding-left: 0.75rem;
+}

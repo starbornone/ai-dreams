@@ -3,7 +3,7 @@
   =============== */
 
 a {
-  text-decoration-line: none;
+  text-decoration: none;
 }
 
 a:hover {
@@ -21,7 +21,8 @@ li a,
 p a {
   border-bottom-width: 1px;
   border-color: var(--color-aqua-700);
-  color: var(--color-aqua-500);
+  color: var(--color-gray-200);
+  font-weight: 400;
 }
 
 footer a:before,
