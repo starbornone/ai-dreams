@@ -2,6 +2,10 @@
   Links CSS
   =============== */
 
+a {
+  @apply no-underline;
+}
+
 .neon-links a {
   text-shadow:
     0 0 0.6rem #d99df1,

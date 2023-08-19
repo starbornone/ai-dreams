@@ -50,11 +50,13 @@ hr,
   Unordered List CSS
   =============== */
 
-ul {
+ul,
+.post ul {
   @apply list-disc;
   @apply ml-4;
 }
 
-li {
+li,
+.post li {
   @apply my-2;
 }
