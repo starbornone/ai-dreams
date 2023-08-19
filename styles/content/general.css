@@ -1,0 +1,60 @@
+/* ===============
+  Font Properties CSS
+  =============== */
+
+b,
+strong {
+  @apply font-bold;
+  @apply text-orange-700;
+}
+
+i,
+em {
+  @apply italic;
+  @apply text-orange-700;
+}
+
+/* ===============
+  Blockquote CSS
+  =============== */
+
+blockquote {
+  @apply border-l-4;
+  @apply border-orange-500;
+  @apply font-thin;
+  @apply pl-6;
+  @apply text-gray-100;
+  @apply text-xl;
+}
+
+/* ===============
+  Horizontal Rule CSS
+  =============== */
+
+hr,
+.hr {
+  @apply border-b;
+  @apply border-orange-500;
+  @apply my-12;
+}
+
+/* ===============
+  Caption CSS
+  =============== */
+
+.caption {
+  @apply text-gray-500 text-sm;
+}
+
+/* ===============
+  Unordered List CSS
+  =============== */
+
+ul {
+  @apply list-disc;
+  @apply ml-4;
+}
+
+li {
+  @apply my-2;
+}

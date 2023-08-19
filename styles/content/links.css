@@ -1,0 +1,21 @@
+/* ===============
+  Links CSS
+  =============== */
+
+.neon-links a {
+  text-shadow:
+    0 0 0.6rem #d99df1,
+    0 0 1.5rem #8b1ab7,
+    -0.2rem 0.1rem 1rem #8b1ab7,
+    0.2rem 0.1rem 1rem #8b1ab7,
+    0 -0.5rem 2rem #4a0e62,
+    0 0.5rem 3rem #4a0e62;
+}
+
+.neon-links a:hover {
+  @apply text-gray-800;
+}
+
+a:hover {
+  @apply transition duration-300;
+}

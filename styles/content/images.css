@@ -1,0 +1,8 @@
+/* ===============
+  Image CSS
+  =============== */
+
+.page img {
+  @apply mx-auto;
+  @apply w-full;
+}
