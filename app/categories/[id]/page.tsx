@@ -6,7 +6,7 @@ import {
   getPostsByCategory,
 } from 'lib/graphcms';
 
-import { PostList } from 'components';
+import { Container, PostList } from 'components';
 
 export async function generateStaticParams() {
   const categories = await getAllCategoriesWithSlug();
@@ -26,9 +26,9 @@ interface Props {
   params: { id: string };
 }
 
-export async function generateMetadata(
-  { params: { id } }: Props,
-): Promise<Metadata> {
+export async function generateMetadata({
+  params: { id },
+}: Props): Promise<Metadata> {
   const category = await getCategory(id);
 
   return {
@@ -41,5 +41,9 @@ export async function generateMetadata(
 export default async function Categories({ params }) {
   const { posts } = await handleGetPosts(params);
 
-  return <>{posts && posts.length > 0 ? <PostList posts={posts} /> : null}</>;
+  return (
+    <Container>
+      {posts && posts.length > 0 ? <PostList posts={posts} /> : null}
+    </Container>
+  );
 }

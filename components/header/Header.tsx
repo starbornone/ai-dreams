@@ -7,18 +7,19 @@ interface Props {
   date?: string;
   tags?: string[];
   title: string;
+  subtitle?: string;
 }
 
-export function Header({ coverImage, date, tags, title }: Props) {
+export function Header({ coverImage, date, tags, subtitle, title }: Props) {
   return (
     <>
       {coverImage && (
-        <div className="-mx-5 mb-8 sm:mx-0 md:mb-12">
+        <div className="mb-8 -mx-5 sm:mx-0 md:mb-12">
           <CoverImage title={title} url={coverImage.url} />
         </div>
       )}
       {(tags || date) && (
-        <div className="mx-auto mb-6 flex max-w-3xl justify-between">
+        <div className="flex justify-between max-w-3xl mx-auto mb-6">
           {tags && (
             <div className="flex gap-8 font-light text-text-500">
               {tags.map((tag) => (
@@ -34,6 +35,7 @@ export function Header({ coverImage, date, tags, title }: Props) {
         </div>
       )}
       {title && <Title>{title}</Title>}
+      {subtitle && <div className="subtitle">{subtitle}</div>}
     </>
   );
 }

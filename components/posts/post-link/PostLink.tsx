@@ -11,7 +11,7 @@ export function PostLink({ post }) {
       >
         <div className="flex w-full justify-between">
           <div>
-            <div className="post-title-link group-hover:text-gray-800">
+            <div className="title-link group-hover:text-gray-800">
               {post.title}
             </div>
 

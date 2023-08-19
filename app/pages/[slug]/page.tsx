@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import { getAllPagesWithSlug, getPage } from 'lib/graphcms';
 
-import { Body, Header } from 'components';
+import { Body, Container, Header } from 'components';
 
 interface Props {
   params: { slug: string };
@@ -23,13 +23,12 @@ export async function generateStaticParams() {
 
 async function handleGetPage({ slug }) {
   const data = await getPage(slug);
-  
   return data.page;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page: PageProps = await handleGetPage(params);
-
+  if (!page) return { title: 'AI Dreams' };
   return {
     title: `${page.title} | AI Dreams`,
     description: page.excerpt,
@@ -43,9 +42,11 @@ export default async function Page({ params }) {
   const page = await handleGetPage(params);
 
   return (
-    <article className="page mb-32">
-      <Header coverImage={page.coverImage} title={page.title} />
-      <Body content={page.content} />
-    </article>
+    <Container>
+      <article className="mb-32 page">
+        <Header coverImage={page.coverImage} title={page.title} />
+        <Body content={page.content} />
+      </article>
+    </Container>
   );
 }

@@ -6,7 +6,13 @@ import {
   getPostAndMorePosts,
 } from 'lib/graphcms';
 
-import { PostList, Body, Header, SectionSeparator } from 'components';
+import {
+  Body,
+  Container,
+  Header,
+  PostList,
+  SectionSeparator,
+} from 'components';
 
 type Props = {
   params: { slug: string };
@@ -64,7 +70,7 @@ export default async function Post({ params }) {
   const { morePosts, post } = await handleGetPostAndMorePost(params);
 
   return (
-    <>
+    <Container>
       <article>
         <Header
           coverImage={post.coverImage}
@@ -76,6 +82,6 @@ export default async function Post({ params }) {
       </article>
       <SectionSeparator />
       {morePosts?.length > 0 && <PostList posts={morePosts} />}
-    </>
+    </Container>
   );
 }

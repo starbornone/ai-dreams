@@ -21,7 +21,7 @@ export function CoverImage({ title, url, slug }: Props) {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link className="img-link" href={`/posts/${slug}`}>
+        <Link className="img-link" href={`/${slug}`}>
           {image}
         </Link>
       ) : (

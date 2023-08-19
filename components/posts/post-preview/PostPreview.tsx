@@ -8,14 +8,14 @@ export function PostPreview({ coverImage, date, excerpt, slug, tags, title }) {
     <div className="mt-6 grid gap-8 md:grid-cols-2 lg:gap-y-16">
       {coverImage && (
         <div>
-          <CoverImage slug={slug} title={title} url={coverImage.url} />
+          <CoverImage slug={`posts/${slug}`} title={title} url={coverImage.url} />
         </div>
       )}
       <div className="flex flex-wrap content-between">
         <div>
           <h2 className="mb-3 text-2xl leading-snug">
             <Link
-              className="post-title-link"
+              className="title-link"
               data-content={title}
               href={`/posts/${slug}`}
             >

@@ -1,6 +1,6 @@
 import { getLimitedPosts } from 'lib/graphcms';
 
-import { MorePages, MorePosts, PostList } from 'components';
+import { Container, MorePages, MorePosts, PostList } from 'components';
 
 async function getPosts() {
   const data = await getLimitedPosts();
@@ -29,11 +29,15 @@ export default async function Page() {
 
   return (
     <>
-      {posts && posts.length > 0 ? <PostList posts={posts} /> : null}
-      {/* <MorePages /> */}
-      {morePosts && morePosts.length > 0 ? (
-        <MorePosts posts={morePosts} />
-      ) : null}
+      <Container>
+        {posts && posts.length > 0 ? <PostList posts={posts} /> : null}
+      </Container>
+      <MorePages />
+      <Container>
+        {morePosts && morePosts.length > 0 ? (
+          <MorePosts posts={morePosts} />
+        ) : null}
+      </Container>
     </>
   );
 }
