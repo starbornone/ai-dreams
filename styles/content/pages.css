@@ -2,6 +2,13 @@
   Pages CSS
   =============== */
 
+.page h1,
+.page h2,
+.page h3,
+.page h4 {
+  font-weight: 500;
+}
+
 .page p,
 .page ul,
 .page ol {
@@ -20,13 +27,11 @@
 
 .page h2 {
   font-family: 'Neon';
-  font-weight: 500;
 }
 
 .page h3 {
   border-color: var(--color-gray-700);
   border-left-width: 4px;
   font-family: 'Neon';
-  font-weight: 500;
   padding-left: 0.75rem;
 }
