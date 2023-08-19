@@ -16,14 +16,14 @@ const lexend = Lexend({
 function Layout({ children }) {
   return (
     <html lang="en">
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-KJ9Z35H5ES" />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-KNC561RKZX" />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-KJ9Z35H5ES');
+          gtag('config', 'G-KNC561RKZX');
       `}
       </Script>
       <body className={lexend.className}>
