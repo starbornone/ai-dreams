@@ -54,7 +54,7 @@ p a:after {
 }
 
 footer a:hover {
-  background-color: var(--color-aqua-500);
+  color: var(--color-aqua-500);
 }
 
 .neon-links a {

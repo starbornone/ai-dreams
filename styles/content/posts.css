@@ -21,6 +21,7 @@
 }
 
 .post-title {
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-shadow: 0.1em 0.1em 0 var(--color-purple-500);
 }
