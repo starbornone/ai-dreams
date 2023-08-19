@@ -1,219 +1,226 @@
 @keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: var(--color-purple-100);
+    text-shadow:
+      0 0 0.6rem var(--color-purple-100),
+      0 0 1.5rem var(--color-purple-300),
+      -0.2rem 0.1rem 1rem var(--color-purple-300),
+      0.2rem 0.1rem 1rem var(--color-purple-300),
+      0 -0.5rem 2rem var(--color-purple-400),
+      0 0.5rem 3rem var(--color-purple-400);
+  }
 
-    0%,
-    22%,
-    36%,
-    75% {
-        color: #faf2fd;
-        text-shadow: 0 0 0.6rem #faf2fd, 0 0 1.5rem #ba4ce6,
-            -0.2rem 0.1rem 1rem #ba4ce6, 0.2rem 0.1rem 1rem #ba4ce6,
-            0 -0.5rem 2rem #8b1ab7, 0 0.5rem 3rem #8b1ab7;
-    }
+  28%,
+  33% {
+    color: var(--color-purple-300);
+    text-shadow: none;
+  }
 
-    28%,
-    33% {
-        color: #ba4ce6;
-        text-shadow: none;
-    }
-
-    82%,
-    97% {
-        color: #8b1ab7;
-        text-shadow: none;
-    }
+  82%,
+  97% {
+    color: var(--color-purple-400);
+    text-shadow: none;
+  }
 }
 
 @keyframes shine-less {
-    0% {
-        color: #252728;
-        text-shadow: none;
-    }
+  0% {
+    color: var(--color-gray-800);
+    text-shadow: none;
+  }
 
-    100% {
-        color: #afafaf;
-    }
+  100% {
+    color: var(--color-gray-100);
+  }
 }
 
 @keyframes shine {
-    0% {
-        color: #400c55;
-        text-shadow: none;
-    }
+  0% {
+    color: var(--color-purple-600);
+    text-shadow: none;
+  }
 
-    100% {
-        color: #faf2fd;
-        text-shadow: 0 0 0.6rem #faf2fd, 0 0 1.5rem #ba4ce6,
-            -0.2rem 0.1rem 1rem #ba4ce6, 0.2rem 0.1rem 1rem #ba4ce6,
-            0 -0.5rem 2rem #8b1ab7, 0 0.5rem 3rem #8b1ab7;
-    }
+  100% {
+    color: var(--color-purple-100);
+    text-shadow:
+      0 0 0.6rem var(--color-purple-100),
+      0 0 1.5rem var(--color-purple-300),
+      -0.2rem 0.1rem 1rem var(--color-purple-300),
+      0.2rem 0.1rem 1rem var(--color-purple-300),
+      0 -0.5rem 2rem var(--color-purple-400),
+      0 0.5rem 3rem var(--color-purple-400);
+  }
 }
 
 @keyframes flicker {
-    from {
-        opacity: 1;
-    }
+  from {
+    opacity: 1;
+  }
 
-    4% {
-        opacity: 0.9;
-    }
+  4% {
+    opacity: 0.9;
+  }
 
-    6% {
-        opacity: 0.85;
-    }
+  6% {
+    opacity: 0.85;
+  }
 
-    8% {
-        opacity: 0.95;
-    }
+  8% {
+    opacity: 0.95;
+  }
 
-    10% {
-        opacity: 0.9;
-    }
+  10% {
+    opacity: 0.9;
+  }
 
-    11% {
-        opacity: 0.922;
-    }
+  11% {
+    opacity: 0.922;
+  }
 
-    12% {
-        opacity: 0.9;
-    }
+  12% {
+    opacity: 0.9;
+  }
 
-    14% {
-        opacity: 0.95;
-    }
+  14% {
+    opacity: 0.95;
+  }
 
-    16% {
-        opacity: 0.98;
-    }
+  16% {
+    opacity: 0.98;
+  }
 
-    17% {
-        opacity: 0.9;
-    }
+  17% {
+    opacity: 0.9;
+  }
 
-    19% {
-        opacity: 0.93;
-    }
+  19% {
+    opacity: 0.93;
+  }
 
-    20% {
-        opacity: 0.99;
-    }
+  20% {
+    opacity: 0.99;
+  }
 
-    24% {
-        opacity: 1;
-    }
+  24% {
+    opacity: 1;
+  }
 
-    26% {
-        opacity: 0.94;
-    }
+  26% {
+    opacity: 0.94;
+  }
 
-    28% {
-        opacity: 0.98;
-    }
+  28% {
+    opacity: 0.98;
+  }
 
-    37% {
-        opacity: 0.93;
-    }
+  37% {
+    opacity: 0.93;
+  }
 
-    38% {
-        opacity: 0.5;
-    }
+  38% {
+    opacity: 0.5;
+  }
 
-    39% {
-        opacity: 0.96;
-    }
+  39% {
+    opacity: 0.96;
+  }
 
-    42% {
-        opacity: 1;
-    }
+  42% {
+    opacity: 1;
+  }
 
-    44% {
-        opacity: 0.97;
-    }
+  44% {
+    opacity: 0.97;
+  }
 
-    46% {
-        opacity: 0.94;
-    }
+  46% {
+    opacity: 0.94;
+  }
 
-    56% {
-        opacity: 0.9;
-    }
+  56% {
+    opacity: 0.9;
+  }
 
-    58% {
-        opacity: 0.9;
-    }
+  58% {
+    opacity: 0.9;
+  }
 
-    60% {
-        opacity: 0.99;
-    }
+  60% {
+    opacity: 0.99;
+  }
 
-    68% {
-        opacity: 1;
-    }
+  68% {
+    opacity: 1;
+  }
 
-    70% {
-        opacity: 0.9;
-    }
+  70% {
+    opacity: 0.9;
+  }
 
-    72% {
-        opacity: 0.95;
-    }
+  72% {
+    opacity: 0.95;
+  }
 
-    93% {
-        opacity: 0.93;
-    }
+  93% {
+    opacity: 0.93;
+  }
 
-    95% {
-        opacity: 0.95;
-    }
+  95% {
+    opacity: 0.95;
+  }
 
-    97% {
-        opacity: 0.93;
-    }
+  97% {
+    opacity: 0.93;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes glitchy {
-    0% {
-        transform: translate(-2px, 2px);
-    }
+  0% {
+    transform: translate(-2px, 2px);
+  }
 
-    25% {
-        transform: translate(-2px, -2px);
-    }
+  25% {
+    transform: translate(-2px, -2px);
+  }
 
-    50% {
-        transform: translate(2px, 2px);
-    }
+  50% {
+    transform: translate(2px, 2px);
+  }
 
-    75% {
-        transform: translate(2px, -2px);
-    }
+  75% {
+    transform: translate(2px, -2px);
+  }
 
-    100% {
-        transform: translate(-2px, 2px);
-    }
+  100% {
+    transform: translate(-2px, 2px);
+  }
 }
 
 @keyframes line-glitchy {
-    0% {
-        transform: translate(-1px, 1px);
-    }
+  0% {
+    transform: translate(-1px, 1px);
+  }
 
-    25% {
-        transform: translate(-1px, -1px);
-    }
+  25% {
+    transform: translate(-1px, -1px);
+  }
 
-    50% {
-        transform: translate(1px, 1px);
-    }
+  50% {
+    transform: translate(1px, 1px);
+  }
 
-    75% {
-        transform: translate(1px, -1px);
-    }
+  75% {
+    transform: translate(1px, -1px);
+  }
 
-    100% {
-        transform: translate(-1px, 1px);
-    }
+  100% {
+    transform: translate(-1px, 1px);
+  }
 }

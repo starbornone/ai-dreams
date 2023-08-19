@@ -3,23 +3,103 @@
   =============== */
 
 a {
-  @apply no-underline;
+  text-decoration-line: none;
+}
+
+a:hover {
+  transition-duration: 300ms;
+}
+
+footer a,
+li a,
+p a {
+  position: relative;
+  z-index: 1;
+}
+
+li a,
+p a {
+  border-bottom-width: 1px;
+  border-color: var(--color-aqua-700);
+  color: var(--color-aqua-500);
+}
+
+footer a:before,
+footer a:after,
+li a:before,
+li a:after,
+p a:before,
+p a:after {
+  bottom: -1px;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+}
+
+footer a:before,
+li a:before,
+p a:before {
+  background-color: var(--color-aqua-700);
+  z-index: -1;
+}
+
+footer a:after,
+li a:after,
+p a:after {
+  background-color: var(--color-purple-300);
+  z-index: -2;
+}
+
+footer a:hover {
+  background-color: var(--color-aqua-500);
 }
 
 .neon-links a {
   text-shadow:
-    0 0 0.6rem #d99df1,
-    0 0 1.5rem #8b1ab7,
-    -0.2rem 0.1rem 1rem #8b1ab7,
-    0.2rem 0.1rem 1rem #8b1ab7,
-    0 -0.5rem 2rem #4a0e62,
-    0 0.5rem 3rem #4a0e62;
+    0 0 0.6rem var(--color-purple-200),
+    0 0 1.5rem var(--color-purple-400),
+    -0.2rem 0.1rem 1rem var(--color-purple-400),
+    0.2rem 0.1rem 1rem var(--color-purple-400),
+    0 -0.5rem 2rem var(--color-purple-500),
+    0 0.5rem 3rem var(--color-purple-500);
 }
 
 .neon-links a:hover {
-  @apply text-gray-800;
+  color: var(--color-gray-800);
 }
 
-a:hover {
-  @apply transition duration-300;
+.title-link {
+  color: var(--color-gray-100);
+  display: inline-block;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.title-link:before,
+.title-link:after {
+  bottom: 0;
+  content: attr(data-content);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+}
+
+.title-link:before {
+  color: var(--color-purple-400);
+  z-index: -1;
+}
+
+.title-link:after {
+  color: var(--color-aqua-500);
+  z-index: -2;
+}
+
+.title-link:hover {
+  color: var(--color-white);
 }

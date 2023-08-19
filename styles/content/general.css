@@ -4,14 +4,14 @@
 
 b,
 strong {
-  @apply font-bold;
-  @apply text-orange-700;
+  color: var(--color-orange-700);
+  font-weight: 700;
 }
 
 i,
 em {
-  @apply italic;
-  @apply text-orange-700;
+  color: var(--color-orange-700);
+  font-style: italic;
 }
 
 /* ===============
@@ -19,12 +19,13 @@ em {
   =============== */
 
 blockquote {
-  @apply border-l-4;
-  @apply border-orange-500;
-  @apply font-thin;
-  @apply pl-6;
-  @apply text-gray-100;
-  @apply text-xl;
+  border-color: var(--color-orange-500);
+  color: var(--color-gray-100);
+  border-left-width: 4px;
+  font-size: 1.25rem;
+  font-weight: 100;
+  line-height: 1.75rem;
+  padding-left: 1.5rem;
 }
 
 /* ===============
@@ -33,9 +34,10 @@ blockquote {
 
 hr,
 .hr {
-  @apply border-b;
-  @apply border-orange-500;
-  @apply my-12;
+  border-color: var(--color-orange-500);
+  border-bottom-width: 1px;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 /* ===============
@@ -43,7 +45,9 @@ hr,
   =============== */
 
 .caption {
-  @apply text-gray-500 text-sm;
+  color: var(--color-gray-500);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 /* ===============
@@ -52,11 +56,12 @@ hr,
 
 ul,
 .post ul {
-  @apply list-disc;
-  @apply ml-4;
+  list-style-type: disc;
+  margin-left: 1rem;
 }
 
 li,
 .post li {
-  @apply my-2;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }

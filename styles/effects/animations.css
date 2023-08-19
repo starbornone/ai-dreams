@@ -1,190 +1,98 @@
-.site-title {
-    font-family: "Neon";
-    text-shadow: 0 0 0.6rem #585d5f, 0 0 1.5rem #212324,
-        -0.2rem 0.1rem 1rem #212324, 0.2rem 0.1rem 1rem #212324,
-        0 -0.5rem 2rem #131414, 0 0.5rem 3rem #131414;
-    animation: shine-less 2s forwards, flicker 3s infinite;
-}
-
-/**
- * .world SIGN
- */
-
-.sign {
-    font-family: "Neon Lines";
-    text-transform: uppercase;
-    text-shadow: 0 0 0.6rem #faf2fd, 0 0 1.5rem #ba4ce6,
-        -0.2rem 0.1rem 1rem #ba4ce6, 0.2rem 0.1rem 1rem #ba4ce6,
-        0 -0.5rem 2rem #8b1ab7, 0 0.5rem 3rem #8b1ab7;
-    animation: shine 2s forwards, flicker 3s infinite;
-}
-
-.flicker {
-    animation: shine 2s forwards, blink 3s 2s infinite;
-}
-
-.fast-flicker {
-    animation: shine 2s forwards, blink 10s 1s infinite;
-}
-
-/**
- * COVER IMAGES
- */
-
-.img-link {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-    z-index: 1;
-}
-
-.img-link:before,
-.img-link:after {
-    content: '';
-    position: absolute;
-    visibility: hidden;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.img-link:before {
-    @apply bg-aqua-500;
-    z-index: -1;
-}
-
-.img-link:after {
-    @apply bg-purple-400;
-    z-index: -2;
-}
-
-.img-link:hover .link-inner {
-    animation: glitchy 0.3s infinite;
-}
-
-.img-link:hover::before {
-    visibility: visible;
-    animation: glitchy 0.3s ease 0.3s infinite;
-}
-
-.img-link:hover::after {
-    visibility: visible;
-    animation: glitchy 0.3s ease infinite reverse;
-}
-
-.link-inner {
-    @apply block;
-}
-
-/**
- * POST LINKS
- */
-
-.post-title-link {
-    @apply relative;
-    @apply inline-block;
-    @apply font-bold;
-    @apply text-gray-100;
-    z-index: 1;
-}
-
-.post-title-link:before,
-.post-title-link:after {
-    @apply absolute;
-    visibility: hidden;
-    content: attr(data-content);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.post-title-link:before {
-    @apply text-purple-400;
-    z-index: -1;
-}
-
-.post-title-link:after {
-    @apply text-aqua-500;
-    z-index: -2;
-}
-
-.post-title-link:hover {
-    @apply text-white;
-}
-
-.post-title-link:hover::before {
-    visibility: visible;
-    animation: glitchy 0.3s ease 0.3s infinite;
-}
-
-.post-title-link:hover::after {
-    visibility: visible;
-    animation: glitchy 0.3s ease infinite reverse;
-}
-
-/**
- * NORMAL LINKS
- */
-
-footer a,
-li a,
-p a {
-    @apply relative;
-    z-index: 1;
-}
-
-li a,
-p a {
-    @apply border-b;
-    @apply border-aqua-700;
-    @apply text-aqua-500;
-}
-
-footer a:before,
-footer a:after,
-li a:before,
-li a:after,
-p a:before,
-p a:after {
-    @apply absolute;
-    content: '';
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    visibility: hidden;
-}
-
-footer a:before,
-li a:before,
-p a:before {
-    @apply bg-aqua-700;
-    z-index: -1;
-}
-
-footer a:after,
-li a:after,
-p a:after {
-    @apply bg-purple-300;
-    z-index: -2;
-}
-
-footer a:hover {
-    @apply text-aqua-500;
-}
+/* ===============
+  Normal Links
+  =============== */
 
 footer a:hover::before,
 li a:hover::before,
 p a:hover::before {
-    visibility: visible;
-    animation: line-glitchy 0.3s ease 0.3s infinite;
+  visibility: visible;
+  animation: line-glitchy 0.3s ease 0.3s infinite;
 }
 
 footer a:hover::after,
 li a:hover::after,
 p a:hover::after {
-    visibility: visible;
-    animation: line-glitchy 0.3s ease infinite reverse;
+  visibility: visible;
+  animation: line-glitchy 0.3s ease infinite reverse;
+}
+
+/* ===============
+  Site Title
+  =============== */
+
+.site-title {
+  font-family: 'Neon';
+  text-shadow:
+    0 0 0.6rem var(--color-gray-600),
+    0 0 1.5rem var(--color-gray-700),
+    -0.2rem 0.1rem 1rem var(--color-gray-700),
+    0.2rem 0.1rem 1rem var(--color-gray-700),
+    0 -0.5rem 2rem var(--color-gray-800),
+    0 0.5rem 3rem var(--color-gray-800);
+  animation:
+    shine-less 2s forwards,
+    flicker 3s infinite;
+}
+
+/* ===============
+  .world Sign
+  =============== */
+
+.sign {
+  font-family: 'Neon Lines';
+  text-transform: uppercase;
+  text-shadow:
+    0 0 0.6rem var(--color-purple-100),
+    0 0 1.5rem var(--color-purple-300),
+    -0.2rem 0.1rem 1rem var(--color-purple-300),
+    0.2rem 0.1rem 1rem var(--color-purple-300),
+    0 -0.5rem 2rem var(--color-purple-400),
+    0 0.5rem 3rem var(--color-purple-400);
+  animation:
+    shine 2s forwards,
+    flicker 3s infinite;
+}
+
+.flicker {
+  animation:
+    shine 2s forwards,
+    blink 3s 2s infinite;
+}
+
+.fast-flicker {
+  animation:
+    shine 2s forwards,
+    blink 10s 1s infinite;
+}
+
+/* ===============
+  Cover Images
+  =============== */
+
+.img-link:hover .link-inner {
+  animation: glitchy 0.3s infinite;
+}
+
+.img-link:hover::before {
+  visibility: visible;
+  animation: glitchy 0.3s ease 0.3s infinite;
+}
+
+.img-link:hover::after {
+  visibility: visible;
+  animation: glitchy 0.3s ease infinite reverse;
+}
+
+/* ===============
+  Post Links
+  =============== */
+
+.title-link:hover::before {
+  visibility: visible;
+  animation: glitchy 0.3s ease 0.3s infinite;
+}
+
+.title-link:hover::after {
+  visibility: visible;
+  animation: glitchy 0.3s ease infinite reverse;
 }

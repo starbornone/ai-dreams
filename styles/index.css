@@ -21,25 +21,31 @@
 @tailwind utilities;
 
 /* ===============
+  Custom Properties
+  =============== */
+
+@import './custom-properties/colors.css';
+
+/* ===============
   Page
   =============== */
 
 html {
-  @apply bg-gray-800;
-  @apply text-gray-300;
-  @apply font-light;
+  background-color: var(--color-gray-800);
+  color: var(--color-gray-300);
+  font-weight: 300;
 }
 
 /* ===============
-  CSS Imports
+  Component CSS Imports
   =============== */
 
-  @import './effects/animations.css';
-  @import './effects/keyframes.css';
-  
-  @import './content/general.css';
-  @import './content/headings.css';
-  @import './content/images.css';
-  @import './content/links.css';
-  @import './content/notes.css';
-  @import './content/posts.css';
+@import './effects/animations.css';
+@import './effects/keyframes.css';
+
+@import './content/general.css';
+@import './content/headings.css';
+@import './content/images.css';
+@import './content/links.css';
+@import './content/notes.css';
+@import './content/posts.css';
