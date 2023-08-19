@@ -71,7 +71,7 @@ export default async function Post({ params }) {
 
   return (
     <Container>
-      <article>
+      <article className="post">
         <Header
           coverImage={post.coverImage}
           date={post.date}

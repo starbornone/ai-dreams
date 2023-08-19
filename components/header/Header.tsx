@@ -7,10 +7,9 @@ interface Props {
   date?: string;
   tags?: string[];
   title: string;
-  subtitle?: string;
 }
 
-export function Header({ coverImage, date, tags, subtitle, title }: Props) {
+export function Header({ coverImage, date, tags, title }: Props) {
   return (
     <>
       {coverImage && (
@@ -35,7 +34,6 @@ export function Header({ coverImage, date, tags, subtitle, title }: Props) {
         </div>
       )}
       {title && <Title>{title}</Title>}
-      {subtitle && <div className="subtitle">{subtitle}</div>}
     </>
   );
 }

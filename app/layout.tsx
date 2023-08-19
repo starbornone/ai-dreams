@@ -7,7 +7,7 @@ import { Footer, Header, Meta, MobileNav } from 'layout';
 import 'styles/index.css';
 
 const lexend = Lexend({
-  weight: ['200', '300', '600', '700', '800'],
+  weight: ['200', '300', '400', '700'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
