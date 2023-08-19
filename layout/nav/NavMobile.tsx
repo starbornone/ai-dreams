@@ -5,7 +5,7 @@ import { navList } from './navList';
 export function MobileNav() {
   return (
     <div className="block lg:hidden m-16 text-center">
-      <div className="site-title text-text-900 tracking-wider mb-6">
+      <div className="site-title text-gray-900 tracking-wider mb-6">
         Topics:
       </div>
       <div

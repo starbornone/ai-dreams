@@ -4,7 +4,7 @@ import { Container } from 'components';
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-sm font-semibold text-text-400">
+    <footer className="bg-gray-900 text-sm font-semibold text-gray-400">
       <Container>
         <div className="grid grid-cols-1 py-12 md:py-24 md:grid-cols-3 md:px-4 lg:px-0">
           <div className="col-span-2 my-8 md:my-0">
@@ -18,7 +18,7 @@ export function Footer() {
           </div>
           <div className="my-8 md:my-0 md:text-right">
             <p>Dreaming since 2021.</p>
-            <div className="text-xs font-light text-text-600">
+            <div className="text-xs font-light text-gray-600">
               <p className="my-2">
                 The purchase of a product from any external sites does not grant
                 any benefit, monetary or otherwise, to the author.
