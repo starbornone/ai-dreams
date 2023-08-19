@@ -1,4 +1,5 @@
 import { Lexend } from 'next/font/google';
+import Script from 'next/script';
 
 import { Container } from 'components';
 import { Footer, Header, Meta, MobileNav } from 'layout';
@@ -15,6 +16,16 @@ const lexend = Lexend({
 function Layout({ children }) {
   return (
     <html lang="en">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-KJ9Z35H5ES" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-KJ9Z35H5ES');
+      `}
+      </Script>
       <body className={lexend.className}>
         <Meta />
         <div className="min-h-screen">
