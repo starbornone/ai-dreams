@@ -1,8 +1,15 @@
 import { format } from 'date-fns';
 
-import { CoverImage, PostTitle } from 'components';
+import { CoverImage, Title } from 'components';
 
-export function PostHeader({ coverImage, date, tags, title }) {
+interface Props {
+  coverImage?: { url: string };
+  date?: string;
+  tags?: string[];
+  title: string;
+}
+
+export function Header({ coverImage, date, tags, title }: Props) {
   return (
     <>
       {coverImage && (
@@ -26,7 +33,7 @@ export function PostHeader({ coverImage, date, tags, title }) {
           )}
         </div>
       )}
-      {title && <PostTitle>{title}</PostTitle>}
+      {title && <Title>{title}</Title>}
     </>
   );
 }

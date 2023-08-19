@@ -1,7 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export function CoverImage({ title, url, slug }) {
+interface Props {
+  slug?: string;
+  title: string;
+  url: string;
+}
+
+export function CoverImage({ title, url, slug }: Props) {
   const image = (
     <Image
       alt={title}

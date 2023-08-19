@@ -1,4 +1,4 @@
-export function PostBody({ content }) {
+export function Body({ content }) {
   return (
     <div
       className="post mx-auto max-w-2xl"

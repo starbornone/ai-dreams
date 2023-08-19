@@ -11,18 +11,18 @@ export function PostLink({ post }) {
       >
         <div className="flex w-full justify-between">
           <div>
-            <div className="post-title-link group-hover:text-text-800">
+            <div className="post-title-link group-hover:text-gray-800">
               {post.title}
             </div>
 
-            <div className="text-sm font-light text-text-500 group-hover:text-text-700">
+            <div className="text-sm font-light text-gray-500 group-hover:text-gray-700">
               {post.tags.length > 0
                 ? post.tags.map((tag, index) => tag + (index === 0 ? ', ' : ''))
                 : null}
             </div>
           </div>
           <div className="justify-self-end">
-            <div className="hidden text-sm font-light text-text-500 group-hover:text-text-700 md:visible md:flex">
+            <div className="hidden text-sm font-light text-gray-500 group-hover:text-gray-700 md:visible md:flex">
               {format(new Date(post.date), 'dd MMMM yyyy')}
             </div>
           </div>
