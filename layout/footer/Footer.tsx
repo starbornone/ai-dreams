@@ -1,13 +1,13 @@
 import Link from 'next/link';
 
-import { Container } from 'components';
+import { Container, LanguageSelect } from 'components';
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-sm font-semibold text-gray-400">
+    <footer className="text-sm text-gray-400 bg-gray-900">
       <Container>
-        <div className="grid grid-cols-1 py-12 md:py-24 md:grid-cols-3 md:px-4 lg:px-0">
-          <div className="col-span-2 my-8 md:my-0">
+        <div className="grid grid-cols-1 py-12 md:py-24 md:grid-cols-3 md:px-4 lg:px-0 gap-y-12 md:gap-y-0">
+          <div className="col-span-2 font-semibold">
             <Link href="/">Home</Link>
             <span className="mx-4">{' | '}</span>
             <Link href="/pages/about">About</Link>
@@ -16,7 +16,10 @@ export function Footer() {
             <span className="mx-4">{' | '}</span>
             <Link href="/categories/fiction">Fiction</Link>
           </div>
-          <div className="my-8 md:my-0 md:text-right">
+          <div className="md:flex md:justify-end">
+            <LanguageSelect />
+          </div>
+          <div className="col-span-2">
             <p>Dreaming since 2021.</p>
             <div className="text-xs font-light text-gray-600">
               <p className="my-2">
@@ -29,7 +32,6 @@ export function Footer() {
               </p>
             </div>
           </div>
-          <div className="flex md:justify-end md:text-right"></div>
         </div>
       </Container>
     </footer>
