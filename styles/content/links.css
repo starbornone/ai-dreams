@@ -12,17 +12,28 @@ a:hover {
 
 footer a,
 li a,
-p a {
+p a,
+.content a {
   position: relative;
   z-index: 1;
 }
 
 li a,
-p a {
+p a,
+.content a {
   border-bottom-width: 1px;
+  border-color: var(--color-aqua-700);
+}
+
+li a,
+p a {
   border-color: var(--color-aqua-700);
   color: var(--color-gray-200);
   font-weight: 400;
+}
+
+.content a {
+  color: var(--color-gray-400);
 }
 
 footer a:before,
@@ -30,7 +41,9 @@ footer a:after,
 li a:before,
 li a:after,
 p a:before,
-p a:after {
+p a:after,
+.content a:before,
+.content a:after {
   bottom: -1px;
   content: '';
   height: 1px;
@@ -42,14 +55,16 @@ p a:after {
 
 footer a:before,
 li a:before,
-p a:before {
+p a:before,
+.content a:before {
   background-color: var(--color-aqua-700);
   z-index: -1;
 }
 
 footer a:after,
 li a:after,
-p a:after {
+p a:after,
+.content a:after {
   background-color: var(--color-purple-300);
   z-index: -2;
 }

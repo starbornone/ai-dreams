@@ -4,14 +4,16 @@
 
 footer a:hover::before,
 li a:hover::before,
-p a:hover::before {
+p a:hover::before,
+.content a:hover::before {
   visibility: visible;
   animation: line-glitchy 0.3s ease 0.3s infinite;
 }
 
 footer a:hover::after,
 li a:hover::after,
-p a:hover::after {
+p a:hover::after,
+.content a:hover::after {
   visibility: visible;
   animation: line-glitchy 0.3s ease infinite reverse;
 }
