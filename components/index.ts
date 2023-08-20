@@ -2,6 +2,8 @@ export * from './body';
 export * from './container';
 export * from './cover-image';
 export * from './header';
+export * from './footer';
+export * from './language-select';
 export * from './pages/more-pages';
 export * from './posts/more-posts';
 export * from './posts/post-link';
