@@ -26,22 +26,20 @@ export function MorePages() {
       <Container>
         <div className="grid gap-16 mx-auto lg:grid-cols-3">
           {pages.map((page) => (
-            <div key={page.title} className="bg-gray-800 img-link group">
-              <Link href={page.href}>
-                <>
-                  {page.imageUrl && (
-                    <CoverImage
-                      slug={page.href}
-                      title={page.title}
-                      url={page.imageUrl}
-                    />
-                  )}
-                  <h3 className="p-6 -mt-2 title-link group-hover:text-gray-800">
-                    {page.title}
-                  </h3>
-                </>
-              </Link>
-            </div>
+            <Link href={page.href} key={page.title}>
+              <div className="bg-gray-800 img-link group">
+                {page.imageUrl && (
+                  <CoverImage
+                    slug={page.href}
+                    title={page.title}
+                    url={page.imageUrl}
+                  />
+                )}
+                <h3 className="p-6 -mt-2 title-link group-hover:text-gray-800">
+                  {page.title}
+                </h3>
+              </div>
+            </Link>
           ))}
         </div>
       </Container>
