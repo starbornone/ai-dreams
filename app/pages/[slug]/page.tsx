@@ -51,7 +51,7 @@ export default async function Page({ params }) {
 
   return (
     <Container>
-      <article className="mb-32 page content">
+      <article className="mb-32 page">
         <Header coverImage={page.coverImage} title={page.title} />
         <div className="max-w-2xl mx-auto">
           <Body content={page.content} />
