@@ -5,7 +5,7 @@ export function Footer({ imageAuthor, updatedAt }) {
     <div className="my-12 text-sm text-gray-500 content md:my-16">
       {imageAuthor?.name && (
         <div>
-          Original image by{' '}
+          Cover image by{' '}
           <a href={imageAuthor.url} rel="noreferrer" target="_blank">
             {imageAuthor.name}
           </a>
