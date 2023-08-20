@@ -2,16 +2,24 @@ import { Metadata } from 'next';
 
 import { getAllPagesWithSlug, getPage } from 'lib/graphcms';
 
-import { Body, Container, Header } from 'components';
+import { Body, Container, Footer, Header } from 'components';
 
 interface Props {
   params: { slug: string };
 }
 
 interface PageProps {
-  title: string;
   excerpt: string;
+  imageAuthor?: string;
+  imageAuthorUrl?: string;
+  localizations: {
+    excerpt: string;
+    locale: 'en' | 'zh_CN';
+    title: string;
+  }[];
   ogImage?: { url: string };
+  title: string;
+  updatedAt?: string;
 }
 
 export async function generateStaticParams() {
@@ -43,9 +51,15 @@ export default async function Page({ params }) {
 
   return (
     <Container>
-      <article className="mb-32 page">
+      <article className="mb-32 page content">
         <Header coverImage={page.coverImage} title={page.title} />
-        <Body content={page.content} />
+        <div className="max-w-2xl mx-auto">
+          <Body content={page.content} />
+          <Footer
+            imageAuthor={{ name: page.imageAuthor, url: page.imageAuthorUrl }}
+            updatedAt={page.updatedAt}
+          />
+        </div>
       </article>
     </Container>
   );

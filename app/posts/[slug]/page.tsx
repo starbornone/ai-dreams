@@ -9,6 +9,7 @@ import {
 import {
   Body,
   Container,
+  Footer,
   Header,
   PostList,
   SectionSeparator,
@@ -23,9 +24,12 @@ interface PostProps {
   coverImage?: { url: string };
   date: string;
   excerpt: string;
+  imageAuthor?: string;
+  imageAuthorUrl?: string;
   ogImage?: { url: string };
   tags: string[];
   title: string;
+  updatedAt?: string;
 }
 
 interface PostAndMorePostsProps {
@@ -78,7 +82,13 @@ export default async function Post({ params }) {
           tags={post.tags}
           title={post.title}
         />
-        <Body content={post.content} />
+        <div className="max-w-2xl mx-auto">
+          <Body content={post.content} />
+          <Footer
+            imageAuthor={{ name: post?.imageAuthor, url: post?.imageAuthorUrl }}
+            updatedAt={post?.updatedAt}
+          />
+        </div>
       </article>
       <SectionSeparator />
       {morePosts?.length > 0 && <PostList posts={morePosts} />}
