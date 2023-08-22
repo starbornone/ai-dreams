@@ -13,7 +13,7 @@ export function Footer({ imageAuthor, updatedAt }) {
       )}
       {updatedAt && (
         <div>
-          Last updated at {format(new Date(updatedAt), 'HH:MM.ss dd MMMM yyyy')}
+          Last updated at {format(new Date(updatedAt), 'dd MMMM yyyy')}
         </div>
       )}
     </div>
