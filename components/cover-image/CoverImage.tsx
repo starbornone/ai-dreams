@@ -11,7 +11,7 @@ export function CoverImage({ title, url, slug }: Props) {
   const image = (
     <Image
       alt={title}
-      className="link-inner object-cover object-center"
+      className="object-cover object-center link-inner"
       height={600}
       src={url}
       width={1200}
