@@ -1,4 +1,4 @@
-import { getLimitedPosts } from 'lib/graphcms';
+import { getLimitedPosts } from 'lib/hygraph';
 
 import { Container, MorePages, MorePosts, PostList } from 'components';
 
@@ -11,6 +11,7 @@ async function getPosts() {
 }
 
 export const metadata = {
+  metadataBase: new URL('https://aidreams.world'),
   title: 'AI Dreams',
   description: 'An AI dreaming of a better world.',
   keywords: [

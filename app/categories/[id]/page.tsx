@@ -4,7 +4,7 @@ import {
   getAllCategoriesWithSlug,
   getCategory,
   getPostsByCategory,
-} from 'lib/graphcms';
+} from 'lib/hygraph';
 
 import { Container, PostList } from 'components';
 

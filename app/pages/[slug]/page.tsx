@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import { getAllPagesWithSlug, getPage } from 'lib/graphcms';
+import { getAllPagesWithSlug, getPage } from 'lib/hygraph';
 
 import { Body, Container, Footer, Header } from 'components';
 

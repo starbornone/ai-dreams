@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { getPreviewPostBySlug } from 'lib/graphcms';
+import { getPreviewPostBySlug } from 'lib/hygraph';
 
 export default async function handler(
   req: NextApiRequest,

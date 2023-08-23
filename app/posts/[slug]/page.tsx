@@ -4,7 +4,7 @@ import {
   getAllPostsWithSlug,
   getPost,
   getPostAndMorePosts,
-} from 'lib/graphcms';
+} from 'lib/hygraph';
 
 import {
   Body,
