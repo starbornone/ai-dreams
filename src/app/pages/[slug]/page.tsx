@@ -32,17 +32,17 @@ export async function generateStaticParams() {
 
 async function handleGetPage({ slug }: { slug: string }) {
   const data = await getPage(slug);
-  return data.page;
+  return data;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page: PageProps = await handleGetPage(params);
   if (!page) return { title: 'AI Dreams' };
   return {
-    title: `${page.title} | AI Dreams`,
-    description: page.excerpt,
+    title: `${page?.title || ''} | AI Dreams`,
+    description: page?.excerpt || '',
     openGraph: {
-      images: page.ogImage?.url,
+      images: page?.ogImage?.url,
     },
   };
 }
@@ -50,15 +50,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const page = await handleGetPage(params);
 
+  console.log('page', page);
+
   return (
     <Container>
-      <article className="mb-32 page">
-        <Header coverImage={page.coverImage} title={page.title} />
-        <div className="max-w-2xl mx-auto">
-          <Body content={page.content} />
-          <Footer imageAuthor={{ name: page.imageAuthor, url: page.imageAuthorUrl }} updatedAt={page.updatedAt} />
-        </div>
-      </article>
+      {page && (
+        <article className="page mb-32">
+          <Header coverImage={page.coverImage} title={page.title} />
+          <div className="mx-auto max-w-2xl">
+            <Body content={page.content} />
+            <Footer imageAuthor={{ name: page.imageAuthor, url: page.imageAuthorUrl }} updatedAt={page.updatedAt} />
+          </div>
+        </article>
+      )}
     </Container>
   );
 }
