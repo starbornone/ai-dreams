@@ -1,24 +1,20 @@
-import { Container, LanguageSelect } from '@/components';
+import { Container } from '@/components';
 import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="text-sm text-gray-400 bg-gray-900">
+    <footer className="bg-gray-900 text-sm text-gray-400">
       <Container>
-        <div className="grid grid-cols-1 py-12 gap-y-12 md:grid-cols-3 md:gap-y-0 md:px-4 md:py-24 lg:px-0">
-          <div className="col-span-2 font-semibold">
-            <Link href="/">Home</Link>
-            <span className="mx-4">{' | '}</span>
-            <Link href="/pages/about">About</Link>
-            <span className="mx-4">{' | '}</span>
-            <Link href="/categories/resources">Resources</Link>
-            <span className="mx-4">{' | '}</span>
-            <Link href="/categories/fiction">Fiction</Link>
+        <div className="py-12 md:px-4 lg:px-0">
+          <div className="flex flex-wrap divide-x divide-gray-700">
+            <Link className="px-4 py-2" href="/">
+              Home
+            </Link>
+            <Link className="px-4 py-2" href="/pages/about">
+              About
+            </Link>
           </div>
-          <div className="md:flex md:justify-end">
-            <LanguageSelect />
-          </div>
-          <div className="col-span-2">
+          <div className="mt-8">
             <p>Dreaming since 2021.</p>
             <div className="text-xs font-light text-gray-600">
               <p className="my-2">

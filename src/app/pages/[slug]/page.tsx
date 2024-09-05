@@ -50,8 +50,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const page = await handleGetPage(params);
 
-  console.log('page', page);
-
   return (
     <Container>
       {page && (
