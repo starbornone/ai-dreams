@@ -49,10 +49,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }) {
+export default async function Page({ params, searchParams }) {
   const page = await handleGetPage(
     params,
-    process.env.NODE_ENV === 'development' ? true : false,
+    process.env.NODE_ENV === 'development' || searchParams?.preview
+      ? true
+      : false,
   );
 
   return (

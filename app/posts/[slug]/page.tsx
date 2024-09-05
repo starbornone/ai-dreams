@@ -69,10 +69,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Post({ params }) {
+export default async function Post({ params, searchParams }) {
   const { morePosts, post } = await handleGetPostAndMorePost(
     params,
-    process.env.NODE_ENV === 'development' ? true : false,
+    process.env.NODE_ENV === 'development' || searchParams?.preview
+      ? true
+      : false,
   );
 
   return (
