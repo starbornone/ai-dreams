@@ -93,13 +93,12 @@ const config: Config = {
           900: 'var(--color-green-900)',
         },
       },
+      fontFamily: {
+        sans: ['Lexend', 'sans-serif'],
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
 
 export default config;
