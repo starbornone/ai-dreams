@@ -40,13 +40,13 @@ export async function generateStaticParams() {
   }));
 }
 
-async function handleGetPost({ slug }, preview) {
-  const data = await getPost(slug, preview);
+async function handleGetPost({ slug }) {
+  const data = await getPost(slug);
   return data.post;
 }
 
-async function handleGetPostAndMorePost({ slug }, preview) {
-  const data: PostAndMorePostsProps = await getPostAndMorePosts(slug, preview);
+async function handleGetPostAndMorePost({ slug }) {
+  const data: PostAndMorePostsProps = await getPostAndMorePosts(slug);
   return {
     post: data.post,
     morePosts: data.morePosts || [],
@@ -54,10 +54,7 @@ async function handleGetPostAndMorePost({ slug }, preview) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post: PostProps = await handleGetPost(
-    params,
-    process.env.NODE_ENV === 'development' ? true : false,
-  );
+  const post: PostProps = await handleGetPost(params);
 
   return {
     title: `${post.title} | AI Dreams`,
@@ -69,13 +66,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Post({ params, searchParams }) {
-  const { morePosts, post } = await handleGetPostAndMorePost(
-    params,
-    searchParams?.preview ? true : false,
-  );
-
-  console.log('post', post);
+export default async function Post({ params }) {
+  const { morePosts, post } = await handleGetPostAndMorePost(params);
 
   return (
     <Container>
