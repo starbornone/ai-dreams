@@ -72,28 +72,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Post({ params, searchParams }) {
   const { morePosts, post } = await handleGetPostAndMorePost(
     params,
-    process.env.NODE_ENV === 'development' || searchParams?.preview
-      ? true
-      : false,
+    searchParams?.preview ? true : false,
   );
+
+  console.log('post', post);
 
   return (
     <Container>
-      <article className="post">
-        <Header
-          coverImage={post.coverImage}
-          date={post.date}
-          tags={post.tags}
-          title={post.title}
-        />
-        <div className="max-w-2xl mx-auto">
-          <Body content={post.content} />
-          <Footer
-            imageAuthor={{ name: post?.imageAuthor, url: post?.imageAuthorUrl }}
-            updatedAt={post?.updatedAt}
+      {post && (
+        <article className="post">
+          <Header
+            coverImage={post.coverImage}
+            date={post.date}
+            tags={post.tags}
+            title={post.title}
           />
-        </div>
-      </article>
+          <div className="max-w-2xl mx-auto">
+            <Body content={post.content} />
+            <Footer
+              imageAuthor={{
+                name: post?.imageAuthor,
+                url: post?.imageAuthorUrl,
+              }}
+              updatedAt={post?.updatedAt}
+            />
+          </div>
+        </article>
+      )}
       <SectionSeparator />
       {morePosts?.length > 0 && <PostList posts={morePosts} />}
     </Container>

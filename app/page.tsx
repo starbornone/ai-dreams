@@ -25,9 +25,9 @@ export const metadata = {
   ],
 };
 
-export default async function Page() {
+export default async function Page({ searchParams }) {
   const { morePosts, posts } = await getPosts(
-    process.env.NODE_ENV === 'development' ? true : false,
+    searchParams?.preview ? true : false,
   );
 
   return (
