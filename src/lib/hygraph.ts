@@ -123,7 +123,7 @@ export async function getLimitedPosts(preview?: boolean) {
   const data = await fetchAPI(
     `   
     query LimitedPosts {
-      posts(orderBy: date_DESC, first: 3) {
+      posts(orderBy: date_DESC, first: 3, where: {NOT: {category: {slug: "fiction"}, OR: {NOT: {category: {slug: "resources"}}}}}) {
         date
         title
         slug
@@ -133,7 +133,7 @@ export async function getLimitedPosts(preview?: boolean) {
           url(transformation: {image: {resize: {fit: crop, width: 2000, height: 1000}}})
         }
       }
-      morePosts: posts(orderBy: date_DESC, skip: 3) {
+      morePosts: posts(orderBy: date_DESC, skip: 3, where: {NOT: {category: {slug: "fiction"}, OR: {NOT: {category: {slug: "resources"}}}}}) {
         date
         title
         slug
