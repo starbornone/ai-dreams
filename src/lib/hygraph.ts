@@ -5,16 +5,17 @@
  * @returns {Promise<Object>} - The JSON data fetched from the API.
  */
 async function fetchAPI(query: string, { variables = {}, preview = false } = {}) {
-  // Fetch the API with the provided query and variables
-  const res = await fetch(process.env.HYGRAPH_PROJECT_API, {
+  const apiUrl = process.env.HYGRAPH_PROJECT_API;
+
+  if (!apiUrl) {
+    throw new Error('HYGRAPH_PROJECT_API is not defined');
+  }
+
+  const res = await fetch(apiUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${
-        preview
-          ? process.env.HYGRAPH_DEV_AUTH_TOKEN // Use dev token in preview mode
-          : process.env.HYGRAPH_PROD_AUTH_TOKEN // Use production token otherwise
-      }`,
+      Authorization: `Bearer ${preview ? process.env.HYGRAPH_DEV_AUTH_TOKEN : process.env.HYGRAPH_PROD_AUTH_TOKEN}`,
     },
     body: JSON.stringify({
       query,
@@ -22,16 +23,13 @@ async function fetchAPI(query: string, { variables = {}, preview = false } = {})
     }),
   });
 
-  // Parse response as JSON
   const json = await res.json();
 
-  // Check for any errors in the response and throw an error if found
   if (json.errors) {
     console.error(json.errors);
     throw new Error('Failed to fetch API');
   }
 
-  // Return the data from the JSON response
   return json.data;
 }
 
@@ -41,7 +39,7 @@ async function fetchAPI(query: string, { variables = {}, preview = false } = {})
  * @param {boolean} preview - Whether to fetch in preview mode.
  * @returns {Promise<Object>} - The post data.
  */
-export async function getPreviewPostBySlug(slug: string, preview?: boolean) {
+export async function getPreviewPostBySlug(slug: string | string[], preview?: boolean) {
   const data = await fetchAPI(
     `
     query PostBySlug($slug: String!, $stage: Stage!) {

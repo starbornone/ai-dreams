@@ -1,23 +1,28 @@
-import Link from 'next/link';
 import { format } from 'date-fns';
+import Link from 'next/link';
 
-export function PostLink({ post }) {
+interface PostLinkProps {
+  post: {
+    title: string;
+    slug: string;
+    tags: string[];
+    date: string;
+  };
+}
+
+export function PostLink({ post }: PostLinkProps) {
   return (
     <div className="my-4" key={post.slug}>
       <Link
-        className="block w-full p-4 text-xl bg-gray-900 img-link group"
+        className="img-link group block w-full bg-gray-900 p-4 text-xl"
         data-content={post.title}
         href={`/posts/${post.slug}`}
       >
-        <div className="flex justify-between w-full">
+        <div className="flex w-full justify-between">
           <div>
-            <div className="title-link group-hover:text-gray-800">
-              {post.title}
-            </div>
+            <div className="title-link group-hover:text-gray-800">{post.title}</div>
             <div className="text-sm font-light text-gray-500 group-hover:text-gray-700">
-              {post.tags.length > 0
-                ? post.tags.map((tag, index) => tag + (index === 0 ? ', ' : ''))
-                : null}
+              {post.tags.length > 0 ? post.tags.map((tag, index) => tag + (index === 0 ? ', ' : '')) : null}
             </div>
           </div>
           <div className="justify-self-end">

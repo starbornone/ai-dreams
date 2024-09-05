@@ -2,7 +2,7 @@ import { Container, PostList } from '@/components';
 import { getAllCategoriesWithSlug, getCategory, getPostsByCategory } from '@/lib/hygraph';
 import { Metadata } from 'next';
 
-interface PageProps {
+interface Props {
   params: { id: string };
 }
 
@@ -20,7 +20,7 @@ async function handleGetPosts({ id }: { id: string }) {
   };
 }
 
-export async function generateMetadata({ params: { id } }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
   const category = await getCategory(id);
 
   return {
@@ -30,7 +30,7 @@ export async function generateMetadata({ params: { id } }: PageProps): Promise<M
   };
 }
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: Props) {
   const { posts } = await handleGetPosts(params);
 
   return <Container>{posts && posts.length > 0 ? <PostList posts={posts} /> : null}</Container>;

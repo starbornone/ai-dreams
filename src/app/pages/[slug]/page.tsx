@@ -2,7 +2,7 @@ import { Body, Container, Footer, Header } from '@/components';
 import { getAllPagesWithSlug, getPage } from '@/lib/hygraph';
 import { Metadata } from 'next';
 
-interface PageProps {
+interface Props {
   params: { slug: string };
 }
 
@@ -35,7 +35,7 @@ async function handleGetPage({ slug }: { slug: string }) {
   return data.page;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page: PageProps = await handleGetPage(params);
   if (!page) return { title: 'AI Dreams' };
   return {
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: Props) {
   const page = await handleGetPage(params);
 
   return (

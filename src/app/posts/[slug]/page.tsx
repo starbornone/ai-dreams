@@ -2,7 +2,7 @@ import { Body, Container, Footer, Header, PostList, SectionSeparator } from '@/c
 import { getAllPostsWithSlug, getPost, getPostAndMorePosts } from '@/lib/hygraph';
 import { Metadata } from 'next';
 
-interface PageProps {
+interface Props {
   params: { slug: string };
 }
 
@@ -46,7 +46,7 @@ async function handleGetPostAndMorePost({ slug }: { slug: string }) {
   };
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post: PostProps = await handleGetPost(params);
 
   return {
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: Props) {
   const { morePosts, post } = await handleGetPostAndMorePost(params);
 
   return (
@@ -67,7 +67,7 @@ export default async function Page({ params }: PageProps) {
       {post && (
         <article className="post">
           <Header coverImage={post.coverImage} date={post.date} tags={post.tags} title={post.title} />
-          <div className="max-w-2xl mx-auto">
+          <div className="mx-auto max-w-2xl">
             <Body content={post.content} />
             <Footer
               imageAuthor={{
