@@ -1,10 +1,6 @@
 import { Metadata } from 'next';
 
-import {
-  getAllPostsWithSlug,
-  getPost,
-  getPostAndMorePosts,
-} from 'lib/hygraph';
+import { getAllPostsWithSlug, getPost, getPostAndMorePosts } from 'lib/hygraph';
 
 import {
   Body,
@@ -44,13 +40,13 @@ export async function generateStaticParams() {
   }));
 }
 
-async function handleGetPost({ slug }) {
-  const data = await getPost(slug);
+async function handleGetPost({ slug }, preview) {
+  const data = await getPost(slug, preview);
   return data.post;
 }
 
-async function handleGetPostAndMorePost({ slug }) {
-  const data: PostAndMorePostsProps = await getPostAndMorePosts(slug);
+async function handleGetPostAndMorePost({ slug }, preview) {
+  const data: PostAndMorePostsProps = await getPostAndMorePosts(slug, preview);
   return {
     post: data.post,
     morePosts: data.morePosts || [],
@@ -58,7 +54,10 @@ async function handleGetPostAndMorePost({ slug }) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post: PostProps = await handleGetPost(params);
+  const post: PostProps = await handleGetPost(
+    params,
+    process.env.NODE_ENV === 'development' ? true : false,
+  );
 
   return {
     title: `${post.title} | AI Dreams`,
@@ -71,7 +70,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Post({ params }) {
-  const { morePosts, post } = await handleGetPostAndMorePost(params);
+  const { morePosts, post } = await handleGetPostAndMorePost(
+    params,
+    process.env.NODE_ENV === 'development' ? true : false,
+  );
 
   return (
     <Container>

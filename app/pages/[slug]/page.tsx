@@ -29,13 +29,16 @@ export async function generateStaticParams() {
   }));
 }
 
-async function handleGetPage({ slug }) {
-  const data = await getPage(slug);
+async function handleGetPage({ slug }, preview) {
+  const data = await getPage(slug, preview);
   return data.page;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const page: PageProps = await handleGetPage(params);
+  const page: PageProps = await handleGetPage(
+    params,
+    process.env.NODE_ENV === 'development' ? true : false,
+  );
   if (!page) return { title: 'AI Dreams' };
   return {
     title: `${page.title} | AI Dreams`,
@@ -47,7 +50,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page({ params }) {
-  const page = await handleGetPage(params);
+  const page = await handleGetPage(
+    params,
+    process.env.NODE_ENV === 'development' ? true : false,
+  );
 
   return (
     <Container>

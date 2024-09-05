@@ -2,8 +2,8 @@ import { getLimitedPosts } from 'lib/hygraph';
 
 import { Container, MorePages, MorePosts, PostList } from 'components';
 
-async function getPosts() {
-  const data = await getLimitedPosts();
+async function getPosts(preview) {
+  const data = await getLimitedPosts(preview);
   return {
     posts: data.posts,
     morePosts: data.morePosts || [],
@@ -26,7 +26,9 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const { morePosts, posts } = await getPosts();
+  const { morePosts, posts } = await getPosts(
+    process.env.NODE_ENV === 'development' ? true : false,
+  );
 
   return (
     <>
