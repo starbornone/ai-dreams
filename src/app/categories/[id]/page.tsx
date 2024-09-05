@@ -4,7 +4,6 @@ import { Metadata } from 'next';
 
 interface PageProps {
   params: { id: string };
-  searchParams: { preview?: string };
 }
 
 export async function generateStaticParams() {
@@ -14,8 +13,8 @@ export async function generateStaticParams() {
   }));
 }
 
-async function handleGetPosts({ id }: { id: string }, preview?: boolean) {
-  const data = await getPostsByCategory(id, preview);
+async function handleGetPosts({ id }: { id: string }) {
+  const data = await getPostsByCategory(id);
   return {
     posts: data || [],
   };
@@ -31,8 +30,8 @@ export async function generateMetadata({ params: { id } }: PageProps): Promise<M
   };
 }
 
-export default async function Page({ params, searchParams }: PageProps) {
-  const { posts } = await handleGetPosts(params, searchParams?.preview === 'true');
+export default async function Page({ params }: PageProps) {
+  const { posts } = await handleGetPosts(params);
 
   return <Container>{posts && posts.length > 0 ? <PostList posts={posts} /> : null}</Container>;
 }
