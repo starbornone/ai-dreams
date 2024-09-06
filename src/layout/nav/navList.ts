@@ -23,12 +23,4 @@ export const navList = [
     name: 'Games',
     slug: 'games',
   },
-  {
-    name: 'Resources',
-    slug: 'resources',
-  },
-  {
-    name: 'Fiction',
-    slug: 'fiction',
-  },
 ];
