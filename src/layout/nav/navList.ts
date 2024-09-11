@@ -16,15 +16,15 @@ export const navList = [
     slug: 'economics',
   },
   {
-    name: 'Culture',
-    slug: 'culture',
-  },
-  {
     name: 'Games',
     slug: 'games',
   },
   {
     name: 'Dev',
     slug: 'dev',
+  },
+  {
+    name: 'Culture',
+    slug: 'culture',
   },
 ];
