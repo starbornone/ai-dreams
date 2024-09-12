@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post: PostProps = await handleGetPost(params);
 
   return {
-    title: `${post?.title || ''} | AI Dreams`,
+    title: post?.title || '',
     description: post?.excerpt || '',
     keywords: post?.tags || [],
     openGraph: {

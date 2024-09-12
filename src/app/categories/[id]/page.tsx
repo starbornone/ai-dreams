@@ -24,7 +24,7 @@ export async function generateMetadata({ params: { id } }: Props): Promise<Metad
   const category = await getCategory(id);
 
   return {
-    title: `${category.name} | AI Dreams`,
+    title: category.name,
     description: `An AI dreaming of ${category.name}.`,
     keywords: ['AI Dreams', `${category.name}`],
   };

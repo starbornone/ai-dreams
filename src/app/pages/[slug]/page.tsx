@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!page) return { title: 'AI Dreams' };
 
   return {
-    title: `${page?.title || ''} | AI Dreams`,
+    title: page?.title || '',
     description: page?.excerpt || '',
     openGraph: {
       images: page?.ogImage?.url || '',
