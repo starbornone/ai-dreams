@@ -33,7 +33,7 @@ export function PostPreview({ coverImage, date, excerpt, slug, tags, title }: Po
             {tags && (
               <div className="font-light text-gray-500 md:flex md:gap-8">
                 {tags.map((tag) => (
-                  <div key={tag}>{tag}</div>
+                  <div key={`${slug}-${tag}`}>{tag}</div>
                 ))}
               </div>
             )}
