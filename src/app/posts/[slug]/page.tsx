@@ -47,9 +47,7 @@ async function handleGetPostAndMorePost({ slug }: { slug: string }) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  console.log('params', params);
   const post: PostProps = await handleGetPost(params);
-  console.log('post', post);
 
   return {
     title: `${post?.title || ''} | AI Dreams`,
