@@ -33,13 +33,13 @@ export async function generateStaticParams() {
   }));
 }
 
-async function handleGetPost({ slug }: { slug: string }, preview = false) {
-  const data = await getPost(slug, preview);
-  return data?.post || null;
+async function handleGetPost({ slug }: { slug: string }) {
+  const data = await getPost(slug);
+  return data || null;
 }
 
-async function handleGetPostAndMorePost({ slug }: { slug: string }, preview = false) {
-  const data: PostAndMorePostsProps = await getPostAndMorePosts(slug, preview);
+async function handleGetPostAndMorePost({ slug }: { slug: string }) {
+  const data: PostAndMorePostsProps = await getPostAndMorePosts(slug);
   return {
     post: data?.post || null,
     morePosts: data?.morePosts || [],
@@ -47,7 +47,9 @@ async function handleGetPostAndMorePost({ slug }: { slug: string }, preview = fa
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  console.log('params', params);
   const post: PostProps = await handleGetPost(params);
+  console.log('post', post);
 
   return {
     title: `${post?.title || ''} | AI Dreams`,

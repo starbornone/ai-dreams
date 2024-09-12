@@ -1,9 +1,3 @@
-/**
- * Fetches data from the Hygraph API.
- * @param {string} query - GraphQL query string.
- * @param {Object} options - Additional options including variables and preview mode.
- * @returns {Promise<Object>} - The JSON data fetched from the API.
- */
 async function fetchAPI(query: string, { variables = {}, preview = false } = {}) {
   const apiUrl = process.env.HYGRAPH_PROJECT_API;
 
@@ -33,13 +27,7 @@ async function fetchAPI(query: string, { variables = {}, preview = false } = {})
   return json.data;
 }
 
-/**
- * Fetches a preview post by its slug.
- * @param {string} slug - The slug of the post.
- * @param {boolean} preview - Whether to fetch in preview mode.
- * @returns {Promise<Object>} - The post data.
- */
-export async function getPreviewPostBySlug(slug: string | string[], preview?: boolean) {
+export async function getPreviewPostBySlug(slug: string | string[]) {
   const data = await fetchAPI(
     `
     query PostBySlug($slug: String!, $stage: Stage!) {
@@ -49,7 +37,6 @@ export async function getPreviewPostBySlug(slug: string | string[], preview?: bo
     }
   `,
     {
-      preview,
       variables: {
         stage: 'DRAFT',
         slug,
@@ -59,10 +46,6 @@ export async function getPreviewPostBySlug(slug: string | string[], preview?: bo
   return data.post;
 }
 
-/**
- * Fetches all categories with their slugs.
- * @returns {Promise<Array<Object>>} - Array of categories.
- */
 export async function getAllCategoriesWithSlug() {
   const data = await fetchAPI(`
     {
@@ -75,14 +58,10 @@ export async function getAllCategoriesWithSlug() {
   return data.categories;
 }
 
-/**
- * Fetches all posts with their slugs.
- * @returns {Promise<Array<Object>>} - Array of posts.
- */
 export async function getAllPostsWithSlug() {
   const data = await fetchAPI(`
     {
-      posts {
+      posts(stage: PUBLISHED) {
         slug
       }
     }
@@ -90,14 +69,10 @@ export async function getAllPostsWithSlug() {
   return data.posts;
 }
 
-/**
- * Fetches all posts, ordered by date in descending order.
- * @returns {Promise<Array<Object>>} - Array of posts.
- */
 export async function getAllPosts() {
   const data = await fetchAPI(`
     {
-      posts(orderBy: date_DESC) {
+      posts(stage: PUBLISHED, orderBy: date_DESC) {
         date
         title
         slug
@@ -107,21 +82,16 @@ export async function getAllPosts() {
           url(transformation: {image: {resize: {fit: crop, width: 1200, height: 800}}})
         }
       }
-    }        
+    }
   `);
   return data.posts;
 }
 
-/**
- * Fetches a limited number of posts and more posts (pagination).
- * @param {boolean} preview - Whether to fetch in preview mode.
- * @returns {Promise<Object>} - Data of limited posts and more posts.
- */
-export async function getLimitedPosts(preview?: boolean) {
+export async function getLimitedPosts() {
   const data = await fetchAPI(
-    `   
+    `
     query LimitedPosts {
-      posts(orderBy: date_DESC, ${preview ? '' : 'first: 3,'} ) {
+      posts(stage: PUBLISHED, orderBy: date_DESC, first: 3) {
         date
         title
         slug
@@ -131,31 +101,19 @@ export async function getLimitedPosts(preview?: boolean) {
           url(transformation: {image: {resize: {fit: crop, width: 2000, height: 1000}}})
         }
       }
-      morePosts: posts(orderBy: date_DESC, skip: 3) {
+      morePosts: posts(stage: PUBLISHED, orderBy: date_DESC, skip: 3) {
         date
         title
         slug
         tags
       }
     }
-  `,
-    {
-      preview,
-      variables: {
-        stage: preview ? 'DRAFT' : 'PUBLISHED',
-      },
-    }
+  `
   );
   return data;
 }
 
-/**
- * Fetches a category by its slug.
- * @param {string} category - The slug of the category.
- * @param {boolean} preview - Whether to fetch in preview mode.
- * @returns {Promise<Object>} - The category data.
- */
-export async function getCategory(category: string, preview?: boolean) {
+export async function getCategory(category: string) {
   const data = await fetchAPI(
     `
     query Category($category: String!) {
@@ -166,9 +124,7 @@ export async function getCategory(category: string, preview?: boolean) {
     }
   `,
     {
-      preview,
       variables: {
-        stage: preview ? 'DRAFT' : 'PUBLISHED',
         category,
       },
     }
@@ -176,13 +132,7 @@ export async function getCategory(category: string, preview?: boolean) {
   return data.category;
 }
 
-/**
- * Fetches posts by category.
- * @param {string} category - The slug of the category.
- * @param {boolean} preview - Whether to fetch in preview mode.
- * @returns {Promise<Array<Object>>} - Array of posts for the category.
- */
-export async function getPostsByCategory(category: string, preview?: boolean) {
+export async function getPostsByCategory(category: string) {
   const data = await fetchAPI(
     `
     query PostsByCategory($category: String!, $stage: Stage!) {
@@ -199,23 +149,16 @@ export async function getPostsByCategory(category: string, preview?: boolean) {
     }
   `,
     {
-      preview,
       variables: {
-        stage: 'PUBLISHED',
         category,
+        stage: 'PUBLISHED',
       },
     }
   );
   return data.posts;
 }
 
-/**
- * Fetches a single post by its slug.
- * @param {string} slug - The slug of the post.
- * @param {boolean} preview - Whether to fetch in preview mode.
- * @returns {Promise<Object>} - The post data.
- */
-export async function getPost(slug: string, preview?: boolean) {
+export async function getPost(slug: string) {
   const data = await fetchAPI(
     `
     query PostBySlug($slug: String!, $stage: Stage!) {
@@ -241,23 +184,16 @@ export async function getPost(slug: string, preview?: boolean) {
     }
   `,
     {
-      preview,
       variables: {
-        stage: preview ? 'DRAFT' : 'PUBLISHED',
         slug,
+        stage: 'PUBLISHED',
       },
     }
   );
   return data.post;
 }
 
-/**
- * Fetches a post and more posts (excluding the current one) by its slug.
- * @param {string} slug - The slug of the post.
- * @param {boolean} preview - Whether to fetch in preview mode.
- * @returns {Promise<Object>} - The post and more posts data.
- */
-export async function getPostAndMorePosts(slug: string, preview?: boolean) {
+export async function getPostAndMorePosts(slug: string) {
   const data = await fetchAPI(
     `
     query PostBySlug($slug: String!, $stage: Stage!) {
@@ -280,7 +216,7 @@ export async function getPostAndMorePosts(slug: string, preview?: boolean) {
           url(transformation: {image: {resize: {fit: crop, width: 1200, height: 800}}})
         }
       }
-      morePosts: posts(orderBy: date_DESC, first: 3, where: {slug_not_in: [$slug]}) {
+      morePosts: posts(stage: PUBLISHED, orderBy: date_DESC, first: 3, where: {slug_not_in: [$slug]}) {
         date
         title
         slug
@@ -293,24 +229,19 @@ export async function getPostAndMorePosts(slug: string, preview?: boolean) {
     }
   `,
     {
-      preview,
       variables: {
-        stage: preview ? 'DRAFT' : 'PUBLISHED',
         slug,
+        stage: 'PUBLISHED',
       },
     }
   );
   return data;
 }
 
-/**
- * Fetches all pages with their slugs.
- * @returns {Promise<Array<Object>>} - Array of pages.
- */
 export async function getAllPagesWithSlug() {
   const data = await fetchAPI(`
     {
-      pages {
+      pages(stage: PUBLISHED) {
         slug
       }
     }
@@ -318,13 +249,7 @@ export async function getAllPagesWithSlug() {
   return data.pages;
 }
 
-/**
- * Fetches a single page by its slug.
- * @param {string} slug - The slug of the page.
- * @param {boolean} preview - Whether to fetch in preview mode.
- * @returns {Promise<Object>} - The page data.
- */
-export async function getPage(slug: string, preview?: boolean) {
+export async function getPage(slug: string) {
   const data = await fetchAPI(
     `
     query PageBySlug($slug: String!, $stage: Stage!) {
@@ -349,13 +274,12 @@ export async function getPage(slug: string, preview?: boolean) {
           title
         }
       }
-    }        
+    }
   `,
     {
-      preview,
       variables: {
-        stage: preview ? 'DRAFT' : 'PUBLISHED',
         slug,
+        stage: 'PUBLISHED',
       },
     }
   );

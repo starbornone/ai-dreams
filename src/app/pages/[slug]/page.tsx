@@ -30,9 +30,9 @@ export async function generateStaticParams() {
   }));
 }
 
-async function handleGetPage({ slug }: { slug: string }, preview = false) {
-  const data = await getPage(slug, preview);
-  return data?.page || null;
+async function handleGetPage({ slug }: { slug: string }) {
+  const data = await getPage(slug);
+  return data || null;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

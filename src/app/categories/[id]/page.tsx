@@ -13,8 +13,8 @@ export async function generateStaticParams() {
   }));
 }
 
-async function handleGetPosts({ id }: { id: string }, preview = false) {
-  const data = await getPostsByCategory(id, preview);
+async function handleGetPosts({ id }: { id: string }) {
+  const data = await getPostsByCategory(id);
   return {
     posts: data || [],
   };
