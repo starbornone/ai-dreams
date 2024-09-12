@@ -1,8 +1,8 @@
 import { Container, MorePages, MorePosts, PostList } from '@/components';
 import { getLimitedPosts } from '@/lib/hygraph';
 
-async function getPosts(preview = false) {
-  const data = await getLimitedPosts(preview);
+async function getPosts() {
+  const data = await getLimitedPosts();
   return {
     posts: data.posts,
     morePosts: data.morePosts || [],
