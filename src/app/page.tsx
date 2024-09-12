@@ -1,16 +1,20 @@
 import { Container, MorePages, MorePosts, PostList } from '@/components';
 import { getLimitedPosts } from '@/lib/hygraph';
 
-async function getPosts() {
-  const data = await getLimitedPosts();
+interface Props {
+  searchParams: { preview?: boolean };
+}
+
+async function getPosts(preview = false) {
+  const data = await getLimitedPosts(preview);
   return {
     posts: data.posts,
     morePosts: data.morePosts || [],
   };
 }
 
-export default async function Page() {
-  const { morePosts, posts } = await getPosts();
+export default async function Page({ searchParams }: Props) {
+  const { morePosts, posts } = await getPosts(searchParams?.preview);
 
   return (
     <>

@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 
 interface Props {
   params: { id: string };
+  searchParams: { preview?: boolean };
 }
 
 export async function generateStaticParams() {
@@ -13,15 +14,15 @@ export async function generateStaticParams() {
   }));
 }
 
-async function handleGetPosts({ id }: { id: string }) {
-  const data = await getPostsByCategory(id);
+async function handleGetPosts({ id }: { id: string }, preview = false) {
+  const data = await getPostsByCategory(id, preview);
   return {
     posts: data || [],
   };
 }
 
-export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
-  const category = await getCategory(id);
+export async function generateMetadata({ params: { id }, searchParams }: Props): Promise<Metadata> {
+  const category = await getCategory(id, searchParams?.preview);
 
   return {
     title: `${category.name} | AI Dreams`,

@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 
 interface Props {
   params: { slug: string };
+  searchParams: { preview?: boolean };
 }
 
 interface PageProps {
@@ -30,36 +31,42 @@ export async function generateStaticParams() {
   }));
 }
 
-async function handleGetPage({ slug }: { slug: string }) {
-  const data = await getPage(slug);
-  return data;
+async function handleGetPage({ slug }: { slug: string }, preview = false) {
+  const data = await getPage(slug, preview);
+  return data?.page || null;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const page: PageProps = await handleGetPage(params);
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
+  const page: PageProps = await handleGetPage(params, searchParams?.preview);
   if (!page) return { title: 'AI Dreams' };
+
   return {
     title: `${page?.title || ''} | AI Dreams`,
     description: page?.excerpt || '',
     openGraph: {
-      images: page?.ogImage?.url,
+      images: page?.ogImage?.url || '',
     },
   };
 }
 
-export default async function Page({ params }: Props) {
-  const page = await handleGetPage(params);
+export default async function Page({ params, searchParams }: Props) {
+  const page = await handleGetPage(params, searchParams?.preview);
 
   return (
     <Container>
-      {page && (
+      {page ? (
         <article className="page mb-32">
           <Header coverImage={page.coverImage} title={page.title} />
           <div className="mx-auto max-w-2xl">
             <Body content={page.content} />
-            <Footer imageAuthor={{ name: page.imageAuthor, url: page.imageAuthorUrl }} updatedAt={page.updatedAt} />
+            <Footer
+              imageAuthor={{ name: page?.imageAuthor || '', url: page?.imageAuthorUrl || '' }}
+              updatedAt={page?.updatedAt || ''}
+            />
           </div>
         </article>
+      ) : (
+        <p>Page not found</p>
       )}
     </Container>
   );
