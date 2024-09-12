@@ -4,7 +4,6 @@ import { Metadata } from 'next';
 
 interface Props {
   params: { slug: string };
-  searchParams: { preview?: boolean };
 }
 
 interface PageProps {
@@ -36,8 +35,8 @@ async function handleGetPage({ slug }: { slug: string }, preview = false) {
   return data?.page || null;
 }
 
-export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const page: PageProps = await handleGetPage(params, searchParams?.preview);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const page: PageProps = await handleGetPage(params);
   if (!page) return { title: 'AI Dreams' };
 
   return {
@@ -49,8 +48,8 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   };
 }
 
-export default async function Page({ params, searchParams }: Props) {
-  const page = await handleGetPage(params, searchParams?.preview);
+export default async function Page({ params }: Props) {
+  const page = await handleGetPage(params);
 
   return (
     <Container>

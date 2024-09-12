@@ -4,7 +4,6 @@ import { Metadata } from 'next';
 
 interface Props {
   params: { slug: string };
-  searchParams: { preview?: boolean };
 }
 
 interface PostProps {
@@ -47,8 +46,8 @@ async function handleGetPostAndMorePost({ slug }: { slug: string }, preview = fa
   };
 }
 
-export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const post: PostProps = await handleGetPost(params, searchParams?.preview);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post: PostProps = await handleGetPost(params);
 
   return {
     title: `${post?.title || ''} | AI Dreams`,
@@ -60,8 +59,8 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   };
 }
 
-export default async function Page({ params, searchParams }: Props) {
-  const { morePosts, post } = await handleGetPostAndMorePost(params, searchParams?.preview);
+export default async function Page({ params }: Props) {
+  const { morePosts, post } = await handleGetPostAndMorePost(params);
 
   return (
     <Container>
