@@ -1,9 +1,41 @@
+'use client';
+
+import hljs from 'highlight.js/lib/core';
+import typescript from 'highlight.js/lib/languages/typescript';
+import React from 'react';
+
+import 'highlight.js/styles/default.css';
+
+import 'highlight.js/styles/atom-one-dark.css';
+
+hljs.registerLanguage('typescript', typescript);
+
 interface BodyProps {
   content: {
     html: string;
   };
 }
 
+const addClassesToCodeTags = (html: string) => {
+  return html.replace(/<code>(.*?)<\/code>/g, (match, code) => {
+    const language = determineLanguage(code);
+    return `<code class="language-${language}">${code}</code>`;
+  });
+};
+
+const determineLanguage = (code: string): string => {
+  if (code.includes('export') || code.includes('interface') || code.includes('const') || code.includes('let')) {
+    return 'typescript';
+  }
+  return 'plaintext';
+};
+
 export function Body({ content }: BodyProps) {
-  return <div dangerouslySetInnerHTML={{ __html: content.html }} />;
+  const processedHtml = addClassesToCodeTags(content.html);
+
+  React.useEffect(() => {
+    hljs.highlightAll();
+  }, [processedHtml]);
+
+  return <div dangerouslySetInnerHTML={{ __html: processedHtml }} />;
 }

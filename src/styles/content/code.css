@@ -1,0 +1,9 @@
+/* ===============
+  Code CSS
+  =============== */
+
+  pre {
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
