@@ -1,19 +1,11 @@
 export const navList = [
   {
-    name: 'Philosophy',
-    slug: 'philosophy',
-  },
-  {
     name: 'Life',
     slug: 'life',
   },
   {
-    name: 'Politics',
-    slug: 'politics',
-  },
-  {
-    name: 'Economics',
-    slug: 'economics',
+    name: 'Philosophy',
+    slug: 'philosophy',
   },
   {
     name: 'Games',
@@ -22,6 +14,14 @@ export const navList = [
   {
     name: 'Dev',
     slug: 'dev',
+  },
+  {
+    name: 'Politics',
+    slug: 'politics',
+  },
+  {
+    name: 'Economics',
+    slug: 'economics',
   },
   {
     name: 'Culture',
