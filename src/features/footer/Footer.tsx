@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import styles from './Footer.module.css';
 
 interface FooterProps {
   imageAuthor?: { name: string; url: string };
@@ -7,16 +8,18 @@ interface FooterProps {
 
 export function Footer({ imageAuthor, updatedAt }: FooterProps) {
   return (
-    <div className="my-12 text-sm text-gray-500 content md:my-16">
+    <div className={styles['footer']}>
       {imageAuthor?.name && (
-        <div>
+        <div className={styles['footer__content']}>
           Cover image by{' '}
           <a href={imageAuthor.url} rel="noreferrer" target="_blank">
             {imageAuthor.name}
           </a>
         </div>
       )}
-      {updatedAt && <div>Last updated at {format(new Date(updatedAt), 'dd MMMM yyyy')}</div>}
+      {updatedAt && (
+        <div className={styles['footer__content']}>Last updated at {format(new Date(updatedAt), 'dd MMMM yyyy')}</div>
+      )}
     </div>
   );
 }
