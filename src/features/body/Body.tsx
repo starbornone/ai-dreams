@@ -5,7 +5,9 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import React from 'react';
 import styles from './Body.module.css';
 
+// Default styling
 import 'highlight.js/styles/default.css';
+// Atom One Dark styling
 import 'highlight.js/styles/atom-one-dark.css';
 
 hljs.registerLanguage('typescript', typescript);
@@ -19,7 +21,7 @@ interface BodyProps {
 const addClassesToCodeTags = (html: string) => {
   return html.replace(/<code>(.*?)<\/code>/g, (match, code) => {
     const language = determineLanguage(code);
-    return `<code class="${styles['body__code']} language-${language}">${code}</code>`;
+    return `<code class="language-${language}">${code}</code>`;
   });
 };
 
