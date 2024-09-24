@@ -1,4 +1,5 @@
-import { Body, Container, Footer, Header } from '@/components';
+import { Container } from '@/components';
+import { Body, Footer, Header } from '@/features';
 import { getAllPagesWithSlug, getPage } from '@/lib/hygraph';
 import { Metadata } from 'next';
 

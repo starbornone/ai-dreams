@@ -1,4 +1,4 @@
-import { PostPreview } from '@/components';
+import { PostPreview } from '@/features';
 
 export function PostList({ posts }) {
   return (

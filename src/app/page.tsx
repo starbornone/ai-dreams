@@ -1,4 +1,5 @@
-import { Container, MorePages, MorePosts, PostList } from '@/components';
+import { Container } from '@/components';
+import { MorePages, MorePosts, PostList } from '@/features';
 import { getLimitedPosts } from '@/lib/hygraph';
 
 async function getPosts() {

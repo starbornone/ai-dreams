@@ -1,4 +1,5 @@
-import { Container, PostList } from '@/components';
+import { Container } from '@/components';
+import { PostList } from '@/features';
 import { getAllCategoriesWithSlug, getCategory, getPostsByCategory } from '@/lib/hygraph';
 import { Metadata } from 'next';
 

@@ -1,4 +1,4 @@
-import { CoverImage } from '@/components';
+import { CoverImage } from '@/features';
 import { format } from 'date-fns';
 import Link from 'next/link';
 
@@ -13,7 +13,7 @@ interface PostPreviewProps {
 
 export function PostPreview({ coverImage, date, excerpt, slug, tags, title }: PostPreviewProps) {
   return (
-    <div className="grid gap-8 mt-6 md:grid-cols-2 lg:gap-y-16">
+    <div className="mt-6 grid gap-8 md:grid-cols-2 lg:gap-y-16">
       {coverImage && (
         <div>
           <CoverImage slug={`posts/${slug}`} title={title} url={coverImage.url} />

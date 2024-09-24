@@ -1,4 +1,5 @@
-import { Container, CoverImage } from '@/components';
+import { Container } from '@/components';
+import { CoverImage } from '@/features';
 import Link from 'next/link';
 
 const pages = [
@@ -21,14 +22,14 @@ const pages = [
 
 export function MorePages() {
   return (
-    <div className="py-16 my-16 bg-gray-900 md:my-32 md:py-32">
+    <div className="my-16 bg-gray-900 py-16 md:my-32 md:py-32">
       <Container>
-        <div className="grid gap-16 mx-auto lg:grid-cols-3">
+        <div className="mx-auto grid gap-16 lg:grid-cols-3">
           {pages.map((page) => (
             <Link href={page.href} key={page.href}>
-              <div className="bg-gray-800 img-link group">
+              <div className="img-link group bg-gray-800">
                 {page.imageUrl && <CoverImage title={page.title} url={page.imageUrl} />}
-                <h3 className="p-6 -mt-2 title-link group-hover:text-gray-800">{page.title}</h3>
+                <h3 className="title-link -mt-2 p-6 group-hover:text-gray-800">{page.title}</h3>
               </div>
             </Link>
           ))}

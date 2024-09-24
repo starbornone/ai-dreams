@@ -1,4 +1,4 @@
-import { PostLink } from '@/components';
+import { PostLink } from '@/features';
 
 interface MorePostsProps {
   posts: { title: string; slug: string; tags: string[]; date: string }[];

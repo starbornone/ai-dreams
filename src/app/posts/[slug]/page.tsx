@@ -1,4 +1,5 @@
-import { Body, Container, Footer, Header, PostList, SectionSeparator } from '@/components';
+import { Container, SectionSeparator } from '@/components';
+import { Body, Footer, Header, PostList } from '@/features';
 import { getAllPostsWithSlug, getPost, getPostAndMorePosts } from '@/lib/hygraph';
 import { Metadata } from 'next';
 
