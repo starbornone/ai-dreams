@@ -1,5 +1,7 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
+import styles from './CoverImage.module.css';
 
 interface CoverImageProps {
   slug?: string;
@@ -9,13 +11,19 @@ interface CoverImageProps {
 
 export function CoverImage({ title, url, slug }: CoverImageProps) {
   const image = (
-    <Image alt={title} className="object-cover object-center link-inner" height={600} src={url} width={1200} />
+    <Image
+      alt={title}
+      className={clsx(styles['cover-image__image'], 'link-inner')}
+      height={600}
+      src={url}
+      width={1200}
+    />
   );
 
   return (
-    <div className="sm:mx-0">
+    <div className={styles['cover-image']}>
       {slug ? (
-        <Link className="img-link" href={`/${slug}`}>
+        <Link className={clsx(styles['cover-image__link'], 'img-link')} href={`/${slug}`}>
           {image}
         </Link>
       ) : (

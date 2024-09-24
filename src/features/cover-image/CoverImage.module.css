@@ -1,0 +1,13 @@
+.cover-image {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.cover-image__link {
+  display: block;
+}
+
+.cover-image__image {
+  object-fit: cover;
+  object-position: center;
+}
