@@ -1,12 +1,18 @@
 import { Footer, Header, Meta, MobileNav } from '@/layout';
 import '@/styles/index.css';
 import type { Metadata } from 'next';
-import { Lexend } from 'next/font/google';
+import { Lexend, Source_Code_Pro } from 'next/font/google';
 
 const lexend = Lexend({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-lexend',
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-source-code-pro',
 });
 
 export const metadata: Metadata = {
@@ -46,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lexend.variable}>
+      <body className={`${lexend.variable} ${sourceCodePro.variable}`}>
         <Meta />
         <div className="min-h-screen">
           <hr className="h-4 border-0 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500" />

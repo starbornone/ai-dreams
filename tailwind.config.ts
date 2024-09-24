@@ -95,6 +95,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Lexend', 'sans-serif'],
+        mono: ['Source Code Pro', 'sans-serif'],
       },
     },
   },

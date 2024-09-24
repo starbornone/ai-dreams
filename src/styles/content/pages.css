@@ -6,7 +6,14 @@
 .page h2,
 .page h3,
 .page h4 {
-  font-weight: 500;
+  font-family: 'Neon';
+  font-weight: 700;
+}
+
+.page h2,
+.page h3,
+.page h4 {
+  text-shadow: 0.1em 0.1em 0 var(--color-purple-500);
 }
 
 .page p,
@@ -17,26 +24,8 @@
   margin-top: 1.5rem;
 }
 
-.page .post-title {
-  font-family: 'Neon';
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-shadow: 0.1em 0.1em 0 var(--color-purple-500);
-}
-
-@media (min-width: 640px) {
-  .page .post-title {
-    font-size: 3.75rem;
-  }
-}
-
-.page h2 {
-  font-family: 'Neon';
-}
-
 .page h3 {
   border-color: var(--color-gray-700);
   border-left-width: 4px;
-  font-family: 'Neon';
   padding-left: 0.75rem;
 }
