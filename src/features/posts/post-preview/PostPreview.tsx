@@ -14,11 +14,17 @@ interface PostPreviewProps {
 export function PostPreview({ coverImage, date, excerpt, slug, tags, title }: PostPreviewProps) {
   return (
     <div className="mt-6 grid gap-8 md:grid-cols-2 lg:gap-y-16">
-      {coverImage && (
-        <div>
-          <CoverImage slug={`posts/${slug}`} title={title} url={coverImage.url} />
-        </div>
-      )}
+      <div>
+        <CoverImage
+          slug={`posts/${slug}`}
+          title={title}
+          url={
+            coverImage
+              ? coverImage.url
+              : 'https://res.cloudinary.com/starborn/image/upload/v1727344591/ai-dreams/ai-dreams_mryb03.png'
+          }
+        />
+      </div>
       <div className="flex flex-wrap content-between">
         <div>
           <h2 className="mb-3 text-2xl leading-snug">
