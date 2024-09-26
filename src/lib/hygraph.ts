@@ -1,4 +1,4 @@
-async function fetchAPI(query: string, { variables = {}, preview = false } = {}) {
+async function fetchAPI(query: string, { variables = {} } = {}) {
   const apiUrl = process.env.HYGRAPH_PROJECT_API;
 
   if (!apiUrl) {
@@ -9,7 +9,11 @@ async function fetchAPI(query: string, { variables = {}, preview = false } = {})
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${preview ? process.env.HYGRAPH_DEV_AUTH_TOKEN : process.env.HYGRAPH_PROD_AUTH_TOKEN}`,
+      Authorization: `Bearer ${
+        process.env.NODE_ENV === 'development'
+          ? process.env.HYGRAPH_DEV_AUTH_TOKEN
+          : process.env.HYGRAPH_PROD_AUTH_TOKEN
+      }`,
     },
     body: JSON.stringify({
       query,
@@ -30,7 +34,7 @@ async function fetchAPI(query: string, { variables = {}, preview = false } = {})
 export async function getPreviewPostBySlug(slug: string | string[]) {
   const data = await fetchAPI(
     `
-    query PostBySlug($slug: String!, $stage: Stage!) {
+    query GetPreviewPostBySlug($slug: String!, $stage: Stage!) {
       post(where: {slug: $slug}, stage: $stage) {
         slug
       }
@@ -47,51 +51,47 @@ export async function getPreviewPostBySlug(slug: string | string[]) {
 }
 
 export async function getAllCategoriesWithSlug() {
-  const data = await fetchAPI(`
-    {
-      categories {
+  const data = await fetchAPI(
+    `
+    query GetAllCategoriesWithSlug($stage: Stage!) {
+      categories(stage: $stage) {
         name
         slug
       }
     }
-  `);
+  `,
+    {
+      variables: {
+        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
+      },
+    }
+  );
   return data.categories;
 }
 
 export async function getAllPostsWithSlug() {
-  const data = await fetchAPI(`
-    {
-      posts(stage: PUBLISHED) {
+  const data = await fetchAPI(
+    `
+    query GetAllPostsWithSlug($stage: Stage!) {
+      posts(stage: $stage) {
         slug
       }
     }
-  `);
-  return data.posts;
-}
-
-export async function getAllPosts() {
-  const data = await fetchAPI(`
+  `,
     {
-      posts(stage: PUBLISHED, orderBy: date_DESC) {
-        date
-        title
-        slug
-        excerpt
-        tags
-        coverImage {
-          url(transformation: {image: {resize: {fit: crop, width: 1200, height: 800}}})
-        }
-      }
+      variables: {
+        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
+      },
     }
-  `);
+  );
   return data.posts;
 }
 
 export async function getLimitedPosts() {
   const data = await fetchAPI(
     `
-    query LimitedPosts {
-      posts(stage: PUBLISHED, orderBy: date_DESC, first: 3) {
+    query GetLimitedPosts($stage: Stage!) {
+      posts(stage: $stage, orderBy: date_DESC, first: 3, where: {date_not: null}) {
         date
         title
         slug
@@ -101,14 +101,19 @@ export async function getLimitedPosts() {
           url(transformation: {image: {resize: {fit: crop, width: 2000, height: 1000}}})
         }
       }
-      morePosts: posts(stage: PUBLISHED, orderBy: date_DESC, skip: 3) {
+      morePosts: posts(stage: $stage, orderBy: date_DESC, skip: 3, where: {date_not: null}) {
         date
         title
         slug
         tags
       }
     }
-  `
+  `,
+    {
+      variables: {
+        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
+      },
+    }
   );
   return data;
 }
@@ -116,8 +121,8 @@ export async function getLimitedPosts() {
 export async function getCategory(category: string) {
   const data = await fetchAPI(
     `
-    query Category($category: String!) {
-      category(where: {slug: $category}) {
+    query GetCategory($stage: Stage!, $category: String!) {
+      category(stage: $stage, where: {slug: $category}) {
         name
         slug
       }
@@ -126,6 +131,7 @@ export async function getCategory(category: string) {
     {
       variables: {
         category,
+        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
       },
     }
   );
@@ -135,7 +141,7 @@ export async function getCategory(category: string) {
 export async function getPostsByCategory(category: string) {
   const data = await fetchAPI(
     `
-    query PostsByCategory($category: String!, $stage: Stage!) {
+    query GetPostsByCategory($category: String!, $stage: Stage!) {
       posts(stage: $stage, where: {category: {slug: $category}}, orderBy: date_DESC) {
         date
         title
@@ -151,7 +157,7 @@ export async function getPostsByCategory(category: string) {
     {
       variables: {
         category,
-        stage: 'PUBLISHED',
+        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
       },
     }
   );
@@ -161,7 +167,7 @@ export async function getPostsByCategory(category: string) {
 export async function getPost(slug: string) {
   const data = await fetchAPI(
     `
-    query PostBySlug($slug: String!, $stage: Stage!) {
+    query GetPost($slug: String!, $stage: Stage!) {
       post(stage: $stage, where: {slug: $slug}) {
         date
         title
@@ -186,7 +192,7 @@ export async function getPost(slug: string) {
     {
       variables: {
         slug,
-        stage: 'PUBLISHED',
+        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
       },
     }
   );
@@ -196,7 +202,7 @@ export async function getPost(slug: string) {
 export async function getPostAndMorePosts(slug: string) {
   const data = await fetchAPI(
     `
-    query PostBySlug($slug: String!, $stage: Stage!) {
+    query GetPostAndMorePosts($slug: String!, $stage: Stage!) {
       post(stage: $stage, where: {slug: $slug}) {
         date
         title
@@ -216,7 +222,7 @@ export async function getPostAndMorePosts(slug: string) {
           url(transformation: {image: {resize: {fit: crop, width: 1200, height: 800}}})
         }
       }
-      morePosts: posts(stage: PUBLISHED, orderBy: date_DESC, first: 3, where: {slug_not_in: [$slug]}) {
+      morePosts: posts(stage: $stage, orderBy: date_DESC, first: 3, where: {slug_not_in: [$slug]}) {
         date
         title
         slug
@@ -231,7 +237,7 @@ export async function getPostAndMorePosts(slug: string) {
     {
       variables: {
         slug,
-        stage: 'PUBLISHED',
+        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
       },
     }
   );
@@ -239,20 +245,27 @@ export async function getPostAndMorePosts(slug: string) {
 }
 
 export async function getAllPagesWithSlug() {
-  const data = await fetchAPI(`
-    {
-      pages(stage: PUBLISHED) {
+  const data = await fetchAPI(
+    `
+    query GetAllPagesWithSlug($stage: Stage!) {
+      pages(stage: $stage) {
         slug
       }
     }
-  `);
+  `,
+    {
+      variables: {
+        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
+      },
+    }
+  );
   return data.pages;
 }
 
 export async function getPage(slug: string) {
   const data = await fetchAPI(
     `
-    query PageBySlug($slug: String!, $stage: Stage!) {
+    query GetPage($slug: String!, $stage: Stage!) {
       page(stage: $stage, where: {slug: $slug}) {
         title
         slug
@@ -279,7 +292,7 @@ export async function getPage(slug: string) {
     {
       variables: {
         slug,
-        stage: 'PUBLISHED',
+        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
       },
     }
   );

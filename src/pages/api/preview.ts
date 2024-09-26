@@ -1,17 +1,10 @@
+import { getPreviewPostBySlug } from '@/lib/hygraph';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { getPreviewPostBySlug } from '@/lib/hygraph';
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS
-  if (
-    req.query.secret !== process.env.HYGRAPH_PREVIEW_SECRET ||
-    !req.query.slug
-  ) {
+  if (req.query.secret !== process.env.HYGRAPH_PREVIEW_SECRET || !req.query.slug) {
     return res.status(401).json({ message: 'Invalid token' });
   }
 
