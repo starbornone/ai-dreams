@@ -34,8 +34,8 @@ export function PostPreview({ post }: PostPreviewProps) {
           </p>
         </div>
         <div className="w-full pb-2">
-          <div className="flex justify-between text-sm text-gray-500">
-            <div className="flex gap-6">
+          <div className="text-sm text-gray-500 lg:flex lg:justify-between">
+            <div className="lg:flex lg:gap-6">
               {post.category && (
                 <div className="flex items-center gap-2 lowercase">
                   <svg
