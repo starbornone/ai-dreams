@@ -4,7 +4,7 @@ import { Loading } from '@/components';
 import { PostLink } from '@/features';
 import { PostData } from '@/types';
 import axios from 'axios';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface MorePostsProps {
   initialSkip: number;
@@ -18,7 +18,7 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
   const [hasMore, setHasMore] = useState<boolean>(true);
   const observerRef = useRef<HTMLDivElement | null>(null);
 
-  const fetchMorePosts = async () => {
+  const fetchMorePosts = useCallback(async () => {
     if (loading || !hasMore) return;
 
     setLoading(true);
@@ -39,12 +39,11 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [loading, hasMore, limit, skip]);
 
   useEffect(() => {
     fetchMorePosts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fetchMorePosts]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -60,14 +59,16 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
       }
     );
 
-    if (observerRef.current) {
-      observer.observe(observerRef.current);
+    const currentObserverRef = observerRef.current;
+
+    if (currentObserverRef) {
+      observer.observe(currentObserverRef);
     }
 
     return () => {
-      if (observerRef.current) observer.unobserve(observerRef.current);
+      if (currentObserverRef) observer.unobserve(currentObserverRef);
     };
-  }, [loading, hasMore]);
+  }, [fetchMorePosts, loading, hasMore]);
 
   return (
     <div className="my-16 md:my-32">
