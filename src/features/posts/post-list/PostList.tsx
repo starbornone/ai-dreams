@@ -1,8 +1,8 @@
 import { PostPreview } from '@/features';
-import { Post } from '@/types';
+import { PostData } from '@/types';
 
 interface PostListProps {
-  posts: Post[];
+  posts: PostData[];
 }
 
 export function PostList({ posts }: PostListProps) {

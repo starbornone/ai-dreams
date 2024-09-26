@@ -1,9 +1,9 @@
 import { getLimitedPosts } from '@/lib/hygraph';
-import { Post } from '@/types';
+import { PostData } from '@/types';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 interface Data {
-  posts: Post[];
+  posts: PostData[];
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data | { error: string }>) {

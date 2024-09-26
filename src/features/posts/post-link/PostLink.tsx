@@ -1,13 +1,9 @@
+import { PostData } from '@/types';
 import { format } from 'date-fns';
 import Link from 'next/link';
 
 interface PostLinkProps {
-  post: {
-    title: string;
-    slug: string;
-    tags: string[];
-    date: string;
-  };
+  post: PostData;
 }
 
 export function PostLink({ post }: PostLinkProps) {

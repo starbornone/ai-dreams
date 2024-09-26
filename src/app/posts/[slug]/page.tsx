@@ -1,30 +1,16 @@
 import { Container, SectionSeparator } from '@/components';
 import { Body, Footer, Header, PostList } from '@/features';
 import { getAllPostsWithSlug, getPost, getPostAndMorePosts } from '@/lib/hygraph';
+import { PostData } from '@/types';
 import { Metadata } from 'next';
 
 interface Props {
   params: { slug: string };
 }
 
-interface PostProps {
-  content: {
-    html: string;
-  };
-  coverImage?: { url: string };
-  date: string;
-  excerpt: string;
-  imageAuthor?: string;
-  imageAuthorUrl?: string;
-  ogImage?: { url: string };
-  tags: string[];
-  title: string;
-  updatedAt?: string;
-}
-
 interface PostAndMorePostsProps {
-  post: PostProps;
-  morePosts: PostProps[];
+  post: PostData;
+  morePosts: PostData[];
 }
 
 export async function generateStaticParams() {
@@ -48,7 +34,7 @@ async function handleGetPostAndMorePost({ slug }: { slug: string }) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post: PostProps = await handleGetPost(params);
+  const post: PostData = await handleGetPost(params);
 
   return {
     title: post?.title || '',

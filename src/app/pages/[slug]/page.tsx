@@ -1,27 +1,11 @@
 import { Container } from '@/components';
 import { Body, Footer, Header } from '@/features';
 import { getAllPagesWithSlug, getPage } from '@/lib/hygraph';
+import { PageData } from '@/types';
 import { Metadata } from 'next';
 
 interface Props {
   params: { slug: string };
-}
-
-interface PageProps {
-  content: {
-    html: string;
-  };
-  excerpt: string;
-  imageAuthor?: string;
-  imageAuthorUrl?: string;
-  localizations: {
-    excerpt: string;
-    locale: 'en' | 'zh_CN';
-    title: string;
-  }[];
-  ogImage?: { url: string };
-  title: string;
-  updatedAt?: string;
 }
 
 export async function generateStaticParams() {
@@ -37,7 +21,7 @@ async function handleGetPage({ slug }: { slug: string }) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const page: PageProps = await handleGetPage(params);
+  const page: PageData = await handleGetPage(params);
   if (!page) return { title: 'AI Dreams' };
 
   return {

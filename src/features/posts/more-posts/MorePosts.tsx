@@ -2,7 +2,7 @@
 
 import { Loading } from '@/components';
 import { PostLink } from '@/features';
-import { Post } from '@/types';
+import { PostData } from '@/types';
 import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
 
@@ -12,7 +12,7 @@ interface MorePostsProps {
 }
 
 export function MorePosts({ initialSkip, limit }: MorePostsProps) {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<PostData[]>([]);
   const [skip, setSkip] = useState<number>(initialSkip);
   const [loading, setLoading] = useState<boolean>(false);
   const [hasMore, setHasMore] = useState<boolean>(true);
@@ -26,7 +26,7 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
       const response = await axios.get('/api/posts', {
         params: { skip, limit },
       });
-      const newPosts: Post[] = response.data.posts;
+      const newPosts: PostData[] = response.data.posts;
 
       if (newPosts.length < limit) {
         setHasMore(false);

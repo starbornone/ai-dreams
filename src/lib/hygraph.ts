@@ -1,4 +1,4 @@
-import { GetLimitedPostsResponse, Post } from '@/types';
+import { GetLimitedPostsResponse, PostData } from '@/types';
 
 async function fetchAPI(query: string, { variables = {} } = {}) {
   const apiUrl = process.env.HYGRAPH_PROJECT_API;
@@ -89,7 +89,7 @@ export async function getAllPostsWithSlug() {
   return data.posts;
 }
 
-export async function getLimitedPosts(skip = 0, limit = 3): Promise<Post[]> {
+export async function getLimitedPosts(skip = 0, limit = 3): Promise<PostData[]> {
   const data: GetLimitedPostsResponse = await fetchAPI(
     `
     query GetLimitedPosts($stage: Stage!, $skip: Int!, $limit: Int!) {

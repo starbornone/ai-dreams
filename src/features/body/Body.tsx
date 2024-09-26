@@ -8,14 +8,13 @@ import styles from './Body.module.css';
 // Default styling
 import 'highlight.js/styles/default.css';
 // Atom One Dark styling
+import { BodyContent } from '@/types';
 import 'highlight.js/styles/atom-one-dark.css';
 
 hljs.registerLanguage('typescript', typescript);
 
 interface BodyProps {
-  content: {
-    html: string;
-  };
+  content?: BodyContent;
 }
 
 const addClassesToCodeTags = (html: string) => {
@@ -33,7 +32,7 @@ const determineLanguage = (code: string): string => {
 };
 
 export function Body({ content }: BodyProps) {
-  const processedHtml = addClassesToCodeTags(content.html);
+  const processedHtml = addClassesToCodeTags(content?.html || '');
 
   React.useEffect(() => {
     hljs.highlightAll();
