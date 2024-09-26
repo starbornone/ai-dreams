@@ -28,7 +28,7 @@ export function PostLink({ post }: PostLinkProps) {
             <div className="title-link group-hover:text-gray-800">{post.title}</div>
             <div className="my-2 text-sm text-gray-300 group-hover:text-gray-800">{post.excerpt}</div>
           </div>
-          <div className="flex gap-6 text-sm font-light text-gray-500 group-hover:text-gray-700">
+          <div className="gap-6 text-sm font-light text-gray-500 group-hover:text-gray-700 lg:flex">
             {post.category && (
               <div className="flex items-center gap-2 lowercase">
                 <svg
