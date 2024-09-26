@@ -76,7 +76,7 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
       {posts.length > 0 ? posts.map((post) => <PostLink key={post.slug} post={post} />) : null}
       {loading && <Loading color="orange" message="Loading more posts..." />}
       {!hasMore && (
-        <div className="mt-8 text-center text-gray-600">
+        <div className="mt-8 hidden text-center text-gray-600 lg:block">
           <p>You have reached the end of history.</p>
           <p>Of my posts, anyway.</p>
         </div>

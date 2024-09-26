@@ -18,6 +18,7 @@ export interface PageData {
 }
 
 export interface PostData {
+  category?: { name: string; slug?: string };
   content?: BodyContent;
   coverImage: CoverImage;
   date: string;

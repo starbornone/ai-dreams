@@ -7,7 +7,7 @@ interface Data {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data | { error: string }>) {
-  const { skip = '0', limit = '3' } = req.query;
+  const { skip = '3', limit = '3' } = req.query;
 
   try {
     const posts = await getLimitedPosts(Number(skip), Number(limit));

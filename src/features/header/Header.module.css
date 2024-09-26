@@ -1,7 +1,6 @@
 .header {
-  margin-left: -1.25rem;
-  margin-right: -1.25rem;
-  margin-bottom: 2rem;
+  width: 100vw;
+  height: 33rem;
 }
 
 .header__cover-image {
@@ -18,14 +17,12 @@
   justify-content: space-between;
 }
 
-.header__tags {
-  font-weight: 300;
-  color: var(--color-gray-500);
-  display: flex;
-  gap: 2rem;
-}
-
 .header__date {
   font-weight: 300;
   color: var(--color-gray-500);
+}
+
+.cover-image {
+  object-fit: cover;
+  object-position: center;
 }

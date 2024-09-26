@@ -10,16 +10,14 @@ export function Footer({ imageAuthor, updatedAt }: FooterProps) {
   return (
     <div className={styles['footer']}>
       {imageAuthor?.name && (
-        <div className={styles['footer__content']}>
+        <div>
           Cover image by{' '}
           <a href={imageAuthor.url} rel="noreferrer" target="_blank">
             {imageAuthor.name}
           </a>
         </div>
       )}
-      {updatedAt && (
-        <div className={styles['footer__content']}>Last updated at {format(new Date(updatedAt), 'dd MMMM yyyy')}</div>
-      )}
+      {updatedAt && <div>Last updated at {format(new Date(updatedAt), 'dd MMMM yyyy')}</div>}
     </div>
   );
 }

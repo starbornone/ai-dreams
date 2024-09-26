@@ -1,8 +1,9 @@
 .title {
+  display: block;
   font-family: 'Neon';
   font-size: 2.25rem;
   letter-spacing: 0.05em;
-  margin: 3rem auto 2rem auto;
+  margin: 3rem auto 1rem auto;
   text-align: center;
   text-shadow:
     0 0 0.6rem var(--color-gray-600),
@@ -13,7 +14,7 @@
     0 0.5rem 3rem var(--color-gray-800);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .title {
     font-size: 3rem;
   }

@@ -98,6 +98,10 @@ export async function getLimitedPosts(skip = 0, limit = 3): Promise<PostData[]> 
         title
         slug
         excerpt
+        category {
+          name
+          slug
+        }
         tags
         coverImage {
           url(transformation: { image: { resize: { fit: crop, width: 2000, height: 1000 } } })
@@ -145,6 +149,10 @@ export async function getPostsByCategory(category: string) {
         title
         slug
         excerpt
+        category {
+          name
+          slug
+        }
         tags
         coverImage {
           url(transformation: {image: {resize: {fit: crop, width: 2000, height: 1000}}})
@@ -174,6 +182,9 @@ export async function getPost(slug: string) {
         excerpt
         content {
           html
+        }
+        category {
+          name
         }
         tags
         imageAuthor
@@ -210,6 +221,9 @@ export async function getPostAndMorePosts(slug: string) {
         content {
           html
         }
+        category {
+          name
+        }
         tags
         imageAuthor
         imageAuthorUrl
@@ -220,10 +234,13 @@ export async function getPostAndMorePosts(slug: string) {
           url(transformation: {image: {resize: {fit: crop, width: 1200, height: 800}}})
         }
       }
-      morePosts: posts(stage: $stage, orderBy: date_DESC, first: 3, where: {slug_not_in: [$slug]}) {
+      morePosts: posts(stage: $stage, orderBy: date_DESC, first: 3, where: {slug_not_in: [$slug], AND: { date_not: null }}) {
         date
         title
         slug
+        category {
+          name
+        }
         tags
         excerpt
         coverImage {
