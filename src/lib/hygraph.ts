@@ -1,3 +1,5 @@
+import { GetLimitedPostsResponse, Post } from '@/types';
+
 async function fetchAPI(query: string, { variables = {} } = {}) {
   const apiUrl = process.env.HYGRAPH_PROJECT_API;
 
@@ -87,35 +89,31 @@ export async function getAllPostsWithSlug() {
   return data.posts;
 }
 
-export async function getLimitedPosts() {
-  const data = await fetchAPI(
+export async function getLimitedPosts(skip = 0, limit = 3): Promise<Post[]> {
+  const data: GetLimitedPostsResponse = await fetchAPI(
     `
-    query GetLimitedPosts($stage: Stage!) {
-      posts(stage: $stage, orderBy: date_DESC, first: 3, where: {date_not: null}) {
+    query GetLimitedPosts($stage: Stage!, $skip: Int!, $limit: Int!) {
+      posts(stage: $stage, orderBy: date_DESC, first: $limit, skip: $skip, where: { date_not: null }) {
         date
         title
         slug
         excerpt
         tags
         coverImage {
-          url(transformation: {image: {resize: {fit: crop, width: 2000, height: 1000}}})
+          url(transformation: { image: { resize: { fit: crop, width: 2000, height: 1000 } } })
         }
       }
-      morePosts: posts(stage: $stage, orderBy: date_DESC, skip: 3, where: {date_not: null}) {
-        date
-        title
-        slug
-        tags
-      }
     }
-  `,
+    `,
     {
       variables: {
         stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
+        skip,
+        limit,
       },
     }
   );
-  return data;
+  return data.posts;
 }
 
 export async function getCategory(category: string) {

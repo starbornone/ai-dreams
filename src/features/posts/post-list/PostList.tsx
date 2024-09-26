@@ -1,14 +1,8 @@
 import { PostPreview } from '@/features';
+import { Post } from '@/types';
 
 interface PostListProps {
-  posts: {
-    date: string;
-    title: string;
-    coverImage: { url: string };
-    slug: string;
-    excerpt: string;
-    tags: string[];
-  }[];
+  posts: Post[];
 }
 
 export function PostList({ posts }: PostListProps) {
