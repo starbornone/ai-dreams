@@ -16,6 +16,7 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
   const [skip, setSkip] = useState<number>(initialSkip);
   const [loading, setLoading] = useState<boolean>(false);
   const [hasMore, setHasMore] = useState<boolean>(true);
+  const [triggerFetch, setTriggerFetch] = useState<boolean>(true);
   const observerRef = useRef<HTMLDivElement | null>(null);
 
   const fetchMorePosts = useCallback(async () => {
@@ -38,17 +39,20 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
       console.error('Error fetching more posts:', error);
     } finally {
       setLoading(false);
+      setTriggerFetch(false);
     }
   }, [loading, hasMore, limit, skip]);
 
   useEffect(() => {
-    fetchMorePosts();
-  }, [fetchMorePosts]);
+    if (triggerFetch) {
+      fetchMorePosts();
+    }
+  }, [fetchMorePosts, triggerFetch]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
+        if (entries[0].isIntersecting && !triggerFetch) {
           fetchMorePosts();
         }
       },
@@ -61,14 +65,14 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
 
     const currentObserverRef = observerRef.current;
 
-    if (currentObserverRef) {
+    if (currentObserverRef && !triggerFetch) {
       observer.observe(currentObserverRef);
     }
 
     return () => {
       if (currentObserverRef) observer.unobserve(currentObserverRef);
     };
-  }, [fetchMorePosts, loading, hasMore]);
+  }, [fetchMorePosts, loading, hasMore, triggerFetch]);
 
   return (
     <div className="my-16 md:my-32">
