@@ -1,7 +1,8 @@
-import { Container } from '@/components';
-import { Body, Footer, Header } from '@/features';
-import { getAllPagesWithSlug, getPage } from '@/lib/hygraph';
+import { Container, Title } from '@/components';
+import { Body, CoverImage, Footer } from '@/features';
+import { getAllPagesWithSlug } from '@/lib';
 import { PageData } from '@/types';
+import { handleGetPage } from '@/utils';
 import { Metadata } from 'next';
 
 interface Props {
@@ -13,11 +14,6 @@ export async function generateStaticParams() {
   return pages.map(({ slug }: { slug: string }) => ({
     id: slug,
   }));
-}
-
-async function handleGetPage({ slug }: { slug: string }) {
-  const data = await getPage(slug);
-  return data || null;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -37,21 +33,24 @@ export default async function Page({ params }: Props) {
   const page = await handleGetPage(params);
 
   return (
-    <Container>
+    <>
       {page ? (
         <article className="page mb-32">
-          <Header coverImage={page.coverImage} title={page.title} />
-          <div className="mx-auto max-w-2xl">
-            <Body content={page.content} />
-            <Footer
-              imageAuthor={{ name: page?.imageAuthor || '', url: page?.imageAuthorUrl || '' }}
-              updatedAt={page?.updatedAt || ''}
-            />
-          </div>
+          {page.coverImage && <CoverImage title={page.title} url={page.coverImage.url} />}
+          <Container>
+            {page.title && <Title>{page.title}</Title>}
+            <div className="mx-auto max-w-prose">
+              <Body content={page.content} />
+              <Footer
+                imageAuthor={{ name: page?.imageAuthor || '', url: page?.imageAuthorUrl || '' }}
+                updatedAt={page?.updatedAt || ''}
+              />
+            </div>
+          </Container>
         </article>
       ) : (
         <p>Page not found</p>
       )}
-    </Container>
+    </>
   );
 }

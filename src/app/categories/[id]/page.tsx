@@ -1,6 +1,6 @@
 import { Container } from '@/components';
 import { PostList } from '@/features';
-import { getAllCategoriesWithSlug, getCategory, getPostsByCategory } from '@/lib/hygraph';
+import { getAllCategoriesWithSlug, getCategory, getPostsByCategory } from '@/lib';
 import { Metadata } from 'next';
 
 interface Props {

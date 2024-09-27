@@ -7,4 +7,3 @@ export * from './posts/more-posts';
 export * from './posts/post-link';
 export * from './posts/post-list';
 export * from './posts/post-preview';
-export * from './title';

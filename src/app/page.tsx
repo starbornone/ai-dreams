@@ -1,6 +1,6 @@
 import { Container } from '@/components';
 import { MorePages, MorePosts, PostList } from '@/features';
-import { getLimitedPosts } from '@/lib/hygraph';
+import { getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
 
 async function getInitialPosts(): Promise<PostData[]> {

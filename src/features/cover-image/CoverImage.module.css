@@ -1,6 +1,8 @@
 .cover-image {
-  margin-left: 0;
-  margin-right: 0;
+  display: block;
+  height: 24rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .cover-image__link {
@@ -8,6 +10,17 @@
 }
 
 .cover-image__image {
+  height: 24rem;
   object-fit: cover;
   object-position: center;
+}
+
+@media (min-width: 640px) {
+  .cover-image {
+    height: 36rem;
+  }
+
+  .cover-image__image {
+    height: 36rem;
+  }
 }
