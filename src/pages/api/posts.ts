@@ -1,4 +1,4 @@
-import { getLimitedPosts } from '@/lib/hygraph';
+import { getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
 import { NextApiRequest, NextApiResponse } from 'next';
 

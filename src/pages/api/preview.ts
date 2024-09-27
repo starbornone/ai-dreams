@@ -1,4 +1,4 @@
-import { getPreviewPostBySlug } from '@/lib/hygraph';
+import { getPreviewPostBySlug } from '@/lib';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
