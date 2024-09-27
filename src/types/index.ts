@@ -1,37 +1,4 @@
-export interface CoverImage {
-  url: string;
-}
-
-export interface BodyContent {
-  html: string;
-}
-
-export interface PageData {
-  content?: BodyContent;
-  coverImage: CoverImage;
-  excerpt: string;
-  imageAuthor?: string;
-  imageAuthorUrl?: string;
-  ogImage?: CoverImage;
-  title: string;
-  updatedAt?: string;
-}
-
-export interface PostData {
-  category?: { name: string; slug?: string };
-  content?: BodyContent;
-  coverImage: CoverImage;
-  date: string;
-  excerpt: string;
-  imageAuthor?: string;
-  imageAuthorUrl?: string;
-  ogImage?: CoverImage;
-  slug: string;
-  tags: string[];
-  title: string;
-  updatedAt?: string;
-}
-
-export interface GetLimitedPostsResponse {
-  posts: PostData[];
-}
+export * from './BodyContent';
+export * from './CoverImage';
+export * from './PageData';
+export * from './PostData';
