@@ -1,8 +1,10 @@
 import { CalendarIcon, FolderIcon, TagIcon } from '@/components';
 import { PostData } from '@/types';
+import clsx from 'clsx';
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
+import styles from './PostPreview.module.css';
 
 interface PostPreviewProps {
   post: PostData;
@@ -11,9 +13,10 @@ interface PostPreviewProps {
 export function PostPreview({ post }: PostPreviewProps) {
   return (
     <div className="my-6">
-      <Link className="img-link" href={`/posts/${post.slug}`}>
+      <Link className={clsx(styles['post-preview__image-link'], 'img-link')} href={`/posts/${post.slug}`}>
         <Image
           alt={post.title}
+          className={styles['post-preview__image']}
           height={600}
           src={
             post.coverImage

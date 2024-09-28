@@ -1,0 +1,9 @@
+.post-preview__image-link {
+  height: 24rem;
+}
+
+.post-preview__image {
+  height: 24rem;
+  object-fit: cover;
+  object-position: center;
+}
