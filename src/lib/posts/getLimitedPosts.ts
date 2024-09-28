@@ -5,11 +5,27 @@ export interface GetLimitedPostsResponse {
   posts: PostData[];
 }
 
-export async function getLimitedPosts(skip = 0, limit = 3): Promise<PostData[]> {
+interface GetLimitedPostsRequest {
+  skip: number;
+  limit?: number;
+  category?: string;
+}
+
+export async function getLimitedPosts({ skip = 0, limit = 3, category }: GetLimitedPostsRequest): Promise<PostData[]> {
   const data: GetLimitedPostsResponse = await fetchAPI(
     `
-    query GetLimitedPosts($stage: Stage!, $skip: Int!, $limit: Int!) {
-      posts(stage: $stage, orderBy: date_DESC, first: $limit, skip: $skip, where: { date_not: null }) {
+    query GetLimitedPosts($stage: Stage!, $skip: Int!, $limit: Int!
+    ${category ? '$category: String!' : ''}) {
+      posts(
+        stage: $stage,
+        orderBy: date_DESC,
+        first: $limit,
+        skip: $skip,
+        where: { 
+          date_not: null, 
+          ${category ? 'category: { slug: $category }' : ''}
+        }
+      ) {
         date
         title
         slug
@@ -27,9 +43,10 @@ export async function getLimitedPosts(skip = 0, limit = 3): Promise<PostData[]> 
     `,
     {
       variables: {
-        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
-        skip,
+        category: category ?? null,
         limit,
+        skip,
+        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
       },
     }
   );
