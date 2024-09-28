@@ -1,6 +1,7 @@
 import { CalendarIcon, FolderIcon, TagIcon } from '@/components';
 import { PostData } from '@/types';
 import { format } from 'date-fns';
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface PostLinkProps {
@@ -15,14 +16,16 @@ export function PostLink({ post }: PostLinkProps) {
         data-content={post.title}
         href={`/posts/${post.slug}`}
       >
-        <img
+        <Image
           alt={post.title}
-          className="h-48 w-full object-cover"
+          className="object-cover"
+          height={300}
           src={
             post.coverImage
               ? post.coverImage.url
               : 'https://res.cloudinary.com/starborn/image/upload/v1727344591/ai-dreams/ai-dreams_mryb03.png'
           }
+          width={600}
         />
         <div className="col-span-2 flex flex-wrap content-between p-4">
           <div>
