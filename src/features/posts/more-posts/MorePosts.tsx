@@ -7,11 +7,13 @@ import axios from 'axios';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface MorePostsProps {
-  initialSkip: number;
+  category?: string;
+  initialSkip?: number;
   limit: number;
+  title?: string;
 }
 
-export function MorePosts({ initialSkip, limit }: MorePostsProps) {
+export function MorePosts({ category, initialSkip = 0, limit, title }: MorePostsProps) {
   const [posts, setPosts] = useState<PostData[]>([]);
   const [skip, setSkip] = useState<number>(initialSkip);
   const [loading, setLoading] = useState<boolean>(false);
@@ -25,7 +27,7 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
     setLoading(true);
     try {
       const response = await axios.get('/api/posts', {
-        params: { skip, limit },
+        params: { category, skip, limit },
       });
       const newPosts: PostData[] = response.data.posts;
 
@@ -41,7 +43,7 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
       setLoading(false);
       setTriggerFetch(false);
     }
-  }, [loading, hasMore, limit, skip]);
+  }, [loading, hasMore, limit, skip, category]);
 
   useEffect(() => {
     if (triggerFetch) {
@@ -76,15 +78,11 @@ export function MorePosts({ initialSkip, limit }: MorePostsProps) {
 
   return (
     <div className="my-16 md:my-32">
-      <h2 className="site-title mb-8 text-center text-4xl sm:ml-3 sm:text-left md:text-5xl">More Posts</h2>
+      <h2 className="site-title mb-8 text-center text-4xl sm:ml-3 sm:text-left md:text-5xl">
+        {title ? title : 'More Posts'}
+      </h2>
       {posts.length > 0 ? posts.map((post) => <PostLink key={post.slug} post={post} />) : null}
       {loading && <Loading color="orange" message="Loading more posts..." />}
-      {!hasMore && (
-        <div className="mt-8 hidden text-center text-gray-600 lg:block">
-          <p>You have reached the end of history.</p>
-          <p>Of my posts, anyway.</p>
-        </div>
-      )}
       <div ref={observerRef} style={{ height: '1px' }} />
     </div>
   );
