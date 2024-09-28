@@ -15,6 +15,7 @@ export async function getPost(slug: string) {
         }
         category {
           name
+          slug
         }
         tags
         keywords
