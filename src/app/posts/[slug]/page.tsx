@@ -1,8 +1,8 @@
-import { CalendarIcon, Container, FolderIcon, SectionSeparator, TagIcon, Title } from '@/components';
-import { Body, CoverImage, Footer, PostList } from '@/features';
+import { CalendarIcon, Container, FolderIcon, Loading, SectionSeparator, TagIcon, Title } from '@/components';
+import { Body, CoverImage, Footer, MorePosts } from '@/features';
 import { getAllPostsWithSlug } from '@/lib';
 import { PostData } from '@/types';
-import { handleGetPost, handleGetPostAndMorePost } from '@/utils';
+import { handleGetPost } from '@/utils';
 import { format } from 'date-fns';
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -32,7 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page({ params }: Props) {
-  const { morePosts, post } = await handleGetPostAndMorePost(params);
+  const post = await handleGetPost(params);
+
+  if (!post) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -50,7 +54,9 @@ export default async function Page({ params }: Props) {
               {post.tags && (
                 <div className="flex items-center gap-2">
                   <TagIcon className="h-4 w-4 text-gray-600" />
-                  {post.tags.length > 0 ? post.tags.map((tag, index) => tag + (index === 0 ? ', ' : '')) : null}
+                  {post.tags.length > 0
+                    ? post.tags.map((tag: string | number, index: number) => tag + (index === 0 ? ', ' : ''))
+                    : null}
                 </div>
               )}
               {post.date && (
@@ -78,7 +84,7 @@ export default async function Page({ params }: Props) {
       )}
       <Container>
         <SectionSeparator />
-        {morePosts?.length > 0 && <PostList posts={morePosts} />}
+        <MorePosts title={`More ${post.category.name} Posts`} category={post.category.slug} limit={3} />
       </Container>
     </>
   );
