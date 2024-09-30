@@ -10,7 +10,7 @@ interface PostLinkProps {
 
 export function PostLink({ post }: PostLinkProps) {
   return (
-    <div className="my-6 lg:my-14" key={post.slug}>
+    <div className="my-6 lg:my-14">
       <Link
         className="img-link group w-full gap-2 bg-gray-900 text-xl lg:grid lg:grid-cols-3 lg:gap-y-16"
         data-content={post.title}

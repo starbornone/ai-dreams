@@ -34,7 +34,8 @@ export function PostPreview({ post }: PostPreviewProps) {
         </h2>
         <p className="mb-8 leading-relaxed text-gray-300">
           {post.excerpt ||
-            'Welcome to my blog. This website is a place where I share my thoughts and express my concerns about how external forces often shape our thoughts and actions in ways that favour them more than us. My goal here is to encourage deeper thinking, partly by critiquing the status quo.'}
+            'Welcome to my blog. This website is a place where I share my thoughts and express my concerns about how external forces often shape our thoughts and actions in ways that favour them more than us. My goal here is to encourage deeper thinking, partly by critiquing the status quo.'}{' '}
+          <Link href={`/posts/${post.slug}`}>Read More</Link>
         </p>
         <div className="text-sm text-gray-500 lg:flex lg:justify-between">
           <div className="lg:flex lg:gap-6">
