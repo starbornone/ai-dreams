@@ -8,11 +8,12 @@ import { usePathname } from 'next/navigation';
 
 export function Header() {
   const pathname = usePathname();
+  const isPostListPage = pathname === '/' || pathname.includes('/categories/');
 
   return (
     <Container>
       <div
-        className={clsx('items-center justify-between lg:flex', pathname === '/' ? 'my-16 lg:my-24' : 'my-8 lg:my-12')}
+        className={clsx('items-center justify-between lg:flex', isPostListPage ? 'my-16 lg:my-24' : 'my-8 lg:my-12')}
       >
         <div className="site-title">
           <h1 className="-mb-2 text-5xl md:mb-0 md:pr-8 md:text-6xl">
