@@ -1,11 +1,9 @@
-import { CalendarIcon, Container, FolderIcon, Loading, SectionSeparator, TagIcon, Title } from '@/components';
-import { Body, CoverImage, Footer, MorePosts } from '@/features';
+import { Container, Loading, SectionSeparator, Title } from '@/components';
+import { Body, CoverImage, Footer, MetaData, MorePosts } from '@/features';
 import { getAllPostsWithSlug } from '@/lib';
 import { PostData } from '@/types';
 import { handleGetPost } from '@/utils';
-import { format } from 'date-fns';
 import { Metadata } from 'next';
-import Link from 'next/link';
 
 export const experimental_ppr = true;
 
@@ -46,30 +44,9 @@ export default async function Page({ params }: Props) {
         <article className="post">
           {post.coverImage && <CoverImage title={post.title} url={post.coverImage.url} />}
           <Container>
-            <div className="justify-between lg:flex">
-              {post.category && (
-                <div className="flex items-center gap-2 justify-self-start">
-                  <FolderIcon className="h-3 w-3 text-gray-600" />
-                  <Link href={`/categories/${post.category.slug}`}>{post.category.name}</Link>
-                </div>
-              )}
-              {post.tags && (
-                <div className="flex items-center gap-2">
-                  <TagIcon className="h-4 w-4 text-gray-600" />
-                  {post.tags.length > 0
-                    ? post.tags.map((tag: string | number, index: number) => tag + (index === 0 ? ', ' : ''))
-                    : null}
-                </div>
-              )}
-              {post.date && (
-                <div className="flex items-center gap-2 justify-self-end">
-                  <CalendarIcon className="h-4 w-4 text-gray-600" />
-                  {format(new Date(post.date), 'dd MMMM yyyy')}
-                </div>
-              )}
-            </div>
             {post.title && <Title>{post.title}</Title>}
             <div className="mx-auto max-w-prose">
+              <MetaData post={post} />
               <Body content={post.content} />
               <Footer
                 imageAuthor={{

@@ -1,9 +1,8 @@
-import { CalendarIcon, FolderIcon, TagIcon } from '@/components';
 import { PostData } from '@/types';
 import clsx from 'clsx';
-import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
+import { MetaData } from '../meta-data';
 import styles from './PostPreview.module.css';
 
 interface PostPreviewProps {
@@ -26,39 +25,20 @@ export function PostPreview({ post }: PostPreviewProps) {
           width={1200}
         />
       </Link>
-      <div className="mx-auto max-w-prose">
-        <h2 className="my-4 text-3xl leading-snug">
+      <div className="mx-auto my-4 flex max-w-prose flex-col gap-4">
+        <h2 className="text-3xl leading-snug">
           <Link className="title-link" data-content={post.title} href={`/posts/${post.slug}`}>
             {post.title}
           </Link>
         </h2>
-        <p className="mb-8 leading-relaxed text-gray-300">
+        <MetaData post={post} />
+        <p className="leading-relaxed text-gray-300">
           {post.excerpt ||
-            'Welcome to my blog. This website is a place where I share my thoughts and express my concerns about how external forces often shape our thoughts and actions in ways that favour them more than us. My goal here is to encourage deeper thinking, partly by critiquing the status quo.'}{' '}
-          <Link href={`/posts/${post.slug}`}>Read More</Link>
+            'Welcome to my blog. This website is a place where I share my thoughts and express my concerns about how external forces often shape our thoughts and actions in ways that favour them more than us. My goal here is to encourage deeper thinking, partly by critiquing the status quo.'}
         </p>
-        <div className="text-sm text-gray-500 lg:flex lg:justify-between">
-          <div className="lg:flex lg:gap-6">
-            {post.category && (
-              <div className="flex items-center gap-2">
-                <FolderIcon className="h-3 w-3 text-gray-600" />
-                <Link href={`/categories/${post.category.slug}`}>{post.category.name}</Link>
-              </div>
-            )}
-            {post.tags && (
-              <div className="flex items-center gap-2">
-                <TagIcon className="h-3 w-3 text-gray-600" />
-                {post.tags.length > 0 ? post.tags.map((tag, index) => tag + (index === 0 ? ', ' : '')) : null}
-              </div>
-            )}
-          </div>
-          {post.date && (
-            <div className="flex items-center gap-2">
-              <CalendarIcon className="h-3 w-3 text-gray-600" />
-              {format(new Date(post.date), 'dd MMMM yyyy')}
-            </div>
-          )}
-        </div>
+        <Link className="img-link bg-gray-900 px-4 py-2 hover:text-gray-800" href={`/posts/${post.slug}`}>
+          Read More
+        </Link>
       </div>
     </div>
   );

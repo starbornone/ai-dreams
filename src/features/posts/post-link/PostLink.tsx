@@ -27,12 +27,12 @@ export function PostLink({ post }: PostLinkProps) {
           }
           width={600}
         />
-        <div className="col-span-2 flex flex-wrap content-between p-4">
+        <div className="col-span-2 flex flex-wrap content-between gap-4 p-4 lg:gap-0">
           <div>
             <div className="title-link group-hover:text-gray-800">{post.title}</div>
-            <div className="my-2 text-sm text-gray-300 group-hover:text-gray-800">{post.excerpt}</div>
+            <div className="mt-2 text-sm text-gray-300 group-hover:text-gray-800">{post.excerpt}</div>
           </div>
-          <div className="gap-6 text-sm font-light text-gray-500 group-hover:text-gray-700 lg:flex">
+          <div className="flex flex-col gap-1 text-sm font-light text-gray-500 group-hover:text-gray-600 lg:flex-row lg:gap-6">
             {post.category && (
               <div className="flex items-center gap-2">
                 <FolderIcon className="h-3 w-3 text-gray-600" />
