@@ -5,6 +5,8 @@ import { PageData } from '@/types';
 import { handleGetPage } from '@/utils';
 import { Metadata } from 'next';
 
+export const experimental_ppr = true;
+
 interface Props {
   params: { slug: string };
 }

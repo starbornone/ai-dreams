@@ -7,6 +7,8 @@ import { format } from 'date-fns';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+export const experimental_ppr = true;
+
 interface Props {
   params: { slug: string };
 }
