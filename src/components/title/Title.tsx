@@ -6,5 +6,5 @@ interface TitleProps {
 }
 
 export function Title({ children }: TitleProps) {
-  return <h1 className={clsx(styles['title'], 'title-link')}>{children}</h1>;
+  return <h1 className={clsx(styles['title'])}>{children}</h1>;
 }
