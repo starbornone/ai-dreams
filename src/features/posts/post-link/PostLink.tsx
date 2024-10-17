@@ -25,7 +25,7 @@ export function PostLink({ post }: PostLinkProps) {
               ? post.coverImage.url
               : 'https://res.cloudinary.com/starborn/image/upload/v1727344591/ai-dreams/ai-dreams_mryb03.png'
           }
-          width={600}
+          width={900}
         />
         <div className="col-span-2 flex flex-wrap content-between gap-4 p-4 lg:gap-0">
           <div>
