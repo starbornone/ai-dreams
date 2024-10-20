@@ -7,7 +7,6 @@ export async function getPage(slug: string) {
       page(stage: $stage, where: {slug: $slug}) {
         title
         slug
-        updatedAt
         content {
           html
         }

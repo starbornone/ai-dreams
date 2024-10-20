@@ -8,7 +8,6 @@ export async function getPost(slug: string) {
         date
         title
         slug
-        updatedAt
         excerpt
         content {
           html

@@ -53,7 +53,6 @@ export default async function Page({ params }: Props) {
                   name: post?.imageAuthor || '',
                   url: post?.imageAuthorUrl || '',
                 }}
-                updatedAt={post?.updatedAt || ''}
               />
             </div>
           </Container>

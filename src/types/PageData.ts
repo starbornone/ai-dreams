@@ -9,5 +9,4 @@ export interface PageData {
   imageAuthorUrl?: string;
   ogImage?: CoverImage;
   title: string;
-  updatedAt?: string;
 }

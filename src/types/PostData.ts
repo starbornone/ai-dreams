@@ -14,5 +14,4 @@ export interface PostData {
   slug: string;
   tags: string[];
   title: string;
-  updatedAt?: string;
 }

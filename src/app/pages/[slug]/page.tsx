@@ -43,10 +43,7 @@ export default async function Page({ params }: Props) {
             {page.title && <Title>{page.title}</Title>}
             <div className="mx-auto max-w-prose">
               <Body content={page.content} />
-              <Footer
-                imageAuthor={{ name: page?.imageAuthor || '', url: page?.imageAuthorUrl || '' }}
-                updatedAt={page?.updatedAt || ''}
-              />
+              <Footer imageAuthor={{ name: page?.imageAuthor || '', url: page?.imageAuthorUrl || '' }} />
             </div>
           </Container>
         </article>
