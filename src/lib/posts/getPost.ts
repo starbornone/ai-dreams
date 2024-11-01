@@ -12,6 +12,7 @@ export async function getPost(slug: string) {
         content {
           html
         }
+        markdownContent
         category {
           name
           slug

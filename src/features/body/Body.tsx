@@ -1,42 +1,40 @@
-'use client';
-
 import { BodyContent } from '@/types';
-import hljs from 'highlight.js/lib/core';
-import typescript from 'highlight.js/lib/languages/typescript';
-import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import remarkGfm from 'remark-gfm';
 import styles from './Body.module.css';
 
-// Default styling
-import 'highlight.js/styles/default.css';
-// Atom One Dark styling
-import 'highlight.js/styles/atom-one-dark.css';
-
-hljs.registerLanguage('typescript', typescript);
-
 interface BodyProps {
-  content?: BodyContent;
+  content: BodyContent;
 }
 
-const determineLanguage = (code: string): string => {
-  if (code.includes('export') || code.includes('interface') || code.includes('const') || code.includes('let')) {
-    return 'typescript';
-  }
-  return 'plaintext';
-};
-
-const addClassesToCodeTags = (html: string) => {
-  return html.replace(/<code>(.*?)<\/code>/g, (match, code) => {
-    const language = determineLanguage(code);
-    return `<code class="language-${language || 'plaintext'}">${code}</code>`;
-  });
-};
-
 export function Body({ content }: BodyProps) {
-  const processedHtml = addClassesToCodeTags(content?.html || '');
-
-  React.useEffect(() => {
-    hljs.highlightAll();
-  }, [processedHtml]);
-
-  return <div className={styles['body']} dangerouslySetInnerHTML={{ __html: processedHtml }} />;
+  return (
+    <div className={styles['body']}>
+      {content.markdownContent ? (
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            code({ node, inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || '');
+              return !inline && match ? (
+                <SyntaxHighlighter language={match[1]} style={oneDark} {...props}>
+                  {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
+              ) : (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              );
+            },
+          }}
+        >
+          {content.markdownContent}
+        </ReactMarkdown>
+      ) : (
+        <div dangerouslySetInnerHTML={{ __html: content.html || '' }} />
+      )}
+    </div>
+  );
 }

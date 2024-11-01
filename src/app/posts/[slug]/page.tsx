@@ -47,7 +47,7 @@ export default async function Page({ params }: Props) {
             {post.title && <Title>{post.title}</Title>}
             <div className="mx-auto max-w-prose">
               <MetaData post={post} />
-              <Body content={post.content} />
+              {post.content && <Body content={{ html: post.content.html, markdownContent: post.markdownContent }} />}
               <Footer
                 imageAuthor={{
                   name: post?.imageAuthor || '',

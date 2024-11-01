@@ -1,3 +1,4 @@
 export interface BodyContent {
-  html: string;
+  html?: string;
+  markdownContent?: string;
 }
