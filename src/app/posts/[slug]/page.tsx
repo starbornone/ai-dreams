@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post: PostData = await handleGetPost(params);
+  const post: PostData = await handleGetPost(params.slug);
 
   return {
     title: post?.title || '',
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page({ params }: Props) {
-  const post = await handleGetPost(params);
+  const post = await handleGetPost(params.slug);
 
   if (!post) {
     return <Loading />;
