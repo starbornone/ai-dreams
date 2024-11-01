@@ -1,8 +1,10 @@
+import { Note } from '@/components';
 import { BodyContent } from '@/types';
-import ReactMarkdown from 'react-markdown';
+import Markdoc from '@markdoc/markdoc';
+import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import remarkGfm from 'remark-gfm';
+import { config } from '../../../markdoc.config';
 import styles from './Body.module.css';
 
 interface BodyProps {
@@ -10,28 +12,31 @@ interface BodyProps {
 }
 
 export function Body({ content }: BodyProps) {
+  const ast = content.markdownContent ? Markdoc.parse(content.markdownContent) : null;
+  const transformedContent = ast ? Markdoc.transform(ast, config) : null;
+
   return (
     <div className={styles['body']}>
-      {content.markdownContent ? (
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            code({ node, inline, className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || '');
-              return !inline && match ? (
-                <SyntaxHighlighter language={match[1]} style={oneDark} {...props}>
-                  {String(children).replace(/\n$/, '')}
-                </SyntaxHighlighter>
-              ) : (
-                <code className={className} {...props}>
+      {transformedContent ? (
+        Markdoc.renderers.react(transformedContent, React, {
+          components: {
+            Note,
+            code({ children, className }: { children: string; className?: string }) {
+              const language = className?.replace(/language-/, '') || 'plaintext';
+
+              return (
+                <SyntaxHighlighter
+                  PreTag="div"
+                  customStyle={{ color: 'var(--color-text)', backgroundColor: 'var(--color-bg-secondary)' }}
+                  language={language}
+                  style={oneDark || {}}
+                >
                   {children}
-                </code>
+                </SyntaxHighlighter>
               );
             },
-          }}
-        >
-          {content.markdownContent}
-        </ReactMarkdown>
+          },
+        })
       ) : (
         <div dangerouslySetInnerHTML={{ __html: content.html || '' }} />
       )}
