@@ -4,11 +4,7 @@ import { getAllCategoriesWithSlug, getCategory, getPostsByCategory } from '@/lib
 import { PostData } from '@/types';
 import { Metadata } from 'next';
 
-export const experimental_ppr = true;
-
-interface Props {
-  params: { slug: string };
-}
+type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
   const categories = await getAllCategoriesWithSlug();
@@ -17,7 +13,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params: { slug } }: Props): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params;
+  const slug = params.slug;
+
   const category = await getCategory(slug);
 
   return {
@@ -27,13 +26,16 @@ export async function generateMetadata({ params: { slug } }: Props): Promise<Met
   };
 }
 
-async function handleGetPosts({ slug }: { slug: string }): Promise<PostData[]> {
+async function handleGetPosts(slug: string): Promise<PostData[]> {
   const posts = await getPostsByCategory(slug);
   return posts;
 }
 
-export default async function Page({ params }: Props) {
-  const posts = await handleGetPosts(params);
+export default async function Page(props: { params: Promise<Params> }) {
+  const params = await props.params;
+  const slug = params.slug;
+
+  const posts = await handleGetPosts(slug);
 
   return (
     <Container>

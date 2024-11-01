@@ -7,6 +7,7 @@ export interface PageData {
   excerpt: string;
   imageAuthor?: string;
   imageAuthorUrl?: string;
+  markdownContent?: BodyContent;
   ogImage?: CoverImage;
   title: string;
 }

@@ -5,20 +5,17 @@ import { PageData } from '@/types';
 import { handleGetPage } from '@/utils';
 import { Metadata } from 'next';
 
-export const experimental_ppr = true;
-
-interface Props {
-  params: { slug: string };
-}
+type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
   const pages = await getAllPagesWithSlug();
   return pages.map(({ slug }: { slug: string }) => ({
-    id: slug,
+    slug,
   }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params;
   const page: PageData = await handleGetPage(params);
   if (!page) return { title: 'AI Dreams' };
 
@@ -31,7 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const page = await handleGetPage(params);
 
   return (

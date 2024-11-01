@@ -10,6 +10,7 @@ export interface PostData {
   imageAuthor?: string;
   imageAuthorUrl?: string;
   keywords: string[];
+  markdownContent?: string;
   ogImage?: CoverImage;
   slug: string;
   tags: string[];

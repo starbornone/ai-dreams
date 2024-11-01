@@ -5,33 +5,31 @@ import { PostData } from '@/types';
 import { handleGetPost } from '@/utils';
 import { Metadata } from 'next';
 
-export const experimental_ppr = true;
-
-interface Props {
-  params: { slug: string };
-}
+type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
   const posts = await getAllPostsWithSlug();
   return posts.map(({ slug }: { slug: string }) => ({
-    id: slug,
+    slug,
   }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params;
   const post: PostData = await handleGetPost(params.slug);
 
   return {
     title: post?.title || '',
     description: post?.excerpt || '',
-    keywords: [...post?.tags, ...post?.keywords],
+    keywords: [...(post?.tags || []), ...(post?.keywords || [])],
     openGraph: {
       images: post?.ogImage?.url || '',
     },
   };
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const post = await handleGetPost(params.slug);
 
   if (!post) {
