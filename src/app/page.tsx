@@ -3,8 +3,6 @@ import { MorePages, MorePosts, PostPreview } from '@/features';
 import { getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
 
-export const experimental_ppr = true;
-
 async function getInitialPosts(): Promise<PostData[]> {
   const posts = await getLimitedPosts({ skip: 0, limit: 3 });
   return posts;

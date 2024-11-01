@@ -3,8 +3,6 @@ import { PostData } from '@/types';
 import { format } from 'date-fns';
 import Link from 'next/link';
 
-export const experimental_ppr = true;
-
 interface Props {
   post: PostData;
 }

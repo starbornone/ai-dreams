@@ -3,8 +3,6 @@ import { getAllCategoriesWithSlug, getAllPostsWithCategory } from '@/lib';
 import { PostData } from '@/types';
 import Link from 'next/link';
 
-export const experimental_ppr = true;
-
 async function getPosts() {
   const posts = await getAllPostsWithCategory();
   const categories = await getAllCategoriesWithSlug();
