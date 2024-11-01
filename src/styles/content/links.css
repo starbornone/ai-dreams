@@ -2,120 +2,113 @@
   Links CSS
   =============== */
 
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  transition-duration: 300ms;
-}
-
-footer a,
-li a,
-p a,
-.content a {
-  position: relative;
-  z-index: 1;
-}
-
-li a,
-p a,
-.content a {
-  border-bottom-width: 1px;
-  border-color: var(--color-aqua-700);
-}
-
-li a,
-p a {
-  border-color: var(--color-aqua-700);
-  color: var(--color-gray-200);
-  font-weight: 400;
-}
-
-.content a {
-  color: var(--color-gray-400);
-}
-
-footer a:before,
-footer a:after,
-li a:before,
-li a:after,
-p a:before,
-p a:after,
-.content a:before,
-.content a:after {
-  bottom: -1px;
-  content: '';
-  height: 1px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  visibility: hidden;
-}
-
-footer a:before,
-li a:before,
-p a:before,
-.content a:before {
-  background-color: var(--color-aqua-700);
-  z-index: -1;
-}
-
-footer a:after,
-li a:after,
-p a:after,
-.content a:after {
-  background-color: var(--color-purple-300);
-  z-index: -2;
-}
-
-footer a:hover {
-  color: var(--color-aqua-500);
-}
-
-.neon-links a {
-  text-shadow:
-    0 0 0.6rem var(--color-purple-200),
-    0 0 1.5rem var(--color-purple-400),
-    -0.2rem 0.1rem 1rem var(--color-purple-400),
-    0.2rem 0.1rem 1rem var(--color-purple-400),
-    0 -0.5rem 2rem var(--color-purple-500),
-    0 0.5rem 3rem var(--color-purple-500);
-}
-
-.neon-links a:hover {
-  color: var(--color-gray-800);
-}
-
-.title-link {
-  color: var(--color-gray-100);
-  display: inline-block;
-  font-weight: 700;
-  position: relative;
-  z-index: 1;
-}
-
-.title-link:before,
-.title-link:after {
-  bottom: 0;
-  content: attr(data-content);
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  visibility: hidden;
-}
-
-.title-link:before {
-  color: var(--color-purple-400);
-  z-index: -1;
-}
-
-.title-link:after {
-  color: var(--color-aqua-500);
-  z-index: -2;
-}
-
-.title-link:hover {
-  color: var(--color-white);
-}
+  a {
+    text-decoration: none;
+    transition-duration: 300ms;
+  }
+  
+  footer a,
+  li a,
+  p a,
+  .content a,
+  .title-link {
+    position: relative;
+    z-index: 1;
+  }
+  
+  li a,
+  p a,
+  .content a {
+    color: var(--color-gray-200);
+    font-weight: 400;
+    border-bottom: 1px solid var(--color-aqua-700);
+  }
+  
+  .content a {
+    color: var(--color-gray-400);
+  }
+  
+  footer a:hover {
+    color: var(--color-aqua-500);
+  }
+  
+  footer a:before,
+  footer a:after,
+  li a:before,
+  li a:after,
+  p a:before,
+  p a:after,
+  .content a:before,
+  .content a:after,
+  .title-link:before,
+  .title-link:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    visibility: hidden;
+  }
+  
+  footer a:before,
+  li a:before,
+  p a:before,
+  .content a:before {
+    background-color: var(--color-aqua-700);
+    z-index: -1;
+  }
+  
+  footer a:after,
+  li a:after,
+  p a:after,
+  .content a:after {
+    background-color: var(--color-purple-300);
+    z-index: -2;
+  }
+  
+  .neon-links a {
+    text-shadow:
+      0 0 0.6rem var(--color-purple-200),
+      0 0 1.5rem var(--color-purple-400),
+      -0.2rem 0.1rem 1rem var(--color-purple-400),
+      0.2rem 0.1rem 1rem var(--color-purple-400),
+      0 -0.5rem 2rem var(--color-purple-500),
+      0 0.5rem 3rem var(--color-purple-500);
+  }
+  
+  .neon-links a:hover {
+    color: var(--color-gray-800);
+  }
+  
+  .title-link {
+    color: var(--color-gray-100);
+    display: inline-block;
+    font-weight: 700;
+  }
+  
+  .title-link:hover {
+    color: var(--color-white);
+  }
+  
+  .title-link:before,
+  .title-link:after {
+    content: attr(data-content);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .title-link:before {
+    color: var(--color-purple-400);
+    z-index: -1;
+  }
+  
+  .title-link:after {
+    color: var(--color-aqua-500);
+    z-index: -2;
+  }
+  
