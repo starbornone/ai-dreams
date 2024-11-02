@@ -1,17 +1,14 @@
 import { getLimitedPosts } from '@/lib';
-import { PostData } from '@/types';
 import { NextRequest, NextResponse } from 'next/server';
-
-interface Data {
-  posts: PostData[];
-}
 
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
+
     const category = searchParams.get('category');
-    const skip = searchParams.get('skip') ?? '0';
     const limit = searchParams.get('limit') ?? '10';
+    const skip = searchParams.get('skip') ?? '0';
+    const skipPost = searchParams.get('skipPost') ?? undefined;
 
     const parsedSkip = parseInt(skip, 10);
     const parsedLimit = parseInt(limit, 10);
@@ -30,9 +27,10 @@ export async function GET(req: NextRequest) {
     const categorySlug = Array.isArray(category) ? category[0] : category;
 
     const posts = await getLimitedPosts({
-      skip: parsedSkip,
-      limit: parsedLimit,
       category: categorySlug || undefined,
+      limit: parsedLimit,
+      skip: parsedSkip,
+      skipPost: skipPost || undefined,
     });
 
     return NextResponse.json({ posts });

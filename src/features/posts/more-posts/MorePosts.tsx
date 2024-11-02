@@ -10,10 +10,11 @@ interface MorePostsProps {
   category?: string;
   initialSkip?: number;
   limit: number;
+  skipPost?: string;
   title?: string;
 }
 
-export function MorePosts({ category, initialSkip = 0, limit, title }: MorePostsProps) {
+export function MorePosts({ category, initialSkip = 0, limit, skipPost, title }: MorePostsProps) {
   const [posts, setPosts] = useState<PostData[]>([]);
   const [skip, setSkip] = useState<number>(initialSkip);
   const [loading, setLoading] = useState<boolean>(false);
@@ -27,7 +28,7 @@ export function MorePosts({ category, initialSkip = 0, limit, title }: MorePosts
     setLoading(true);
     try {
       const response = await axios.get('/api/posts', {
-        params: { category, skip, limit },
+        params: { category, skip, skipPost, limit },
       });
       const newPosts: PostData[] = response.data.posts;
 
@@ -43,7 +44,7 @@ export function MorePosts({ category, initialSkip = 0, limit, title }: MorePosts
       setLoading(false);
       setTriggerFetch(false);
     }
-  }, [loading, hasMore, limit, skip, category]);
+  }, [loading, hasMore, limit, skip, skipPost, category]);
 
   useEffect(() => {
     if (triggerFetch) {

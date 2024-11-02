@@ -7,15 +7,21 @@ export interface GetLimitedPostsResponse {
 
 interface GetLimitedPostsRequest {
   skip: number;
+  skipPost?: string;
   limit?: number;
   category?: string;
 }
 
-export async function getLimitedPosts({ skip = 0, limit = 3, category }: GetLimitedPostsRequest): Promise<PostData[]> {
+export async function getLimitedPosts({
+  skip = 0,
+  skipPost,
+  limit = 3,
+  category,
+}: GetLimitedPostsRequest): Promise<PostData[]> {
   const data: GetLimitedPostsResponse = await fetchAPI(
     `
     query GetLimitedPosts($stage: Stage!, $skip: Int!, $limit: Int!
-    ${category ? '$category: String!' : ''}) {
+    ${category ? '$category: String!' : ''} ${skipPost ? '$skipPost: String!' : ''}) {
       posts(
         stage: $stage,
         orderBy: date_DESC,
@@ -24,6 +30,7 @@ export async function getLimitedPosts({ skip = 0, limit = 3, category }: GetLimi
         where: { 
           date_not: null, 
           ${category ? 'category: { slug: $category }' : ''}
+          ${skipPost ? 'slug_not_in: [$skipPost]' : ''}
         }
       ) {
         date
@@ -47,6 +54,7 @@ export async function getLimitedPosts({ skip = 0, limit = 3, category }: GetLimi
         limit,
         skip,
         stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
+        skipPost: skipPost ?? undefined,
       },
     }
   );

@@ -68,7 +68,12 @@ export default async function Page(props: { params: Promise<Params> }) {
       <Container>
         <SectionSeparator />
         {post.category && (
-          <MorePosts title={`More ${post.category.name} Posts`} category={post.category.slug} limit={3} />
+          <MorePosts
+            category={post.category.slug}
+            limit={3}
+            skipPost={post.slug}
+            title={`More ${post.category.name} Posts`}
+          />
         )}
       </Container>
     </>
