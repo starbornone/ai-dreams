@@ -45,7 +45,14 @@ export default async function Page(props: { params: Promise<Params> }) {
             {post.title && <Title>{post.title}</Title>}
             <div className="mx-auto max-w-prose">
               <MetaData post={post} />
-              {post.content && <Body content={{ html: post.content.html, markdownContent: post.markdownContent }} />}
+              {(post.content || post.markdownContent) && (
+                <Body
+                  content={{
+                    html: post.content?.html || undefined,
+                    markdownContent: post.markdownContent || undefined,
+                  }}
+                />
+              )}
               <Footer
                 imageAuthor={{
                   name: post?.imageAuthor || '',
@@ -60,7 +67,9 @@ export default async function Page(props: { params: Promise<Params> }) {
       )}
       <Container>
         <SectionSeparator />
-        <MorePosts title={`More ${post.category.name} Posts`} category={post.category.slug} limit={3} />
+        {post.category && (
+          <MorePosts title={`More ${post.category.name} Posts`} category={post.category.slug} limit={3} />
+        )}
       </Container>
     </>
   );
