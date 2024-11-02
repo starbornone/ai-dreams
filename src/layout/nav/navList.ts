@@ -16,6 +16,14 @@ export const navList = [
     slug: 'dev',
   },
   {
+    name: 'Fiction',
+    slug: 'fiction',
+  },
+  {
+    name: 'Resources',
+    slug: 'resources',
+  },
+  {
     name: 'Politics',
     slug: 'politics',
   },
