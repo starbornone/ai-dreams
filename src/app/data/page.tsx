@@ -1,7 +1,8 @@
 import { Container, Title } from '@/components';
-import { handleCategoryCounts } from '@/utils';
+import { handleCategoryCounts, handlePostsCountByMonth } from '@/utils';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { PostCounts } from './_post-counts';
 
 export const metadata: Metadata = {
   title: 'Blog Data',
@@ -10,6 +11,13 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const { categories } = await handleCategoryCounts();
+  const dateCounts = await handlePostsCountByMonth();
+  const sortedDates = Object.keys(dateCounts).sort();
+  const labels = sortedDates;
+  const data = sortedDates.map((date) => dateCounts[date]);
+
+  console.log('labels', labels);
+  console.log('data', data);
 
   return (
     <>
@@ -22,8 +30,8 @@ export default async function Page() {
               to migrating this entire blog to my own CMS. Who knows. (I should, but I sure don&apos;t!)
             </p>
           </div>
-          <div className="mx-auto max-w-sm">
-            <h2 className="mb-2 text-xl font-bold">Published posts in each category</h2>
+          <div className="my-12">
+            <h2 className="mb-2 text-xl font-bold">Posts Per Category</h2>
             <ul>
               {categories.map((category: any) => (
                 <li className="flex justify-between" key={category.slug}>
@@ -35,6 +43,7 @@ export default async function Page() {
               ))}
             </ul>
           </div>
+          <PostCounts data={{ labels, data }} />
         </div>
       </Container>
     </>
