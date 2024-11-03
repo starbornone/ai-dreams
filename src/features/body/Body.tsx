@@ -1,3 +1,4 @@
+import { Note } from '@/components';
 import { BodyContent } from '@/types';
 import Markdoc from '@markdoc/markdoc';
 import React from 'react';
@@ -11,21 +12,31 @@ interface BodyProps {
 }
 
 const renderContent = (node: any, index = 0) => {
-  if (node.$$mdtype === 'Tag' && node.name === 'pre') {
-    const language = node.attributes['data-language'] || 'plaintext';
-    const codeContent = node.children[0] || '';
+  if (node.$$mdtype === 'Tag') {
+    if (node.name === 'Note') {
+      return (
+        <Note key={index} {...node.attributes}>
+          {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
+        </Note>
+      );
+    }
 
-    return (
-      <SyntaxHighlighter
-        className={styles['body__code-block']}
-        key={index}
-        language={language}
-        style={atomOneDark}
-        wrapLongLines
-      >
-        {codeContent}
-      </SyntaxHighlighter>
-    );
+    if (node.name === 'pre') {
+      const language = node.attributes['data-language'] || 'plaintext';
+      const codeContent = node.children[0] || '';
+
+      return (
+        <SyntaxHighlighter
+          className={styles['body__code-block']}
+          key={index}
+          language={language}
+          style={atomOneDark}
+          wrapLongLines
+        >
+          {codeContent}
+        </SyntaxHighlighter>
+      );
+    }
   }
 
   if (node.children && Array.isArray(node.children)) {
