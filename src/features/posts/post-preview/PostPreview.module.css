@@ -5,7 +5,7 @@
 .post-preview__image {
   height: 18rem;
   object-fit: cover;
-  object-position: center;
+  object-position: bottom;
 }
 
 @media (min-width: 640px) {

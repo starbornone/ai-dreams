@@ -18,7 +18,7 @@ export function PostLink({ post }: PostLinkProps) {
       >
         <Image
           alt={post.title}
-          className="object-cover"
+          className="object-cover object-bottom"
           height={300}
           src={
             post.coverImage
