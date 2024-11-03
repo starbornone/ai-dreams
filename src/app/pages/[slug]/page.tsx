@@ -1,5 +1,5 @@
 import { Container, Title } from '@/components';
-import { Body, CoverImage, Footer } from '@/features';
+import { Body, CoverImage } from '@/features';
 import { getAllPagesWithSlug } from '@/lib';
 import { PageData } from '@/types';
 import { handleGetPage } from '@/utils';
@@ -36,12 +36,20 @@ export default async function Page(props: { params: Promise<Params> }) {
     <>
       {page ? (
         <article className="page mb-32">
-          {page.coverImage && <CoverImage title={page.title} url={page.coverImage.url} />}
+          {page.coverImage && (
+            <CoverImage
+              imageAuthor={{
+                name: page?.imageAuthor || '',
+                url: page?.imageAuthorUrl || '',
+              }}
+              title={page.title}
+              url={page.coverImage.url}
+            />
+          )}
           <Container>
-            {page.title && <Title>{page.title}</Title>}
+            <div className="lg:mt-12">{page.title && <Title>{page.title}</Title>}</div>
             <div className="mx-auto max-w-prose">
               <Body content={page.content} />
-              <Footer imageAuthor={{ name: page?.imageAuthor || '', url: page?.imageAuthorUrl || '' }} />
             </div>
           </Container>
         </article>

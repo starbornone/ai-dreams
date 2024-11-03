@@ -1,5 +1,5 @@
 import { Container, Loading, SectionSeparator, Title } from '@/components';
-import { Body, CoverImage, Footer, MetaData, MorePosts } from '@/features';
+import { Body, CoverImage, MetaData, MorePosts } from '@/features';
 import { getAllPostsWithSlug } from '@/lib';
 import { PostData } from '@/types';
 import { handleGetPost } from '@/utils';
@@ -40,11 +40,22 @@ export default async function Page(props: { params: Promise<Params> }) {
     <>
       {post ? (
         <article className="post">
-          {post.coverImage && <CoverImage title={post.title} url={post.coverImage.url} />}
+          {post.coverImage && (
+            <CoverImage
+              imageAuthor={{
+                name: post?.imageAuthor || '',
+                url: post?.imageAuthorUrl || '',
+              }}
+              title={post.title}
+              url={post.coverImage.url}
+            />
+          )}
           <Container>
-            {post.title && <Title>{post.title}</Title>}
+            <div className="lg:mt-12">{post.title && <Title>{post.title}</Title>}</div>
             <div className="mx-auto max-w-prose">
-              <MetaData post={post} />
+              <div className="lg:mb-12">
+                <MetaData post={post} />
+              </div>
               {(post.content || post.markdownContent) && (
                 <Body
                   content={{
@@ -53,12 +64,6 @@ export default async function Page(props: { params: Promise<Params> }) {
                   }}
                 />
               )}
-              <Footer
-                imageAuthor={{
-                  name: post?.imageAuthor || '',
-                  url: post?.imageAuthorUrl || '',
-                }}
-              />
             </div>
           </Container>
         </article>

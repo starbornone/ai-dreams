@@ -5,8 +5,12 @@
   width: 100%;
 }
 
-.cover-image__link {
-  display: block;
+.cover-image p {
+  margin: 0;
+}
+
+.cover-image p a {
+  text-decoration: none;
 }
 
 .cover-image__image {
