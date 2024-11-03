@@ -1,7 +1,9 @@
+import { handleCategoryCounts } from '@/utils';
 import Link from 'next/link';
-import { navList } from './navList';
 
-export function MobileNav() {
+export async function MobileNav() {
+  const { categories } = await handleCategoryCounts();
+
   return (
     <div className="m-16 block text-center lg:hidden">
       <div className="sr-only">Topics:</div>
@@ -9,9 +11,9 @@ export function MobileNav() {
         className="neon-links grid grid-cols-1 space-y-6 text-2xl tracking-wider text-gray-100"
         style={{ fontFamily: 'Neon' }}
       >
-        {navList?.map((link) => (
-          <Link href={`/categories/${link.slug}`} key={link.slug}>
-            {link.name}
+        {categories?.map((category: { slug: string; name: string }) => (
+          <Link href={`/categories/${category.slug}`} key={category.slug}>
+            {category.name}
           </Link>
         ))}
       </div>
