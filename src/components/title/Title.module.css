@@ -4,7 +4,9 @@
   font-size: 2.25rem;
   letter-spacing: 0.05em;
   margin: 1rem auto;
+  overflow-wrap: anywhere;
   text-align: center;
+  word-break: break-word;
   text-shadow:
     0 0 0.6rem var(--color-gray-600),
     0 0 1.5rem var(--color-gray-700),

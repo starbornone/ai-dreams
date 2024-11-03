@@ -1,21 +1,9 @@
-'use client';
-
 import { Nav } from '@/layout';
-import clsx from 'clsx';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 export function Header() {
-  const pathname = usePathname();
-  const isPostListPage = pathname === '/' || pathname.includes('/categories/');
-
   return (
-    <div
-      className={clsx(
-        'items-center justify-between px-6 lg:flex lg:px-24',
-        isPostListPage ? 'my-16 lg:my-24' : 'my-8 lg:my-12'
-      )}
-    >
+    <div className="my-12 items-center justify-between px-6 lg:my-16 lg:flex lg:px-24">
       <div className="site-title">
         <h1 className="-mb-2 text-5xl md:mb-0 md:pr-8 md:text-6xl">
           <Link href="/">AI Dreams</Link>

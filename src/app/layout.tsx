@@ -1,4 +1,4 @@
-import { Footer, Header, Meta, MobileNav } from '@/layout';
+import { Layout, Meta } from '@/layout';
 import '@/styles/index.css';
 import type { Metadata } from 'next';
 import { Lexend, Source_Code_Pro } from 'next/font/google';
@@ -54,14 +54,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${lexend.variable} ${sourceCodePro.variable}`}>
         <Meta />
-        <div className="min-h-screen">
-          <hr className="h-4 border-0 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500" />
-          <Header />
-          {children}
-        </div>
-        <MobileNav />
-        <Footer />
-        <hr className="h-4 border-0 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500" />
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
