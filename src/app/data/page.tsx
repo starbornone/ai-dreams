@@ -16,9 +16,6 @@ export default async function Page() {
   const labels = sortedDates;
   const data = sortedDates.map((date) => dateCounts[date]);
 
-  console.log('labels', labels);
-  console.log('data', data);
-
   return (
     <>
       <Container>
