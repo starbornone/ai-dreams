@@ -2,6 +2,7 @@ import { Layout, Meta } from '@/layout';
 import '@/styles/index.css';
 import type { Metadata } from 'next';
 import { Lexend, Source_Code_Pro } from 'next/font/google';
+import Script from 'next/script';
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -52,6 +53,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-YLF7PH1ZNW" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YLF7PH1ZNW');
+          `}
+        </Script>
+      </head>
       <body className={`${lexend.variable} ${sourceCodePro.variable}`}>
         <Meta />
         <Layout>{children}</Layout>
