@@ -32,8 +32,8 @@ export function PostPreview({ post }: PostPreviewProps) {
             {post.title}
           </Link>
         </h2>
-        <div className="flex flex-row items-center justify-between gap-2 text-sm text-gray-500">
-          <div className="flex flex-row items-center gap-2">
+        <div className="flex flex-col justify-between gap-4 text-sm text-gray-500 lg:flex-row lg:items-center">
+          <div className="flex flex-row items-center justify-between gap-2 lg:justify-start">
             {/* Author */}
             <Link aria-label="Read more about the author" className="flex items-center gap-2" href="/pages/about">
               <Image
@@ -57,7 +57,7 @@ export function PostPreview({ post }: PostPreviewProps) {
               </time>
             )}
           </div>
-          <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-row items-center justify-between gap-2 lg:justify-start">
             {/* Category */}
             {post.category && (
               <div className="flex items-center gap-2" aria-label="Category">
@@ -87,11 +87,11 @@ export function PostPreview({ post }: PostPreviewProps) {
             )}
           </div>
         </div>
-        <p className="leading-relaxed text-gray-300">
+        <p className="my-2 leading-relaxed text-gray-300">
           {post.excerpt ||
             'Welcome to my blog. This website is a place where I share my thoughts and express my concerns about how external forces often shape our thoughts and actions in ways that favour them more than us. My goal here is to encourage deeper thinking, partly by critiquing the status quo.'}
         </p>
-        <Link className="img-link bg-gray-900 px-4 py-2 hover:text-gray-800" href={`/posts/${post.slug}`}>
+        <Link className="img-link mt-2 bg-gray-900 px-4 py-2 hover:text-gray-800" href={`/posts/${post.slug}`}>
           Read More
         </Link>
       </div>
