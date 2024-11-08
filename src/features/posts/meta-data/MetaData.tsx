@@ -49,15 +49,7 @@ export function MetaData({ post }: Props) {
         {post.tags && post.tags.length > 0 && (
           <div className="flex items-center gap-2" aria-label="Tags">
             <TagIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
-            <span>
-              {post.tags
-                .map((tag) => (
-                  <Link aria-label={`Explore more posts tagged with ${tag}`} href={`/tags/${tag}`} key={tag}>
-                    {tag}
-                  </Link>
-                ))
-                .reduce((prev, curr) => [prev, ', ', curr] as any)}
-            </span>
+            <span>{post.tags.map((tag) => tag).reduce((prev, curr) => [prev, ', ', curr] as any)}</span>
           </div>
         )}
       </div>
