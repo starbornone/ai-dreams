@@ -14,9 +14,9 @@ export function CoverImage({ imageAuthor, title, url }: CoverImageProps) {
       <Image
         alt={title}
         className={clsx(styles['cover-image__image'], 'link-inner')}
-        height={600}
+        height={1440}
         src={url}
-        width={1200}
+        width={2560}
       />
       {imageAuthor?.name && (
         <div className="absolute bottom-4 right-4 z-10">
