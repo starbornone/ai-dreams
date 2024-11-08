@@ -1,8 +1,9 @@
+import { CalendarIcon, FolderIcon, TagIcon } from '@/components';
 import { PostData } from '@/types';
 import clsx from 'clsx';
+import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MetaData } from '../meta-data';
 import styles from './PostPreview.module.css';
 
 interface PostPreviewProps {
@@ -31,7 +32,61 @@ export function PostPreview({ post }: PostPreviewProps) {
             {post.title}
           </Link>
         </h2>
-        <MetaData post={post} />
+        <div className="flex flex-row items-center justify-between gap-2 text-sm text-gray-500">
+          <div className="flex flex-row items-center gap-2">
+            {/* Author */}
+            <Link aria-label="Read more about the author" className="flex items-center gap-2" href="/pages/about">
+              <Image
+                alt="Human"
+                aria-hidden="true"
+                className="h-8 w-auto rounded-full border-2 border-gray-900 bg-gray-800"
+                height={61}
+                src="https://res.cloudinary.com/starborn/image/upload/v1731091304/ai-dreams/profile/human.png"
+                width={36}
+              />
+            </Link>
+            {/* Date */}
+            {post.date && (
+              <time
+                className="flex items-center gap-2 lg:justify-end"
+                dateTime={post.date}
+                aria-label="Publication date"
+              >
+                <CalendarIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
+                {format(new Date(post.date), 'dd MMMM yyyy')}
+              </time>
+            )}
+          </div>
+          <div className="flex flex-row items-center gap-2">
+            {/* Category */}
+            {post.category && (
+              <div className="flex items-center gap-2" aria-label="Category">
+                <FolderIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
+                <Link
+                  aria-label={`Explore more posts in the ${post.category.name} category`}
+                  href={`/categories/${post.category.slug}`}
+                >
+                  {post.category.name}
+                </Link>
+              </div>
+            )}
+            {/* Tags */}
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex items-center gap-2" aria-label="Tags">
+                <TagIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
+                <span>
+                  {post.tags
+                    .map((tag) => (
+                      <Link aria-label={`Explore more posts tagged with ${tag}`} href={`/tags/${tag}`} key={tag}>
+                        {tag}
+                      </Link>
+                    ))
+                    .reduce((prev, curr) => [prev, ', ', curr] as any)}
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
         <p className="leading-relaxed text-gray-300">
           {post.excerpt ||
             'Welcome to my blog. This website is a place where I share my thoughts and express my concerns about how external forces often shape our thoughts and actions in ways that favour them more than us. My goal here is to encourage deeper thinking, partly by critiquing the status quo.'}
