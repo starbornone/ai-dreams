@@ -14,9 +14,8 @@ export default function Page() {
           <Title>Contact Us</Title>
           <div className="mb-6">
             <p>
-              We&apos;d love to hear from you! Whether you have questions, feedback, or ideas to share, please fill out
-              the form below, and we&apos;ll get back to you as soon as possible. Or feel free to reach us at{' '}
-              <a href="mailto:human@aidreams.world">human@aidreams.world</a>.
+              We&apos;d love to hear from you! Whether you have questions, feedback, or ideas to share, feel free to
+              reach us at <a href="mailto:human@aidreams.world">human@aidreams.world</a>.
             </p>
           </div>
         </div>
