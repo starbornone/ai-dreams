@@ -2,8 +2,8 @@
   Image CSS
   =============== */
 
-.page img,
-.post img {
+.page img:not(.w-auto),
+.post img:not(.w-auto) {
   margin-left: auto;
   margin-right: auto;
   width: 100%;

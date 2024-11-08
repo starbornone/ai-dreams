@@ -53,9 +53,6 @@ export default async function Page(props: { params: Promise<Params> }) {
           <Container>
             <div className="lg:mt-12">{post.title && <Title>{post.title}</Title>}</div>
             <div className="mx-auto max-w-prose">
-              <div className="lg:mb-12">
-                <MetaData post={post} />
-              </div>
               {(post.content || post.markdownContent) && (
                 <Body
                   content={{
@@ -64,6 +61,9 @@ export default async function Page(props: { params: Promise<Params> }) {
                   }}
                 />
               )}
+              <div className="lg:my-12">
+                <MetaData post={post} />
+              </div>
             </div>
           </Container>
         </article>
