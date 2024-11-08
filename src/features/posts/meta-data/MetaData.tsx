@@ -11,47 +11,46 @@ interface Props {
 export function MetaData({ post }: Props) {
   return (
     <>
-      <div className="mt-12 flex flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <div className="mt-12 flex flex-row items-center gap-4 text-xs text-gray-500 lg:text-sm">
         {/* Author */}
-        <Link aria-label="Read more about the author" className="flex items-center gap-2" href="/pages/about">
+        <Link aria-label="Read more about the author" className="z-20 flex items-center gap-2" href="/pages/about">
           <Image
             alt="Human"
             aria-hidden="true"
-            className="h-12 w-auto rounded-full border-2 border-gray-900 bg-gray-800"
-            height={61}
-            src="https://res.cloudinary.com/starborn/image/upload/v1731091304/ai-dreams/profile/human.png"
-            width={36}
+            className="h-28 w-28 rounded-full border-4 border-gray-900 bg-gray-800"
+            height={256}
+            src="https://res.cloudinary.com/starborn/image/upload/v1731092556/ai-dreams/profile/kat-sq_axind9.jpg"
+            width={256}
           />
         </Link>
-        {/* Date */}
-        {post.date && (
-          <time className="flex items-center gap-2 lg:justify-end" dateTime={post.date} aria-label="Publication date">
-            <CalendarIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
-            {format(new Date(post.date), 'dd MMMM yyyy')}
-          </time>
-        )}
-      </div>
-
-      <div className="my-4 flex flex-row items-center justify-between gap-4 text-sm text-gray-500">
-        {/* Category */}
-        {post.category && (
-          <div className="flex items-center gap-2" aria-label="Category">
-            <FolderIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
-            <Link
-              aria-label={`Explore more posts in the ${post.category.name} category`}
-              href={`/categories/${post.category.slug}`}
-            >
-              {post.category.name}
-            </Link>
-          </div>
-        )}
-        {/* Tags */}
-        {post.tags && post.tags.length > 0 && (
-          <div className="flex items-center gap-2" aria-label="Tags">
-            <TagIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
-            <span>{post.tags.map((tag) => tag).reduce((prev, curr) => [prev, ', ', curr] as any)}</span>
-          </div>
-        )}
+        <div className="z-10 -ml-16 flex flex-col gap-2 rounded-r-full bg-gray-900 py-4 pl-16 pr-8 lg:pr-12">
+          {/* Date */}
+          {post.date && (
+            <time className="flex items-center gap-2" dateTime={post.date} aria-label="Publication date">
+              <CalendarIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
+              {format(new Date(post.date), 'dd MMMM yyyy')}
+            </time>
+          )}
+          {/* Category */}
+          {post.category && (
+            <div className="flex items-center gap-2" aria-label="Category">
+              <FolderIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
+              <Link
+                aria-label={`Explore more posts in the ${post.category.name} category`}
+                href={`/categories/${post.category.slug}`}
+              >
+                {post.category.name}
+              </Link>
+            </div>
+          )}
+          {/* Tags */}
+          {post.tags && post.tags.length > 0 && (
+            <div className="flex items-center gap-2" aria-label="Tags">
+              <TagIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
+              <span>{post.tags.map((tag) => tag).reduce((prev, curr) => [prev, ', ', curr] as any)}</span>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
