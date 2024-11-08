@@ -10,6 +10,7 @@ export async function getPage(slug: string) {
         content {
           html
         }
+        markdownContent
         imageAuthor
         imageAuthorUrl
         ogImage: coverImage {

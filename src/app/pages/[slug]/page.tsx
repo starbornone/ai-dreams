@@ -49,7 +49,14 @@ export default async function Page(props: { params: Promise<Params> }) {
           <Container>
             <div className="lg:mt-12">{page.title && <Title>{page.title}</Title>}</div>
             <div className="mx-auto max-w-prose">
-              <Body content={page.content} />
+              {(page.content || page.markdownContent) && (
+                <Body
+                  content={{
+                    html: page.content?.html || undefined,
+                    markdownContent: page.markdownContent || undefined,
+                  }}
+                />
+              )}
             </div>
           </Container>
         </article>
