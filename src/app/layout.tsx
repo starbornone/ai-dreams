@@ -1,6 +1,5 @@
 import { Layout, Meta } from '@/layout';
 import '@/styles/index.css';
-import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { Lexend, Source_Code_Pro } from 'next/font/google';
 
@@ -57,7 +56,6 @@ export default function RootLayout({
         <Meta />
         <Layout>{children}</Layout>
       </body>
-      <GoogleAnalytics gaId="G-YLF7PH1ZNW" />
     </html>
   );
 }
