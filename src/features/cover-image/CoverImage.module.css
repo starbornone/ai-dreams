@@ -22,10 +22,7 @@
 }
 
 @media (min-width: 640px) {
-  .cover-image {
-    height: 36rem;
-  }
-
+  .cover-image,
   .cover-image__image {
     height: 36rem;
   }
