@@ -17,13 +17,13 @@ export function MetaData({ post }: Props) {
           <Image
             alt="Human"
             aria-hidden="true"
-            className="h-28 w-28 rounded-full border-4 border-gray-900 bg-gray-800"
+            className="h-32 w-32 rounded-full border-4 border-gray-900 bg-gray-800"
             height={256}
             src="https://res.cloudinary.com/starborn/image/upload/v1732555832/ai-dreams/profile/starbornone-003_pzkzue.png"
             width={256}
           />
         </Link>
-        <div className="z-10 -ml-16 flex flex-col gap-2 rounded-r-full bg-gray-900 py-4 pl-16 pr-8 lg:pr-12">
+        <div className="z-10 -ml-32 flex w-full flex-col gap-2 rounded-l-full bg-gray-900 py-4 pl-32 pr-8 lg:pr-12">
           {/* Date */}
           {post.date && (
             <time className="flex items-center gap-2" dateTime={post.date} aria-label="Publication date">
