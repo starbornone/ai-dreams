@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     'Rules for a Fulfilling Life',
     'Critical Thinking',
     'Curiosity and Discovery',
-    '2022 Reflections',
+    'Life Reflections',
     'Exploration of Consciousness',
     'Radical Ethics',
     'Human Experience',
