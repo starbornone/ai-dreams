@@ -19,7 +19,7 @@ export function MetaData({ post }: Props) {
             aria-hidden="true"
             className="h-28 w-28 rounded-full border-4 border-gray-900 bg-gray-800"
             height={256}
-            src="https://res.cloudinary.com/starborn/image/upload/v1731092556/ai-dreams/profile/kat-sq_axind9.jpg"
+            src="https://res.cloudinary.com/starborn/image/upload/v1732555832/ai-dreams/profile/starbornone-003_pzkzue.png"
             width={256}
           />
         </Link>
