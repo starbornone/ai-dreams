@@ -78,11 +78,13 @@ export function MorePosts({ category, initialSkip = 0, limit, skipPost, title }:
   }, [fetchMorePosts, loading, hasMore, triggerFetch]);
 
   return (
-    <div className="my-16 md:my-32">
+    <div className="my-6 lg:my-24">
       <h2 className="site-title mb-8 text-center text-4xl sm:ml-3 sm:text-left md:text-5xl">
         {title ? title : 'More Posts'}
       </h2>
-      {posts.length > 0 ? posts.map((post) => <PostLink key={post.slug} post={post} />) : null}
+      <div className="flex flex-col gap-12">
+        {posts.length > 0 ? posts.map((post) => <PostLink key={post.slug} post={post} />) : null}
+      </div>
       {loading && <Loading color="orange" message="Loading more posts..." />}
       <div ref={observerRef} style={{ height: '1px' }} />
     </div>

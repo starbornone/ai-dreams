@@ -39,7 +39,7 @@ export default async function Page(props: { params: Promise<Params> }) {
   return (
     <>
       {post ? (
-        <article className="post">
+        <article className="post my-6 lg:my-16">
           {post.coverImage && (
             <CoverImage
               imageAuthor={{

@@ -12,7 +12,7 @@ interface PostPreviewProps {
 
 export function PostPreview({ post }: PostPreviewProps) {
   return (
-    <article className="my-6" aria-label={`Post preview for ${post.title}`}>
+    <article aria-label={`Post preview for ${post.title}`}>
       {/* Image Link */}
       <Link
         className={clsx(styles['post-preview__image-link'], 'img-link')}

@@ -15,7 +15,7 @@ export default async function Page() {
     <>
       <Container>
         {posts && posts.length > 0 ? (
-          <section className="my-12 grid grid-cols-1 gap-y-12 md:mb-32 lg:gap-y-16">
+          <section className="my-16 grid grid-cols-1 gap-y-12 lg:my-24 lg:gap-y-16">
             {posts.map((post) => (
               <PostPreview key={post.slug} post={post} />
             ))}

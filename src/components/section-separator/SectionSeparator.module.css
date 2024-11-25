@@ -1,7 +1,5 @@
 .section-separator {
   height: 0.25rem;
-  margin-bottom: 6rem;
-  margin-top: 7rem;
   border: none;
   border-radius: 9999px;
   background: linear-gradient(to right, var(--color-purple-500), var(--color-pink-500), var(--color-orange-500));
