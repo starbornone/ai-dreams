@@ -78,7 +78,7 @@ export function MorePosts({ category, initialSkip = 0, limit, skipPost, title }:
   }, [fetchMorePosts, loading, hasMore, triggerFetch]);
 
   return (
-    <div className="my-6 lg:my-24">
+    <div className="my-16 lg:my-24">
       <h2 className="site-title mb-8 text-center text-4xl sm:ml-3 sm:text-left md:text-5xl">
         {title ? title : 'More Posts'}
       </h2>

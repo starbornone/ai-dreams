@@ -16,9 +16,11 @@ export function Layout({ children }: LayoutProps) {
 
         <Container>
           <SectionSeparator />
+          <SupportLinks />
+          <div className="block lg:hidden">
+            <SectionSeparator />
+          </div>
         </Container>
-
-        <SupportLinks />
       </div>
 
       <MobileNav />
