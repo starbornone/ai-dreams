@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 1s linear infinite',
+      },
       colors: {
         transparent: 'var(--color-transparent)',
         current: 'var(--color-currentColor)',
@@ -96,6 +99,7 @@ const config: Config = {
       fontFamily: {
         sans: ['Lexend', 'sans-serif'],
         mono: ['Source Code Pro', 'sans-serif'],
+        neon: ['Neon', 'sans-serif'],
       },
     },
   },

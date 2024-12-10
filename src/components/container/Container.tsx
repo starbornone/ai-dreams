@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import styles from './Container.module.css';
 
 interface ContainerProps {
   children: React.ReactNode;
@@ -7,5 +6,5 @@ interface ContainerProps {
 }
 
 export function Container({ children, className }: ContainerProps) {
-  return <main className={clsx(styles['container'], className)}>{children}</main>;
+  return <main className={clsx('mx-auto max-w-6xl px-5', className)}>{children}</main>;
 }
