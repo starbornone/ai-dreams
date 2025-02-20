@@ -6,12 +6,14 @@ const pages = [
   {
     title: 'About Me',
     href: 'pages/about',
-    imageUrl: 'https://ap-southeast-2.graphassets.com/AnKXekidYRMi78mgukWzEz/P7tLAcr7RyyAyyDd9Q7Y',
+    imageUrl:
+      'https://ap-southeast-2.graphassets.com/AnKXekidYRMi78mgukWzEz/resize=height:400,width:800/P7tLAcr7RyyAyyDd9Q7Y',
   },
   {
     title: 'Best of AI Dreams',
     href: 'pages/best',
-    imageUrl: 'https://ap-southeast-2.graphassets.com/AnKXekidYRMi78mgukWzEz/6znd7BOhRLS9vQcjPHQH',
+    imageUrl:
+      'https://ap-southeast-2.graphassets.com/AnKXekidYRMi78mgukWzEz/resize=height:400,width:800/6znd7BOhRLS9vQcjPHQH',
   },
 ];
 
