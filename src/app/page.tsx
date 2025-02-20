@@ -3,13 +3,14 @@ import { MorePages, MorePosts, PostPreview } from '@/features';
 import { getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
 
-async function getInitialPosts(): Promise<PostData[]> {
+async function getInitialPosts(): Promise<{ posts: PostData[]; morePosts: PostData[] }> {
   const posts = await getLimitedPosts({ skip: 0, limit: 3 });
-  return posts;
+  const morePosts = await getLimitedPosts({ skip: 3 });
+  return { posts, morePosts };
 }
 
 export default async function Page() {
-  const posts = await getInitialPosts();
+  const { posts, morePosts } = await getInitialPosts();
 
   return (
     <>
@@ -24,7 +25,7 @@ export default async function Page() {
       </Container>
       <MorePages />
       <Container>
-        <MorePosts initialSkip={3} limit={12} />
+        <MorePosts morePosts={morePosts} />
       </Container>
     </>
   );

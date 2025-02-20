@@ -15,17 +15,17 @@ interface GetLimitedPostsRequest {
 export async function getLimitedPosts({
   skip = 0,
   skipPost,
-  limit = 3,
+  limit,
   category,
 }: GetLimitedPostsRequest): Promise<PostData[]> {
   const data: GetLimitedPostsResponse = await fetchAPI(
     `
-    query GetLimitedPosts($stage: Stage!, $skip: Int!, $limit: Int!
+    query GetLimitedPosts($stage: Stage!, $skip: Int!, ${limit ? '$limit: Int!' : ''}
     ${category ? '$category: String!' : ''} ${skipPost ? '$skipPost: String!' : ''}) {
       posts(
         stage: $stage,
         orderBy: date_DESC,
-        first: $limit,
+        ${limit ? 'first: $limit,' : ''}
         skip: $skip,
         where: { 
           date_not: null, 
@@ -51,7 +51,7 @@ export async function getLimitedPosts({
     {
       variables: {
         category: category ?? null,
-        limit,
+        limit: limit ?? undefined,
         skip,
         stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
         skipPost: skipPost ?? undefined,

@@ -1,6 +1,6 @@
 import { Container, Loading, SectionSeparator, Title } from '@/components';
 import { Body, CoverImage, MetaData, MorePosts } from '@/features';
-import { getAllPostsWithSlug } from '@/lib';
+import { getAllPostsWithSlug, getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
 import { handleGetPost } from '@/utils';
 import { Metadata } from 'next';
@@ -31,6 +31,7 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
 export default async function Page(props: { params: Promise<Params> }) {
   const params = await props.params;
   const post = await handleGetPost(params.slug);
+  const morePosts = await getLimitedPosts({ category: post.category.slug, limit: 3, skip: 1, skipPost: post.slug });
 
   if (!post) {
     return <Loading />;
@@ -72,14 +73,7 @@ export default async function Page(props: { params: Promise<Params> }) {
       )}
       <Container>
         <SectionSeparator />
-        {post.category && (
-          <MorePosts
-            category={post.category.slug}
-            limit={3}
-            skipPost={post.slug}
-            title={`More ${post.category.name} Posts`}
-          />
-        )}
+        {post.category && <MorePosts morePosts={morePosts} title={`More ${post.category.name} Posts`} />}
       </Container>
     </>
   );
