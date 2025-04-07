@@ -1,5 +1,4 @@
 import { Container, SectionSeparator } from '@/components';
-import { SupportLinks } from '@/components/support-links';
 import { Footer, Header, MobileNav } from '@/layout';
 
 interface LayoutProps {
@@ -16,7 +15,6 @@ export function Layout({ children }: LayoutProps) {
 
         <Container>
           <SectionSeparator />
-          <SupportLinks />
           <div className="block lg:hidden">
             <SectionSeparator />
           </div>
