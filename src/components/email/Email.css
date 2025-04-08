@@ -21,14 +21,19 @@
   .email__header {
     background-color: var(--color-gray-800);
     border-bottom: 1px solid var(--color-gray-700);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     padding: 1rem 1.5rem;
     position: relative;
   }
   
-  .email__header-line {
-    align-items: center;
-    display: flex;
-    gap: 0.5rem;
+  @media screen and (min-width: 768px) {
+    .email__header-line {
+      align-items: center;
+      display: flex;
+      gap: 0.5rem;
+    }
   }
   
   .email__label {
@@ -50,9 +55,24 @@
   .email__time {
     color: var(--color-gray-400);
     font-size: 0.75rem;
-    position: absolute;
-    right: 1.25rem;
-    top: 1.25rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .email__time {
+      position: absolute;
+      right: 1.25rem;
+      top: 1.25rem;
+    }
+  }
+
+  .email__time-prefix {
+    display: inline;
+  }
+
+  @media screen and (min-width: 768px) {
+    .email__time-prefix {
+      display: none;
+    }
   }
   
   .email__content {
