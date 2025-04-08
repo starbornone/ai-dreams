@@ -20,6 +20,7 @@
   /* ===============
     Site Title
     =============== */
+
   .site-title {
     font-family: 'Neon';
     text-shadow:
@@ -37,6 +38,7 @@
   /* ===============
     .world Sign
     =============== */
+
   .sign {
     font-family: 'Neon Lines';
     text-transform: uppercase;
@@ -65,6 +67,7 @@
   /* ===============
     Cover Images
     =============== */
+
   .img-link:hover .link-inner {
     animation: glitchy 0.3s infinite;
   }
@@ -80,6 +83,7 @@
   /* ===============
     Post Links
     =============== */
+
   .title-link:hover::before {
     visibility: visible;
     animation: glitchy 0.3s ease 0.3s infinite;
