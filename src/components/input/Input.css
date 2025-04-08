@@ -1,0 +1,23 @@
+/* ===============
+  Input CSS
+  =============== */
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .input__label {
+    color: var(--color-gray-300);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .input__field {
+    background-color: var(--color-gray-800);
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-gray-700);
+    padding: 0.25rem;
+    width: 100%;
+  }
