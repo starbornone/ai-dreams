@@ -15,7 +15,7 @@ export const Notification = ({ children, icon = 'info' }: NotificationProps) => 
           {ICONS[icon]}
         </svg>
       </div>
-      {children}
+      <div className="notification__content">{children}</div>
     </div>
   );
 };

@@ -34,3 +34,7 @@
   .notification__icon-path {
     fill: var(--color-gray-800);
   }
+
+  .notification__content {
+    padding-right: 1rem;
+  }
