@@ -3,10 +3,11 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-import { Chat, ChatMessage, Email, FakeLink, Note, Notification } from '@/components';
+import { Chat, ChatMessage, Email, FakeLink, Form, Grid, Note, Notification } from '@/components';
 import { BodyContent } from '@/types';
 import { config } from '../../../markdoc.config';
 
+import { Input } from '@/components/input';
 import styles from './Body.module.css';
 
 interface BodyProps {
@@ -44,6 +45,30 @@ const renderContent = (node: any, index = 0) => {
         <FakeLink key={index} {...node.attributes}>
           {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
         </FakeLink>
+      );
+    }
+
+    if (node.name === 'Form') {
+      return (
+        <Form key={index} {...node.attributes}>
+          {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
+        </Form>
+      );
+    }
+
+    if (node.name === 'Grid') {
+      return (
+        <Grid key={index} {...node.attributes}>
+          {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
+        </Grid>
+      );
+    }
+
+    if (node.name === 'Input') {
+      return (
+        <Input key={index} {...node.attributes}>
+          {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
+        </Input>
       );
     }
 

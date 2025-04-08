@@ -41,6 +41,40 @@ export const config = {
       description: 'Display a fake link',
       attributes: {},
     },
+    form: {
+      render: 'Form',
+      description: 'Display a form',
+      attributes: {},
+    },
+    grid: {
+      render: 'Grid',
+      description: 'Display a grid',
+      attributes: {
+        columns: {
+          type: String,
+          description: 'Number of columns in the grid',
+        },
+      },
+    },
+    input: {
+      render: 'Input',
+      description: 'Display an input field',
+      attributes: {
+        label: {
+          type: String,
+          description: 'Label for the input field',
+        },
+        placeholder: {
+          type: String,
+          description: 'Placeholder text for the input field',
+        },
+        type: {
+          type: String,
+          description: 'Type of the input field',
+          matches: ['email', 'password', 'text', 'textarea'],
+        },
+      },
+    },
     note: {
       render: 'Note',
       description: 'Display a callout or highlighted note',
