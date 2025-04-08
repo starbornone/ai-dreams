@@ -1,0 +1,30 @@
+/* ===============
+  Chat Message CSS
+  =============== */
+
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.chat-message__header {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.chat-message__sender {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.chat-message__time {
+  color: var(--color-gray-500);
+  font-size: 0.75rem;
+}
+
+.chat-message__content p {
+  line-height: 1.4;
+  margin: 0;
+}
