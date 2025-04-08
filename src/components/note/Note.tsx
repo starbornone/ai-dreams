@@ -1,3 +1,5 @@
+import './Note.css';
+
 interface NoteProps {
   children: string;
 }
