@@ -1,10 +1,12 @@
-import { Note } from '@/components';
-import { BodyContent } from '@/types';
 import Markdoc from '@markdoc/markdoc';
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+import { Chat, ChatMessage, Email, FakeLink, Note, Notification } from '@/components';
+import { BodyContent } from '@/types';
 import { config } from '../../../markdoc.config';
+
 import styles from './Body.module.css';
 
 interface BodyProps {
@@ -13,11 +15,51 @@ interface BodyProps {
 
 const renderContent = (node: any, index = 0) => {
   if (node.$$mdtype === 'Tag') {
+    if (node.name === 'Chat') {
+      return (
+        <Chat key={index} {...node.attributes}>
+          {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
+        </Chat>
+      );
+    }
+
+    if (node.name === 'ChatMessage') {
+      return (
+        <ChatMessage key={index} {...node.attributes}>
+          {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
+        </ChatMessage>
+      );
+    }
+
+    if (node.name === 'Email') {
+      return (
+        <Email key={index} {...node.attributes}>
+          {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
+        </Email>
+      );
+    }
+
+    if (node.name === 'FakeLink') {
+      return (
+        <FakeLink key={index} {...node.attributes}>
+          {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
+        </FakeLink>
+      );
+    }
+
     if (node.name === 'Note') {
       return (
         <Note key={index} {...node.attributes}>
           {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
         </Note>
+      );
+    }
+
+    if (node.name === 'Notification') {
+      return (
+        <Notification key={index} {...node.attributes}>
+          {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
+        </Notification>
       );
     }
 
@@ -40,6 +82,27 @@ const renderContent = (node: any, index = 0) => {
   }
 
   if (node.children && Array.isArray(node.children)) {
+    const selfClosingTags = [
+      'hr',
+      'br',
+      'img',
+      'input',
+      'meta',
+      'link',
+      'area',
+      'base',
+      'col',
+      'embed',
+      'param',
+      'source',
+      'track',
+      'wbr',
+    ];
+
+    if (selfClosingTags.includes(node.name)) {
+      return React.createElement(node.name, { ...node.attributes, key: index });
+    }
+
     return React.createElement(
       node.name || 'div',
       { ...node.attributes, key: index },
