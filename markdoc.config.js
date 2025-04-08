@@ -9,11 +9,11 @@ export const config = {
       description: 'Display a message in a chat window',
       attributes: {
         sender: {
-          type: 'string',
+          type: String,
           description: 'Sender of the message',
         },
         time: {
-          type: 'string',
+          type: String,
           description: 'Time of the message',
         },
       },
@@ -23,15 +23,15 @@ export const config = {
       description: 'Display a block with an email style format',
       attributes: {
         sender: {
-          type: 'string',
+          type: String,
           description: 'Email sender',
         },
         subject: {
-          type: 'string',
+          type: String,
           description: 'Email subject',
         },
         time: {
-          type: 'string',
+          type: String,
           description: 'Time of the email',
         },
       },
@@ -51,7 +51,7 @@ export const config = {
       description: 'Display a notification or alert',
       attributes: {
         icon: {
-          type: 'string',
+          type: String,
           description: 'Icon to display in the notification',
           matches: ['alert', 'bell', 'calendar', 'info'],
         },
