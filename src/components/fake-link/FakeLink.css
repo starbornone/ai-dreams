@@ -1,0 +1,17 @@
+/* ===============
+  FakeLink CSS
+  =============== */
+
+.fake-link {
+  border-bottom: 1px solid var(--color-aqua-700);
+  color: var(--color-gray-200);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.fake-link:hover {
+  border-color: var(--color-aqua-600);
+  color: var(--color-aqua-600);
+  text-decoration: none;
+}
