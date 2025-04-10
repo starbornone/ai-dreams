@@ -36,7 +36,12 @@ hr,
 .hr {
   border-color: var(--color-orange-500);
   border-bottom-width: 1px;
-  margin: 3rem 0 !important;
+  margin: 0;
+}
+
+article hr,
+article .hr {
+  margin: 3rem 0;
 }
 
 /* ===============
