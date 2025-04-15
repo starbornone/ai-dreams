@@ -15,13 +15,19 @@ const pages = [
     imageUrl:
       'https://ap-southeast-2.graphassets.com/AnKXekidYRMi78mgukWzEz/resize=height:400,width:800/6znd7BOhRLS9vQcjPHQH',
   },
+  {
+    title: 'Book Recommendations',
+    href: 'pages/book-recommendations-non-fiction-edition',
+    imageUrl:
+      'https://ap-southeast-2.graphassets.com/AnKXekidYRMi78mgukWzEz/resize=height:400,width:800/vPQl7aVYRDOzhxgOCpuq',
+  },
 ];
 
 export function MorePages() {
   return (
     <div className="my-16 bg-gray-900 py-16 md:my-32 md:py-32">
       <Container>
-        <div className="mx-auto grid gap-16 lg:grid-cols-2">
+        <div className="mx-auto grid grid-cols-1 justify-items-center gap-16 lg:grid-cols-3">
           {pages.map((page) => (
             <Link href={page.href} key={page.href}>
               <div className="img-link group bg-gray-800">
