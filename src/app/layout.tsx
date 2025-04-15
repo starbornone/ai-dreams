@@ -1,7 +1,9 @@
 import { Layout, Meta } from '@/layout';
-import '@/styles/index.css';
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Lexend, Source_Code_Pro } from 'next/font/google';
+
+import '@/styles/index.css';
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -64,6 +66,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${lexend.variable} ${sourceCodePro.variable}`}>
         <Meta />
+        <Analytics />
         <Layout>{children}</Layout>
       </body>
     </html>
