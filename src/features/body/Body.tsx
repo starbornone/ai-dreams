@@ -3,11 +3,10 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-import { Chat, ChatMessage, Email, FakeLink, Form, Grid, Note, Notification } from '@/components';
+import { Chat, ChatMessage, Email, FakeLink, Form, Grid, Input, Note, Notification } from '@/components';
 import { BodyContent } from '@/types';
 import { config } from '../../../markdoc.config';
 
-import { Input } from '@/components/input';
 import styles from './Body.module.css';
 
 interface BodyProps {
