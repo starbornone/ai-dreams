@@ -4,8 +4,8 @@ import { getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
 
 async function getInitialPosts(): Promise<{ posts: PostData[]; morePosts: PostData[] }> {
-  const posts = await getLimitedPosts({ skip: 0, limit: 3 });
-  const morePosts = await getLimitedPosts({ skip: 3 });
+  const posts = await getLimitedPosts({ skip: 0, limit: 6 });
+  const morePosts = await getLimitedPosts({ skip: 6 });
   return { posts, morePosts };
 }
 
