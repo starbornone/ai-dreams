@@ -10,9 +10,10 @@ export async function MobileNav() {
         Topics:
       </div>
       <div
-        className="neon-links grid grid-cols-1 space-y-6 text-2xl tracking-wider text-gray-100"
+        className="neon-links flex flex-wrap gap-6 text-2xl tracking-wider text-gray-100"
         style={{ fontFamily: 'Neon' }}
       >
+        Topics:{' '}
         {categories?.map((category: { slug: string; name: string }) => (
           <Link
             aria-label={`Navigate to ${category.name}`}
