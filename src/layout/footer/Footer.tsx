@@ -9,31 +9,33 @@ export function Footer() {
           {/* Navigation Links Section */}
           <nav aria-label="Footer Navigation">
             <h3 className="sr-only text-gray-300">Quick Links</h3>
-            <div className="mt-2 flex flex-col gap-4 font-semibold lg:flex-row lg:gap-x-8 lg:gap-y-0">
-              <Link href="/" aria-label="Home page">
-                Home
-              </Link>
+            <div className="mt-2 flex gap-4 font-semibold lg:gap-x-8 lg:gap-y-0">
               <Link href="/pages/about" aria-label="About the author and site">
                 About
               </Link>
-              <Link href="/contact" aria-label="Contact page">
-                Contact Us
+              <Link
+                href="/pages/book-recommendations-non-fiction-edition"
+                aria-label="Non-fiction book recommendations"
+              >
+                Book Recommendations
               </Link>
               <Link href="/pages/glossary" aria-label="Glossary of terms">
                 Glossary
-              </Link>
-              <Link href="/data" aria-label="Blog data page">
-                Blog Data
-              </Link>
-              <Link href="/pages/privacy-policy" aria-label="Privacy policy">
-                Privacy Policy
               </Link>
             </div>
           </nav>
 
           {/* Site Information Section */}
           <div className="my-8">
-            <p className="text-gray-300">Dreaming since 2021.</p>
+            <div className="flex gap-4 lg:gap-x-8 lg:gap-y-0">
+              <p className="text-gray-300">AI dreaming since 2021.</p>
+              <Link href="/data" aria-label="Blog data">
+                Blog Data
+              </Link>
+              <Link href="/pages/privacy-policy" aria-label="Privacy policy">
+                Privacy Policy
+              </Link>
+            </div>
             <p className="mt-2 text-xs font-light text-gray-600">
               The purchase of any products through external sites does not provide any monetary benefit to the author.
             </p>
