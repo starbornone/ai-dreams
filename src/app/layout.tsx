@@ -1,7 +1,8 @@
-import { Layout, Meta } from '@/layout';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Lexend, Source_Code_Pro } from 'next/font/google';
+
+import { Layout, Meta } from '@/layout';
 
 import '@/styles/index.css';
 
