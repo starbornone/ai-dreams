@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { Lexend, Source_Code_Pro } from 'next/font/google';
 
@@ -66,8 +67,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${lexend.variable} ${sourceCodePro.variable}`}>
-        <Meta />
         <Analytics />
+        <Meta />
+        <SpeedInsights />
         <Layout>{children}</Layout>
       </body>
     </html>
