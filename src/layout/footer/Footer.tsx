@@ -35,7 +35,7 @@ export function Footer() {
           <div className="my-8">
             <LinkContainer>
               <p className="text-gray-300">AI dreaming since 2021.</p>
-              <Link href="/contact" aria-label="Contact us">
+              <Link href="/pages/contact-us" aria-label="Contact us">
                 Contact Us
               </Link>
               <Link href="/data" aria-label="Blog data">
