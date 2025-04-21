@@ -36,10 +36,7 @@ export function PostLink({ post }: PostLinkProps) {
           {/* Title and Excerpt */}
           <div>
             <h2 className="title-link group-hover:text-gray-800">{post.title}</h2>
-            <p className="mt-2 text-sm text-gray-300 group-hover:text-gray-800">
-              {post.excerpt ||
-                'Welcome to my blog. This website is a place where I share my thoughts and express my concerns about how external forces often shape our thoughts and actions in ways that favour them more than us. My goal here is to encourage deeper thinking, partly by critiquing the status quo.'}
-            </p>
+            {post.excerpt && <p className="mt-2 text-sm text-gray-300 group-hover:text-gray-800">{post.excerpt}</p>}
           </div>
 
           {/* Metadata: Category, Tags, Date */}
@@ -61,10 +58,12 @@ export function PostLink({ post }: PostLinkProps) {
             )}
 
             {/* Date */}
-            <div className="flex items-center gap-2" aria-label="Publication date">
-              <CalendarIcon className="h-3 w-3 text-gray-600" aria-hidden="true" />
-              <time dateTime={post.date}>{format(new Date(post.date), 'dd MMMM yyyy')}</time>
-            </div>
+            {post.date && (
+              <div className="flex items-center gap-2" aria-label="Publication date">
+                <CalendarIcon className="h-3 w-3 text-gray-600" aria-hidden="true" />
+                <time dateTime={post.date}>{format(new Date(post.date), 'dd MMMM yyyy')}</time>
+              </div>
+            )}
           </div>
         </div>
       </Link>
