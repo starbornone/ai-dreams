@@ -1,8 +1,10 @@
-import { Container, Title } from '@/components';
-import { handleCategoryCounts, handlePostsCountByMonth } from '@/utils';
 import { Metadata } from 'next';
 import Link from 'next/link';
+
+import { Container, Title } from '@/components';
+import { getAllData } from '@/lib';
 import { PostCounts } from './_post-counts';
+import { TagCloud } from './_tag-cloud';
 
 export const metadata: Metadata = {
   title: 'Blog Data',
@@ -10,8 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const { categories } = await handleCategoryCounts();
-  const dateCounts = await handlePostsCountByMonth();
+  const { categories, dateCounts, tags } = await getAllData();
+
   const sortedDates = Object.keys(dateCounts).sort();
   const labels = sortedDates;
   const data = sortedDates.map((date) => dateCounts[date]);
@@ -19,7 +21,7 @@ export default async function Page() {
   return (
     <>
       <Container>
-        <div className="mx-auto max-w-prose">
+        <article className="mx-auto max-w-prose">
           <Title>Blog Data</Title>
           <div className="mb-6">
             <p>
@@ -41,7 +43,11 @@ export default async function Page() {
             </ul>
           </div>
           <PostCounts data={{ labels, data }} />
-        </div>
+          <div className="my-12">
+            <h2 className="mb-2 text-xl font-bold">Tags</h2>
+            <TagCloud tags={tags} />
+          </div>
+        </article>
       </Container>
     </>
   );
