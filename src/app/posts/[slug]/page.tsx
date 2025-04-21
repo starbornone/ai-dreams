@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import { Container, Loading, SectionSeparator, Title } from '@/components';
 import { Body, CoverImage, MetaData, MorePosts } from '@/features';
@@ -32,7 +33,17 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
 export default async function Page(props: { params: Promise<Params> }) {
   const params = await props.params;
   const post = await handleGetPost(params.slug);
-  const morePosts = await getLimitedPosts({ category: post.category.slug, limit: 3, skip: 1, skipPost: post.slug });
+
+  if (!post) {
+    notFound();
+  }
+
+  const morePosts = await getLimitedPosts({
+    category: post?.category?.slug || '',
+    limit: 3,
+    skip: 1,
+    skipPost: post?.slug,
+  });
 
   if (!post) {
     return <Loading />;
