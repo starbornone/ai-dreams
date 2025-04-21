@@ -42,8 +42,6 @@ export default async function Page({ params }: { params: Params }) {
 
   return (
     <Container>
-      <h1 className="mb-8 text-3xl font-bold">{tagName}</h1>
-
       {posts && posts.length > 0 ? (
         <section className="my-12 grid grid-cols-1 gap-y-12 md:mb-32 lg:gap-y-16">
           {posts.map((post) => (
