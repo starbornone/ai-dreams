@@ -6,7 +6,7 @@ import { getAllData } from '@/lib';
 import { getAllPostsByTag } from '@/lib/tags/getAllPostsByTag';
 import { PostData } from '@/types';
 
-type Params = { slug: string };
+type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
   const { tags } = await getAllData();
@@ -35,8 +35,9 @@ async function handleGetPosts(tag: string): Promise<PostData[]> {
   return posts;
 }
 
-export default async function Page({ params }: { params: Params }) {
-  const { slug } = params;
+export default async function Page(props: { params: Promise<Params> }) {
+  const params = await props.params;
+  const slug = params.slug;
 
   const posts = await handleGetPosts(slug);
   const tagName = decodeURIComponent(slug);
