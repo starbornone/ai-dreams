@@ -1,4 +1,5 @@
 export * from './getAllPostDates';
+export * from './getAllPosts';
 export * from './getAllPostsWithCategory';
 export * from './getAllPostsWithSlug';
 export * from './getLimitedPosts';
