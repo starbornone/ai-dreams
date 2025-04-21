@@ -1,8 +1,9 @@
+import { Metadata } from 'next';
+
 import { Container } from '@/components';
 import { PostPreview } from '@/features';
 import { getAllCategoriesWithSlug, getCategory, getPostsByCategory } from '@/lib';
 import { PostData } from '@/types';
-import { Metadata } from 'next';
 
 type Params = Promise<{ slug: string }>;
 
