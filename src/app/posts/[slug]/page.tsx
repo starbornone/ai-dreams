@@ -1,9 +1,10 @@
+import { Metadata } from 'next';
+
 import { Container, Loading, SectionSeparator, Title } from '@/components';
 import { Body, CoverImage, MetaData, MorePosts } from '@/features';
 import { getAllPostsWithSlug, getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
 import { handleGetPost } from '@/utils';
-import { Metadata } from 'next';
 
 type Params = Promise<{ slug: string }>;
 
