@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import { Container } from '@/components';
 import { PostPreview } from '@/features';
@@ -19,6 +20,10 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   const slug = params.slug;
 
   const category = await getCategory(slug);
+
+  if (!category) {
+    notFound();
+  }
 
   return {
     title: category.name,
