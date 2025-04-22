@@ -1,9 +1,11 @@
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+
 import { Container, Title } from '@/components';
 import { Body, CoverImage } from '@/features';
 import { getAllPagesWithSlug } from '@/lib';
 import { PageData } from '@/types';
 import { handleGetPage } from '@/utils';
-import { Metadata } from 'next';
 
 type Params = Promise<{ slug: string }>;
 
@@ -31,6 +33,10 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
 export default async function Page(props: { params: Promise<Params> }) {
   const params = await props.params;
   const page = await handleGetPage(params);
+
+  if (!page) {
+    notFound();
+  }
 
   return (
     <>
