@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     default: 'AI Dreams',
   },
   description:
-    'A thoughtful exploration of philosophy, society, and personal growth. AI Dreams bridges the gap between deep ideas and practical reflections, covering topics like perception, ethics, community, and systemic critiques.',
+    "A software engineer's thoughtful exploration of philosophy, society, and personal growth. AI Dreams bridges the gap between deep ideas and practical reflections, covering topics like perception, ethics, community, and systemic critiques.",
   keywords: [
     'Accessible Philosophy',
     'Class Analysis',
