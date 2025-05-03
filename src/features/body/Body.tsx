@@ -3,7 +3,7 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-import { Chat, ChatMessage, Email, FakeLink, Form, Grid, Input, Note, Notification } from '@/components';
+import { Caption, Chat, ChatMessage, Email, FakeLink, Form, Grid, Input, Note, Notification } from '@/components';
 import { BodyContent } from '@/types';
 import { config } from '../../../markdoc.config';
 
@@ -15,6 +15,14 @@ interface BodyProps {
 
 const renderContent = (node: any, index = 0) => {
   if (node.$$mdtype === 'Tag') {
+    if (node.name === 'Caption') {
+      return (
+        <Caption key={index} {...node.attributes}>
+          {node.children.map((child: any, childIndex: number) => renderContent(child, childIndex))}
+        </Caption>
+      );
+    }
+
     if (node.name === 'Chat') {
       return (
         <Chat key={index} {...node.attributes}>
