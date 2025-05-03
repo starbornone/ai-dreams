@@ -1,5 +1,19 @@
 export const config = {
   tags: {
+    caption: {
+      render: 'Caption',
+      description: 'Display a caption for an image or video',
+      attributes: {
+        linkTitle: {
+          type: String,
+          description: 'Title of the link to be displayed with the caption',
+        },
+        linkUrl: {
+          type: String,
+          description: 'URL of the link to be displayed with the caption',
+        },
+      },
+    },
     chat: {
       render: 'Chat',
       description: 'Display a chat window',
