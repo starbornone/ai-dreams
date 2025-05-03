@@ -1,3 +1,4 @@
+export * from './caption';
 export * from './chat';
 export * from './chat-message';
 export * from './container';

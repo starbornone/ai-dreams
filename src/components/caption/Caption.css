@@ -1,0 +1,12 @@
+/* ===============
+  Caption CSS
+  =============== */
+
+.caption {
+  background: var(--color-gray-700);
+  color: var(--color-gray-500);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.5rem 1rem;
+  text-align: right;
+}
