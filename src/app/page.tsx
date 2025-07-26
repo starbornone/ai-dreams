@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { Container } from '@/components';
 import { MorePages, MorePosts, PostPreview } from '@/features';
 import { getLimitedPosts } from '@/lib';
