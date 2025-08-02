@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { headers } from 'next/headers';
 import Link from 'next/link';
 

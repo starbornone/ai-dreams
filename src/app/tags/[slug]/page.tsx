@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { Metadata } from 'next';
 
 import { Container } from '@/components';
