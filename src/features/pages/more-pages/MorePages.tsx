@@ -12,7 +12,7 @@ const pages = [
   },
   {
     title: 'Best of AI Dreams',
-    href: 'pages/best',
+    href: 'pages/best-ai-dreams',
     imageUrl:
       'https://ap-southeast-2.graphassets.com/AnKXekidYRMi78mgukWzEz/resize=height:400,width:800/6znd7BOhRLS9vQcjPHQH',
   },
