@@ -4,7 +4,10 @@ export async function getAllData() {
   const data = await fetchAPI(
     `
     query GetAllData($stage: Stage!) {
-      posts(stage: $stage) {
+      posts(
+        stage: $stage,
+        where: { date_not: null }
+      ) {
         date
         tags
         category {
