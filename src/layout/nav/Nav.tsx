@@ -5,7 +5,7 @@ export async function Nav() {
   const { categories } = await handleCategoryCounts();
 
   return (
-    <nav aria-label="Primary Navigation" className="hidden lg:my-0 lg:block lg:max-w-lg">
+    <nav aria-label="Primary Navigation" className="hidden lg:my-0 lg:block md:max-w-md xl:max-w-2xl">
       <div className="neon-links flex flex-wrap justify-end space-x-10 font-neon text-xl tracking-wider text-gray-100">
         {categories?.map((category: { slug: string; name: string }) => (
           <Link
