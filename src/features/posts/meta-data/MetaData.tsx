@@ -17,7 +17,7 @@ export function MetaData({ post }: Props) {
           <Image
             alt="Human"
             aria-hidden="true"
-            className="h-32 w-32 rounded-full border-4 border-gray-900 bg-gray-800"
+            className="avatar-image h-32 w-32 rounded-full border-4 border-gray-900 bg-gray-800"
             height={256}
             src="https://res.cloudinary.com/starborn/image/upload/v1732555832/ai-dreams/profile/starbornone-003_pzkzue.png"
             width={256}
