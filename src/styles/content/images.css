@@ -2,11 +2,29 @@
   Image CSS
   =============== */
 
+/* Mobile-first: Images full width by default */
 .page img:not(.w-auto),
 .post img:not(.w-auto) {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}
+
+@media (min-width: 1025px) {
+  .page img:not(.w-auto),
+  .post img:not(.w-auto) {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: calc(-50% - 3rem);
+    margin-right: calc(-50% - 3rem);
+    width: calc(100% + 6rem);
+    max-width: none;
+  }
 }
 
 .img-link {
