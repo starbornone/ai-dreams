@@ -1,5 +1,7 @@
-import { Nav } from '@/layout';
 import Link from 'next/link';
+
+import { Nav } from '@/layout';
+
 import './Header.css';
 
 export function Header() {
