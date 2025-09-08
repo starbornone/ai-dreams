@@ -1,6 +1,6 @@
 import { API_CONFIG, getAuthToken } from '@/config/api';
 import { GraphQLResponse } from '@/types/graphql';
-import { GraphQLError, APIError, RateLimitError, handleAPIError, logError } from '@/utils/handleErrors';
+import { APIError, GraphQLError, RateLimitError, handleAPIError, logError } from '@/utils/handleErrors';
 
 // Rate limiting state
 let lastFetchTime = 0;
@@ -12,14 +12,10 @@ async function delay(ms: number): Promise<void> {
 
 async function exponentialBackoff(attempt: number): Promise<void> {
   const delay = API_CONFIG.RATE_LIMIT.DELAY_MS * Math.pow(API_CONFIG.RATE_LIMIT.BACKOFF_MULTIPLIER, attempt);
-  await new Promise(resolve => setTimeout(resolve, delay));
+  await new Promise((resolve) => setTimeout(resolve, delay));
 }
 
-export async function fetchAPI<T = any>(
-  query: string, 
-  { variables = {} } = {},
-  retryAttempt = 0
-): Promise<T> {
+export async function fetchAPI<T = any>(query: string, { variables = {} } = {}, retryAttempt = 0): Promise<T> {
   const apiUrl = process.env.HYGRAPH_PROJECT_API;
 
   if (!apiUrl) {
@@ -79,10 +75,9 @@ export async function fetchAPI<T = any>(
     // Reset retry count on success
     retryCount = 0;
     return json.data;
-
   } catch (error) {
     const apiError = handleAPIError(error);
-    
+
     // Retry logic for rate limiting and network errors
     if (
       (apiError instanceof RateLimitError || apiError.statusCode >= 500) &&
@@ -90,7 +85,7 @@ export async function fetchAPI<T = any>(
     ) {
       retryCount++;
       logError(apiError, `Retry attempt ${retryAttempt + 1}/${API_CONFIG.RATE_LIMIT.MAX_RETRIES}`);
-      
+
       await exponentialBackoff(retryAttempt);
       return fetchAPI<T>(query, { variables }, retryAttempt + 1);
     }

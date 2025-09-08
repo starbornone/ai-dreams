@@ -30,9 +30,7 @@ export function PostHeader({ category, coverImage, date, tags, title }: PostHead
         {tags && (
           <div className="post-header__metadata-item">
             <TagIcon className="post-header__metadata-icon" />
-            <div>
-              {tags.length > 0 ? tags.map((tag, index) => tag + (index === 0 ? ', ' : '')) : null}
-            </div>
+            <div>{tags.length > 0 ? tags.map((tag, index) => tag + (index === 0 ? ', ' : '')) : null}</div>
           </div>
         )}
         {date && (

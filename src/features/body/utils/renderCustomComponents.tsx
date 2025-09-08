@@ -1,24 +1,24 @@
-import React from 'react';
-import { type RenderableTreeNode } from '@markdoc/markdoc';
 import { Caption, Chat, ChatMessage, Email, FakeLink, Form, Grid, Input, Note, Notification } from '@/components';
+import { type RenderableTreeNode } from '@markdoc/markdoc';
+import React from 'react';
 
 /**
  * Converts node children to string content for components that expect string children
  */
 const convertToStringContent = (children: any[]): string => {
-  return children?.map((child: any) => 
-    typeof child === 'string' ? child : 
-    typeof child === 'number' ? String(child) : 
-    ''
-  ).join('') || '';
+  return (
+    children
+      ?.map((child: any) => (typeof child === 'string' ? child : typeof child === 'number' ? String(child) : ''))
+      .join('') || ''
+  );
 };
 
 /**
  * Renders custom Markdoc components
  */
 export const renderCustomComponent = (
-  tagNode: any, 
-  index: number, 
+  tagNode: any,
+  index: number,
   renderContent: (node: RenderableTreeNode, index: number) => React.ReactNode
 ): React.ReactNode => {
   const { name, attributes, children } = tagNode;
@@ -74,9 +74,7 @@ export const renderCustomComponent = (
       );
 
     case 'Input':
-      return (
-        <Input key={index} type="text" {...attributes} />
-      );
+      return <Input key={index} type="text" {...attributes} />;
 
     case 'Note':
       return (

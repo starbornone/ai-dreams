@@ -3,8 +3,8 @@ export const dynamic = 'force-static';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { Body, CoverImage, MetaData, MorePosts } from '@/features';
 import { Container, Loading, SectionSeparator, Title } from '@/components';
+import { Body, CoverImage, MetaData, MorePosts } from '@/features';
 import { getAllPostsWithSlug, getLimitedPosts } from '@/lib';
 import { handleGetPost } from '@/services';
 import { PostData } from '@/types';

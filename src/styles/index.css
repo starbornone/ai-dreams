@@ -41,7 +41,22 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
   tab-size: 4;
-  font-family: 'Lexend', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:
+    'Lexend',
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
   font-feature-settings: normal;
   font-variation-settings: normal;
   background-color: var(--color-gray-800);
@@ -59,7 +74,12 @@ body {
   =============== */
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-gray-100);
   font-size: inherit;
   font-weight: inherit;
@@ -72,19 +92,24 @@ a {
   text-decoration: inherit;
 }
 
-b, strong {
+b,
+strong {
   color: var(--color-gray-100);
   font-weight: 700;
 }
 
-i, em {
+i,
+em {
   color: var(--color-gray-100);
   font-style: italic;
 }
 
 /* Code elements */
-code, kbd, samp, pre {
-  font-family: 'Source Code Pro', ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+code,
+kbd,
+samp,
+pre {
+  font-family: 'Source Code Pro', ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
   font-feature-settings: normal;
   font-variation-settings: normal;
   font-size: 1em;
@@ -96,7 +121,8 @@ small {
 }
 
 /* Subscript and superscript */
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -142,14 +168,21 @@ article .hr {
 }
 
 /* Lists */
-ol, ul, menu {
+ol,
+ul,
+menu {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 /* Block elements */
-blockquote, dl, dd, figure, p, pre {
+blockquote,
+dl,
+dd,
+figure,
+p,
+pre {
   margin: 0;
 }
 
@@ -165,7 +198,11 @@ table {
   =============== */
 
 /* Form controls */
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   font-feature-settings: inherit;
   font-variation-settings: inherit;
@@ -177,11 +214,15 @@ button, input, optgroup, select, textarea {
   padding: 0;
 }
 
-button, select {
+button,
+select {
   text-transform: none;
 }
 
-button, input:where([type="button"]), input:where([type="reset"]), input:where([type="submit"]) {
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
   -webkit-appearance: button;
   background-color: transparent;
   background-image: none;
@@ -196,7 +237,8 @@ button, input:where([type="button"]), input:where([type="reset"]), input:where([
   box-shadow: none;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   opacity: 1;
   color: var(--color-gray-400);
 }
@@ -220,7 +262,8 @@ textarea {
   =============== */
 
 /* Buttons and interactive elements */
-button, [role="button"] {
+button,
+[role='button'] {
   cursor: pointer;
 }
 
@@ -233,13 +276,14 @@ progress {
   vertical-align: baseline;
 }
 
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
 /* Webkit specific */
-::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -266,12 +310,20 @@ dialog {
   =============== */
 
 /* Images and media */
-img, svg, video, canvas, audio, iframe, embed, object {
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
   display: block;
   vertical-align: middle;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
   height: auto;
 }

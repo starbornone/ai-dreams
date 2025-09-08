@@ -7,10 +7,10 @@ export const API_CONFIG = {
     MAX_RETRIES: 3,
     BACKOFF_MULTIPLIER: 2,
   },
-  
+
   // Request timeout
   TIMEOUT_MS: 10000,
-  
+
   // Environment-specific settings
   STAGES: {
     DEVELOPMENT: 'DRAFT' as const,
@@ -19,9 +19,7 @@ export const API_CONFIG = {
 } as const;
 
 export const getCurrentStage = (): 'DRAFT' | 'PUBLISHED' => {
-  return process.env.NODE_ENV === 'development' 
-    ? API_CONFIG.STAGES.DEVELOPMENT 
-    : API_CONFIG.STAGES.PRODUCTION;
+  return process.env.NODE_ENV === 'development' ? API_CONFIG.STAGES.DEVELOPMENT : API_CONFIG.STAGES.PRODUCTION;
 };
 
 export const getAuthToken = (): string => {

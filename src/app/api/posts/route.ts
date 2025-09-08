@@ -1,6 +1,6 @@
 import { getLimitedPosts } from '@/lib';
+import { handleAPIError, logError } from '@/utils/handleErrors';
 import { NextRequest, NextResponse } from 'next/server';
-import { APIError, handleAPIError, logError } from '@/utils/handleErrors';
 
 export async function GET(req: NextRequest) {
   try {
@@ -38,14 +38,14 @@ export async function GET(req: NextRequest) {
   } catch (error) {
     const apiError = handleAPIError(error);
     logError(apiError, 'Posts API route');
-    
+
     return NextResponse.json(
-      { 
+      {
         error: apiError.message,
-        ...(process.env.NODE_ENV === 'development' && { 
-          details: apiError.originalError?.message 
-        })
-      }, 
+        ...(process.env.NODE_ENV === 'development' && {
+          details: apiError.originalError?.message,
+        }),
+      },
       { status: apiError.statusCode }
     );
   }

@@ -79,16 +79,16 @@
     gap: var(--spacing-5xl);
     grid-template-columns: 1fr 2fr;
   }
-  
+
   .post-link__image {
     height: 18.75rem;
     width: 100%;
   }
-  
+
   .post-link__content {
     gap: 0;
   }
-  
+
   .post-link__metadata {
     flex-direction: row;
     gap: var(--spacing-lg);
@@ -104,7 +104,7 @@
 }
 
 .more-posts__list .post-link__image {
-    height: 12.5rem;
+  height: 12.5rem;
   width: 100%;
   flex-shrink: 0;
 }
@@ -123,6 +123,6 @@
 
 .more-posts__list .post-link__metadata {
   flex-direction: column;
-    gap: var(--spacing-xs);
+  gap: var(--spacing-xs);
   margin-top: auto;
 }

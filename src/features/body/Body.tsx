@@ -1,5 +1,4 @@
 import Markdoc from '@markdoc/markdoc';
-import React from 'react';
 
 import { BodyContent } from '@/types';
 import { config } from '../../../markdoc.config';

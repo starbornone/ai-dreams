@@ -11,13 +11,7 @@ interface CoverImageProps {
 export function CoverImage({ imageAuthor, title, url }: CoverImageProps) {
   return (
     <div className="cover-image">
-      <Image
-        alt={title}
-        className="cover-image__image link-inner"
-        height={1440}
-        src={url}
-        width={2560}
-      />
+      <Image alt={title} className="cover-image__image link-inner" height={1440} src={url} width={2560} />
       {imageAuthor?.name && (
         <div className="cover-image__attribution">
           <p className="cover-image__attribution-text">

@@ -43,7 +43,7 @@
   .footer__content {
     padding: var(--spacing-3xl) 0;
   }
-  
+
   .link-container {
     flex-direction: row;
     gap: var(--spacing-xl);

@@ -10,13 +10,7 @@ export const renderCodeBlock = (tagNode: any, index: number): React.ReactNode =>
   const codeContent = tagNode.children?.[0] || '';
 
   return (
-    <SyntaxHighlighter
-      className="body__code-block"
-      key={index}
-      language={language}
-      style={atomOneDark}
-      wrapLongLines
-    >
+    <SyntaxHighlighter className="body__code-block" key={index} language={language} style={atomOneDark} wrapLongLines>
       {String(codeContent)}
     </SyntaxHighlighter>
   );

@@ -22,13 +22,7 @@ const nextConfig = {
 
   // Bundle optimization
   experimental: {
-    optimizePackageImports: [
-      '@markdoc/markdoc',
-      'react-syntax-highlighter',
-      'chart.js',
-      'react-chartjs-2',
-      'date-fns',
-    ],
+    optimizePackageImports: ['@markdoc/markdoc', 'react-syntax-highlighter', 'chart.js', 'react-chartjs-2', 'date-fns'],
     turbo: {
       rules: {
         '*.svg': {
@@ -41,15 +35,18 @@ const nextConfig = {
 
   // Compiler optimizations
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production' ? {
-      exclude: ['error', 'warn'],
-    } : false,
+    removeConsole:
+      process.env.NODE_ENV === 'production'
+        ? {
+            exclude: ['error', 'warn'],
+          }
+        : false,
   },
 
   // Performance optimizations
   poweredByHeader: false,
   compress: true,
-  
+
   // Webpack optimizations
   webpack: (config, { dev, isServer }) => {
     // Optimize bundle splitting

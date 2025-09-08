@@ -3,8 +3,8 @@ export const dynamic = 'force-static';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { Body, CoverImage } from '@/features';
 import { Container, Title } from '@/components';
+import { Body, CoverImage } from '@/features';
 import { getAllPagesWithSlug } from '@/lib';
 import { handleGetPage } from '@/services';
 import { PageData } from '@/types';

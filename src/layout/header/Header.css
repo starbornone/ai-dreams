@@ -36,7 +36,7 @@
     margin-right: var(--spacing-xl);
     font-size: var(--font-size-6xl);
   }
-  
+
   .header__subtitle {
     font-size: var(--font-size-2xl);
     line-height: var(--line-height-tight);

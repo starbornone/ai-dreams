@@ -1,6 +1,5 @@
 import { CalendarIcon, FolderIcon, TagIcon } from '@/components';
 import { PostData } from '@/types';
-import clsx from 'clsx';
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';

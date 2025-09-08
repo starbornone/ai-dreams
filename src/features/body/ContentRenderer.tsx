@@ -4,7 +4,7 @@ import React from 'react';
 import { renderCodeBlock } from './utils/renderCodeBlock';
 import { renderCustomComponent } from './utils/renderCustomComponents';
 import { renderHtmlElement } from './utils/renderHtmlElements';
-import { renderPrimitive, renderArray } from './utils/renderPrimitives';
+import { renderArray, renderPrimitive } from './utils/renderPrimitives';
 
 /**
  * Main content renderer that handles all types of Markdoc nodes
@@ -28,7 +28,7 @@ export const renderContent = (node: RenderableTreeNode, index = 0): React.ReactN
   // Handle Markdoc Tag nodes
   if (typeof node === 'object' && '$$mdtype' in node && node.$$mdtype === 'Tag') {
     const tagNode = node as any;
-    
+
     // Handle custom components
     const customComponent = renderCustomComponent(tagNode, index, renderContent);
     if (customComponent) {

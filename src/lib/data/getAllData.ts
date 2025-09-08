@@ -1,5 +1,5 @@
 import { fetchAPI, getAllCategoriesWithSlug } from '@/lib';
-import { GetAllDataResponse, AllDataResponse, TagCount, CategoryData } from '@/types';
+import { AllDataResponse, CategoryData, GetAllDataResponse } from '@/types';
 
 export async function getAllData(): Promise<AllDataResponse> {
   const data: GetAllDataResponse = await fetchAPI(
