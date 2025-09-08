@@ -5,8 +5,9 @@ import Link from 'next/link';
 
 import { Container, Title } from '@/components';
 import { getAllData } from '@/lib';
-import { PostCounts } from './_post-counts';
-import { TagCloud } from './_tag-cloud';
+import { PostCounts } from './components/_post-counts';
+import { TagCloud } from './components/_tag-cloud';
+
 import './page.css';
 
 export const metadata: Metadata = {
