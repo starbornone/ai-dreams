@@ -1,5 +1,6 @@
 import { API_CONFIG, getAuthToken } from '@/config/api';
-import { GraphQLResponse, GraphQLError, APIError, RateLimitError, handleAPIError, logError } from '@/utils/handleErrors';
+import { GraphQLResponse } from '@/types/graphql';
+import { GraphQLError, APIError, RateLimitError, handleAPIError, logError } from '@/utils/handleErrors';
 
 // Rate limiting state
 let lastFetchTime = 0;

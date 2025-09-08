@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
   const params = await props.params;
-  const post: PostData = await handleGetPost(params.slug);
+  const post: PostData = await handleGetPost({ slug: params.slug });
 
   return {
     title: post?.title || '',
@@ -36,7 +36,7 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
 
 export default async function Page(props: { params: Promise<Params> }) {
   const params = await props.params;
-  const post = await handleGetPost(params.slug);
+  const post = await handleGetPost({ slug: params.slug });
 
   if (!post) {
     notFound();

@@ -25,13 +25,13 @@ export function findSimilarContent(keywords: string[], allContent: any[], limit:
 
       // Check for partial matches in longer words
       const titleWords = title.split(/\s+/);
-      if (titleWords.some((word) => word.startsWith(keywordLower) && word.length > keywordLower.length)) {
+      if (titleWords.some((word: string) => word.startsWith(keywordLower) && word.length > keywordLower.length)) {
         score += 2;
       }
 
       // Check tags
       if (
-        tags.some((tag) => {
+        tags.some((tag: string) => {
           // Exact match
           if (tag === keywordLower) return true;
           // Tag includes keyword

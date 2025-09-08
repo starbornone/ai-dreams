@@ -1,6 +1,6 @@
 // Page-related types
-import { BodyContent } from './BodyContent';
-import { CoverImage } from './CoverImage';
+import { BodyContent } from './body-content';
+import { CoverImage } from './cover-image';
 
 export interface PageData {
   title: string;
