@@ -1,0 +1,52 @@
+/* ===============
+  Footer CSS
+  =============== */
+
+.footer {
+  background-color: var(--color-gray-900);
+  font-size: 0.875rem;
+  color: var(--color-gray-400);
+}
+
+.footer__content {
+  padding: var(--spacing-4) var(--spacing-lg);
+}
+
+.footer__nav {
+  font-weight: 600;
+}
+
+.footer__info {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.footer__disclaimer {
+  margin-top: var(--spacing-sm);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--color-gray-600);
+}
+
+.footer__disclaimer + .footer__disclaimer {
+  margin-top: 0.25rem;
+}
+
+/* Link container utility */
+.link-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .footer__content {
+    padding: var(--spacing-3xl) 0;
+  }
+  
+  .link-container {
+    flex-direction: row;
+    gap: var(--spacing-xl);
+  }
+}

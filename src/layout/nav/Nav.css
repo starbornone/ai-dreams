@@ -6,36 +6,22 @@
   display: none;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 28rem;
+  max-width: 36rem;
 }
 
 .nav__links {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 2.5rem;
+  gap: 0 var(--spacing-lg);
   font-family: 'Neon', sans-serif;
   font-size: 1.25rem;
   letter-spacing: 0.05em;
   color: var(--color-gray-100);
 }
 
-/* Responsive styles */
-@media (min-width: 768px) {
-  .nav {
-    max-width: 28rem;
-  }
-}
-
 @media (min-width: 1024px) {
   .nav {
     display: block;
-    max-width: 32rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .nav {
-    max-width: 48rem;
   }
 }
