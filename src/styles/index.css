@@ -18,12 +18,14 @@
 
 @import './custom-properties/colors.css';
 @import './custom-properties/spacing.css';
+@import './custom-properties/typography.css';
 @import './custom-properties/layout.css';
 
 /* ===============
-  Base Styles
+  CSS Reset & Base Styles
   =============== */
 
+/* Box sizing and borders */
 *,
 *::before,
 *::after {
@@ -33,6 +35,7 @@
   border-color: #e5e7eb;
 }
 
+/* HTML and body */
 html {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
@@ -51,30 +54,35 @@ body {
   line-height: inherit;
 }
 
-hr {
-  height: 0;
-  color: inherit;
-  border-top-width: 1px;
-}
+/* ===============
+  Typography Elements
+  =============== */
 
-abbr:where([title]) {
-  text-decoration: underline dotted;
-}
-
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
+  color: var(--color-gray-100);
   font-size: inherit;
   font-weight: inherit;
+  margin: 0;
 }
 
+/* Text formatting */
 a {
   color: inherit;
   text-decoration: inherit;
 }
 
 b, strong {
-  font-weight: bolder;
+  color: var(--color-gray-100);
+  font-weight: 700;
 }
 
+i, em {
+  color: var(--color-gray-100);
+  font-style: italic;
+}
+
+/* Code elements */
 code, kbd, samp, pre {
   font-family: 'Source Code Pro', ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
   font-feature-settings: normal;
@@ -82,10 +90,12 @@ code, kbd, samp, pre {
   font-size: 1em;
 }
 
+/* Small text */
 small {
   font-size: 80%;
 }
 
+/* Subscript and superscript */
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -101,12 +111,60 @@ sup {
   top: -0.5em;
 }
 
+/* Abbreviations */
+abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+
+/* ===============
+  Layout Elements
+  =============== */
+
+/* Horizontal rules */
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px;
+  border-color: var(--color-orange-500);
+  border-bottom-width: 1px;
+  margin: 0;
+}
+
+.hr {
+  border-color: var(--color-orange-500);
+  border-bottom-width: 1px;
+  margin: 0;
+}
+
+article hr,
+article .hr {
+  margin: var(--spacing-2xl) 0;
+}
+
+/* Lists */
+ol, ul, menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Block elements */
+blockquote, dl, dd, figure, p, pre {
+  margin: 0;
+}
+
+/* Tables */
 table {
   text-indent: 0;
   border-color: inherit;
   border-collapse: collapse;
 }
 
+/* ===============
+  Form Elements
+  =============== */
+
+/* Form controls */
 button, input, optgroup, select, textarea {
   font-family: inherit;
   font-feature-settings: inherit;
@@ -129,6 +187,7 @@ button, input:where([type="button"]), input:where([type="reset"]), input:where([
   background-image: none;
 }
 
+/* Form states */
 :-moz-focusring {
   outline: auto;
 }
@@ -137,17 +196,51 @@ button, input:where([type="button"]), input:where([type="reset"]), input:where([
   box-shadow: none;
 }
 
-progress {
-  vertical-align: baseline;
+input::placeholder, textarea::placeholder {
+  opacity: 1;
+  color: #9ca3af;
 }
 
-::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
-  height: auto;
+/* Form specific elements */
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ===============
+  Interactive Elements
+  =============== */
+
+/* Buttons and interactive elements */
+button, [role="button"] {
+  cursor: pointer;
+}
+
+disabled {
+  cursor: default;
+}
+
+/* Progress and search */
+progress {
+  vertical-align: baseline;
 }
 
 [type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
+}
+
+/* Webkit specific */
+::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+  height: auto;
 }
 
 ::-webkit-search-decoration {
@@ -159,50 +252,20 @@ progress {
   font: inherit;
 }
 
+/* Details and summary */
 summary {
   display: list-item;
-}
-
-blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
-  margin: 0;
-}
-
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-legend {
-  padding: 0;
-}
-
-ol, ul, menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 dialog {
   padding: 0;
 }
 
-textarea {
-  resize: vertical;
-}
+/* ===============
+  Media Elements
+  =============== */
 
-input::placeholder, textarea::placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-
-button, [role="button"] {
-  cursor: pointer;
-}
-
-disabled {
-  cursor: default;
-}
-
+/* Images and media */
 img, svg, video, canvas, audio, iframe, embed, object {
   display: block;
   vertical-align: middle;
@@ -213,14 +276,16 @@ img, video {
   height: auto;
 }
 
+/* ===============
+  Utility Classes
+  =============== */
+
+/* Display utilities */
 [hidden] {
   display: none;
 }
 
-/* ===============
-  Accessibility Utilities
-  =============== */
-
+/* Accessibility utilities */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -239,12 +304,6 @@ img, video {
 
 @import './effects/animations.css';
 @import './effects/keyframes.css';
-
-
-@import './content/general.css';
-@import './content/headings.css';
 @import './content/images.css';
 @import './content/links.css';
-@import './content/pages.css';
-@import './content/posts.css';
 @import './content/code.css';
