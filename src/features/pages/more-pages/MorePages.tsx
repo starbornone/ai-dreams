@@ -31,7 +31,7 @@ export function MorePages() {
       <Container>
         <div className="more-pages__grid">
           {pages.map((page) => (
-            <Link href={page.href} key={page.href}>
+            <Link href={page.href} key={page.href} className="more-pages__link">
               <div className="img-link more-pages__item">
                 {page.imageUrl && <Image alt={page.title} height={300} src={page.imageUrl} width={600} />}
                 <h3 className="title-link more-pages__title">{page.title}</h3>

@@ -3,11 +3,7 @@
   =============== */
 
 .more-pages {
-  margin-top: var(--spacing-3xl);
-  margin-bottom: var(--spacing-3xl);
   background-color: var(--color-gray-900);
-  padding-top: var(--spacing-3xl);
-  padding-bottom: var(--spacing-3xl);
 }
 
 .more-pages__grid {
@@ -19,6 +15,12 @@
   gap: var(--spacing-3xl);
 }
 
+.more-pages__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .more-pages__item {
   background-color: var(--color-gray-800);
 }
@@ -26,9 +28,10 @@
 .more-pages__title {
   margin-top: calc(-1 * var(--spacing-sm));
   padding: var(--spacing-lg);
+  transition: color 0.2s ease;
 }
 
-.more-pages__title:hover {
+.more-pages__link:hover .more-pages__title {
   color: var(--color-gray-800);
 }
 
