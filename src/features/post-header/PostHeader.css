@@ -1,0 +1,40 @@
+/* ===============
+  Post Header CSS
+  =============== */
+
+.post-header {
+  width: 100vw;
+  height: 33rem;
+}
+
+.post-header__info {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  max-width: 48rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-header__date {
+  font-weight: 300;
+  color: var(--color-gray-500);
+}
+
+.post-header__cover-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.post-header__metadata-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.post-header__metadata-icon {
+  height: 1rem;
+  width: 1rem;
+  color: var(--color-gray-600);
+}

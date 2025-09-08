@@ -1,0 +1,49 @@
+/* ===============
+  More Pages CSS
+  =============== */
+
+.more-pages {
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
+  background-color: var(--color-gray-900);
+  padding-top: var(--spacing-3xl);
+  padding-bottom: var(--spacing-3xl);
+}
+
+.more-pages__grid {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: var(--spacing-3xl);
+}
+
+.more-pages__item {
+  background-color: var(--color-gray-800);
+}
+
+.more-pages__title {
+  margin-top: calc(-1 * var(--spacing-sm));
+  padding: var(--spacing-lg);
+}
+
+.more-pages__title:hover {
+  color: var(--color-gray-800);
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .more-pages {
+    margin-top: calc(var(--spacing-3xl) * 2);
+    margin-bottom: calc(var(--spacing-3xl) * 2);
+    padding-top: calc(var(--spacing-3xl) * 2);
+    padding-bottom: calc(var(--spacing-3xl) * 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .more-pages__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

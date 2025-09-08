@@ -1,0 +1,41 @@
+/* ===============
+  More Posts CSS
+  =============== */
+
+.more-posts {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.more-posts__title {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  font-size: 2.25rem;
+}
+
+.more-posts__list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+  .more-posts__title {
+    margin-left: var(--spacing-md);
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .more-posts__title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .more-posts {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}

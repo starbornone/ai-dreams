@@ -7,7 +7,7 @@ import { Caption, Chat, ChatMessage, Email, FakeLink, Form, Grid, Input, Note, N
 import { BodyContent } from '@/types';
 import { config } from '../../../markdoc.config';
 
-import styles from './Body.module.css';
+import './Body.css';
 
 interface BodyProps {
   content: BodyContent;
@@ -101,7 +101,7 @@ const renderContent = (node: any, index = 0) => {
 
       return (
         <SyntaxHighlighter
-          className={styles['body__code-block']}
+          className="body__code-block"
           key={index}
           language={language}
           style={atomOneDark}
@@ -150,7 +150,7 @@ export function Body({ content }: BodyProps) {
   const transformedContent = ast ? Markdoc.transform(ast, config) : null;
 
   return (
-    <div className={styles['body']}>
+    <div className="body">
       {transformedContent ? (
         renderContent(transformedContent)
       ) : (

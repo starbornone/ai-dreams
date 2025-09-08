@@ -1,0 +1,50 @@
+/* ===============
+  Cover Image CSS
+  =============== */
+
+.cover-image {
+  display: block;
+  height: 24rem;
+  margin-bottom: var(--spacing-lg);
+  width: 100%;
+  position: relative;
+}
+
+.cover-image p {
+  margin: 0;
+}
+
+.cover-image p a {
+  text-decoration: none;
+}
+
+.cover-image__image {
+  height: 100%;
+  height: 24rem;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.cover-image__attribution {
+  position: absolute;
+  bottom: var(--spacing-md);
+  right: var(--spacing-md);
+  z-index: 10;
+}
+
+.cover-image__attribution-text {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.cover-image__attribution-link {
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .cover-image,
+  .cover-image__image {
+    height: 36rem;
+  }
+}

@@ -1,0 +1,90 @@
+/* ===============
+  Post Link CSS
+  =============== */
+
+.post-link {
+  width: 100%;
+  gap: var(--spacing-sm);
+  background-color: var(--color-gray-900);
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-link__image {
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.post-link__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+}
+
+.post-link__text {
+  flex: 1;
+}
+
+.post-link__title {
+  margin-bottom: var(--spacing-sm);
+}
+
+.post-link__excerpt {
+  margin-top: var(--spacing-sm);
+  font-size: 0.875rem;
+  color: var(--color-gray-300);
+}
+
+.post-link__metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--color-gray-500);
+}
+
+.post-link__metadata-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.post-link__metadata-icon {
+  height: 0.75rem;
+  width: 0.75rem;
+  color: var(--color-gray-600);
+}
+
+/* Hover states */
+.post-link:hover .post-link__title {
+  color: var(--color-gray-800);
+}
+
+.post-link:hover .post-link__excerpt {
+  color: var(--color-gray-800);
+}
+
+.post-link:hover .post-link__metadata {
+  color: var(--color-gray-600);
+}
+
+/* Responsive styles */
+@media (min-width: 1024px) {
+  .post-link {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+  }
+  
+  .post-link__content {
+    gap: 0;
+  }
+  
+  .post-link__metadata {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+}
