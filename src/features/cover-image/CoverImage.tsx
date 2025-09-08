@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import Image from 'next/image';
+
 import './CoverImage.css';
 
 interface CoverImageProps {

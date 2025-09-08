@@ -1,5 +1,7 @@
-import { handleCategoryCounts } from '@/utils';
 import Link from 'next/link';
+
+import { handleCategoryCounts } from '@/utils';
+
 import './Nav.css';
 
 export async function Nav() {

@@ -5,8 +5,8 @@
 .caption {
   background: var(--color-gray-700);
   color: var(--color-gray-500);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  padding: 0.5rem 1rem;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-tight);
+  padding: var(--spacing-sm) var(--spacing-md);
   text-align: right;
 }

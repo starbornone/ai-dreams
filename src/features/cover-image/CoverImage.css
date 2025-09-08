@@ -6,8 +6,8 @@
   display: block;
   height: 24rem;
   margin-bottom: var(--spacing-lg);
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 
 .cover-image p {
