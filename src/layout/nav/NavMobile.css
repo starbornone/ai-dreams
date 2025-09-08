@@ -1,0 +1,38 @@
+/* ===============
+  Mobile Nav CSS
+  =============== */
+
+.mobile-nav {
+  margin: 4rem;
+  display: block;
+  text-align: center;
+}
+
+.mobile-nav__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mobile-nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  font-family: 'Neon', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--color-gray-100);
+}
+
+/* Hide on large screens */
+@media (min-width: 1024px) {
+  .mobile-nav {
+    display: none;
+  }
+}

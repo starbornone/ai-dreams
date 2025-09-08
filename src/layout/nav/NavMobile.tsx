@@ -1,18 +1,16 @@
 import { handleCategoryCounts } from '@/utils';
 import Link from 'next/link';
+import './NavMobile.css';
 
 export async function MobileNav() {
   const { categories } = await handleCategoryCounts();
 
   return (
-    <nav aria-label="Mobile Navigation" className="m-16 block text-center lg:hidden">
-      <div className="sr-only" aria-hidden="true">
+    <nav aria-label="Mobile Navigation" className="mobile-nav">
+      <div className="mobile-nav__sr-only" aria-hidden="true">
         Topics:
       </div>
-      <div
-        className="neon-links flex flex-wrap gap-6 text-2xl tracking-wider text-gray-100"
-        style={{ fontFamily: 'Neon' }}
-      >
+      <div className="neon-links mobile-nav__links">
         Topics:{' '}
         {categories?.map((category: { slug: string; name: string }) => (
           <Link
