@@ -4,12 +4,12 @@
 
 .footer {
   background-color: var(--color-gray-900);
-  font-size: 0.875rem;
   color: var(--color-gray-400);
+  font-size: 0.875rem;
 }
 
 .footer__content {
-  padding: var(--spacing-4) var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 
 .footer__nav {
@@ -18,14 +18,13 @@
 
 .footer__info {
   margin-top: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);
 }
 
 .footer__disclaimer {
-  margin-top: var(--spacing-sm);
+  color: var(--color-gray-600);
   font-size: 0.75rem;
   font-weight: 300;
-  color: var(--color-gray-600);
+  margin-top: var(--spacing-sm);
 }
 
 .footer__disclaimer + .footer__disclaimer {
