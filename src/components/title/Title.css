@@ -1,9 +1,13 @@
+/* ===============
+  Title CSS
+  =============== */
+
 .title {
   display: block;
   font-family: 'Neon';
   font-size: 2.25rem;
   letter-spacing: 0.05em;
-  margin: 1rem auto;
+  margin: var(--spacing-md) auto;
   overflow-wrap: anywhere;
   text-align: center;
   word-break: break-word;
