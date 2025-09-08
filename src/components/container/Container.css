@@ -1,0 +1,9 @@
+/* ===============
+  Container Component
+  =============== */
+
+.container {
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 0 1.25rem;
+}

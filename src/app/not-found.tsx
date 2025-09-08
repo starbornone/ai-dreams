@@ -7,6 +7,7 @@ import { Container, Title } from '@/components';
 import { PostLink } from '@/features';
 import { getAllPages, getAllPosts } from '@/lib';
 import { findSimilarContent } from '@/utils';
+import './not-found.css';
 
 export default async function NotFound() {
   const headersList = await headers();
@@ -36,10 +37,10 @@ export default async function NotFound() {
         </div>
 
         {relatedContent.length > 0 ? (
-          <section className="my-8 grid grid-cols-1 gap-y-6 lg:my-12 lg:gap-y-8">
-            <h2 className="site-title text-xl">You might be looking for:</h2>
+          <section className="not-found__related">
+            <h2 className="not-found__related-title site-title">You might be looking for:</h2>
 
-            <div className="mb-24 mt-4 grid gap-4 text-left">
+            <div className="not-found__related-content">
               {relatedContent.map((content) => (
                 <PostLink key={content.slug} post={content} />
               ))}

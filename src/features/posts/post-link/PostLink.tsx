@@ -3,6 +3,7 @@ import { PostData } from '@/types';
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
+import './PostLink.css';
 
 interface PostLinkProps {
   post: PostData;
@@ -12,7 +13,7 @@ export function PostLink({ post }: PostLinkProps) {
   return (
     <article aria-label={`Post preview for ${post.title}`}>
       <Link
-        className="img-link group w-full gap-2 bg-gray-900 text-xl lg:grid lg:grid-cols-3 lg:gap-y-16"
+        className="post-link img-link"
         data-content={post.title}
         href={`/posts/${post.slug}`}
         aria-label={`Read more about ${post.title}`}
@@ -20,7 +21,7 @@ export function PostLink({ post }: PostLinkProps) {
         {/* Post Image */}
         <Image
           alt={post.title}
-          className="object-cover object-bottom"
+          className="post-link__image"
           height={300}
           src={
             post.coverImage
@@ -32,35 +33,35 @@ export function PostLink({ post }: PostLinkProps) {
         />
 
         {/* Post Content */}
-        <div className="col-span-2 flex flex-wrap content-between gap-4 p-4 lg:gap-0">
+        <div className="post-link__content">
           {/* Title and Excerpt */}
-          <div>
-            <h2 className="title-link group-hover:text-gray-800">{post.title}</h2>
-            {post.excerpt && <p className="mt-2 text-sm text-gray-300 group-hover:text-gray-800">{post.excerpt}</p>}
+          <div className="post-link__header">
+            <h2 className="post-link__title title-link">{post.title}</h2>
+            {post.excerpt && <p className="post-link__excerpt">{post.excerpt}</p>}
           </div>
 
           {/* Metadata: Category, Tags, Date */}
-          <div className="flex flex-col gap-1 text-sm font-light text-gray-500 group-hover:text-gray-600 lg:flex-row lg:gap-6">
+          <div className="post-link__metadata">
             {/* Category */}
             {post.category && (
-              <div className="flex items-center gap-2" aria-label="Category">
-                <FolderIcon className="h-3 w-3 text-gray-600" aria-hidden="true" />
+              <div className="post-link__metadata-item" aria-label="Category">
+                <FolderIcon className="post-link__metadata-icon" aria-hidden="true" />
                 <span aria-label={`Category: ${post.category.name}`}>{post.category.name}</span>
               </div>
             )}
 
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
-              <div className="flex items-center gap-2" aria-label="Tags">
-                <TagIcon className="h-3 w-3 text-gray-600" aria-hidden="true" />
+              <div className="post-link__metadata-item" aria-label="Tags">
+                <TagIcon className="post-link__metadata-icon" aria-hidden="true" />
                 <span aria-label="Tags">{post.tags.join(', ')}</span>
               </div>
             )}
 
             {/* Date */}
             {post.date && (
-              <div className="flex items-center gap-2" aria-label="Publication date">
-                <CalendarIcon className="h-3 w-3 text-gray-600" aria-hidden="true" />
+              <div className="post-link__metadata-item" aria-label="Publication date">
+                <CalendarIcon className="post-link__metadata-icon" aria-hidden="true" />
                 <time dateTime={post.date}>{format(new Date(post.date), 'dd MMMM yyyy')}</time>
               </div>
             )}

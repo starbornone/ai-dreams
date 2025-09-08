@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
-import { Lexend, Source_Code_Pro } from 'next/font/google';
+import { Rubik_Glitch, Rubik_Dirt, Lexend, Source_Code_Pro } from 'next/font/google';
 
 import { Layout, Meta } from '@/layout';
 
@@ -11,6 +11,20 @@ const lexend = Lexend({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-lexend',
+});
+
+const rubikGlitch = Rubik_Glitch({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-rubik-glitch',
+  weight: '400',
+});
+
+const rubikDirt = Rubik_Dirt({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-rubik-dirt',
+  weight: '400',
 });
 
 const sourceCodePro = Source_Code_Pro({
@@ -66,7 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.variable} ${sourceCodePro.variable}`}>
+      <body className={`${rubikGlitch.variable} ${rubikDirt.variable} ${lexend.variable} ${sourceCodePro.variable}`}>
         <Analytics />
         <Meta />
         <SpeedInsights />

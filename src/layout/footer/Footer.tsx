@@ -2,20 +2,21 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 import { Container } from '@/components';
+import './Footer.css';
 
 const LinkContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-  return <div className={clsx('flex flex-col gap-2 md:flex-row md:gap-x-8', className)}>{children}</div>;
+  return <div className={clsx('footer__link-container', className)}>{children}</div>;
 };
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-sm text-gray-400">
+    <footer className="footer">
       <Container>
-        <div className="px-4 py-12 lg:px-0 lg:py-24">
+        <div className="footer__container">
           {/* Navigation Links Section */}
-          <nav aria-label="Footer Navigation">
-            <h3 className="sr-only text-gray-300">Quick Links</h3>
-            <LinkContainer className="font-semibold">
+          <nav className="footer__nav" aria-label="Footer Navigation">
+            <h3 className="footer__nav-title">Quick Links</h3>
+            <LinkContainer>
               <Link href="/pages/about" aria-label="About the author and site">
                 About
               </Link>
@@ -32,9 +33,9 @@ export function Footer() {
           </nav>
 
           {/* Site Information Section */}
-          <div className="my-8">
-            <LinkContainer>
-              <p className="text-gray-300">AI dreaming since 2021.</p>
+          <div className="footer__info">
+            <LinkContainer className="footer__link-container--secondary">
+              <p>AI dreaming since 2021.</p>
               <Link href="/pages/contact-us" aria-label="Contact us">
                 Contact Us
               </Link>
@@ -45,10 +46,10 @@ export function Footer() {
                 Privacy Policy
               </Link>
             </LinkContainer>
-            <p className="mt-2 text-xs font-light text-gray-600">
+            <p className="footer__disclaimer">
               The purchase of any products through external sites does not provide any monetary benefit to the author.
             </p>
-            <p className="mt-1 text-xs font-light text-gray-600">
+            <p className="footer__disclaimer">
               All opinions expressed are the author&apos;s alone and are not representative of any affiliated
               organisation.
             </p>

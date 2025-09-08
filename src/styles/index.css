@@ -1,52 +1,184 @@
 /* ===============
-  Font Definitions
+  AKUMA Dark Cyberpunk Theme
   =============== */
 
-@font-face {
-  font-family: 'Neon';
-  src: url(./fonts/Neon-Solid.otf);
+/* ===============
+  Import Custom Properties and Effects
+  =============== */
+
+@import './custom-properties/index.css';
+@import './effects/index.css';
+
+/* ===============
+  Base Styles
+  =============== */
+
+* {
+  box-sizing: border-box;
 }
-
-@font-face {
-  font-family: 'Neon Lines';
-  src: url(./fonts/NeonLines-Regular.otf);
-}
-
-/* ===============
-  Tailwind Imports
-  =============== */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* ===============
-  Custom Properties
-  =============== */
-
-@import './custom-properties/colors.css';
-
-/* ===============
-  Page
-  =============== */
 
 html {
-  background-color: var(--color-gray-800);
-  color: var(--color-gray-300);
-  font-weight: 300;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ===============
-  Component CSS Imports
+  Typography
   =============== */
 
-@import './effects/animations.css';
-@import './effects/keyframes.css';
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-4) 0;
+  color: var(--color-text-primary);
+}
 
-@import './content/general.css';
-@import './content/headings.css';
-@import './content/images.css';
-@import './content/links.css';
-@import './content/pages.css';
-@import './content/posts.css';
-@import './content/code.css';
+h1 {
+  font-size: var(--font-size-5xl);
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+}
+
+p {
+  margin: 0 0 var(--space-4) 0;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ===============
+  Form Elements
+  =============== */
+
+input, textarea, select {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+  padding: var(--space-3);
+  transition: var(--transition-cyberpunk);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 2px rgba(174, 95, 150, 0.2);
+}
+
+button {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-base);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  padding: var(--space-3) var(--space-4);
+  transition: var(--transition-cyberpunk);
+}
+
+button:hover {
+  background-color: var(--color-bg-tertiary);
+  border-color: var(--color-accent-primary);
+}
+
+/* ===============
+  Utility Classes
+  =============== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/* ===============
+  Utility Classes
+  =============== */
+
+.bg-void {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-dark {
+  background-color: var(--color-bg-secondary);
+}
+
+.text-neon {
+  color: var(--color-neon-primary);
+}
+
+.text-matrix {
+  color: var(--color-matrix-green);
+}
+
+.text-blood {
+  color: var(--color-blood-red);
+}
+
+.border-neon {
+  border: 1px solid var(--color-neon-primary);
+}

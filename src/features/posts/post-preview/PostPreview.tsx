@@ -32,9 +32,9 @@ export function PostPreview({ post }: PostPreviewProps) {
         />
       </Link>
 
-      <div className="mx-auto my-4 flex max-w-prose flex-col gap-4">
+      <div className={styles['post-preview__content']}>
         {/* Title with Link */}
-        <h2 className="text-3xl leading-snug">
+        <h2 className={styles['post-preview__title']}>
           <Link
             className="title-link"
             data-content={post.title}
@@ -46,12 +46,12 @@ export function PostPreview({ post }: PostPreviewProps) {
         </h2>
 
         {/* Metadata Section */}
-        <div className="flex flex-col justify-between gap-4 text-sm text-gray-500 lg:flex-row lg:items-center">
-          <div className="flex flex-row items-center justify-between gap-4 lg:justify-start">
+        <div className={styles['post-preview__metadata']}>
+          <div className={styles['post-preview__metadata-left']}>
             {/* Category */}
             {post.category && (
-              <div className="flex items-center gap-2" aria-label="Category">
-                <FolderIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
+              <div className={styles['post-preview__metadata-item']} aria-label="Category">
+                <FolderIcon className={styles['post-preview__metadata-icon']} aria-hidden="true" />
                 <Link
                   aria-label={`Explore more posts in the ${post.category.name} category`}
                   href={`/categories/${post.category.slug}`}
@@ -62,8 +62,8 @@ export function PostPreview({ post }: PostPreviewProps) {
             )}
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
-              <div className="flex items-center gap-2" aria-label="Tags">
-                <TagIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
+              <div className={styles['post-preview__metadata-item']} aria-label="Tags">
+                <TagIcon className={styles['post-preview__metadata-icon']} aria-hidden="true" />
                 <span aria-label="Tags">{post.tags.join(', ')}</span>
               </div>
             )}
@@ -72,25 +72,25 @@ export function PostPreview({ post }: PostPreviewProps) {
           {/* Date */}
           {post.date && (
             <time
-              className="flex items-center gap-2 lg:justify-end"
+              className={styles['post-preview__date']}
               dateTime={post.date}
               aria-label={`Published on ${format(new Date(post.date), 'dd MMMM yyyy')}`}
             >
-              <CalendarIcon className="h-4 w-4 text-gray-600" aria-hidden="true" />
+              <CalendarIcon className={styles['post-preview__metadata-icon']} aria-hidden="true" />
               {format(new Date(post.date), 'dd MMMM yyyy')}
             </time>
           )}
         </div>
 
         {/* Excerpt */}
-        <p className="my-2 leading-relaxed text-gray-300">
+        <p className={styles['post-preview__excerpt']}>
           {post.excerpt ||
             'Welcome to my blog. This website is a place where I share my thoughts and express my concerns about how external forces often shape our thoughts and actions in ways that favour them more than us. My goal here is to encourage deeper thinking, partly by critiquing the status quo.'}
         </p>
 
         {/* Read More Link */}
         <Link
-          className="img-link mt-2 bg-gray-900 px-4 py-2 hover:text-gray-800"
+          className={`img-link ${styles['post-preview__read-more']}`}
           href={`/posts/${post.slug}`}
           aria-label={`Read more of ${post.title}`}
         >

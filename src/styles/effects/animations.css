@@ -1,94 +1,227 @@
 /* ===============
-  Normal Links
+  AKUMA Cyberpunk Animations
   =============== */
 
-  footer a:hover::before,
-  li a:hover::before,
-  p a:hover::before,
-  .content a:hover::before {
-    visibility: visible;
-    animation: line-glitchy 0.3s ease 0.3s infinite;
-  }
-  footer a:hover::after,
-  li a:hover::after,
-  p a:hover::after,
-  .content a:hover::after {
-    visibility: visible;
-    animation: line-glitchy 0.3s ease infinite reverse;
-  }
-  
-  /* ===============
-    Site Title
-    =============== */
+/* ===============
+   Keyframe Definitions
+   =============== */
 
-  .site-title {
-    font-family: 'Neon';
-    text-shadow:
-      0 0 0.6rem var(--color-gray-600),
-      0 0 1.5rem var(--color-gray-700),
-      -0.2rem 0.1rem 1rem var(--color-gray-700),
-      0.2rem 0.1rem 1rem var(--color-gray-700),
-      0 -0.5rem 2rem var(--color-gray-800),
-      0 0.5rem 3rem var(--color-gray-800);
-    animation:
-      shine-less 2s forwards,
-      flicker 3s infinite;
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    opacity: 1;
   }
+  50% {
+    text-shadow: 0 0 2px currentColor, 0 0 5px currentColor, 0 0 8px currentColor;
+    opacity: 0.8;
+  }
+}
 
-  /* ===============
-    .world Sign
-    =============== */
+@keyframes neon-flicker {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  2% {
+    opacity: 0.8;
+    text-shadow: 0 0 2px currentColor, 0 0 5px currentColor;
+  }
+  4% {
+    opacity: 1;
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  6% {
+    opacity: 0.9;
+    text-shadow: 0 0 3px currentColor, 0 0 7px currentColor;
+  }
+  8% {
+    opacity: 1;
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+}
 
-  .sign {
-    font-family: 'Neon Lines';
-    text-transform: uppercase;
-    text-shadow:
-      0 0 0.6rem var(--color-purple-100),
-      0 0 1.5rem var(--color-purple-300),
-      -0.2rem 0.1rem 1rem var(--color-purple-300),
-      0.2rem 0.1rem 1rem var(--color-purple-300),
-      0 -0.5rem 2rem var(--color-purple-400),
-      0 0.5rem 3rem var(--color-purple-400);
-    animation:
-      shine 2s forwards,
-      flicker 3s infinite;
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
   }
-  .flicker {
-    animation:
-      shine 2s forwards,
-      blink 3s 2s infinite;
+  10% {
+    opacity: 1;
   }
-  .fast-flicker {
-    animation:
-      shine 2s forwards,
-      blink 10s 1s infinite;
+  90% {
+    opacity: 1;
   }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
 
-  /* ===============
-    Cover Images
-    =============== */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--color-glow-primary), 0 0 10px var(--color-glow-primary);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--color-glow-primary), 0 0 20px var(--color-glow-primary), 0 0 30px var(--color-glow-primary);
+  }
+}
 
-  .img-link:hover .link-inner {
-    animation: glitchy 0.3s infinite;
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
   }
-  .img-link:hover::before {
-    visibility: visible;
-    animation: glitchy 0.3s ease 0.3s infinite;
+  50% {
+    opacity: 1;
   }
-  .img-link:hover::after {
-    visibility: visible;
-    animation: glitchy 0.3s ease infinite reverse;
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
   }
+}
 
-  /* ===============
-    Post Links
-    =============== */
+@keyframes data-stream {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
 
-  .title-link:hover::before {
-    visibility: visible;
-    animation: glitchy 0.3s ease 0.3s infinite;
+@keyframes cyberpunk-slide-in {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+    opacity: 0;
   }
-  .title-link:hover::after {
-    visibility: visible;
-    animation: glitchy 0.3s ease infinite reverse;
+  100% {
+    transform: translateX(0) skewX(0deg);
+    opacity: 1;
   }
+}
+
+@keyframes hologram-flicker {
+  0%, 100% {
+    opacity: 1;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    opacity: 0.8;
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    opacity: 0.9;
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    opacity: 0.7;
+    filter: hue-rotate(270deg);
+  }
+}
+
+@keyframes blood-drip {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* ===============
+   Animation Classes
+   =============== */
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.animate-neon-flicker {
+  animation: neon-flicker 0.15s infinite linear;
+}
+
+.animate-matrix-rain {
+  animation: matrix-rain 3s linear infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-scan-line {
+  animation: scan-line 2s linear infinite;
+}
+
+.animate-data-stream {
+  animation: data-stream 4s linear infinite;
+}
+
+.animate-cyberpunk-slide-in {
+  animation: cyberpunk-slide-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-hologram-flicker {
+  animation: hologram-flicker 0.1s infinite linear;
+}
+
+.animate-blood-drip {
+  animation: blood-drip 4s linear infinite;
+}
+
+/* ===============
+   Hover Effects
+   =============== */
+
+.hover-neon-glow:hover {
+  text-shadow: var(--text-shadow-neon);
+  transition: text-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: var(--glow-md);
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-matrix:hover {
+  color: var(--color-matrix-green);
+  text-shadow: var(--text-shadow-matrix);
+  transition: all 0.3s ease;
+}
+
+.hover-blood:hover {
+  color: var(--color-blood-red);
+  text-shadow: var(--text-shadow-blood);
+  transition: all 0.3s ease;
+}
+
+/* ===============
+   Transition Classes
+   =============== */
+
+.transition-cyberpunk {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.transition-glow {
+  transition: box-shadow 0.3s ease, text-shadow 0.3s ease;
+}
+
+.transition-neon {
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}

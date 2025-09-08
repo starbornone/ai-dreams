@@ -1,0 +1,267 @@
+/* ===============
+  AKUMA Cyberpunk Visual Effects
+  =============== */
+
+/* ===============
+   Neon Text Effects
+   =============== */
+
+.text-neon {
+  color: var(--color-neon-primary);
+  text-shadow: var(--text-shadow-neon);
+  font-family: var(--font-family-primary);
+}
+
+.text-neon-secondary {
+  color: var(--color-neon-secondary);
+  text-shadow: 0 0 5px var(--color-neon-secondary), 0 0 10px var(--color-neon-secondary);
+}
+
+.text-neon-tertiary {
+  color: var(--color-neon-tertiary);
+  text-shadow: 0 0 5px var(--color-neon-tertiary), 0 0 10px var(--color-neon-tertiary);
+}
+
+.text-matrix {
+  color: var(--color-matrix-green);
+  text-shadow: var(--text-shadow-matrix);
+  font-family: var(--font-family-mono);
+}
+
+.text-electric {
+  color: var(--color-electric-blue);
+  text-shadow: 0 0 5px var(--color-electric-blue), 0 0 10px var(--color-electric-blue);
+}
+
+.text-blood {
+  color: var(--color-blood-red);
+  text-shadow: var(--text-shadow-blood);
+}
+
+/* ===============
+   Glow Effects
+   =============== */
+
+.glow-primary {
+  box-shadow: var(--glow-md);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 10px var(--color-glow-secondary), 0 0 20px var(--color-glow-secondary);
+}
+
+.glow-tertiary {
+  box-shadow: 0 0 10px var(--color-glow-tertiary), 0 0 20px var(--color-glow-tertiary);
+}
+
+.glow-matrix {
+  box-shadow: var(--glow-matrix);
+}
+
+.glow-electric {
+  box-shadow: var(--glow-electric);
+}
+
+.glow-blood {
+  box-shadow: var(--glow-blood);
+}
+
+/* ===============
+   Border Effects
+   =============== */
+
+.border-neon {
+  border: 1px solid var(--color-neon-primary);
+  box-shadow: 0 0 5px var(--color-glow-primary);
+}
+
+.border-matrix {
+  border: 1px solid var(--color-matrix-green);
+  box-shadow: 0 0 5px var(--color-matrix-green-glow);
+}
+
+.border-electric {
+  border: 1px solid var(--color-electric-blue);
+  box-shadow: 0 0 5px var(--color-electric-blue-glow);
+}
+
+.border-blood {
+  border: 1px solid var(--color-blood-red);
+  box-shadow: 0 0 5px var(--color-blood-red-glow);
+}
+
+/* ===============
+   Background Effects
+   =============== */
+
+.bg-cyberpunk {
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  position: relative;
+}
+
+.bg-cyberpunk::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, var(--color-glow-primary) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, var(--color-glow-secondary) 0%, transparent 50%);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.bg-matrix {
+  background: var(--color-bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-matrix::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, transparent 98%, var(--color-matrix-green) 100%),
+    linear-gradient(0deg, transparent 98%, var(--color-matrix-green) 100%);
+  background-size: 50px 50px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* ===============
+   Scan Line Effect
+   =============== */
+
+.scan-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-lines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    transparent 50%,
+    rgba(0, 255, 65, 0.03) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  animation: scan-line 2s linear infinite;
+}
+
+/* ===============
+   Hologram Effect
+   =============== */
+
+.hologram {
+  position: relative;
+  background: linear-gradient(45deg, 
+    var(--color-bg-primary) 0%, 
+    var(--color-bg-secondary) 25%, 
+    var(--color-bg-primary) 50%, 
+    var(--color-bg-secondary) 75%, 
+    var(--color-bg-primary) 100%);
+  background-size: 20px 20px;
+  animation: hologram-flicker 0.1s infinite linear;
+}
+
+.hologram::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(174, 95, 150, 0.1) 50%,
+    transparent 100%
+  );
+  animation: data-stream 3s linear infinite;
+  pointer-events: none;
+}
+
+/* ===============
+   Terminal Effect
+   =============== */
+
+.terminal {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-matrix-green);
+  border-radius: var(--radius-base);
+  font-family: var(--font-family-mono);
+  color: var(--color-matrix-green);
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--color-matrix-green) 50%, 
+    transparent 100%);
+  animation: data-stream 2s linear infinite;
+}
+
+/* ===============
+   Cyberpunk Button Styles
+   =============== */
+
+.btn-cyberpunk {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-neon-primary);
+  color: var(--color-neon-primary);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-base);
+  font-family: var(--font-family-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cyberpunk::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(174, 95, 150, 0.2), 
+    transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-cyberpunk:hover {
+  background: var(--color-bg-tertiary);
+  box-shadow: var(--glow-md);
+  text-shadow: var(--text-shadow-neon);
+}
+
+.btn-cyberpunk:hover::before {
+  left: 100%;
+}
+
+.btn-cyberpunk:active {
+  transform: translateY(1px);
+  box-shadow: var(--glow-sm);
+}
