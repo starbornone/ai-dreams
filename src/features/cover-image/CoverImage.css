@@ -4,7 +4,7 @@
 
 .cover-image {
   display: block;
-  height: var(--spacing-3xl);
+  height: 24rem;
   margin-bottom: var(--spacing-lg);
   position: relative;
   width: 100%;
@@ -20,7 +20,7 @@
 
 .cover-image__image {
   height: 100%;
-  height: var(--spacing-3xl);
+  height: 24rem;
   object-fit: cover;
   object-position: center;
   width: 100%;
@@ -45,6 +45,6 @@
 @media (min-width: 640px) {
   .cover-image,
   .cover-image__image {
-    height: var(--spacing-4xl);
+    height: 36rem;
   }
 }
