@@ -1,0 +1,9 @@
+/* ===============
+  Layout Definitions
+  =============== */
+
+:root {
+  /* Container layout */
+  --layout-container: var(--container-max-width);
+  --layout-container-padding: var(--container-padding);
+}

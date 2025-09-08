@@ -4,26 +4,26 @@
 
 .note {
   background-color: var(--color-gray-900);
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1rem;
+  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  padding-left: var(--spacing-xl);
+  padding-right: var(--spacing-xl);
+  padding-top: var(--spacing-md);
 }
 
 .note-small {
   background-color: var(--color-gray-900);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  margin-bottom: 1.5rem;
+  font-size: var(--font-size-sm);
+  line-height: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
   margin-top: 0px;
-  padding: 0.5rem;
+  padding: var(--spacing-sm);
 }
 
 .note-small p {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: var(--font-size-sm);
+  line-height: var(--spacing-lg);
   margin: 0;
   padding: 0;
 }

@@ -2,39 +2,35 @@
   Notification CSS
   =============== */
 
-  .notification {
-    background-color: var(--color-gray-800);
-    border: 1px solid var(--color-gray-700);
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.5);
-    display: flex;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.2s ease;
-  }
-  
-  .notification:hover {
-    box-shadow: 0 0.375rem 1rem rgba(0, 0, 0, 0.5);
-    transform: translateY(-0.0625rem);
-  }
-  
-  .notification__icon {
-    align-items: center;
-    background: linear-gradient(
-      180deg,
-      var(--color-aqua-600),
-      var(--color-purple-400)
-    );
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-  }
+.notification {
+  background-color: var(--color-gray-800);
+  border: 1px solid var(--color-gray-700);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease;
+}
 
-  .notification__icon-path {
-    fill: var(--color-gray-800);
-  }
+.notification:hover {
+  box-shadow: 0 0.375rem 1rem rgba(0, 0, 0, 0.5);
+  transform: translateY(-0.0625rem);
+}
 
-  .notification__content {
-    padding-right: 1rem;
-  }
+.notification__icon {
+  align-items: center;
+  background: linear-gradient(180deg, var(--color-aqua-600), var(--color-purple-400));
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.notification__icon-path {
+  fill: var(--color-gray-800);
+}
+
+.notification__content {
+  padding-right: var(--spacing-md);
+}

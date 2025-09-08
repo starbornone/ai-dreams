@@ -1,11 +1,10 @@
 /** @type {import("prettier").Config} */
 const config = {
   jsxSingleQuote: false,
-  plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-tailwindcss'],
+  plugins: ['prettier-plugin-organize-imports'],
   printWidth: 120,
   semi: true,
   singleQuote: true,
-  tailwindFunctions: ['clsx', 'tw'],
   trailingComma: 'es5',
 };
 

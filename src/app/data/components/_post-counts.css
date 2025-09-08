@@ -1,0 +1,14 @@
+/* ===============
+  Post Counts CSS
+  =============== */
+
+.post-counts {
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.post-counts__title {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}

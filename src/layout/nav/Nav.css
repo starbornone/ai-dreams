@@ -1,0 +1,27 @@
+/* ===============
+  Nav CSS
+  =============== */
+
+.nav {
+  display: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 36rem;
+}
+
+.nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0 var(--spacing-lg);
+  font-family: 'Neon', sans-serif;
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-gray-100);
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    display: block;
+  }
+}

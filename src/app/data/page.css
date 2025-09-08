@@ -1,0 +1,36 @@
+/* ===============
+  Data Page CSS
+  =============== */
+
+.data-page__content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 65ch; /* max-w-prose equivalent */
+}
+
+.data-page__intro {
+  margin-bottom: var(--spacing-lg);
+}
+
+.data-page__section {
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.data-page__section-title {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.data-page__category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.data-page__category-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+}

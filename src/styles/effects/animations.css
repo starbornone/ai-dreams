@@ -2,93 +2,93 @@
   Normal Links
   =============== */
 
-  footer a:hover::before,
-  li a:hover::before,
-  p a:hover::before,
-  .content a:hover::before {
-    visibility: visible;
-    animation: line-glitchy 0.3s ease 0.3s infinite;
-  }
-  footer a:hover::after,
-  li a:hover::after,
-  p a:hover::after,
-  .content a:hover::after {
-    visibility: visible;
-    animation: line-glitchy 0.3s ease infinite reverse;
-  }
-  
-  /* ===============
+footer a:hover::before,
+li a:hover::before,
+p a:hover::before,
+.content a:hover::before {
+  visibility: visible;
+  animation: line-glitchy 0.3s ease 0.3s infinite;
+}
+footer a:hover::after,
+li a:hover::after,
+p a:hover::after,
+.content a:hover::after {
+  visibility: visible;
+  animation: line-glitchy 0.3s ease infinite reverse;
+}
+
+/* ===============
     Site Title
     =============== */
 
-  .site-title {
-    font-family: 'Neon';
-    text-shadow:
-      0 0 0.6rem var(--color-gray-600),
-      0 0 1.5rem var(--color-gray-700),
-      -0.2rem 0.1rem 1rem var(--color-gray-700),
-      0.2rem 0.1rem 1rem var(--color-gray-700),
-      0 -0.5rem 2rem var(--color-gray-800),
-      0 0.5rem 3rem var(--color-gray-800);
-    animation:
-      shine-less 2s forwards,
-      flicker 3s infinite;
-  }
+.site-title {
+  font-family: 'Neon';
+  text-shadow:
+    0 0 0.6rem var(--color-gray-600),
+    0 0 1.5rem var(--color-gray-700),
+    -0.2rem 0.1rem 1rem var(--color-gray-700),
+    0.2rem 0.1rem 1rem var(--color-gray-700),
+    0 -0.5rem 2rem var(--color-gray-800),
+    0 0.5rem 3rem var(--color-gray-800);
+  animation:
+    shine-less 2s forwards,
+    flicker 3s infinite;
+}
 
-  /* ===============
+/* ===============
     .world Sign
     =============== */
 
-  .sign {
-    font-family: 'Neon Lines';
-    text-transform: uppercase;
-    text-shadow:
-      0 0 0.6rem var(--color-purple-100),
-      0 0 1.5rem var(--color-purple-300),
-      -0.2rem 0.1rem 1rem var(--color-purple-300),
-      0.2rem 0.1rem 1rem var(--color-purple-300),
-      0 -0.5rem 2rem var(--color-purple-400),
-      0 0.5rem 3rem var(--color-purple-400);
-    animation:
-      shine 2s forwards,
-      flicker 3s infinite;
-  }
-  .flicker {
-    animation:
-      shine 2s forwards,
-      blink 3s 2s infinite;
-  }
-  .fast-flicker {
-    animation:
-      shine 2s forwards,
-      blink 10s 1s infinite;
-  }
+.sign {
+  font-family: 'Neon Lines';
+  text-transform: uppercase;
+  text-shadow:
+    0 0 0.6rem var(--color-purple-100),
+    0 0 1.5rem var(--color-purple-300),
+    -0.2rem 0.1rem 1rem var(--color-purple-300),
+    0.2rem 0.1rem 1rem var(--color-purple-300),
+    0 -0.5rem 2rem var(--color-purple-400),
+    0 0.5rem 3rem var(--color-purple-400);
+  animation:
+    shine 2s forwards,
+    flicker 3s infinite;
+}
+.flicker {
+  animation:
+    shine 2s forwards,
+    blink 3s 2s infinite;
+}
+.fast-flicker {
+  animation:
+    shine 2s forwards,
+    blink 10s 1s infinite;
+}
 
-  /* ===============
+/* ===============
     Cover Images
     =============== */
 
-  .img-link:hover .link-inner {
-    animation: glitchy 0.3s infinite;
-  }
-  .img-link:hover::before {
-    visibility: visible;
-    animation: glitchy 0.3s ease 0.3s infinite;
-  }
-  .img-link:hover::after {
-    visibility: visible;
-    animation: glitchy 0.3s ease infinite reverse;
-  }
+.img-link:hover .link-inner {
+  animation: glitchy 0.3s infinite;
+}
+.img-link:hover::before {
+  visibility: visible;
+  animation: glitchy 0.3s ease 0.3s infinite;
+}
+.img-link:hover::after {
+  visibility: visible;
+  animation: glitchy 0.3s ease infinite reverse;
+}
 
-  /* ===============
+/* ===============
     Post Links
     =============== */
 
-  .title-link:hover::before {
-    visibility: visible;
-    animation: glitchy 0.3s ease 0.3s infinite;
-  }
-  .title-link:hover::after {
-    visibility: visible;
-    animation: glitchy 0.3s ease infinite reverse;
-  }
+.title-link:hover::before {
+  visibility: visible;
+  animation: glitchy 0.3s ease 0.3s infinite;
+}
+.title-link:hover::after {
+  visibility: visible;
+  animation: glitchy 0.3s ease infinite reverse;
+}

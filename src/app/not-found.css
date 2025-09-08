@@ -1,0 +1,32 @@
+/* ===============
+  Not Found Page CSS
+  =============== */
+
+.not-found__related {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.not-found__related-title {
+  font-size: 1.25rem;
+}
+
+.not-found__related-list {
+  margin-bottom: 6rem;
+  margin-top: var(--spacing-md);
+  display: grid;
+  gap: var(--spacing-md);
+  text-align: left;
+}
+
+/* Responsive styles */
+@media (min-width: 1024px) {
+  .not-found__related {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    gap: var(--spacing-xl);
+  }
+}

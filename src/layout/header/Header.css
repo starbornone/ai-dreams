@@ -1,0 +1,53 @@
+/* ===============
+  Header CSS
+  =============== */
+
+.header {
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__title {
+  margin-bottom: calc(-1 * var(--spacing-sm));
+  font-size: var(--font-size-5xl);
+  line-height: 1;
+}
+
+.header__subtitle {
+  margin-left: var(--spacing-3xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+}
+
+.header__sign {
+  margin-left: var(--spacing-sm);
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+  .header__title {
+    margin-bottom: 0;
+    margin-right: var(--spacing-xl);
+    font-size: var(--font-size-6xl);
+  }
+
+  .header__subtitle {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-tight);
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    margin-top: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+    padding-left: var(--spacing-4xl);
+    padding-right: var(--spacing-4xl);
+  }
+}

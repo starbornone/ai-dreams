@@ -1,0 +1,58 @@
+/* ===============
+  Support Links CSS
+  =============== */
+
+.support-links {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.support-links__text {
+  text-align: center;
+  color: var(--color-gray-300);
+}
+
+.support-links__container {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.support-links__link {
+  border: 1px solid var(--color-aqua-500);
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  font-weight: 600;
+  color: var(--color-gray-300);
+  transition: all 0.3s ease;
+}
+
+.support-links__link:hover {
+  background-color: var(--color-aqua-500);
+  color: var(--color-gray-900);
+}
+
+.support-links__link--orange:hover {
+  background-color: var(--color-orange-500);
+  color: var(--color-gray-900);
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+  .support-links {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .support-links__container {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-xl);
+  }
+}

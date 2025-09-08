@@ -1,0 +1,52 @@
+/* ===============
+  More Pages CSS
+  =============== */
+
+.more-pages {
+  background-color: var(--color-gray-900);
+}
+
+.more-pages__grid {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: var(--spacing-3xl);
+}
+
+.more-pages__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.more-pages__item {
+  background-color: var(--color-gray-800);
+}
+
+.more-pages__title {
+  margin-top: calc(-1 * var(--spacing-sm));
+  padding: var(--spacing-lg);
+  transition: color 0.2s ease;
+}
+
+.more-pages__link:hover .more-pages__title {
+  color: var(--color-gray-800);
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .more-pages {
+    margin-top: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .more-pages__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

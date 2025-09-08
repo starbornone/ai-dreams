@@ -5,8 +5,10 @@ import Link from 'next/link';
 
 import { Container, Title } from '@/components';
 import { getAllData } from '@/lib';
-import { PostCounts } from './_post-counts';
-import { TagCloud } from './_tag-cloud';
+import { PostCounts } from './components/_post-counts';
+import { TagCloud } from './components/_tag-cloud';
+
+import './page.css';
 
 export const metadata: Metadata = {
   title: 'Blog Data',
@@ -23,19 +25,19 @@ export default async function Page() {
   return (
     <>
       <Container>
-        <article className="mx-auto max-w-prose">
+        <article className="data-page__content">
           <Title>Blog Data</Title>
-          <div className="mb-6">
+          <div className="data-page__intro">
             <p>
               Maybe I will add more interesting things here in the future. Maybe that will be when I finally get around
               to migrating this entire blog to my own CMS. Who knows. (I should, but I sure don&apos;t!)
             </p>
           </div>
-          <div className="my-12">
-            <h2 className="mb-2 text-xl font-bold">Posts Per Category</h2>
-            <ul>
+          <div className="data-page__section">
+            <h2 className="data-page__section-title">Posts Per Category</h2>
+            <ul className="data-page__category-list">
               {categories.map((category: any) => (
-                <li className="flex justify-between" key={category.slug}>
+                <li className="data-page__category-item" key={category.slug}>
                   <p>
                     <Link href={`/categories/${category.slug}`}>{category.name}</Link>
                   </p>
@@ -45,8 +47,8 @@ export default async function Page() {
             </ul>
           </div>
           <PostCounts data={{ labels, data }} />
-          <div className="my-12">
-            <h2 className="mb-2 text-xl font-bold">Tags</h2>
+          <div className="data-page__section">
+            <h2 className="data-page__section-title">Tags</h2>
             <TagCloud tags={tags} />
           </div>
         </article>

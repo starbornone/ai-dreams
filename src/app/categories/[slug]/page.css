@@ -1,0 +1,24 @@
+/* ===============
+  Category Page CSS
+  =============== */
+
+.category-page__posts {
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-3xl);
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .category-page__posts {
+    margin-bottom: var(--spacing-5xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .category-page__posts {
+    gap: var(--spacing-4xl);
+  }
+}

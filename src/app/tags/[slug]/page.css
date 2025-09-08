@@ -1,0 +1,24 @@
+/* ===============
+  Tag Page CSS
+  =============== */
+
+.tag-page__posts {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .tag-page__posts {
+    margin-bottom: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tag-page__posts {
+    gap: 4rem;
+  }
+}

@@ -2,9 +2,9 @@
   Image CSS
   =============== */
 
-/* Mobile-first: Images full width by default */
-.page img:not(.w-auto):not(.avatar-image),
-.post img:not(.w-auto):not(.avatar-image) {
+/* Content images - full width by default */
+.content-image,
+.body img:not(.avatar-image):not(.cover-image__image) {
   left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
@@ -15,14 +15,14 @@
 }
 
 @media (min-width: 1025px) {
-  .page img:not(.w-auto):not(.avatar-image),
-  .post img:not(.w-auto):not(.avatar-image) {
+  .content-image,
+  .body img:not(.avatar-image):not(.cover-image__image) {
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: calc(-50% - 3rem);
-    margin-right: calc(-50% - 3rem);
-    width: calc(100% + 6rem);
+    margin-left: calc(-50% - var(--spacing-2xl));
+    margin-right: calc(-50% - var(--spacing-2xl));
+    width: calc(100% + var(--spacing-2xl) * 2);
     max-width: none;
   }
 }

@@ -1,0 +1,10 @@
+/* ===============
+  Section Separator CSS
+  =============== */
+
+.section-separator {
+  height: 0.25rem;
+  border-radius: 9999px;
+  border: none;
+  background: linear-gradient(to right, var(--color-purple-500), var(--color-pink-500), var(--color-orange-500));
+}

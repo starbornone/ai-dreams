@@ -1,12 +1,15 @@
-import { handleCategoryCounts } from '@/utils';
 import Link from 'next/link';
+
+import { handleCategoryCounts } from '@/services';
+
+import './Nav.css';
 
 export async function Nav() {
   const { categories } = await handleCategoryCounts();
 
   return (
-    <nav aria-label="Primary Navigation" className="hidden lg:my-0 lg:block md:max-w-md xl:max-w-2xl">
-      <div className="neon-links flex flex-wrap justify-end space-x-10 font-neon text-xl tracking-wider text-gray-100">
+    <nav aria-label="Primary Navigation" className="nav">
+      <div className="neon-links nav__links">
         {categories?.map((category: { slug: string; name: string }) => (
           <Link
             aria-label={`Navigate to ${category.name}`}

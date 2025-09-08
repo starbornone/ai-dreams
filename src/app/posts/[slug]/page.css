@@ -1,0 +1,118 @@
+/* ===============
+  Post Detail Layout
+  =============== */
+
+.post-detail {
+  margin-bottom: var(--spacing-5xl);
+}
+
+.post-detail__title-container {
+  margin-top: var(--spacing-2xl);
+}
+
+.post-detail__content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 65ch; /* max-w-prose equivalent */
+}
+
+.post-detail__metadata {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* ===============
+  Post Content Typography
+  =============== */
+
+/* Headings */
+.post-detail h1,
+.post-detail h2,
+.post-detail h3,
+.post-detail h4 {
+  font-family: 'Neon';
+  font-weight: 700;
+}
+
+.post-detail h2,
+.post-detail h3,
+.post-detail h4 {
+  text-shadow: 0.1em 0.1em 0 var(--color-purple-500);
+}
+
+.post-detail h2 {
+  font-size: var(--font-size-2xl);
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+}
+
+.post-detail h3 {
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-wider);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+/* Body text */
+.post-detail p,
+.post-detail ul,
+.post-detail ol {
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+/* Lists */
+.post-detail ul {
+  list-style-type: disc;
+  margin-left: var(--spacing-md);
+}
+
+.post-detail li {
+  margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+/* Blockquotes */
+.post-detail blockquote {
+  border-color: var(--color-orange-500);
+  border-left-width: 4px;
+  color: var(--color-gray-200);
+  letter-spacing: var(--letter-spacing-wider);
+  padding-left: var(--spacing-lg);
+}
+
+/* ===============
+  Responsive Design
+  =============== */
+
+@media (min-width: 640px) {
+  .post-detail h2 {
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-snug);
+  }
+
+  .post-detail h3 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-tight);
+  }
+}
+
+@media (min-width: 1024px) {
+  .post-detail {
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .post-detail__title-container {
+    margin-top: var(--spacing-2xl);
+  }
+
+  .post-detail__metadata {
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+}

@@ -1,7 +1,8 @@
 import { fetchAPI, getAllCategoriesWithSlug } from '@/lib';
+import { AllDataResponse, CategoryData, GetAllDataResponse } from '@/types';
 
-export async function getAllData() {
-  const data = await fetchAPI(
+export async function getAllData(): Promise<AllDataResponse> {
+  const data: GetAllDataResponse = await fetchAPI(
     `
     query GetAllData($stage: Stage!) {
       posts(
@@ -25,7 +26,7 @@ export async function getAllData() {
   );
 
   const tagCounts = new Map<string, number>();
-  data.posts.forEach((post: any) => {
+  data.posts.forEach((post) => {
     if (post.tags && Array.isArray(post.tags)) {
       post.tags.forEach((tag: string) => {
         if (tag) {
@@ -42,9 +43,9 @@ export async function getAllData() {
 
   const categories = await getAllCategoriesWithSlug();
 
-  data.posts.forEach((post: any) => {
+  data.posts.forEach((post) => {
     if (post.category) {
-      categories.forEach((category: any) => {
+      categories.forEach((category: CategoryData) => {
         if (post.category.slug === category.slug) {
           category.count = category.count ? category.count + 1 : 1;
         }
@@ -66,7 +67,7 @@ export async function getAllData() {
     iterDate.setMonth(iterDate.getMonth() + 1);
   }
 
-  data.posts.forEach((post: any) => {
+  data.posts.forEach((post) => {
     if (post.date) {
       const dateObj = new Date(post.date);
       const yearMonth = `${dateObj.getFullYear()}-${String(dateObj.getMonth() + 1).padStart(2, '0')}`;

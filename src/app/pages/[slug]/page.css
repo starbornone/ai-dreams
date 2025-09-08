@@ -1,0 +1,106 @@
+/* ===============
+  Page Detail Layout
+  =============== */
+
+.page-detail {
+  margin-bottom: var(--spacing-5xl);
+}
+
+.page-detail__title-container {
+  margin-top: var(--spacing-2xl);
+}
+
+.page-detail__content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 65ch; /* max-w-prose equivalent */
+}
+
+/* ===============
+  Page Content Typography
+  =============== */
+
+/* Headings */
+.page-detail h1,
+.page-detail h2,
+.page-detail h3,
+.page-detail h4 {
+  font-family: 'Neon';
+  font-weight: 700;
+}
+
+.page-detail h2,
+.page-detail h3,
+.page-detail h4 {
+  text-shadow: 0.1em 0.1em 0 var(--color-purple-500);
+}
+
+.page-detail h2 {
+  font-size: var(--font-size-2xl);
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+}
+
+.page-detail h3 {
+  border-color: var(--color-gray-700);
+  border-left-width: 4px;
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-wider);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  padding-left: 0.75rem;
+}
+
+/* Body text */
+.page-detail p,
+.page-detail ul,
+.page-detail ol {
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+/* Lists */
+.page-detail ul {
+  list-style-type: disc;
+  margin-left: var(--spacing-md);
+}
+
+.page-detail li {
+  margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+/* Blockquotes */
+.page-detail blockquote {
+  border-color: var(--color-orange-500);
+  border-left-width: 4px;
+  color: var(--color-gray-200);
+  letter-spacing: var(--letter-spacing-wider);
+  padding-left: var(--spacing-lg);
+}
+
+/* ===============
+  Responsive Design
+  =============== */
+
+@media (min-width: 640px) {
+  .page-detail h2 {
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-snug);
+  }
+
+  .page-detail h3 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-tight);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-detail__title-container {
+    margin-top: var(--spacing-2xl);
+  }
+}
