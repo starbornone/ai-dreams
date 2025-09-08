@@ -7,6 +7,7 @@ import { PostPreview } from '@/features';
 import { getAllData } from '@/lib';
 import { getAllPostsByTag } from '@/lib/tags/getAllPostsByTag';
 import { PostData } from '@/types';
+import './page.css';
 
 type Params = Promise<{ slug: string }>;
 
@@ -47,7 +48,7 @@ export default async function Page(props: { params: Promise<Params> }) {
   return (
     <Container>
       {posts && posts.length > 0 ? (
-        <section className="my-12 grid grid-cols-1 gap-y-12 md:mb-32 lg:gap-y-16">
+        <section className="tag-page__posts">
           {posts.map((post) => (
             <PostPreview key={post.slug} post={post} />
           ))}
