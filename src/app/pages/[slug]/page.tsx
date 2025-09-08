@@ -3,11 +3,12 @@ export const dynamic = 'force-static';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { Container, Title } from '@/components';
 import { Body, CoverImage } from '@/features';
+import { Container, Title } from '@/components';
 import { getAllPagesWithSlug } from '@/lib';
-import { PageData } from '@/types';
 import { handleGetPage } from '@/utils';
+import { PageData } from '@/types';
+
 import './page.css';
 
 type Params = Promise<{ slug: string }>;
