@@ -14,9 +14,9 @@
 }
 
 .more-posts__list {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
 }
 
 /* Responsive styles */
@@ -31,11 +31,21 @@
   .more-posts__title {
     font-size: 3rem;
   }
+  
+  .more-posts__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .more-posts {
     margin-top: 6rem;
     margin-bottom: 6rem;
+  }
+  
+  .more-posts__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
   }
 }
