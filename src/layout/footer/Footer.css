@@ -5,7 +5,7 @@
 .footer {
   background-color: var(--color-gray-900);
   color: var(--color-gray-400);
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
 }
 
 .footer__content {
@@ -22,13 +22,13 @@
 
 .footer__disclaimer {
   color: var(--color-gray-600);
-  font-size: 0.75rem;
+  font-size: var(--font-size-xs);
   font-weight: 300;
   margin-top: var(--spacing-sm);
 }
 
 .footer__disclaimer + .footer__disclaimer {
-  margin-top: 0.25rem;
+  margin-top: var(--spacing-xs);
 }
 
 /* Link container utility */

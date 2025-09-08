@@ -6,7 +6,7 @@
   background-color: var(--color-gray-900);
   display: flex;
   flex-direction: column;
-  font-size: 1.25rem;
+  font-size: var(--font-size-xl);
   gap: var(--spacing-sm);
   width: 100%;
 }
@@ -33,7 +33,7 @@
 
 .post-link__excerpt {
   color: var(--color-gray-300);
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
   margin-top: var(--spacing-sm);
 }
 
@@ -41,9 +41,9 @@
   color: var(--color-gray-500);
   display: flex;
   flex-direction: column;
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
   font-weight: 300;
-  gap: 0.25rem;
+  gap: var(--spacing-xs);
 }
 
 .post-link__metadata-item {
@@ -54,8 +54,8 @@
 
 .post-link__metadata-icon {
   color: var(--color-gray-600);
-  height: 0.75rem;
-  width: 0.75rem;
+  height: var(--font-size-xs);
+  width: var(--font-size-xs);
 }
 
 /* Hover states */
@@ -76,12 +76,12 @@
   .post-link {
     align-items: start;
     display: grid;
-    gap: 4rem;
+    gap: var(--spacing-5xl);
     grid-template-columns: 1fr 2fr;
   }
   
   .post-link__image {
-    height: 300px;
+    height: 18.75rem;
     width: 100%;
   }
   
@@ -104,7 +104,7 @@
 }
 
 .more-posts__list .post-link__image {
-  height: 200px;
+    height: 12.5rem;
   width: 100%;
   flex-shrink: 0;
 }
@@ -123,6 +123,6 @@
 
 .more-posts__list .post-link__metadata {
   flex-direction: column;
-  gap: 0.25rem;
+    gap: var(--spacing-xs);
   margin-top: auto;
 }

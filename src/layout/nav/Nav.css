@@ -6,7 +6,7 @@
   display: none;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 36rem;
+  max-width: var(--spacing-4xl);
 }
 
 .nav__links {
@@ -15,8 +15,8 @@
   justify-content: flex-end;
   gap: 0 var(--spacing-lg);
   font-family: 'Neon', sans-serif;
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-wider);
   color: var(--color-gray-100);
 }
 

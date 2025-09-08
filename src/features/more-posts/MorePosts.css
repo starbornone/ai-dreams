@@ -3,19 +3,19 @@
   =============== */
 
 .more-posts {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: var(--spacing-4xl);
+  margin-bottom: var(--spacing-4xl);
 }
 
 .more-posts__title {
   margin-bottom: var(--spacing-xl);
   text-align: center;
-  font-size: 2.25rem;
+  font-size: var(--font-size-4xl);
 }
 
 .more-posts__list {
   display: grid;
-  gap: 2rem;
+  gap: var(--spacing-xl);
   grid-template-columns: 1fr;
 }
 
@@ -29,23 +29,23 @@
 
 @media (min-width: 768px) {
   .more-posts__title {
-    font-size: 3rem;
+    font-size: var(--font-size-5xl);
   }
   
   .more-posts__list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: var(--spacing-2xl);
   }
 }
 
 @media (min-width: 1024px) {
   .more-posts {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    margin-top: var(--spacing-4xl);
+    margin-bottom: var(--spacing-4xl);
   }
   
   .more-posts__list {
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: var(--spacing-3xl);
   }
 }

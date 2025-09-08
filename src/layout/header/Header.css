@@ -47,7 +47,7 @@
   .header {
     margin-top: var(--spacing-3xl);
     margin-bottom: var(--spacing-3xl);
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: var(--spacing-4xl);
+    padding-right: var(--spacing-4xl);
   }
 }

@@ -5,19 +5,19 @@
   .input {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--spacing-sm);
   }
 
   .input__label {
     color: var(--color-gray-300);
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm);
     font-weight: 600;
   }
 
   .input__field {
     background-color: var(--color-gray-800);
-    border-radius: 0.5rem;
+    border-radius: var(--radius-md);
     border: 1px solid var(--color-gray-700);
-    padding: 0.25rem;
+    padding: var(--spacing-xs);
     width: 100%;
   }

@@ -32,7 +32,7 @@
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
-  border-color: #e5e7eb;
+  border-color: var(--color-gray-200);
 }
 
 /* HTML and body */
@@ -198,7 +198,7 @@ button, input:where([type="button"]), input:where([type="reset"]), input:where([
 
 input::placeholder, textarea::placeholder {
   opacity: 1;
-  color: #9ca3af;
+  color: var(--color-gray-400);
 }
 
 /* Form specific elements */
