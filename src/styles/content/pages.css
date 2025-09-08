@@ -2,29 +2,29 @@
   Pages CSS
   =============== */
 
-.page h1,
-.page h2,
-.page h3,
-.page h4 {
+.page-detail h1,
+.page-detail h2,
+.page-detail h3,
+.page-detail h4 {
   font-family: 'Neon';
   font-weight: 700;
 }
 
-.page h2,
-.page h3,
-.page h4 {
+.page-detail h2,
+.page-detail h3,
+.page-detail h4 {
   text-shadow: 0.1em 0.1em 0 var(--color-purple-500);
 }
 
-.page p,
-.page ul,
-.page ol {
+.page-detail p,
+.page-detail ul,
+.page-detail ol {
   line-height: 1.75rem;
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
 }
 
-.page h3 {
+.page-detail h3 {
   border-color: var(--color-gray-700);
   border-left-width: 4px;
   padding-left: 0.75rem;

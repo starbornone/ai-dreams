@@ -3,8 +3,8 @@
   =============== */
 
 /* Mobile-first: Images full width by default */
-.page img:not(.w-auto):not(.avatar-image),
-.post img:not(.w-auto):not(.avatar-image) {
+.page-detail img:not(.w-auto):not(.avatar-image),
+.post-detail img:not(.w-auto):not(.avatar-image) {
   left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
@@ -15,8 +15,8 @@
 }
 
 @media (min-width: 1025px) {
-  .page img:not(.w-auto):not(.avatar-image),
-  .post img:not(.w-auto):not(.avatar-image) {
+  .page-detail img:not(.w-auto):not(.avatar-image),
+  .post-detail img:not(.w-auto):not(.avatar-image) {
     position: relative;
     left: 50%;
     right: 50%;
