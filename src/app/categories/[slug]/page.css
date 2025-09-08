@@ -3,22 +3,22 @@
   =============== */
 
 .category-page__posts {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: var(--spacing-3xl);
 }
 
 /* Responsive styles */
 @media (min-width: 768px) {
   .category-page__posts {
-    margin-bottom: 8rem;
+    margin-bottom: var(--spacing-5xl);
   }
 }
 
 @media (min-width: 1024px) {
   .category-page__posts {
-    gap: 4rem;
+    gap: var(--spacing-4xl);
   }
 }

@@ -3,12 +3,12 @@
   =============== */
 
 .post-counts {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
 }
 
 .post-counts__title {
   margin-bottom: var(--spacing-md);
-  font-size: 1.25rem;
+  font-size: var(--font-size-xl);
   font-weight: 700;
 }

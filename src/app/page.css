@@ -3,18 +3,18 @@
   =============== */
 
 .home-page__posts {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: var(--spacing-4xl);
+  margin-bottom: var(--spacing-4xl);
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: var(--spacing-3xl);
 }
 
 /* Responsive styles */
 @media (min-width: 1024px) {
   .home-page__posts {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
-    gap: 4rem;
+    margin-top: var(--spacing-4xl);
+    margin-bottom: var(--spacing-4xl);
+    gap: var(--spacing-4xl);
   }
 }
