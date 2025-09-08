@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import './_tag-cloud.css';
 
 type TagCloudProps = {
   maxFontSize?: number;
@@ -10,7 +11,7 @@ export function TagCloud({ tags, maxFontSize = 36, minFontSize = 10 }: TagCloudP
   const maxCount = Math.max(...tags.map((tag) => tag.count));
 
   return (
-    <div className="align-end flex flex-wrap justify-center gap-3 font-neon tracking-wider">
+    <div className="tag-cloud">
       {tags.map((tag) => {
         const encodedTagName = encodeURIComponent(tag.name);
         const fontSize = minFontSize + ((maxFontSize - minFontSize) * tag.count) / maxCount;

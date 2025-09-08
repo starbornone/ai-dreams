@@ -2,6 +2,7 @@
 
 import { BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Tooltip } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import './_post-counts.css';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -14,8 +15,8 @@ interface PostCountsProps {
 
 export function PostCounts({ data }: PostCountsProps) {
   return (
-    <div className="my-12">
-      <h2 className="mb-4 text-xl font-bold">Posts Per Month</h2>
+    <div className="post-counts">
+      <h2 className="post-counts__title">Posts Per Month</h2>
       <Bar
         data={{
           labels: data.labels,
