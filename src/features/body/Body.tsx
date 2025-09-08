@@ -132,6 +132,12 @@ const renderContent = (node: any, index = 0) => {
     ];
 
     if (selfClosingTags.includes(node.name)) {
+      if (node.name === 'img') {
+        const className = node.attributes.className 
+          ? `${node.attributes.className} content-image`
+          : 'content-image';
+        return React.createElement(node.name, { ...node.attributes, className, key: index });
+      }
       return React.createElement(node.name, { ...node.attributes, key: index });
     }
 
