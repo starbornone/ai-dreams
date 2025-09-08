@@ -3,11 +3,12 @@ export const dynamic = 'force-static';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { Container, Loading, SectionSeparator, Title } from '@/components';
 import { Body, CoverImage, MetaData, MorePosts } from '@/features';
+import { Container, Loading, SectionSeparator, Title } from '@/components';
 import { getAllPostsWithSlug, getLimitedPosts } from '@/lib';
-import { PostData } from '@/types';
 import { handleGetPost } from '@/utils';
+import { PostData } from '@/types';
+
 import './page.css';
 
 type Params = Promise<{ slug: string }>;
