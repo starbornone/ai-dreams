@@ -1,0 +1,39 @@
+/* ===============
+  Post Detail CSS
+  =============== */
+
+.post-detail {
+  margin-bottom: 8rem;
+}
+
+.post-detail__title-container {
+  margin-top: 3rem;
+}
+
+.post-detail__content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 65ch; /* max-w-prose equivalent */
+}
+
+.post-detail__metadata {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Responsive styles */
+@media (min-width: 1024px) {
+  .post-detail {
+    margin-top: var(--spacing-md);
+    margin-bottom: 4rem;
+  }
+
+  .post-detail__title-container {
+    margin-top: 3rem;
+  }
+
+  .post-detail__metadata {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}

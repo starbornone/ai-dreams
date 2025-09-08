@@ -8,6 +8,7 @@ import { Body, CoverImage, MetaData, MorePosts } from '@/features';
 import { getAllPostsWithSlug, getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
 import { handleGetPost } from '@/utils';
+import './page.css';
 
 type Params = Promise<{ slug: string }>;
 
@@ -54,7 +55,7 @@ export default async function Page(props: { params: Promise<Params> }) {
   return (
     <>
       {post ? (
-        <article className="post my-6 lg:my-16">
+        <article className="post-detail">
           {post.coverImage && (
             <CoverImage
               imageAuthor={{
@@ -66,8 +67,8 @@ export default async function Page(props: { params: Promise<Params> }) {
             />
           )}
           <Container>
-            <div className="lg:mt-12">{post.title && <Title>{post.title}</Title>}</div>
-            <div className="mx-auto max-w-prose">
+            <div className="post-detail__title-container">{post.title && <Title>{post.title}</Title>}</div>
+            <div className="post-detail__content">
               {(post.content || post.markdownContent) && (
                 <Body
                   content={{
@@ -76,7 +77,7 @@ export default async function Page(props: { params: Promise<Params> }) {
                   }}
                 />
               )}
-              <div className="lg:my-12">
+              <div className="post-detail__metadata">
                 <MetaData post={post} />
               </div>
             </div>
