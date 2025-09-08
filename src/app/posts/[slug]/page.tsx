@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation';
 import { Body, CoverImage, MetaData, MorePosts } from '@/features';
 import { Container, Loading, SectionSeparator, Title } from '@/components';
 import { getAllPostsWithSlug, getLimitedPosts } from '@/lib';
-import { handleGetPost } from '@/utils';
+import { handleGetPost } from '@/services';
 import { PostData } from '@/types';
 
 import './page.css';

@@ -1,5 +1,7 @@
-import { handleCategoryCounts } from '@/utils';
 import Link from 'next/link';
+
+import { handleCategoryCounts } from '@/services';
+
 import './NavMobile.css';
 
 export async function MobileNav() {

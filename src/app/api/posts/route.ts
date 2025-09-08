@@ -1,5 +1,6 @@
 import { getLimitedPosts } from '@/lib';
 import { NextRequest, NextResponse } from 'next/server';
+import { APIError, handleAPIError, logError } from '@/utils/handleErrors';
 
 export async function GET(req: NextRequest) {
   try {
@@ -35,7 +36,17 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({ posts });
   } catch (error) {
-    console.error('API Error:', error);
-    return NextResponse.json({ error: 'Failed to fetch posts' }, { status: 500 });
+    const apiError = handleAPIError(error);
+    logError(apiError, 'Posts API route');
+    
+    return NextResponse.json(
+      { 
+        error: apiError.message,
+        ...(process.env.NODE_ENV === 'development' && { 
+          details: apiError.originalError?.message 
+        })
+      }, 
+      { status: apiError.statusCode }
+    );
   }
 }

@@ -1,3 +1,4 @@
+// Page service - business logic for page operations
 import { getPage } from '@/lib';
 
 export async function handleGetPage({ slug }: { slug: string }) {

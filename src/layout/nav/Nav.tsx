@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { handleCategoryCounts } from '@/utils';
+import { handleCategoryCounts } from '@/services';
 
 import './Nav.css';
 
