@@ -1,8 +1,8 @@
-import { apiClient, getAllCategoriesWithSlug } from '@/lib';
+import { fetchAPI, getAllCategoriesWithSlug } from '@/lib';
 import { GetAllDataResponse, AllDataResponse, TagCount, CategoryData } from '@/types';
 
 export async function getAllData(): Promise<AllDataResponse> {
-  const data: GetAllDataResponse = await apiClient(
+  const data: GetAllDataResponse = await fetchAPI(
     `
     query GetAllData($stage: Stage!) {
       posts(
