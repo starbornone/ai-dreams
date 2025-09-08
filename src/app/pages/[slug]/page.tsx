@@ -8,6 +8,7 @@ import { Body, CoverImage } from '@/features';
 import { getAllPagesWithSlug } from '@/lib';
 import { PageData } from '@/types';
 import { handleGetPage } from '@/utils';
+import './page.css';
 
 type Params = Promise<{ slug: string }>;
 
@@ -43,7 +44,7 @@ export default async function Page(props: { params: Promise<Params> }) {
   return (
     <>
       {page ? (
-        <article className="page mb-32">
+        <article className="page-detail">
           {page.coverImage && (
             <CoverImage
               imageAuthor={{
@@ -55,8 +56,8 @@ export default async function Page(props: { params: Promise<Params> }) {
             />
           )}
           <Container>
-            <div className="lg:mt-12">{page.title && <Title>{page.title}</Title>}</div>
-            <div className="mx-auto max-w-prose">
+            <div className="page-detail__title-container">{page.title && <Title>{page.title}</Title>}</div>
+            <div className="page-detail__content">
               {(page.content || page.markdownContent) && (
                 <Body
                   content={{
