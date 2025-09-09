@@ -25,6 +25,7 @@
 
 .post-link__text {
   flex: 1;
+  margin-bottom: var(--spacing-md);
 }
 
 .post-link__title {
