@@ -49,3 +49,60 @@
     gap: var(--spacing-3xl);
   }
 }
+
+/* Load More Button Styles */
+.more-posts__load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-2xl);
+}
+
+.more-posts__load-button {
+  background-color: var(--color-aqua-500);
+  border: none;
+  color: var(--color-black);
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  min-width: 120px;
+  padding: var(--spacing-md) var(--spacing-xl);
+}
+
+.more-posts__load-button:hover:not(:disabled) {
+  background-color: var(--color-aqua-600);
+}
+
+.more-posts__load-button:disabled {
+  background-color: var(--color-gray-400);
+  cursor: not-allowed;
+}
+
+/* Error State Styles */
+.more-posts__error {
+  color: var(--color-pink-600);
+  text-align: center;
+}
+
+.more-posts__error p {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-md);
+}
+
+.more-posts__retry-button {
+  background-color: var(--color-pink-500);
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.more-posts__retry-button:hover:not(:disabled) {
+  background-color: var(--color-pink-600);
+}
+
+.more-posts__retry-button:disabled {
+  background-color: var(--color-gray-400);
+  cursor: not-allowed;
+}
