@@ -4,11 +4,12 @@ import { Container } from '@/components';
 import { MorePages, MorePosts, PostPreview } from '@/features';
 import { getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
+
 import './page.css';
 
 async function getInitialPosts(): Promise<{ posts: PostData[]; morePosts: PostData[] }> {
   const posts = await getLimitedPosts({ skip: 0, limit: 3 });
-  const morePosts = await getLimitedPosts({ skip: 3 });
+  const morePosts = await getLimitedPosts({ skip: 3, limit: 12 });
   return { posts, morePosts };
 }
 
@@ -28,7 +29,7 @@ export default async function Page() {
       </Container>
       <MorePages />
       <Container>
-        <MorePosts morePosts={morePosts} />
+        <MorePosts morePosts={morePosts} enableLoadMore={true} loadMoreLimit={12} initialOffset={3} />
       </Container>
     </>
   );
