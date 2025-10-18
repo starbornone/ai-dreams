@@ -14,9 +14,25 @@ interface PostCountsProps {
 }
 
 export function PostCounts({ data }: PostCountsProps) {
+  const totalPosts = data.data.reduce((sum, count) => sum + count, 0);
+
+  const averagePostsPerMonth = totalPosts / data.labels.length;
+
+  const yearCounts: Record<string, number> = {};
+  
+  data.labels.forEach((label, index) => {
+    const year = label.split('-')[0];
+    yearCounts[year] = (yearCounts[year] || 0) + data.data[index];
+  });
+  
+  const years = Object.keys(yearCounts).sort();
+  const numberOfYears = years.length;
+  const averagePostsPerYear = numberOfYears > 0 ? totalPosts / numberOfYears : 0;
+
   return (
     <div className="post-counts">
-      <h2 className="post-counts__title">Posts Per Month</h2>
+      <h2 className="post-counts__title">Post Counts</h2>
+
       <Bar
         data={{
           labels: data.labels,
@@ -43,6 +59,11 @@ export function PostCounts({ data }: PostCountsProps) {
           },
         }}
       />
+      <div className="post-counts__section">
+        <p>Total posts: {totalPosts}</p>
+        <p>Average posts per month: {averagePostsPerMonth.toFixed(2)}</p>
+        <p>Average posts per year: {averagePostsPerYear.toFixed(2)}</p>
+      </div>
     </div>
   );
 }
