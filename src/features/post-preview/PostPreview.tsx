@@ -59,6 +59,7 @@ export function PostPreview({ post }: PostPreviewProps) {
                 </Link>
               </div>
             )}
+
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
               <div className="post-preview__metadata-item" aria-label="Tags">
