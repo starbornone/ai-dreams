@@ -60,9 +60,9 @@ export function PostCounts({ data }: PostCountsProps) {
         }}
       />
       <div className="post-counts__section">
-        <p>Total posts: {totalPosts}</p>
-        <p>Average posts per month: {averagePostsPerMonth.toFixed(2)}</p>
-        <p>Average posts per year: {averagePostsPerYear.toFixed(2)}</p>
+        <p>{totalPosts} total posts.</p>
+        <p>{averagePostsPerMonth.toFixed(2)} average posts per month.</p>
+        <p>{averagePostsPerYear.toFixed(2)} average posts per calendar year.</p>
       </div>
     </div>
   );
