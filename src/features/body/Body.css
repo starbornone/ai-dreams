@@ -4,4 +4,5 @@
 
 .body__code-block {
   font-size: 0.8rem;
+  padding: 0 var(--spacing-md) !important;
 }
