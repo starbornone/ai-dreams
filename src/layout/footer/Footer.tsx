@@ -36,7 +36,7 @@ export function Footer() {
           {/* Site Information Section */}
           <div className="footer__info">
             <LinkContainer>
-              <p style={{ color: 'var(--color-gray-300)' }}>AI dreaming since 2021.</p>
+              <p>AI dreaming since 2021.</p>
               <Link href="/pages/contact-us" aria-label="Contact us">
                 Contact Us
               </Link>
@@ -46,6 +46,7 @@ export function Footer() {
               <Link href="/pages/privacy-policy" aria-label="Privacy policy">
                 Privacy Policy
               </Link>
+              <a href="https://octothorp.es" target="_blank" rel="noopener noreferrer">#octothorp.es</a>
             </LinkContainer>
             <p className="footer__disclaimer">
               The purchase of any products through external sites does not provide any monetary benefit to the author.
