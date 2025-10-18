@@ -1,7 +1,8 @@
+import React from 'react';
 import './Email.css';
 
 interface EmailProps {
-  children: string;
+  children: React.ReactNode;
   sender?: string;
   subject?: string;
   time?: string;

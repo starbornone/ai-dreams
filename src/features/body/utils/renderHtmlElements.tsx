@@ -1,8 +1,6 @@
 import React from 'react';
+import { renderCodeBlock } from './renderCodeBlock';
 
-/**
- * List of self-closing HTML tags
- */
 const SELF_CLOSING_TAGS = [
   'hr',
   'br',
@@ -20,15 +18,16 @@ const SELF_CLOSING_TAGS = [
   'wbr',
 ];
 
-/**
- * Renders HTML elements from Markdoc nodes
- */
 export const renderHtmlElement = (
   tagNode: any,
   index: number,
   renderContent: (node: any, index: number) => React.ReactNode
 ): React.ReactNode => {
   const { name, attributes, children } = tagNode;
+
+  if (name === 'pre') {
+    return renderCodeBlock(tagNode, index);
+  }
 
   if (SELF_CLOSING_TAGS.includes(name || '')) {
     if (name === 'img') {

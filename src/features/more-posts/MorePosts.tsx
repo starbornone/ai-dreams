@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import { PostLink } from '@/features';
 import { PostData } from '@/types';
+import { useState } from 'react';
 
 import './MorePosts.css';
 
@@ -14,7 +14,13 @@ interface MorePostsProps {
   initialOffset?: number;
 }
 
-export function MorePosts({ morePosts, title, enableLoadMore = false, loadMoreLimit = 12, initialOffset = 0 }: MorePostsProps) {
+export function MorePosts({
+  morePosts,
+  title,
+  enableLoadMore = false,
+  loadMoreLimit = 12,
+  initialOffset = 0,
+}: MorePostsProps) {
   const [posts, setPosts] = useState<PostData[]>(morePosts);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(morePosts.length >= loadMoreLimit);
@@ -29,7 +35,7 @@ export function MorePosts({ morePosts, title, enableLoadMore = false, loadMoreLi
 
     try {
       const response = await fetch(`/api/posts?skip=${totalLoaded}&limit=${loadMoreLimit}`);
-      
+
       if (!response.ok) {
         throw new Error('Failed to load more posts');
       }
@@ -38,8 +44,8 @@ export function MorePosts({ morePosts, title, enableLoadMore = false, loadMoreLi
       const newPosts = data.posts || [];
 
       if (newPosts.length > 0) {
-        setPosts(prevPosts => [...prevPosts, ...newPosts]);
-        setTotalLoaded(prevTotal => prevTotal + newPosts.length);
+        setPosts((prevPosts) => [...prevPosts, ...newPosts]);
+        setTotalLoaded((prevTotal) => prevTotal + newPosts.length);
         setHasMore(newPosts.length >= loadMoreLimit);
       } else {
         setHasMore(false);
@@ -57,28 +63,20 @@ export function MorePosts({ morePosts, title, enableLoadMore = false, loadMoreLi
       <div className="more-posts__list">
         {posts.length > 0 ? posts.map((post) => <PostLink key={post.slug} post={post} />) : null}
       </div>
-      
+
       {enableLoadMore && hasMore && (
         <div className="more-posts__load-more">
           {error && (
             <div className="more-posts__error">
               <p>{error}</p>
-              <button 
-                className="more-posts__retry-button"
-                onClick={loadMorePosts}
-                disabled={isLoading}
-              >
+              <button className="more-posts__retry-button" onClick={loadMorePosts} disabled={isLoading}>
                 Try Again
               </button>
             </div>
           )}
-          
+
           {!error && (
-            <button 
-              className="more-posts__load-button img-link"
-              onClick={loadMorePosts}
-              disabled={isLoading}
-            >
+            <button className="more-posts__load-button img-link" onClick={loadMorePosts} disabled={isLoading}>
               {isLoading ? 'Loading...' : 'Load More'}
             </button>
           )}

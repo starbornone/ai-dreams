@@ -1,7 +1,8 @@
+import React from 'react';
 import './Caption.css';
 
 interface CaptionProps {
-  children: string;
+  children: React.ReactNode;
   linkTitle?: string;
   linkUrl?: string;
 }

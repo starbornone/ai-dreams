@@ -1,7 +1,8 @@
+import React from 'react';
 import './Form.css';
 
 interface FormProps {
-  children: string;
+  children: React.ReactNode;
 }
 
 export const Form = ({ children }: FormProps) => {

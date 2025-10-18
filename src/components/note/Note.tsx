@@ -1,7 +1,8 @@
+import React from 'react';
 import './Note.css';
 
 interface NoteProps {
-  children: string;
+  children: React.ReactNode;
 }
 
 export const Note = ({ children }: NoteProps) => {

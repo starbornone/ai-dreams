@@ -1,7 +1,8 @@
+import React from 'react';
 import './Chat.css';
 
 interface ChatProps {
-  children: string;
+  children: React.ReactNode;
 }
 
 export const Chat = ({ children }: ChatProps) => {

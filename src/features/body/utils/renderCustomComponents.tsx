@@ -1,21 +1,8 @@
-import { Caption, Chat, ChatMessage, Email, FakeLink, Form, Grid, Input, Note, Notification } from '@/components';
 import { type RenderableTreeNode } from '@markdoc/markdoc';
 import React from 'react';
 
-/**
- * Converts node children to string content for components that expect string children
- */
-const convertToStringContent = (children: any[]): string => {
-  return (
-    children
-      ?.map((child: any) => (typeof child === 'string' ? child : typeof child === 'number' ? String(child) : ''))
-      .join('') || ''
-  );
-};
+import { Caption, Chat, ChatMessage, Email, FakeLink, Form, Grid, Input, Note, Notification } from '@/components';
 
-/**
- * Renders custom Markdoc components
- */
 export const renderCustomComponent = (
   tagNode: any,
   index: number,
@@ -27,14 +14,14 @@ export const renderCustomComponent = (
     case 'Caption':
       return (
         <Caption key={index} {...attributes}>
-          {convertToStringContent(children)}
+          {children?.map((child: RenderableTreeNode, childIndex: number) => renderContent(child, childIndex))}
         </Caption>
       );
 
     case 'Chat':
       return (
         <Chat key={index} {...attributes}>
-          {convertToStringContent(children)}
+          {children?.map((child: RenderableTreeNode, childIndex: number) => renderContent(child, childIndex))}
         </Chat>
       );
 
@@ -48,7 +35,7 @@ export const renderCustomComponent = (
     case 'Email':
       return (
         <Email key={index} {...attributes}>
-          {convertToStringContent(children)}
+          {children?.map((child: RenderableTreeNode, childIndex: number) => renderContent(child, childIndex))}
         </Email>
       );
 
@@ -62,7 +49,7 @@ export const renderCustomComponent = (
     case 'Form':
       return (
         <Form key={index} {...attributes}>
-          {convertToStringContent(children)}
+          {children?.map((child: RenderableTreeNode, childIndex: number) => renderContent(child, childIndex))}
         </Form>
       );
 
@@ -79,7 +66,7 @@ export const renderCustomComponent = (
     case 'Note':
       return (
         <Note key={index} {...attributes}>
-          {convertToStringContent(children)}
+          {children?.map((child: RenderableTreeNode, childIndex: number) => renderContent(child, childIndex))}
         </Note>
       );
 

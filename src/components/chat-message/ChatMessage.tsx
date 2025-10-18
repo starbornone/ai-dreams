@@ -1,7 +1,8 @@
+import React from 'react';
 import './ChatMessage.css';
 
 interface ChatMessageProps {
-  children: string;
+  children: React.ReactNode;
   sender?: string;
   time?: string;
 }
