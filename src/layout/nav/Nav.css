@@ -9,6 +9,13 @@
   max-width: 36rem;
 }
 
+@media (min-width: 769px) {
+  .nav {
+    align-self: self-end;
+    display: block;
+  }
+}
+
 .nav__links {
   display: flex;
   flex-wrap: wrap;
@@ -18,10 +25,4 @@
   font-size: var(--font-size-xl);
   letter-spacing: var(--letter-spacing-wider);
   color: var(--color-gray-100);
-}
-
-@media (min-width: 1024px) {
-  .nav {
-    display: block;
-  }
 }
