@@ -64,6 +64,12 @@ html {
   font-weight: 300;
 }
 
+@media (min-width: 2560px) {
+  html {
+    font-size: 1.25rem;
+  }
+}
+
 body {
   margin: 0;
   line-height: inherit;
