@@ -99,7 +99,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .page-detail__title-container {
     margin-top: var(--spacing-2xl);
   }

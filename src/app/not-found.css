@@ -23,7 +23,7 @@
 }
 
 /* Responsive styles */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .not-found__related {
     margin-top: 3rem;
     margin-bottom: 3rem;

@@ -36,7 +36,7 @@
 }
 
 /* Responsive styles */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .more-pages {
     margin-top: var(--spacing-3xl);
     margin-bottom: var(--spacing-3xl);
@@ -45,7 +45,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .more-pages__grid {
     grid-template-columns: repeat(3, 1fr);
   }

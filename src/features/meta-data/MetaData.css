@@ -52,7 +52,7 @@
 }
 
 /* Responsive styles */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .meta-data {
     font-size: var(--font-size-sm);
   }

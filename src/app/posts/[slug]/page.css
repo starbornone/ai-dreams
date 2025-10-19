@@ -101,7 +101,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .post-detail {
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-3xl);

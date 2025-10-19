@@ -27,7 +27,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .more-posts__title {
     font-size: var(--font-size-5xl);
   }
@@ -38,7 +38,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .more-posts {
     margin-top: var(--spacing-4xl);
     margin-bottom: var(--spacing-4xl);

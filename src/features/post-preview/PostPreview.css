@@ -44,7 +44,7 @@
   justify-content: space-between;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .post-preview__metadata-primary {
     align-items: center;
     flex-direction: row;
@@ -101,7 +101,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .post-preview__metadata {
     flex-direction: row;
     align-items: center;

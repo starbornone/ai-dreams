@@ -11,13 +11,13 @@
 }
 
 /* Responsive styles */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .category-page__posts {
     margin-bottom: var(--spacing-5xl);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .category-page__posts {
     gap: var(--spacing-4xl);
   }

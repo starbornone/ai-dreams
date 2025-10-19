@@ -3,15 +3,14 @@
   =============== */
 
 .home-page__posts {
-  margin-top: var(--spacing-4xl);
+  margin-top: var(--spacing-3xl);
   margin-bottom: var(--spacing-4xl);
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-3xl);
 }
 
-/* Responsive styles */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .home-page__posts {
     margin-top: var(--spacing-4xl);
     margin-bottom: var(--spacing-4xl);

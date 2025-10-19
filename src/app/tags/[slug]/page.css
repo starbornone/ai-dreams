@@ -11,13 +11,13 @@
 }
 
 /* Responsive styles */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .tag-page__posts {
     margin-bottom: 8rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .tag-page__posts {
     gap: 4rem;
   }

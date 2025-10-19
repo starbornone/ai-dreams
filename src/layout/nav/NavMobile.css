@@ -31,7 +31,7 @@
 }
 
 /* Hide on large screens */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .mobile-nav {
     display: none;
   }
