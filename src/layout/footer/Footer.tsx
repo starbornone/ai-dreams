@@ -46,7 +46,9 @@ export function Footer() {
               <Link href="/pages/privacy-policy" aria-label="Privacy policy">
                 Privacy Policy
               </Link>
-              <a href="https://octothorp.es" target="_blank" rel="noopener noreferrer">#octothorp.es</a>
+              <a href="https://octothorp.es" target="_blank" rel="noopener noreferrer">
+                #octothorp.es
+              </a>
             </LinkContainer>
             <p className="footer__disclaimer">
               The purchase of any products through external sites does not provide any monetary benefit to the author.

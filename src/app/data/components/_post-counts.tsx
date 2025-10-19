@@ -19,12 +19,12 @@ export function PostCounts({ data }: PostCountsProps) {
   const averagePostsPerMonth = totalPosts / data.labels.length;
 
   const yearCounts: Record<string, number> = {};
-  
+
   data.labels.forEach((label, index) => {
     const year = label.split('-')[0];
     yearCounts[year] = (yearCounts[year] || 0) + data.data[index];
   });
-  
+
   const years = Object.keys(yearCounts).sort();
   const numberOfYears = years.length;
   const averagePostsPerYear = numberOfYears > 0 ? totalPosts / numberOfYears : 0;
