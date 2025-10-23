@@ -3,17 +3,9 @@
   =============== */
 
 .home-page__posts {
-  margin-top: var(--spacing-3xl);
-  margin-bottom: var(--spacing-4xl);
+  margin: var(--spacing-2xl) 0;
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-3xl);
 }
 
-@media (min-width: 1025px) {
-  .home-page__posts {
-    margin-top: var(--spacing-4xl);
-    margin-bottom: var(--spacing-4xl);
-    gap: var(--spacing-4xl);
-  }
-}

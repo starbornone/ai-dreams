@@ -18,15 +18,13 @@ export default async function Page() {
 
   return (
     <>
-      <Container>
-        {posts && posts.length > 0 ? (
-          <section className="home-page__posts">
-            {posts.map((post) => (
-              <PostPreview key={post.slug} post={post} />
-            ))}
-          </section>
-        ) : null}
-      </Container>
+      {posts && posts.length > 0 ? (
+        <section className="home-page__posts">
+          {posts.map((post) => (
+            <PostPreview key={post.slug} post={post} />
+          ))}
+        </section>
+      ) : null}
       <Container>
         <MorePosts morePosts={morePosts} enableLoadMore={true} loadMoreLimit={12} initialOffset={3} />
       </Container>

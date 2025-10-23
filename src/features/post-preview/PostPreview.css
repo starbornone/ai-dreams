@@ -2,25 +2,33 @@
   Post Preview CSS
   =============== */
 
+.post-preview {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--layout-container);
+}
+
 .post-preview__image-link {
-  height: 18rem;
+  height: 24rem;
 }
 
 .post-preview__image {
-  height: 18rem;
+  height: 24rem;
   object-fit: cover;
   object-position: center;
 }
 
 .post-preview__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
   margin-left: auto;
   margin-right: auto;
   margin-top: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-  display: flex;
-  max-width: 65ch; /* max-w-prose equivalent */
-  flex-direction: column;
-  gap: var(--spacing-md);
+  max-width: 65ch;
+  padding-left: var(--layout-container-padding);
+  padding-right: var(--layout-container-padding);
 }
 
 .post-preview__title {

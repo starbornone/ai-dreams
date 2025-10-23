@@ -1,8 +1,10 @@
-import { CalendarIcon, FolderIcon, TagIcon } from '@/components';
-import { PostData } from '@/types';
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { CalendarIcon, FolderIcon, TagIcon } from '@/components';
+import { PostData } from '@/types';
+
 import './PostPreview.css';
 
 interface PostPreviewProps {
@@ -11,7 +13,7 @@ interface PostPreviewProps {
 
 export function PostPreview({ post }: PostPreviewProps) {
   return (
-    <article aria-label={`Post preview for ${post.title}`}>
+    <article aria-label={`Post preview for ${post.title}`} className="post-preview">
       {/* Image Link */}
       <Link
         className="post-preview__image-link img-link"

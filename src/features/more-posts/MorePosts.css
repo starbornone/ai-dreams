@@ -3,8 +3,7 @@
   =============== */
 
 .more-posts {
-  margin-top: var(--spacing-4xl);
-  margin-bottom: var(--spacing-4xl);
+  margin: var(--spacing-3xl) 0;
 }
 
 .more-posts__title {
@@ -39,11 +38,6 @@
 }
 
 @media (min-width: 1025px) {
-  .more-posts {
-    margin-top: var(--spacing-4xl);
-    margin-bottom: var(--spacing-4xl);
-  }
-
   .more-posts__list {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-3xl);
