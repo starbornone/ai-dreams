@@ -27,7 +27,6 @@ export default async function Page() {
           </section>
         ) : null}
       </Container>
-      <MorePages />
       <Container>
         <MorePosts morePosts={morePosts} enableLoadMore={true} loadMoreLimit={12} initialOffset={3} />
       </Container>

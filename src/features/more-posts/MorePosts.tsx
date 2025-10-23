@@ -59,7 +59,7 @@ export function MorePosts({
 
   return (
     <div className="more-posts">
-      <h2 className="site-title more-posts__title">{title ? title : 'More Posts'}</h2>
+      {title && <h2 className="site-title more-posts__title">{title}</h2>}
       <div className="more-posts__list">
         {posts.length > 0 ? posts.map((post) => <PostLink key={post.slug} post={post} />) : null}
       </div>
