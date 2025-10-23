@@ -1,7 +1,7 @@
 export const dynamic = 'force-static';
 
 import { Container } from '@/components';
-import { MorePages, MorePosts, PostPreview } from '@/features';
+import { MorePosts, PostPreview } from '@/features';
 import { getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
 
