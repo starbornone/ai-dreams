@@ -20,6 +20,9 @@
 
 @media (min-width: 1025px) {
   .header {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
     margin: var(--spacing-3xl);
   }
 }
