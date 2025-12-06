@@ -37,9 +37,15 @@ export const renderCodeBlock = (tagNode: any, index: number): React.ReactNode =>
   const language = extractLanguage(tagNode);
   const codeContent = extractCodeContent(tagNode.children || []);
 
+  const Highlighter = SyntaxHighlighter as any;
   return (
-    <SyntaxHighlighter className="body__code-block" key={index} language={language} style={atomOneDark} wrapLongLines>
-      {codeContent}
-    </SyntaxHighlighter>
+    <Highlighter
+      className="body__code-block"
+      key={index}
+      language={language}
+      style={atomOneDark}
+      wrapLongLines
+      children={codeContent}
+    />
   );
 };
