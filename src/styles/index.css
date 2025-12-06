@@ -1,18 +1,4 @@
 /* ===============
-  Font Definitions
-  =============== */
-
-@font-face {
-  font-family: 'Neon';
-  src: url(./fonts/Neon-Solid.otf);
-}
-
-@font-face {
-  font-family: 'Neon Lines';
-  src: url(./fonts/NeonLines-Regular.otf);
-}
-
-/* ===============
   Custom Properties
   =============== */
 
@@ -20,6 +6,30 @@
 @import './custom-properties/spacing.css';
 @import './custom-properties/typography.css';
 @import './custom-properties/layout.css';
+
+/* ===============
+  Component CSS Imports
+  =============== */
+
+  @import './effects/animations.css';
+  @import './effects/keyframes.css';
+  @import './content/images.css';
+  @import './content/links.css';
+  @import './content/code.css';
+
+/* ===============
+  Font Definitions
+  =============== */
+
+  @font-face {
+    font-family: 'Neon';
+    src: url(./fonts/Neon-Solid.otf);
+  }
+  
+  @font-face {
+    font-family: 'Neon Lines';
+    src: url(./fonts/NeonLines-Regular.otf);
+  }
 
 /* ===============
   CSS Reset & Base Styles
@@ -355,13 +365,3 @@ video {
   white-space: nowrap;
   border: 0;
 }
-
-/* ===============
-  Component CSS Imports
-  =============== */
-
-@import './effects/animations.css';
-@import './effects/keyframes.css';
-@import './content/images.css';
-@import './content/links.css';
-@import './content/code.css';
