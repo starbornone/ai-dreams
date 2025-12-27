@@ -7,7 +7,6 @@ import { Container, Title } from '@/components';
 import { Body, CoverImage } from '@/features';
 import { getAllPagesWithSlug } from '@/lib';
 import { handleGetPage } from '@/services';
-import { PageData } from '@/types';
 
 import './page.css';
 
@@ -22,15 +21,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
   const params = await props.params;
-  const page: PageData = await handleGetPage(params);
+  const page = await handleGetPage(params);
   if (!page) return { title: 'AI Dreams' };
 
   return {
     title: page?.title || '',
     description: page?.excerpt || '',
-    openGraph: {
-      images: page?.ogImage?.url || '',
-    },
   };
 }
 
@@ -46,7 +42,7 @@ export default async function Page(props: { params: Promise<Params> }) {
     <>
       {page ? (
         <article className="page-detail">
-          {page.coverImage && (
+          {page.coverImage?.url && (
             <CoverImage
               imageAuthor={{
                 name: page?.imageAuthor || '',
@@ -59,11 +55,10 @@ export default async function Page(props: { params: Promise<Params> }) {
           <Container>
             <div className="page-detail__title-container">{page.title && <Title>{page.title}</Title>}</div>
             <div className="page-detail__content">
-              {(page.content || page.markdownContent) && (
+              {page.markdownContent && (
                 <Body
                   content={{
-                    html: page.content?.html || undefined,
-                    markdownContent: page.markdownContent || undefined,
+                    markdownContent: page.markdownContent,
                   }}
                 />
               )}
