@@ -1,38 +1,28 @@
-import { fetchAPI } from '@/lib';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import matter from 'gray-matter';
 
 export async function getPage(slug: string) {
-  const data = await fetchAPI(
-    `
-    query GetPage($slug: String!, $stage: Stage!) {
-      page(stage: $stage, where: {slug: $slug}) {
-        title
-        slug
-        content {
-          html
-        }
-        markdownContent
-        imageAuthor
-        imageAuthorUrl
-        ogImage: coverImage {
-          url(transformation: {image: {resize: {fit: crop, width: 1200, height: 800}}})
-        }
-        coverImage {
-          url(transformation: {image: {resize: {fit: crop, width: 1200, height: 800}}})
-        }
-        localizations {
-          excerpt
-          locale
-          title
-        }
-      }
-    }
-  `,
-    {
-      variables: {
-        slug,
-        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
-      },
-    }
-  );
-  return data.page;
+  try {
+    const pagesDirectory = join(process.cwd(), 'src', 'app', 'pages');
+    const filePath = join(pagesDirectory, `${slug}.md`);
+    const fileContents = readFileSync(filePath, 'utf8');
+
+    const { data, content } = matter(fileContents);
+
+    const firstParagraph = content.split('\n\n')[0];
+    const excerpt = firstParagraph?.substring(0, 160) || '';
+    
+    return {
+      title: data.title || slug,
+      slug,
+      markdownContent: content,
+      excerpt,
+      coverImage: data.coverImage ? { url: data.coverImage } : { url: '' },
+      imageAuthor: data.imageAuthor || undefined,
+      imageAuthorUrl: data.imageAuthorUrl || undefined,
+    };
+  } catch (error) {
+    return null;
+  }
 }

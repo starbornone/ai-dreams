@@ -1,19 +1,15 @@
-import { fetchAPI } from '@/lib';
+import { readdirSync } from 'fs';
+import { join } from 'path';
 
 export async function getAllPagesWithSlug() {
-  const data = await fetchAPI(
-    `
-    query GetAllPagesWithSlug($stage: Stage!) {
-      pages(stage: $stage) {
-        slug
-      }
-    }
-  `,
-    {
-      variables: {
-        stage: process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED',
-      },
-    }
-  );
-  return data.pages;
+  const pagesDirectory = join(process.cwd(), 'src', 'app', 'pages');
+  const files = readdirSync(pagesDirectory);
+  
+  const pages = files
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => ({
+      slug: file.replace(/\.md$/, ''),
+    }));
+  
+  return pages;
 }
