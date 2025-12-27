@@ -1,4 +1,6 @@
-## title: Privacy Policy
+---
+title: Privacy Policy
+---
 
 **Last updated:** 15/04/2025
 

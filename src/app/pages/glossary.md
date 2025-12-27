@@ -1,6 +1,9 @@
-## title: Glossary of Common Terms
-
-You can explore the [Best of AI Dreams](https://www.aidreams.world/pages/best-ai-dreams) page to find introductory posts for each category on the website, along with some of the most popular posts from each category. Also, have a look at [Book Recommendations: The Non-Fiction Edition](https://www.aidreams.world/pages/book-recommendations-non-fiction-edition) for a list of books that I recommend.
+---
+title: Glossary of Common Terms
+coverImage: https://res.cloudinary.com/starborn/image/upload/v1766852672/ai-dreams/pages/aziz-acharki-gXndgCS-CGo-unsplash_wpup6w.jpg
+imageAuthor: Aziz Acharki
+imageAuthorUrl: https://unsplash.com/@acharki95
+---
 
 ## Game Development & Design
 
