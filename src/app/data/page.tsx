@@ -27,12 +27,6 @@ export default async function Page() {
       <Container>
         <article className="data-page__content">
           <Title>Blog Data</Title>
-          <div className="data-page__intro">
-            <p>
-              Maybe I will add more interesting things here in the future. Maybe that will be when I finally get around
-              to migrating this entire blog to my own CMS. Who knows. (I should, but I sure don&apos;t!)
-            </p>
-          </div>
           <div className="data-page__section">
             <h2 className="data-page__section-title">Posts Per Category</h2>
             <ul className="data-page__category-list">

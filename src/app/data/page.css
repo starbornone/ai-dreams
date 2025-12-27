@@ -5,15 +5,10 @@
 .data-page__content {
   margin-left: auto;
   margin-right: auto;
-  max-width: 65ch; /* max-w-prose equivalent */
-}
-
-.data-page__intro {
-  margin-bottom: var(--spacing-lg);
+  max-width: 65ch;
 }
 
 .data-page__section {
-  margin-top: var(--spacing-3xl);
   margin-bottom: var(--spacing-3xl);
 }
 
