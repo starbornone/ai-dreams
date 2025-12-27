@@ -1,12 +1,12 @@
 export const dynamic = 'force-static';
 
 import { headers } from 'next/headers';
-import Link from 'next/link';
 
 import { Container, Title } from '@/components';
 import { PostLink } from '@/features';
-import { getAllPages, getAllPosts } from '@/lib';
 import { findSimilarContent } from '@/utils';
+import { getAllPages, getAllPosts } from '@/lib';
+
 import './not-found.css';
 
 export default async function NotFound() {
@@ -32,7 +32,7 @@ export default async function NotFound() {
         <div>
           <p>
             Sorry, the page you were looking for doesn&apos;t exist or has been moved. If you believe this page should
-            exist, please <Link href="/pages/contact-us">contact us</Link>.
+            exist, please contact us at <a href="mailto:human@aidreams.world" target="_blank" rel="noopener noreferrer">human@aidreams.world</a>.
           </p>
         </div>
 
