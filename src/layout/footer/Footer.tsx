@@ -21,14 +21,14 @@ export function Footer() {
               <Link href="/pages/about" aria-label="About the author and site">
                 About
               </Link>
-              <Link
-                href="/pages/book-recommendations-non-fiction-edition"
-                aria-label="Non-fiction book recommendations"
-              >
-                Book Recommendations
-              </Link>
               <Link href="/pages/glossary" aria-label="Glossary of terms">
                 Glossary
+              </Link>
+              <Link href="/data" aria-label="Blog data">
+                Blog Data
+              </Link>
+              <Link href="/pages/privacy-policy" aria-label="Privacy policy">
+                Privacy Policy
               </Link>
             </LinkContainer>
           </nav>
@@ -37,15 +37,7 @@ export function Footer() {
           <div className="footer__info">
             <LinkContainer>
               <p>AI dreaming since 2021.</p>
-              <Link href="/pages/contact-us" aria-label="Contact us">
-                Contact Us
-              </Link>
-              <Link href="/data" aria-label="Blog data">
-                Blog Data
-              </Link>
-              <Link href="/pages/privacy-policy" aria-label="Privacy policy">
-                Privacy Policy
-              </Link>
+              <a href="mailto:human@aidreams.world" target="_blank" rel="noopener noreferrer">human@aidreams.world</a>
               <a href="https://octothorp.es" target="_blank" rel="noopener noreferrer">
                 #octothorp.es
               </a>
