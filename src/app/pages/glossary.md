@@ -5,65 +5,54 @@ imageAuthor: Aziz Acharki
 imageAuthorUrl: https://unsplash.com/@acharki95
 ---
 
-## Game Development & Design
+## Economics
 
-- **Procedural Generation**: A method of creating data algorithmically as opposed to manually, often used in games to generate complex environments, levels, or scenarios dynamically.
-- **Emergent Gameplay**: When complex behaviours or strategies arise from simple game mechanics, often surprising even the designers.
-- **Ludonarrative Dissonance**: A conflict between a video game’s narrative and its gameplay mechanics.
-- **Metagame**: Strategies or techniques that go beyond the basic rules of the game, often involving community knowledge or "game-breaking" tactics.
-- **Crunch Time**: The intense period of extended work hours near a project's deadline, often criticised in the industry for its negative impact on mental health.
-- **Game Jam**: An event where developers come together to create games within a short time frame, typically 24-72 hours.
-- **Sandbox Game**: A type of game where players have the freedom to explore, create, and interact with the game world without predefined goals or restrictions.
+- **Externalities**: Unpriced side effects affecting third parties (e.g., pollution). Under capitalism, externalities are simply costs forcibly socialised—the public pays for environmental damage, health crises, and community disruption while capital privatises profits.
+- **Nash Equilibrium**: A strategic stalemate where no single player improves by changing strategy. This models capitalist competition perfectly: workers and firms locked into suboptimal cooperation (e.g., accepting low wages) because any unilateral change risks ruin. It is a formalisation of alienation, not a solution to it.
+- **Opportunity Cost**: The value of the foregone alternative. This concept is weaponised under capitalism to justify exploitation (“if we paid fair wages, we’d lose profit”) while ignoring the opportunity cost of inequality itself: lost lives, crushed potential, preventable suffering.
+- **Pareto Efficiency**: A state where no one can be better off without harming another. This bourgeois concept naturalises inequality by assuming the current distribution of resources is fixed. A materialist view asks: *better off by what metric, under what property relations, and for whom?*
+- **Planned Obsolescence**: Intentional design for early failure. A textbook example of capital’s contradiction: private profit requires waste, inefficiency, and environmental destruction, even when durable goods would be technically possible and socially desirable.
+- **Post-Scarcity**: An economy where goods are abundant with minimal labour. This is the material horizon of communism—not “everyone gets a Ferrari” but the abolition of artificial scarcity, the reduction of necessary labour time, and the freeing of human creativity from the compulsion to sell itself. Post-scarcity is not magic; it is automation under democratic, not capitalist, control.
+- **Prisoner’s Dilemma**: A game showing why rational individuals may not cooperate. Capitalism weaponised this dilemma daily—workers undercutting each other for scarce jobs, nations racing to the bottom on regulations. The materialist resolution is not “better strategy” but **class consciousness** and collective action.
+- **Public Goods**: Non-excludable, non-rivalrous resources (clean air, knowledge). Capital tries to enclose every public good into private property—patents, DRM, paywalls. A communist perspective insists on the expansion of the commons and decommodification of necessities.
+- **Utility**: A measure of satisfaction. Bourgeois economics treats utility as individual and quantifiable, obscuring its social and material basis. What is “utility” to a capitalist (profit) is alienation to a worker. Utility cannot be separated from class position.
 
-## Economics & Game Theory
+## Game Design
 
-- **Pareto Efficiency**: A situation where no individual can be made better off without making someone else worse off, often discussed in economics and game theory.
-- **Nash Equilibrium**: A concept in game theory where no player can benefit by changing their strategy while the other players keep theirs unchanged.
-- **Prisoner’s Dilemma**: A standard example of a game that shows why two completely rational individuals might not cooperate, even if it appears that it is in their best interests to do so.
-- **Externalities**: A side effect or consequence of an activity that affects other parties without being reflected in the costs of the goods or services involved.
-- **Public Goods**: Products that are non-excludable and non-rivalrous, meaning they can be consumed by many people without being depleted.
-- **Opportunity Cost**: The loss of potential gain from other alternatives when one option is chosen.
-- **Utility**: A measure of satisfaction or value derived from the consumption of goods and services.
-
-## Philosophy & Personal Development
-
-- **Existentialism**: A philosophy that emphasises individual existence, freedom, and choice, often exploring the meaning of life.
-- **Stoicism**: A philosophy teaching the development of self-control and fortitude as a means to overcome destructive emotions.
-- **Neurodiversity**: The concept that differences in brain functioning, like autism and ADHD, are normal variations of human diversity and should be respected as such.
-- **Socratic Method**: A form of cooperative argumentative dialogue to stimulate critical thinking and to draw out ideas and underlying presumptions.
-- **Hedonic Treadmill**: The observed tendency of humans to quickly return to a relatively stable level of happiness despite major positive or negative events.
-- **Cognitive Dissonance**: The mental discomfort experienced by a person who holds two or more contradictory beliefs, values, or ideas.
-- **Absurdism**: The belief that human beings exist in a purposeless, chaotic universe, often associated with existential philosophy.
-
-## Anti-Capitalism & Anti-Consumerism
-
-- **Planned Obsolescence**: A business strategy in which the obsolescence of a product is planned and built into it from its conception, often criticised in anti-consumerism.
-- **Late Stage Capitalism**: A term used to describe absurdities and injustices in the capitalist system, often highlighted in critiques of wealth inequality and corporate behaviour.
-- **Neoliberalism**: A political-economic philosophy advocating for free-market capitalism, deregulation, and reduction in government spending.
-- **Brand Loyalty**: The tendency of consumers to continue buying the same brand's products over time, often cultivated through marketing strategies that can be criticised as manipulative.
-- **False Scarcity**: The intentional restriction of a product's availability to increase demand and drive up prices, often seen as a manipulative business practice.
-- **Greenwashing**: The practice of making misleading claims about the environmental benefits of a product, service, or company practices.
-- **Conspicuous Consumption**: The purchase of goods or services for the specific purpose of displaying wealth and status rather than for their practical value.
-- **Commodity Fetishism**: A Marxist concept where the social relationships involved in production are obscured by the relationships between people and commodities.
-
-## Mental Health & Personal Life
-
-- **Masking**: The practice of concealing one’s true self to conform to social expectations, often discussed in the context of neurodiversity.
-- **Burnout**: A state of emotional, physical, and mental exhaustion caused by prolonged stress, often associated with overwork and lack of support.
-- **Executive Dysfunction**: Difficulty in managing and regulating thoughts and actions, commonly experienced by people with ADHD and other neurodivergent conditions.
-- **Imposter Syndrome**: The persistent fear of being exposed as a “fraud” despite evident success, often experienced by high-achieving individuals.
-- **Emotional Labor**: The process of managing feelings and expressions as part of a job, often unrecognized and uncompensated, leading to stress and exhaustion.
-- **Hyperfocus**: An intense form of concentration on a particular task, often experienced by people with ADHD.
-- **Anxiety**: A feeling of worry, nervousness, or unease, typically about an imminent event or something with an uncertain outcome.
-- **Depression**: A common mental disorder characterized by persistent sadness, lack of interest, and a variety of emotional and physical problems.
+- **Emergent Gameplay**: When complex behaviours arise from simple mechanics. Under capitalism, this is frequently co-opted as “free labour”—players generating content, narratives, or balance fixes that would otherwise require paid developers.
+- **Ludonarrative Dissonance**: A conflict between a game’s story and its mechanics. Materially, this mirrors the contradiction between capitalism’s ideological promises (freedom, meritocracy) and its material reality (exploitation, precarity). Many games celebrate anti-capitalist narratives while mechanically enforcing grind, loot boxes, and progress via consumption.
+- **Metagame**: Strategies extending beyond basic rules. In a capitalist context, the metagame is often shaped not by player creativity but by monetised third-party tools, data mining, and influencer marketing—externalising knowledge production while centralising profit.
+- **Procedural Generation**: A method of creating data algorithmically rather than manually. While often used to simulate infinite worlds, from a materialist perspective it reflects capital’s drive to automate creative labour, reducing the need for designers and testers while extracting value from pre-existing human-authored assets.
 
 ## Miscellaneous
 
-- **Gamification**: The application of game-design elements in non-game contexts, such as education or marketing, to engage and motivate people.
-- **Cognitive Load**: The amount of mental effort being used in the working memory, often discussed in terms of how game mechanics or user interfaces impact the player.
-- **Survivorship Bias**: The logical error of focusing on successful entities while ignoring those that failed, often leading to overly optimistic conclusions about strategies or behaviors.
-- **FOMO (Fear of Missing Out)**: The anxiety that an exciting or interesting event may currently be happening elsewhere, often exacerbated by social media.
-- **Deus Ex Machina**: A plot device where a seemingly unsolvable problem is suddenly resolved by an unexpected and unlikely occurrence, often seen as a narrative flaw.
-- **Cyberpunk**: A subgenre of science fiction that focuses on a dystopian future with advanced technology and a breakdown of social order.
-- **Solarpunk**: A literary and artistic movement that envisions a future where environmental sustainability and social justice are core values.
-- **Post-Scarcity**: A hypothetical economy in which most goods can be produced in great abundance with minimal human labor, making them freely available to all.
+- **Cognitive Load**: Mental effort in working memory. Capitalist work design maximises cognitive load through multitasking, interruptions, and poorly designed interfaces—not by accident, but because reducing load would require slowing down extraction. Cognitive load is a bargaining chip.
+- **Cyberpunk**: Dystopian sci-fi of high tech, low life. Classic cyberpunk correctly identified that advanced technology under capitalism leads not to utopia but to intensified exploitation, surveillance, and corporate feudalism. Its weakness: often romanticises individual hackers over collective action.
+- **Deus Ex Machina**: A sudden, unlikely plot resolution. In capitalist storytelling, this often substitutes for genuine systemic change—a tech billionaire saves the world, a hero overthrows a dictator, but the underlying production relations remain untouched. A materialist narrative requires *deus non ex machina*: change comes from collective struggle, not miracles.
+- **Gamification**: Applying game elements to non-game contexts. Under capitalism, gamification is usually a control mechanism—point systems, leaderboards, and badges replace intrinsic motivation with extrinsic rewards, turning work or education into a Skinner box that extracts more effort for less pay.
+- **Solarpunk**: A movement envisioning sustainable, just futures. From a materialist perspective, solarpunk is not just aesthetic—it is a **prefigurative politics**. Its gardens, cooperatives, and renewable grids model what post-capitalist material relations could look like. The question is not whether it’s “realistic” but what it helps us organise toward.
+- **Survivorship Bias**: Focusing on successes while ignoring failures. Capitalism weaponised survivorship bias in entrepreneurship culture, “meritocracy” narratives, and productivity porn. It obscures the fact that under capitalism, most people fail—by design.
+
+## Philosophy
+
+- **Absurdism**: The belief in a purposeless universe. From a materialist perspective, absurdism can be a liberal cop-out—justifying inaction by declaring meaning impossible. The communist response: meaning is not given by the cosmos but made collectively, through struggle and construction of a new world.
+- **Cognitive Dissonance**: Discomfort from contradictory beliefs. Under capitalism, this is a survival mechanism: workers know the system is unjust but must act as if it’s legitimate to pay rent. Dissonance is not a personal failing but a rational response to ideological and material contradictions.
+- **Essentialism**: The belief that objects, people, or concepts have inherent, unchanging “essences” that define their nature. Materialism rejects this as idealist mystification—identities and behaviours are shaped by material conditions, not metaphysical properties. Essentialism under capitalism often serves to naturalise oppression (e.g., “women are naturally nurturing,” “workers are lazy”) and obscure the social relations that produce those traits.
+- **Existentialism**: Emphasises individual freedom and choice. A materialist critique notes that existentialism often ignores class constraints: a wealthy intellectual’s “authenticity project” looks very different from a single parent’s survival labour. Freedom is not abstract—it is determined by one’s position in production.
+- **Hedonic Treadmill**: The tendency to return to a stable happiness level. Capitalism exploits this by constantly manufacturing new desires (planned obsolescence, fashion cycles) while preventing the structural changes—shorter hours, community care, economic security—that might actually raise baseline well-being.
+- **Idealism**: The metaphysical doctrine that reality is fundamentally mental or spiritual, and that ideas, consciousness, or culture shape material conditions. Materialism inverts this: the social and material base (class relations, technology, resources) determines ideas, not the other way around. Idealism is the ideological scaffolding of capitalism, masking exploitation as “freedom of choice” and naturalising hierarchy as “natural law.”
+- **Materialism**: The philosophical position that reality is composed of matter in motion, and that social and historical change arises from material conditions—class struggle, technology, the forces and relations of production—rather than divine will or abstract ideas. Historical materialism, developed by Marx and Engels, analyses society through its economic base and the class conflicts that arise from it. Matter is primary; ideas are secondary and shaped by material reality.
+- **Socratic Method**: Dialogue to stimulate critical thinking. Under capital, this is often reduced to a classroom technique. In a communist context, it becomes a tool for collective inquiry—breaking through ideology, revealing contradictions, and building shared analysis.
+- **Stoicism**: Self-control to overcome destructive emotions. While containing useful psychological tools, stoicism is frequently weaponised under capitalism to gaslight workers: “just manage your stress better” instead of abolishing the cause (exploitation, overwork, precarity). Stoicism as a survival tactic is not the same as liberation.
+
+## Political Economy
+
+- **Brand Loyalty**: The cultivated tendency to stick with one brand. This is not a natural preference but manufactured through advertising, social signalling, and locking consumers into ecosystems (hardware, software, subscriptions). It transforms use value into exchange value and community into market segments.
+- **Commodity Fetishism**: The social relationships of production appear as relationships between things (commodities). Money seems to have power; brands seem to have personalities; labour is forgotten. Unmasking commodity fetishism is the starting point of communist critique.
+- **Conspicuous Consumption**: Purchasing for status, not utility. Veblen’s concept, but a materialist adds: this is not a personal moral failing but a structural requirement of capital—demand must be constantly expanded, and status competition is a reliable engine.
+- **Ethics-Washing**: The performative adoption of ethical posturing (e.g., “corporate social responsibility,” “ESG investing”) to obscure exploitative practices and deflect criticism. Ethics-washing is not about morality—it is a tool of ideological legitimation, allowing capital to present exploitation as “responsible” while continuing to extract surplus value. The materialist response is to expose the gap between rhetoric and practice and demand systemic, not cosmetic, change.
+- **False Scarcity**: Artificial restriction of supply to inflate prices. Ubiquitous under capitalism—from digital goods with zero reproduction cost (games, media) to housing held vacant as investments. The opposite is post-scarcity: production for need, not profit.
+- **Green-Washing**: Misleading claims of environmental benefit. A symptom of capitalism’s inability to solve ecological crisis—individual “solutions” (recycling, carbon offsets) substitute for systemic change, allowing extraction and growth to continue.
+- **Late-Stage Capitalism**: A colloquial term for capitalism’s current absurdities. More precisely: finance-dominated, neoliberal capitalism marked by chronic crisis, extreme inequality, ecological collapse, and the financialisation of everyday life. Not a new stage—just capitalism without pretense.
+- **Liberalism**: A political ideology centred on individual rights, property, and “free markets,” historically championed by the bourgeoisie to justify their rule and dismantle feudal constraints. Liberalism is not neutral—it is the political form of capitalism, prioritising private property and market “freedom” while obscuring class power. Its contradictions (e.g., “freedom” for the few, precarity for the many) expose the limits of reform within capitalist relations.
+- **Neoliberalism**: The global political project to restore class power to capital after the postwar compromise. It is not “less government” but government reorganised to enforce privatisation, deregulation, austerity, and labour discipline.
