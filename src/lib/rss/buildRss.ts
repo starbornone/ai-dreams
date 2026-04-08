@@ -11,6 +11,7 @@ type RssChannel = {
   title: string;
   link: string;
   description: string;
+  selfLink?: string;
   language?: string;
   lastBuildDate?: Date;
   items: RssItem[];
@@ -33,12 +34,21 @@ export function buildRss(channel: RssChannel): string {
   const parts: string[] = [];
 
   parts.push('<?xml version="1.0" encoding="UTF-8"?>');
-  parts.push('<rss version="2.0">');
+  if (channel.selfLink) {
+    parts.push('<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">');
+  } else {
+    parts.push('<rss version="2.0">');
+  }
   parts.push('<channel>');
 
   parts.push(`<title>${escapeXml(channel.title)}</title>`);
   parts.push(`<link>${escapeXml(channel.link)}</link>`);
   parts.push(`<description>${escapeXml(channel.description)}</description>`);
+  if (channel.selfLink) {
+    parts.push(
+      `<atom:link href="${escapeXml(channel.selfLink)}" rel="self" type="application/rss+xml" />`
+    );
+  }
   if (channel.language) {
     parts.push(`<language>${escapeXml(channel.language)}</language>`);
   }

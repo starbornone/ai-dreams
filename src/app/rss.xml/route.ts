@@ -19,6 +19,7 @@ export async function GET() {
     title: CHANNEL_TITLE,
     link: `${siteUrl}/`,
     description: CHANNEL_DESCRIPTION,
+    selfLink: `${siteUrl}/rss.xml`,
     language: 'en',
     lastBuildDate: new Date(),
     items: posts.map((post) => {
