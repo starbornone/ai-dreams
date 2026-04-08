@@ -1,5 +1,3 @@
-export const dynamic = 'force-static';
-
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
@@ -10,6 +8,8 @@ import { handleGetPost } from '@/services';
 import { PostData } from '@/types';
 
 import './page.css';
+
+export const dynamic = 'force-static';
 
 type Params = Promise<{ slug: string }>;
 

@@ -1,11 +1,11 @@
-export const dynamic = 'force-static';
-
 import { Container } from '@/components';
 import { MorePosts, PostPreview } from '@/features';
 import { getLimitedPosts } from '@/lib';
 import { PostData } from '@/types';
 
 import './page.css';
+
+export const dynamic = 'force-static';
 
 async function getInitialPosts(): Promise<{ posts: PostData[]; morePosts: PostData[] }> {
   const posts = await getLimitedPosts({ skip: 0, limit: 3 });

@@ -1,5 +1,3 @@
-export const dynamic = 'force-static';
-
 import { headers } from 'next/headers';
 
 import { Container, Title } from '@/components';

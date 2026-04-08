@@ -1,5 +1,3 @@
-export const dynamic = 'force-static';
-
 import { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -9,6 +7,8 @@ import { PostCounts } from './components/_post-counts';
 import { TagCloud } from './components/_tag-cloud';
 
 import './page.css';
+
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Blog Data',
