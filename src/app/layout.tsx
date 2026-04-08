@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Lexend, Source_Code_Pro } from 'next/font/google';
 
 import { Layout, Meta } from '@/layout';
+import { getSiteUrl } from '@/lib/site/getSiteUrl';
 
 import '@/styles/index.css';
 
@@ -19,13 +20,21 @@ const sourceCodePro = Source_Code_Pro({
   variable: '--font-source-code-pro',
 });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     template: '%s - AI Dreams',
     default: 'AI Dreams',
   },
   description:
     "A software engineer's exploration of philosophy, society, and personal growth. AI Dreams aims to bridge the gap between deep ideas and practical reflections, covering topics like perception, ethics, community, and systemic critiques.",
+  alternates: {
+    types: {
+      'application/rss+xml': [{ url: '/rss.xml', title: 'RSS' }],
+    },
+  },
   keywords: [
     'Accessible Philosophy',
     'Class Analysis',
