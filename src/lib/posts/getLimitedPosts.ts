@@ -37,6 +37,10 @@ export async function getLimitedPosts({
         title
         slug
         excerpt
+        content {
+          html
+        }
+        markdownContent
         category {
           name
           slug

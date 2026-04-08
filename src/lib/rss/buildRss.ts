@@ -4,6 +4,7 @@ type RssItem = {
   guid?: string;
   pubDate: Date;
   description?: string;
+  contentEncoded?: string;
   categories?: string[];
 };
 
@@ -30,15 +31,23 @@ function toRfc822(date: Date): string {
   return date.toUTCString();
 }
 
+function wrapCdata(value: string): string {
+  // Prevent `]]>` from terminating CDATA early.
+  return `<![CDATA[${value.replace(/]]>/g, ']]]]><![CDATA[>')}]]>`;
+}
+
 export function buildRss(channel: RssChannel): string {
   const parts: string[] = [];
 
   parts.push('<?xml version="1.0" encoding="UTF-8"?>');
-  if (channel.selfLink) {
-    parts.push('<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">');
-  } else {
-    parts.push('<rss version="2.0">');
-  }
+  const needsAtom = Boolean(channel.selfLink);
+  const needsContent = channel.items.some((i) => Boolean(i.contentEncoded));
+  const attrs = [
+    'version="2.0"',
+    ...(needsAtom ? ['xmlns:atom="http://www.w3.org/2005/Atom"'] : []),
+    ...(needsContent ? ['xmlns:content="http://purl.org/rss/1.0/modules/content/"'] : []),
+  ].join(' ');
+  parts.push(`<rss ${attrs}>`);
   parts.push('<channel>');
 
   parts.push(`<title>${escapeXml(channel.title)}</title>`);
@@ -68,6 +77,9 @@ export function buildRss(channel: RssChannel): string {
       parts.push(`<description>${escapeXml(item.description)}</description>`);
     } else {
       parts.push('<description></description>');
+    }
+    if (item.contentEncoded) {
+      parts.push(`<content:encoded>${wrapCdata(item.contentEncoded)}</content:encoded>`);
     }
     if (item.categories?.length) {
       for (const category of item.categories) {

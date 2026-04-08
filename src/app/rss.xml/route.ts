@@ -35,6 +35,7 @@ export async function GET() {
         guid: link,
         pubDate: new Date(post.date),
         description: post.excerpt ?? '',
+        contentEncoded: post.markdownContent ?? post.content?.html ?? '',
         categories,
       };
     }),
