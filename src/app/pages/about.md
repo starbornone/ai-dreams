@@ -7,6 +7,8 @@ imageAuthorUrl: https://unsplash.com/@onchky
 
 This blog is where I explore how external forces often influence our beliefs, choices, and actions—sometimes benefiting them more than us. Through critique, reflection, and exploration, I aim to spark deeper thinking about the world we live in, especially when it comes to questioning the status quo.
 
+If you prefer following posts in a feed reader, RSS is available at [/rss.xml](/rss.xml).
+
 ## So, who am I?
 
 I’m just another person navigating life on this planet—probably a lot like you. I make a living designing and coding for the web. I’m based on the east coast of Australia, where Christmas is warm and winters are mild. But there’s more to my story than lines of code and coastal living.

@@ -27,6 +27,9 @@ export function Footer() {
               <Link href="/data" aria-label="Blog data">
                 Blog Data
               </Link>
+              <Link href="/rss.xml" aria-label="RSS feed">
+                RSS
+              </Link>
               <Link href="/pages/privacy-policy" aria-label="Privacy policy">
                 Privacy Policy
               </Link>
@@ -38,6 +41,7 @@ export function Footer() {
             <LinkContainer>
               <p>AI dreaming since 2021.</p>
               <a href="mailto:human@aidreams.world" target="_blank" rel="noopener noreferrer">human@aidreams.world</a>
+              <Link href="/rss.xml">RSS</Link>
               <a href="https://octothorp.es" target="_blank" rel="noopener noreferrer">
                 #octothorp.es
               </a>
