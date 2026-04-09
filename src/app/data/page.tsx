@@ -27,7 +27,6 @@ export default async function Page() {
       <Container>
         <article className="data-page__content">
           <Title>Blog Data</Title>
-          <PostCounts data={{ labels, data }} />
           <div className="data-page__section">
             <h2 className="data-page__section-title">Posts Per Category</h2>
             <ul className="data-page__category-list">
@@ -41,6 +40,7 @@ export default async function Page() {
               ))}
             </ul>
           </div>
+          <PostCounts data={{ labels, data }} />
           <div className="data-page__section">
             <h2 className="data-page__section-title">Tags</h2>
             <TagCloud tags={tags} />
