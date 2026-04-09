@@ -27,9 +27,6 @@ export function Footer() {
               <Link href="/data" aria-label="Blog data">
                 Blog Data
               </Link>
-              <Link href="/rss.xml" aria-label="RSS feed">
-                RSS
-              </Link>
               <Link href="/pages/privacy-policy" aria-label="Privacy policy">
                 Privacy Policy
               </Link>
