@@ -7,7 +7,7 @@ type TagCloudProps = {
   tags: { name: string; count: number }[];
 };
 
-export function TagCloud({ tags, maxFontSize = 36, minFontSize = 10 }: TagCloudProps) {
+export function TagCloud({ tags, maxFontSize = 24, minFontSize = 12 }: TagCloudProps) {
   const maxCount = Math.max(...tags.map((tag) => tag.count));
 
   return (
