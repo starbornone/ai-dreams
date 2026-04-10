@@ -5,10 +5,10 @@ A Next.js blog exploring philosophy, society, and consciousness through a materi
 ## Development
 
 ```bash
-npm run dev     # Start development server
-npm run build   # Build for production
-npm run lint    # Run ESLint
-npm run format  # Format with Prettier
+yarn dev        # Start development server
+yarn build      # Build for production
+yarn lint       # Run ESLint
+yarn format     # Format with Prettier
 ```
 
 ## Tech Stack

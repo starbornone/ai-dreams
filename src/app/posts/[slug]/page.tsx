@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { Container, Loading, SectionSeparator, Title } from '@/components';
-import { Body, CoverImage, MetaData, MorePosts } from '@/features';
+import { Body, CoverImage, MetaData, MorePosts, PostViewTracker } from '@/features';
 import { getAllPostsWithSlug, getLimitedPosts } from '@/lib';
 import { handleGetPost } from '@/services';
 import { PostData } from '@/types';
@@ -55,6 +55,7 @@ export default async function Page(props: { params: Promise<Params> }) {
 
   return (
     <>
+      <PostViewTracker slug={post.slug} />
       {post ? (
         <article className="post-detail">
           {post.coverImage && (

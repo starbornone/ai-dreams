@@ -6,3 +6,4 @@ export * from './more-posts';
 export * from './post-header';
 export * from './post-link';
 export * from './post-preview';
+export * from './post-view-tracker';
