@@ -1,5 +1,5 @@
 ---
-title: Book Recommendations: The Non-Fiction Edition
+title: "Book Recommendations: The Non-Fiction Edition"
 coverImage: https://res.cloudinary.com/starborn/image/upload/v1766852289/ai-dreams/pages/riley-mccullough-w_3rn8XY1o4-unsplash_dy0gkl.jpg
 imageAuthor: Riley McCullough
 imageAuthorUrl: https://unsplash.com/@rileyhphotos
