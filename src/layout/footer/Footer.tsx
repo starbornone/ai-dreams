@@ -24,6 +24,9 @@ export function Footer() {
               <Link href="/pages/glossary" aria-label="Glossary of terms">
                 Glossary
               </Link>
+              <Link href="/pages/book-recommendations-non-fiction-edition" aria-label="Book recommendations">
+                Book Recommendations
+              </Link>
               <Link href="/data" aria-label="Blog data">
                 Blog Data
               </Link>
